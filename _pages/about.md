@@ -1,9 +1,7 @@
 ---
-layout: splash
+layout: single
 author_profile: true
 title: About
-header:
-  overlay_image: chi.jpg
 permalink: /about.html
 ---
 
