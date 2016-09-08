@@ -3,7 +3,7 @@ layout: single
 title: "OverTheWire: 'Bandit' Solutions 1-10"
 header:
   teaser: oth.png
-  image: ZenBG.png
+  overlay_image: ZenBG.png
   caption: "[__OverTheWire__](http://overthewire.org/wargames/)"
 related: true
 comments: true
