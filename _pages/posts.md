@@ -1,8 +1,6 @@
 ---
 layout: single
 title: Posts
-header:
-  overlay_iamge: chi.jpg
 author_profile: true
 permalink: /posts.html
 ---
