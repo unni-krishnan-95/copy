@@ -15,8 +15,6 @@ During the time this club was created, I taught many students the basics of Info
 
 The following solutions below, are to the first 10 levels of “__Bandit__”. Though I must state, please use the following solutions to learn and compare them with your own answers! If you are stuck on the level, use Google to research the answer before you look at the solutions!
 
-__NOTE:__ I will be adding explanations to the solutions, and why I did what I did. This will aim to help you understand the though process behind the solution.
-
 So... Let's begin!
 
 ### Level 0:
@@ -201,4 +199,4 @@ bandit10@melinda:~$ echo VGhlIHBhc3N3b3JkIGlzIElGdWt3S0dzRlc4TU9xM0lSRnFyeEUxaHh
 The password is IFukwKGsFW8MOq3IRFqrxE1hxTNEbUPR
 ```
 
-That's all for now, stay tuned for more "__Bandit__" Solution as well as an addition of explanations!
+That's all for now, stay tuned for more "__Bandit__" Solution!
