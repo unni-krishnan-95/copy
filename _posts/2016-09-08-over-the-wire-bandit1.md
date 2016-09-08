@@ -3,6 +3,7 @@ layout: single
 title: "OverTheWire: 'Bandit' Solutions 1-10"
 header:
   teaser: oth.png
+  image: oth.png
 related: true
 comments: true
 ---
