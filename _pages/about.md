@@ -3,7 +3,7 @@ layout: single
 author_profile: true
 title: About
 header:
-  overlay_iamge: chi.jpg
+  overlay_image: chi.jpg
 permalink: /about.html
 ---
 
