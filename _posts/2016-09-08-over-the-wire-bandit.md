@@ -1,5 +1,4 @@
 ---
-layout: post
 Title: Overthewire: Bandit 1-10 Solutions
 ---
 
