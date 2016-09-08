@@ -1,23 +1,27 @@
 ---
 layout: single
 title: "OverTheWire: 'Bandit' Solutions 1-10"
-commnets: true
+comments: true
 ---
 
-Over the past couple weeks, I have been getting deeper and deeper into the realm of penetration testing (or as many like to call it... hacking). I have been obsessively doing research, practicing, and honing my basic level Linux skills, as well as expanding my toolset knowledge.
+Over the past couple weeks, I have been digging deeper and deeper into the realm of penetration testing (or as many like to call it... hacking). I have been obsessively doing researching, practicing, and honing my basic level Linux skills, as well as expanding my toolset knowledge.
 
-Just recently in my school, we created an “__Information Security Club__”, that was mainly focused on learning, and expanding student knowledge in the Information Security field, as well as introducing many to the hacking culture, and techniques. 
+Just recently my school created an “__Information Security Club__”. It was mainly focused on teaching, and expanding student knowledge in the Information Security field, as well as introducing many to the hacking culture. 
 The club recently decided to participate in the NCL ([National Cyber League]( http://www.nationalcyberleague.org/)) which is an ongoing virtual training ground for collegiate students to develop, practice, and validate their cybersecurity skills using next-generation high-fidelity simulation environments.
 
-The NCL is a CTF ([Capture The Flag]( https://en.wikipedia.org/wiki/Capture_the_flag#Computer_security)) based wargame where students, paired in teams or solo, compete against each other for points by exploiting security vulnerabilities. The NCL is a beginner based CTF that introduces students to the concept of CTF, and teaches them hacking techniques, vulnerabilities, exploits, etc.
+The NCL is a CTF ([Capture The Flag]( https://en.wikipedia.org/wiki/Capture_the_flag#Computer_security)) based wargame where students (either teams or solo), compete against each other for points by exploiting security vulnerabilities. The NCL is a beginner based CTF that introduces students to the concept of CTF, while teaching and allowing practice of hacking skills.
 
-During the time this club was created, I taught the students about many information security basics, and hacking terminology. Though recently, I stumbled across [overthewire.org](http://overthewire.org/wargames/), a wargaming site that allows you to practice your skills; and have been overly obsessed with it. Giving this to many of my students, and asking them to start with “__Bandit__”, I aimed to help them learn the basics of Linux and its commands.
+During the time this club was created, I taught many students the basics of Information Security, as well as the basics of hacking. Though recently, I stumbled across [overthewire.org](http://overthewire.org/wargames/), a wargaming site that allows you to practice your "*__elite hacking skillz__*"; and have been overly obsessed with it. I directed many of my students to this site, and asked them to start with “__Bandit__”. This was aimed to help them learn the basics of Linux and its commands. Which we all know, is an essential skill in the Pentest Field, and IT itself! Because, let's be honest... not a lot of IT Professionals have Linux skills!
 
-The following below are the solutions to the first 10 levels of “__Bandit__”. Though I must state, use the following solutions to learn and compare them with your own answers, also use Google when needed!
+The following solutions below, are to the first 10 levels of “__Bandit__”. Though I must state, please use the following solutions to learn and compare them with your own answers! If you are stuck on the level, use Google to research the answer before you look at the solutions!
+
+__NOTE:__ I will be adding explanations to the solutions, and why I did what I did. This will aim to help you understand the though process behind the solution.
+
+So... Let's begin!
 
 ### Level 0:
 
-The Zero Level is pretty easy, it's there just to make sure that you can connect the the Bandit Lab. I will be using Linux for the following levels, so all of the commands I use (following after the `~#` and or `~$`) are ran under the console.
+The Zero Level is pretty easy, it's there to make sure that you can connect the the Bandit Lab. I will be using Linux for the following levels, so all of the commands I use (following after the `~#` and or `~$`) are ran under the console. So familiarize yourself with it!
 
 To get to level 0 we need to simply __SSH__ into Bandit with the username: __bandit0__ and password: __bandit0__
 
@@ -42,7 +46,7 @@ Now, from here type `exit` and SSH back into th next level by running
 root@kali:~# ssh bandit1@bandit.labs.overthewire.org
 ```
 
-Remeber, you must SSH into the next new level after getting the password. So just replace the user name before the `@` with the next level, and use the password that you attained from the previous level.
+Remeber, you must SSH into the next level after getting the password. So just replace the user name before the `@` with the next level (Ex `bandit0@bandit.labs...` will now be `bandit1@bandit.labs...`, and for the password, use what you attained from the previous level.
 
 ### Level 1 -> 2:
 
@@ -50,7 +54,7 @@ The password for the next level is stored in a file called - located in the home
 
 ```console
 bandit1@melinda:~$ ls -a
-- . .. .bash_logout .bashrc .profile
+-  .  ..  .bash_logout  .bashrc  .profile
 bandit1@melinda:~$ cat ./-
 CV1DtqXWVFXTvM2F0k09SHz0YwRINYA9
 ```
@@ -74,9 +78,9 @@ The password for the next level is stored in a hidden file in the __inhere__ dir
 bandit3@melinda:~$ ls
 inhere
 bandit3@melinda:~$ cd inhere
-bandit3@melissa:~/inhere$ ls -a
-. .. .hidden
-bandit3@melissa:~/inhere$ cat .hidden
+bandit3@melinda:~/inhere$ ls -a
+.  ..  .hidden
+bandit3@melinda:~/inhere$ cat .hidden
 pIwrPrtPN36QITSp3EQaw936yaFoFgAB
 ```
 
@@ -86,22 +90,12 @@ The password for the next level is stored in the only human-readable file in the
 
 ```console
 bandit4@melinda:~$ ls -a
-inhere
+.  ..  .bash_logout  .bashrc  .profile  inhere
 bandit4@melinda:~$ cd inhere
-bandit4@melissa:~/inhere$ ls -la
-drwxr-xr-x 2 root    root    4096 2012-05-10 23:51 .
-drwxr-xr-x 3 root    root    4096 2012-05-10 23:51 ..
--rw-r----- 1 bandit5 bandit4   33 2012-05-10 23:51 -file00
--rw-r----- 1 bandit5 bandit4   33 2012-05-10 23:51 -file01
--rw-r----- 1 bandit5 bandit4   33 2012-05-10 23:51 -file02
--rw-r----- 1 bandit5 bandit4   33 2012-05-10 23:51 -file03
--rw-r----- 1 bandit5 bandit4   33 2012-05-10 23:51 -file04
--rw-r----- 1 bandit5 bandit4   33 2012-05-10 23:51 -file05
--rw-r----- 1 bandit5 bandit4   33 2012-05-10 23:51 -file06
--rw-r----- 1 bandit5 bandit4   33 2012-05-10 23:51 -file07
--rw-r----- 1 bandit5 bandit4   33 2012-05-10 23:51 -file08
--rw-r----- 1 bandit5 bandit4   33 2012-05-10 23:51 -file09
-bandit4@melissa:~/inhere$ file ./-*
+bandit4@melinda:~/inhere$ ls -a
+-file00  -file02  -file04  -file06  -file08  .
+-file01  -file03  -file05  -file07  -file09  ..
+bandit4@melinda:~/inhere$ file ./-*
 ./-file00: data
 ./-file01: data
 ./-file02: data
@@ -112,7 +106,7 @@ bandit4@melissa:~/inhere$ file ./-*
 ./-file07: ASCII text
 ./-file08: data
 ./-file09: data
-bandit4@melissa:~/inhere$ cat ./-file07
+bandit4@melinda:~/inhere$ cat ./-file07
 koReBOKuIDDepwhWk7jZC0RTdopnAYKh
 ```
 
@@ -124,12 +118,14 @@ The password for the next level is stored in a file somewhere under the __inhere
 bandit5@melinda:~$ ls
 inhere
 bandit5@melinda:~$ cd inhere
-bandit5@melissa:~/inhere$ ls -a
-.
-bandit5@melissa:~/inhere$ find -type f -size 1033c
+bandit5@melinda:~/inhere$ ls -a
+.            maybehere02  maybehere06  maybehere10  maybehere14  maybehere18
+..           maybehere03  maybehere07  maybehere11  maybehere15  maybehere19
+maybehere00  maybehere04  maybehere08  maybehere12  maybehere16
+maybehere01  maybehere05  maybehere09  maybehere13  maybehere17
+bandit5@melinda:~/inhere$ find -type f -size 1033c
 ./maybehere07/.file2
-bandit5@melissa:~/inhere$ cd maybehere07
-bandit5@melissa:~/inhere/maybehere07$ cat ./.file2
+bandit5@melinda:~/inhere$ cat ./maybehere07/.file2
 DXjZPULLxYr17uwoI01bNLQbtFemEgo7
 ```
 
@@ -150,8 +146,8 @@ The password for the next level is stored in the file __data.txt__ next to the w
 
 ```console
 bandit7@melinda:~$ ls -a
-. .. .bash_logout .bashrc .profile data.txt
-bandit7@melinda:~$ awk '/^millionth\ {print $2;}' data.txt
+.  ..  .bash_logout  .bashrc  .profile  data.txt
+bandit7@melinda:~$ awk '/^millionth/ {print $2;}' data.txt
 cvX2JJa4CFALtqS87jk27qwqGhBM9plV
 ```
 
@@ -160,8 +156,8 @@ cvX2JJa4CFALtqS87jk27qwqGhBM9plV
 The password for the next level is stored in the file __data.txt__ and is the only line of text that occurs only once
 
 ```console
-bandit8@melinda:~$ ls -a
-. ..
+andit8@melinda:~$ ls -a
+.  ..  .bash_logout  .bashrc  .profile  data.txt
 bandit8@melinda:~$ cat data.txt | sort | uniq -u
 UsvVyFSfZZWbi6wgC7dAFyFuR6jQQUhR
 ```
@@ -172,8 +168,24 @@ The password for the next level is stored in the file __data.txt__ in one of the
 
 ```console
 bandit9@melinda:~$ ls -a
-. ..
+.  ..  .bash_logout  .bashrc  .profile  data.txt
 bandit9@melinda:~$ strings data.txt | grep "="
+epr~F=K
+7?YD=
+?M=HqAH
+/(Ne=
+C=_"
+I========== the6
+z5Y=
+`h(8=`
+n\H=;
+========== password
+========== ism
+N$=&
+l/a=L)
+f=C(
+========== truKLdjsbJ5g7yyJ2X2R0o3a5HQJFuLk
+ie)=5e
 ```
 
 ### Level 10 -> 11
@@ -182,9 +194,11 @@ The password for the next level is stored in the file __data.txt__, which contai
 
 ```console
 bandit10@melinda:~$ ls -a
-. ..
-bandit10@melinda:~$cat data.txt
-
-bandit10@melinda:~$ echo  | base64 --decode
-
+.  ..  .bash_logout  .bashrc  .profile  data.txt
+bandit10@melinda:~$ cat data.txt
+VGhlIHBhc3N3b3JkIGlzIElGdWt3S0dzRlc4TU9xM0lSRnFyeEUxaHhUTkViVVBSCg==
+bandit10@melinda:~$ echo VGhlIHBhc3N3b3JkIGlzIElGdWt3S0dzRlc4TU9xM0lSRnFyeEUxaHhUTkViVVBSCg== | base64 --decode
+The password is IFukwKGsFW8MOq3IRFqrxE1hxTNEbUPR
 ```
+
+That's all for now, stay tuned for more "__Bandit__" Solution as well as an addition of explanations!
