@@ -9,7 +9,7 @@
 locale                   : "en-US"
 title                    : "Home"
 title_separator          : "-"
-name                     : "Jacek Halon"
+name                     : "Jack Halon"
 description              : "InfoSec Analyst/Pentester."
 url                      : "https://jhalon.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
