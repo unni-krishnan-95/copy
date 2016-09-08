@@ -15,7 +15,8 @@ During the time this club was created, I thought the students about many informa
 
 The following below are the solutions to the first 10 levels of “__Bandit__”. Though I must state, use the following solutions to learn and compare with your own answers, and also use Google when needed!
 
-###Level 0:
+### Level 0:
+
 The Zero Level is pretty easy, it's there just to make sure that you can connect the the Bandit Lab. I will be using Linux for the following levels, so all of the commands I use (following after the `~#` and or `~$`) are ran under the console.
 
 To get to level 0 we need to simply __SSH__ into Bandit wit the username:__bandit0__ and password:__bandit0__
@@ -25,7 +26,8 @@ root@kali:~# ssh bandit0@bandit.labs.overthewire.org
 ```
 Congrats! You have accessed Bandit and are in the SSH Shell!
 
-###Level 0 -> 1:
+### Level 0 -> 1:
+
 The password for the next level is stored in a file called __readme__ located in the home directory. Use this password to log into bandit1 using SSH. Whenever you find a password for a level, use SSH to log into that level and continue the game.
 
 ```console
@@ -42,7 +44,8 @@ root@kali:~# ssh bandit1@bandit.labs.overthewire.org
 
 Remeber, you msut SSH into the next new level, so just replace the user name before the `@` with the next level and use the password from the previous level.
 
-###Level 1 -> 2:
+### Level 1 -> 2:
+
 The password for the next level is stored in a file called - located in the home directory
 
 ```console
@@ -52,7 +55,8 @@ bandit1@melinda:~$ cat ./-
 CV1DtqXWVFXTvM2F0k09SHz0YwRINYA9
 ```
 
-###Level 2 -> 3:
+### Level 2 -> 3:
+
 The password for the next level is stored in a file called __spaces in this filename__ located in the home directory
 
 ```console
@@ -62,7 +66,8 @@ bandit1@melinda:~$ cat spaces\ in\ this\ filename
 UmHadQclWmgdLOKQ3YNgjWxGoRMb5luK
 ```
 
-###Level 3 -> 4:
+### Level 3 -> 4:
+
 The password for the next level is stored in a hidden file in the __inhere__ directory.
 
 ```console
@@ -75,7 +80,8 @@ bandit3@melissa:~/inhere$ cat .hidden
 pIwrPrtPN36QITSp3EQaw936yaFoFgAB
 ```
 
-###Level 4 - >5:
+### Level 4 - >5:
+
 The password for the next level is stored in the only human-readable file in the __inhere__ directory. Tip: if your terminal is messed up, try the “reset” command.
 
 ```console
@@ -110,7 +116,8 @@ bandit4@melissa:~/inhere$ cat ./-file07
 koReBOKuIDDepwhWk7jZC0RTdopnAYKh
 ```
 
-###Level 5 -> 6:
+### Level 5 -> 6:
+
 The password for the next level is stored in a file somewhere under the __inhere__ directory and has all of the following properties: - human-readable - 1033 bytes in size - not executable
 
 ```console
@@ -126,7 +133,8 @@ bandit5@melissa:~/inhere/maybehere07$ cat ./.file2
 DXjZPULLxYr17uwoI01bNLQbtFemEgo7
 ```
 
-###Level 6 -> 7:
+### Level 6 -> 7:
+
 The password for the next level is stored __somewhere on the server__ and has all of the following properties: - owned by user bandit7 - owned by group bandit6 - 33 bytes in size
 
 ```console
@@ -136,7 +144,8 @@ bandit6@melinda:~$ cat /var/lib/dpkg/info/bandit7.password
 HKBPTKQnIay4Fw76bEy8PVxKEDQRKTzs
 ```
 
-###Level 7 -> 8:
+### Level 7 -> 8:
+
 The password for the next level is stored in the file __data.txt__ next to the word __millionth__
 
 ```console
@@ -146,7 +155,8 @@ bandit7@melinda:~$ awk '/^millionth\ {print $2;}' data.txt
 cvX2JJa4CFALtqS87jk27qwqGhBM9plV
 ```
 
-###Level 8 -> 9:
+### Level 8 -> 9:
+
 The password for the next level is stored in the file __data.txt__ and is the only line of text that occurs only once
 
 ```console
@@ -156,7 +166,8 @@ bandit8@melinda:~$ cat data.txt | sort | uniq -u
 UsvVyFSfZZWbi6wgC7dAFyFuR6jQQUhR
 ```
 
-###Level 9 -> 10:
+### Level 9 -> 10:
+
 The password for the next level is stored in the file __data.txt__ in one of the few human-readable strings, beginning with several ‘=’ characters.
 
 ```console
@@ -165,7 +176,8 @@ bandit9@melinda:~$ ls -a
 bandit9@melinda:~$ strings data.txt | grep "="
 ```
 
-###Level 10 -> 11
+### Level 10 -> 11
+
 The password for the next level is stored in the file __data.txt__, which contains base64 encoded data
 
 ```console
