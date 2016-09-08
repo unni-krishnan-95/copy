@@ -26,9 +26,9 @@ The Zero Level is pretty easy, it's there to make sure that you can connect the 
 
 To get to level 0 we need to simply __SSH__ into Bandit with the username: __bandit0__ and password: __bandit0__
 
-{% highlight console linenos %}
+``` console
 root@kali:~# ssh bandit0@bandit.labs.overthewire.org
-{% endhighlight %}
+```
 Congrats! You have accessed Bandit and are in the SSH Shell!
 
 ### Level 0 -> 1:
