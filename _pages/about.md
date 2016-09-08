@@ -2,6 +2,8 @@
 layout: single
 author_profile: true
 title: About
+header:
+  overlay_iamge: chi.jpg
 permalink: /about.html
 ---
 
