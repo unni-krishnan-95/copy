@@ -19,7 +19,7 @@ The following below are the solutions to the first 10 levels of “__Bandit__”
 
 The Zero Level is pretty easy, it's there just to make sure that you can connect the the Bandit Lab. I will be using Linux for the following levels, so all of the commands I use (following after the `~#` and or `~$`) are ran under the console.
 
-To get to level 0 we need to simply __SSH__ into Bandit wit the username: __bandit0__ and password: __bandit0__
+To get to level 0 we need to simply __SSH__ into Bandit with the username: __bandit0__ and password: __bandit0__
 
 ```console
 root@kali:~# ssh bandit0@bandit.labs.overthewire.org
@@ -42,7 +42,7 @@ Now, from here type `exit` and SSH back into th next level by running
 root@kali:~# ssh bandit1@bandit.labs.overthewire.org
 ```
 
-Remeber, you msut SSH into the next new level, so just replace the user name before the `@` with the next level and use the password from the previous level.
+Remeber, you must SSH into the next new level after getting the password. So just replace the user name before the `@` with the next level, and use the password that you attained from the previous level.
 
 ### Level 1 -> 2:
 
