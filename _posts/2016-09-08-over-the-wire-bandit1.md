@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "Overthrwire: Bandit Solution 1-10"
+title: "OverTheWire: 'Bandit' Solutions 1-10"
 commnets: true
 ---
 
