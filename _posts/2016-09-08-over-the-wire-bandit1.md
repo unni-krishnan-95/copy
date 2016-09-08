@@ -4,7 +4,7 @@ title: "OverTheWire: 'Bandit' Solutions 1-10"
 header:
   teaser: oth.png
   image: oth.png
-  caption: [__OverTheWire__](http://overthewire.org/wargames/)
+  caption: "[__OverTheWire__](http://overthewire.org/wargames/)"
 related: true
 comments: true
 ---
