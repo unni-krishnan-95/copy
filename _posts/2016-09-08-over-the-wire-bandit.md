@@ -1,8 +1,3 @@
----
-layout: default
-author_profile: true
-title: OverTheWire Bandit: Solutions 1-10
----
 Over the past couple weeks, I have been getting deeper and deeper into the realm of penetration testing (or as many like to call it... hacking). I have been obsessively doing research, practicing, and honing my basic level Linux skills, as well as expanding my toolset knowledge.
 
 Just recently in my school, we created an “__Information Security Club__”, that was mainly focused on learning, and expanding student knowledge in the Information Security field, as well as introducing many to the hacking culture, and techniques. 
