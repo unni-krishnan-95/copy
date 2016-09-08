@@ -239,4 +239,4 @@ defaults:
       read_time: false
       comments: true
       share: false
-      related: false
+      related: true
