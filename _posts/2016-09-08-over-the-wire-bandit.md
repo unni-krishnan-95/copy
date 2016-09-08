@@ -9,11 +9,11 @@ Over the past couple weeks, I have been getting deeper and deeper into the realm
 Just recently in my school, we created an “__Information Security Club__”, that was mainly focused on learning, and expanding student knowledge in the Information Security field, as well as introducing many to the hacking culture, and techniques. 
 The club recently decided to participate in the NCL ([National Cyber League]( http://www.nationalcyberleague.org/)) which is an ongoing virtual training ground for collegiate students to develop, practice, and validate their cybersecurity skills using next-generation high-fidelity simulation environments.
 
-The NCL is a CTF ([Capture The Flag]( https://en.wikipedia.org/wiki/Capture_the_flag#Computer_security)) based wargame where students, paired in teams or solo, compete against each other for points by exploiting security vulnerabilities. The NCL is a beginner based CTF that introduces students to the concept, and teaches them hacking techniques, vulnerabilities, exploits, etc.
+The NCL is a CTF ([Capture The Flag]( https://en.wikipedia.org/wiki/Capture_the_flag#Computer_security)) based wargame where students, paired in teams or solo, compete against each other for points by exploiting security vulnerabilities. The NCL is a beginner based CTF that introduces students to the concept of CTF, and teaches them hacking techniques, vulnerabilities, exploits, etc.
 
-During the time this club was created, I thought the students about many information security basics, and hacking terminology. Though recently, I stumbled across [overthewire.org](http://overthewire.org/wargames/), a wargaming site that allows you to practice your basic skills; and have been over obsessed with it. Giving this to many of my students, and asking them to start with “__Bandit__”, I aimed to help them learn the basics of Linux and its commands.
+During the time this club was created, I taught the students about many information security basics, and hacking terminology. Though recently, I stumbled across [overthewire.org](http://overthewire.org/wargames/), a wargaming site that allows you to practice your skills; and have been overly obsessed with it. Giving this to many of my students, and asking them to start with “__Bandit__”, I aimed to help them learn the basics of Linux and its commands.
 
-The following below are the solutions to the first 10 levels of “__Bandit__”. Though I must state, use the following solutions to learn and compare with your own answers, and also use Google when needed!
+The following below are the solutions to the first 10 levels of “__Bandit__”. Though I must state, use the following solutions to learn and compare them with your own answers, also use Google when needed!
 
 ### Level 0:
 
