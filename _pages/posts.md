@@ -1,7 +1,9 @@
 ---
 layout: single
-title: Posts
 author_profile: true
+title: Posts
+header:
+  overlay_image: ZenBG.png
 permalink: /posts.html
 ---
 
