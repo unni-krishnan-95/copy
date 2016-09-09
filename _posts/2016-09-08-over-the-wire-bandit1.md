@@ -16,15 +16,15 @@ The club recently decided to participate in the NCL ([National Cyber League]( ht
 
 The NCL is a CTF ([Capture The Flag]( https://en.wikipedia.org/wiki/Capture_the_flag#Computer_security)) based wargame where students (either teams or solo), compete against each other for points by exploiting security vulnerabilities. The NCL is a beginner based CTF that introduces students to the concept of CTF, while teaching and allowing practice of hacking skills.
 
-During the time this club was created, I taught many students the basics of Information Security, as well as the basics of hacking. Though recently, I stumbled across [overthewire.org](http://overthewire.org/wargames/), a wargaming site that allows you to practice your "*__elite hacking skillz__*"; and have been overly obsessed with it. I directed many of my students to this site, and asked them to start with “__Bandit__”. This was aimed to help them learn the basics of Linux and its commands. Which we all know, is an essential skill in the Pentest Field, and IT itself! Because, let's be honest... not a lot of IT Professionals have Linux skills!
+During the time this club was created, I taught many students the basics of Information Security, as well as the basics of hacking. Though recently, I stumbled across [overthewire.org](http://overthewire.org/wargames/), a wargaming site that allows you to practice your "*__elite hacking skillz__*"; and have been overly obsessed with it. I directed many of my students to this site, and asked them to start with “__Bandit__”. This was aimed to help them learn the basics of Linux and its commands; which we all know is an essential skill in the Pentest Field, and IT itself! Because let's be honest... not a lot of IT Professionals have Linux skills!
 
-The following solutions below, are to the first 10 levels of “__Bandit__”. Though I must state, please use the following solutions to learn and compare them with your own answers! If you are stuck on the level, use Google to research the answer before you look at the solutions!
+The following solutions below, are to the first 10 levels of “__Bandit__”. Though I must state, please use the following solutions to learn and compare them with your own answers! If you are stuck on the level, use Google to research the question before you look at the solutions!
 
 So... Let's begin!
 
 ### Level 0:
 
-The Zero Level is pretty easy, it's there to make sure that you can connect the the Bandit Lab. I will be using Linux for the following levels, so all of the commands I use (following after the `~#` and or `~$`) are ran under the console. So familiarize yourself with it!
+The Zero Level is pretty easy, it's there to make sure that you can connect the the Bandit Lab. I will be using Linux for the following levels, so all of the commands I use (following after the `~#` and or `~$`) are ran under the terminal. So familiarize yourself with it!
 
 To get to level 0 we need to simply __SSH__ into Bandit with the username: __bandit0__ and password: __bandit0__
 
