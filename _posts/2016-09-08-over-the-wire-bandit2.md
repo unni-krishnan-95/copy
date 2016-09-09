@@ -5,6 +5,7 @@ header:
   teaser: oth.png
   overlay_image: ZenBG.png
   caption: "[__OverTheWire__](http://overthewire.org/wargames/)"
+excerpt: ""
 related: true
 comments: true
 ---
