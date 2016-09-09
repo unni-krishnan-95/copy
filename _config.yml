@@ -7,7 +7,7 @@
 
 # Site Settings
 locale                   : "en-US"
-title                    : "Home"
+title                    : "Jack Hacks"
 title_separator          : "-"
 name                     : "Jack Halon"
 description              : "InfoSec Analyst/Pentester."
