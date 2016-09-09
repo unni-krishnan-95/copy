@@ -9,9 +9,9 @@ related: true
 comments: true
 ---
 
-Hey, Welcome Back! This post is the continuation to the "__Bandit__" Wargame found at (overthewire.org)[http://overthewire.org/wargames/bandit/].
+Hey, Welcome Back! This post is the continuation to the "__Bandit__" Wargame found at [overthewire.org](http://overthewire.org/wargames/bandit/).
 
-Today I will be covering Solution 11 through 25, so if you haven't completed Levels 1-10 in __Bandit__ then I **highly** suggest you do so before you advance to the higher levels; since 1-10 provides you with a good basic foundation for the future levels. You can read my write-up and solutions for 1-10 (here)[https://jhalon.github.io/over-the-wire-bandit1/]!
+Today I will be covering Solution 11 through 25, so if you haven't completed Levels 1-10 in __Bandit__ then I **highly** suggest you do so before you advance to the higher levels; since 1-10 provides you with a good basic foundation for the future levels. You can read my write-up and solutions for 1-10 [here](https://jhalon.github.io/over-the-wire-bandit1/)!
 
 Also remember folks, if you get stuck on a level... don't just look up the solution! Google the question you have, and read any of the "__Helpful Reading Materials__" posted in each level. The point of these wargames is to learn, and not just copy!
 
