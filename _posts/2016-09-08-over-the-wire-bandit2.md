@@ -13,7 +13,7 @@ Hey, Welcome Back! This post is the continuation to the "__Bandit__" Wargame fou
 
 Today I will be covering Solutions 11 through 25, so if you haven't completed Levels 1-10 in __Bandit__ then I **highly** suggest you do so before you advance to the higher levels; since 1-10 provides you with a good basic foundation for the future levels. You can read my write-up and solutions for 1-10 [here](https://jhalon.github.io/over-the-wire-bandit1/)!
 
-Also remember folks, if you get stuck on a level... don't just look up the solution! Google the question you have, and read any of the "__Helpful Reading Materials__" posted in each level. The point of these wargames is to learn, and not just copy!
+And remember folks, if you get stuck on a level... don't just look up the solution! Google the question you have, and read any of the "__Helpful Reading Materials__" posted in each level. The point of these wargames is to learn, and not just copy!
 
 So, without further adieu... let's begin!
 
@@ -156,7 +156,11 @@ Correct!
 -----BEGIN RSA PRIVATE KEY-----
 [redacted]
 -----END RSA PRIVATE KEY-----
+```
 
+Great! So let's copy the RSA Key (Don't forget to get the Header and Footer) and create a new file in a tmp directory.
+
+```console
 bandit16@melinda:~$ mkdir /tmp/jhalon
 bandit16@melinda:~$ cd /tmp/jhalon
 bandit16@melinda:/tmp/jhalon$ nano sshkey.private
@@ -180,6 +184,8 @@ bandit17@melinda:~$ diff passwords.new passwords.old
 ---
 > BS8bqB1kqkinKJjuxL6k072Qq9NRwQpR
 ```
+
+__Note:__ `kfBf3eYk5BPBRzwjqutbbfE887SVc5Yd` is our password as ```console diff``` shows what needs to be changed to equal the second file. `<` means first file (so __passwords.new___) and `>` means second file (so __passwords.old__)
 
 ### Level 18 > 19:
 The password for the next level is stored in a file __readme__ in the homedirectory. Unfortunately, someone has modified __.bashrc__ to log you out when you log in with SSH.
@@ -280,6 +286,11 @@ cronjob_bandit23   natas-stats            semtex0-64
 bandit22@melinda:/etc/cron.d$ cat cronjob_bandit23
 * * * * * bandit23 /usr/bin/cronjob_bandit23.sh  &> /dev/null
 bandit22@melinda:/etc/cron.d$ cat /usr/bin/cronjob_bandit23.sh
+```
+
+Running cat on __/usr/bin/cronjob_bandit23.sh__ we get the following Bash Script
+
+```bash
 #!/bin/bash
 
 myname=$(whoami)
@@ -288,6 +299,11 @@ mytarget=$(echo I am user $myname | md5sum | cut -d ' ' -f 1)
 echo "Copying passwordfile /etc/bandit_pass/$myname to /tmp/$mytarget"
 
 cat /etc/bandit_pass/$myname > /tmp/$mytarget
+```
+
+From here, we will go ahead and try to find what the MD5 Check Sum of the echo is, following the ```console cut``` pipe.
+
+```
 bandit22@melinda:/etc/cron.d$ echo I am user bandit23 | md5sum | cut -d ' ' -f 1 
 8ca319486bfbbc3663ea0fbe81326349
 bandit22@melinda:/etc/cron.d$ cat /tmp/8ca319486bfbbc3663ea0fbe81326349
