@@ -1,6 +1,7 @@
 ---
 layout: splash
 author_profile: true
+title: About
 header:
   overlay_image: ZenBG.png
 permalink: /about.html
