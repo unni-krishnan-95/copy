@@ -24,7 +24,7 @@ So... Let's begin!
 
 ### Level 0:
 
-The Zero Level is pretty easy, it's there to make sure that you can connect the the Bandit Lab. I will be using Linux for the following levels, so all of the commands I use (following after the `~#` and or `~$`) are ran under the terminal. So familiarize yourself with it!
+The Zero Level is pretty easy, it's there to make sure that you can connect to the Bandit Lab. I will be using Linux for the following levels, all of the commands I use (following after the `~#` and or `~$`) are ran under the terminal. So familiarize yourself with it!
 
 To get to level 0 we need to simply __SSH__ into Bandit with the username: __bandit0__ and password: __bandit0__
 
@@ -43,7 +43,7 @@ readme
 bandit0@melinda:~$ cat readme
 boJ9jbbUNNfktd78OOpsqOltutMc3MY1
 ```
-Now, from here type `exit` and SSH back into th next level by running
+Now, from here type `exit` and SSH back into the next level by running
 
 ```console
 root@kali:~# ssh bandit1@bandit.labs.overthewire.org
