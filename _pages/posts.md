@@ -9,9 +9,11 @@ permalink: /posts.html
 
 <ul>
   {% for post in site.posts %}
-    <li>
-      <a href="{{ post.url }}">{{ post.title }}</a>
-      {{ post.excerpt }}
-    </li>
-  {% endfor %}
+  {% assign currentdate = post.date | date: "%Y" %}
+  {% if currentdate != date %}
+    <li id="y{{currentdate}}">{{ currentdate }}</li>
+    {% assign date = currentdate %} 
+  {% endif %}
+    <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+{% endfor %}
 </ul>
