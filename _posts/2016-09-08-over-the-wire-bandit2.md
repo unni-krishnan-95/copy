@@ -6,8 +6,6 @@ header:
   overlay_image: ZenBG.png
   caption: "[__OverTheWire__](http://overthewire.org/wargames/)"
 related: true
-categories:
-  - CTF
 comments: true
 ---
 
