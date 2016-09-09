@@ -185,7 +185,7 @@ bandit17@melinda:~$ diff passwords.new passwords.old
 > BS8bqB1kqkinKJjuxL6k072Qq9NRwQpR
 ```
 
-__Note:__ `kfBf3eYk5BPBRzwjqutbbfE887SVc5Yd` is our password as ```console diff``` shows what needs to be changed to equal the second file. `<` means first file (so __passwords.new___) and `>` means second file (so __passwords.old__)
+__Note:__ `kfBf3eYk5BPBRzwjqutbbfE887SVc5Yd` is our password as `diff` shows what needs to be changed to equal the second file. `<` means first file (so __passwords.new___) and `>` means second file (so __passwords.old__)
 
 ### Level 18 > 19:
 The password for the next level is stored in a file __readme__ in the homedirectory. Unfortunately, someone has modified __.bashrc__ to log you out when you log in with SSH.
@@ -301,7 +301,7 @@ echo "Copying passwordfile /etc/bandit_pass/$myname to /tmp/$mytarget"
 cat /etc/bandit_pass/$myname > /tmp/$mytarget
 ```
 
-From here, we will go ahead and try to find what the MD5 Check Sum of the echo is, following the ```console cut``` pipe.
+From here, we will go ahead and try to find what the MD5 Check Sum of the echo is, following the ` cut` pipe (`|`).
 
 ```
 bandit22@melinda:/etc/cron.d$ echo I am user bandit23 | md5sum | cut -d ' ' -f 1 
