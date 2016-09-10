@@ -171,7 +171,7 @@ Ahdiemoo1j
 And bingo was his name, OH! We got the password for leviathan3! Go do a victory lap around the house, you deserved it!
 
 ### Level 3 -> 4:
-This level was a bit easier than the previous one, just use what you learned from the previous levels to your advantage. Let's begin by seeing what we have at our disposal.
+This level was a bit easier than the previous one. Just use what you learned from the previous levels to your advantage. Let's begin by seeing what we have at our disposal.
 
 ```console
 leviathan3@melinda:~$ ls -la
