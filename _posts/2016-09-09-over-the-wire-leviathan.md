@@ -3,7 +3,7 @@ layout: single
 title: "OverTheWire: 'Leviathan' Solutions 1-8"
 header:
   teaser: oth.png
-  overlay_image: ZenBG.png
+  overlay_image: ZenBGB.png
   caption: "[__OverTheWire__](http://overthewire.org/wargames/)"
 related: true
 comments: true
