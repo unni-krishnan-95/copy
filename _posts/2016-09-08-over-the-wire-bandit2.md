@@ -191,7 +191,7 @@ __Note:__ `kfBf3eYk5BPBRzwjqutbbfE887SVc5Yd` is our password as `diff` shows wha
 The password for the next level is stored in a file __readme__ in the homedirectory. Unfortunately, someone has modified __.bashrc__ to log you out when you log in with SSH.
 
 ```console
-ssh bandit18@bandit.labs.overthewire.org "bash --norc"
+root@kali:~# ssh bandit18@bandit.labs.overthewire.org "bash --norc"
 ls -a
 .
 ..
