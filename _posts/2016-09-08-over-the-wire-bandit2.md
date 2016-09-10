@@ -30,7 +30,7 @@ The password is 5Te8Y4drgCRfCx8ugdwuEX8KFC6k2EUu
 ```
 
 ### Level 12 -> 13:
-The password for the next level is stored in the file __data.txt__, which is a hexdump of a file that has been repeatedly compressed. For this level it may be useful to create a directory under /tmp in which you can work using mkdir. For example: mkdir /tmp/myname123. Then copy the datafile using cp, and rename it using mv (read the manpages!)
+The password for the next level is stored in the file __data.txt__, which is a hexdump of a file that has been repeatedly compressed. For this level it may be useful to create a directory under /tmp in which you can work using mkdir. For example: mkdir /tmp/myname123. Then copy the data file using cp, and rename it using mv (read the manpages!)
 
 ```console
 bandit12@melinda:~$ ls -a
@@ -388,7 +388,7 @@ bandit24@melinda:~$ cd /tmp/jhalon
 bandit24@melinda:/tmp/jhalon$ nano
 ```
 
-We will goahead and write a new Bash Script to Brute Force the PIN while attempting a connection.
+We will go ahead and write a new Bash Script to Brute Force the PIN while attempting a connection.
 
 ```bash
 #!/bin/bash
