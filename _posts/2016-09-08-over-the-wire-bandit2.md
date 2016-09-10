@@ -228,7 +228,7 @@ bandit20@melinda:~$ ls -a
 .  ..  .bash_logout  .bashrc  .profile  suconnect
 bandit20@melinda:~$ nc -l 32123 < /etc/bandit_pass/bandit20
 ```
-Once you got NC (Netcat) listening on port 32123, open another Terminal and login to Bandit20 via SSH.
+Once you got NC (Netcat) listening on port 32123 (or any port of your choosing), open another Terminal and login to Bandit20 via SSH.
 
 ```console
 bandit20@melinda:~$ ls -a
