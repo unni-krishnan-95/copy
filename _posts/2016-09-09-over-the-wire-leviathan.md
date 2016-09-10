@@ -111,7 +111,7 @@ leviathan2@melinda:~$ ./printfile
 Usage: ./printfile filename
 ```
 
-Alright, so it seems the program __printfile__ outputs the text from a file; just like `cat`. Thus we can assume that it's using `cat` somewhere in the code. Yet, hold on a second... I like working smart, and not hard. Let's see if we can get the __leviathan3__ password file from __/etc/leviathan_pass/__ using this exe.
+Alright, so it seems the program __printfile__ outputs the text from a file; just like `cat`. Therefore, we can assume that it's using `cat` somewhere in the code. Yet, hold on a second... I like working smart, and not hard. Let's see if we can get the __leviathan3__ password file from __/etc/leviathan_pass/__ using this exe.
 
 ```console
 leviathan2@melinda:~$ ./printfile /etc/leviathan_pass/leviathan3
