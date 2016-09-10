@@ -118,7 +118,7 @@ leviathan2@melinda:~$ ./printfile /etc/leviathan_pass/leviathan3
 You cant have that file...
 ```
 
-Darn... guess not. That's okay, let's go ahead and make a temp directory and a new text file for testing the program with `ltrace`.
+Darn... guess not. That's okay, let's go ahead and make a temp directory, and a new text file that we can use for testing the program with `ltrace`.
 
 ```console
 leviathan2@melinda:~$ mkdir /tmp/jhalon && touch /tmp/jhalon/test.txt
