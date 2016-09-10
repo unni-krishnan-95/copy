@@ -133,7 +133,7 @@ system("/bin/cat test.txt" <no return ...>
 +++ exited (status 0) +++
 ```
 
-So, what is happening here is a small security hole in how this program functions. We can see that the function `access()` and __/bin/cat__ are being called on the file. What `access()` does is check permissions based on the process’ real user ID rather than the effective user ID.
+From the output we are presented with a small security hole in how this program functions. We can see that the function `access()` and __/bin/cat__ are being called on the file. What `access()` does is check permissions based on the process’ real user ID rather than the effective user ID.
 
 To explain: The real user id is who you really are (the one who owns the process), and the effective user id is what the operating system looks at to make a decision whether or not you are allowed to do something (most of the time, there are some exceptions). 
 
