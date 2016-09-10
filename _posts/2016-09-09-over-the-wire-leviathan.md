@@ -25,6 +25,7 @@ For the first level we must log into leviathan, so we will SSH to leviathan0 wit
 root@kali:~# ssh leviathan0@leviathan.labs.overthewire.org
 ```
 
+### Level 0 -> 1:
 OverTheWire provides us only with one hint "Data for the levels can be found in the __homedirectories__." So we are on our own!
 
 Let's go ahead and find out what we have in our home directory.
@@ -44,7 +45,7 @@ leviathan0@melinda:~/.backup$ grep leviathan1 bookmarks.html
 <DT><A HREF="http://leviathan.labs.overthewire.org/passwordus.html | This will be fixed later, the password for leviathan1 is rioGegei8m" ADD_DATE="1155384634" LAST_CHARSET="ISO-8859-1" ID="rdf:#$2wIU71">password to leviathan1</A>
 ```
 
-### Level 0 -> 1:
+### Level 1 -> 2:
 This level was fairly easy, and you can use a plethora of methods to find the password for this. First let's see what we have to work with.
 
 ```console
@@ -91,7 +92,7 @@ ougahZi8Ta
 And there we have the password! Now, if you think this was hard... it get's harder, so strap in as we move to leviathan2!
 
 
-### Level 1 -> 2:
+### Level 2 -> 3:
 This level is really interesting in my honest opinion, as it allows you to exploit a flaw in the executable. It took me a while and a lot of [Google Fu](https://en.wiktionary.org/wiki/Google-fu) (yes, it's a thing) to finally figure out how the get the password from __/etc/leviathan_pass/leviathan3__.
 
 ```console
@@ -169,17 +170,56 @@ Ahdiemoo1j
 
 And bingo was his name, OH! We got the password for leviathan3! Go do a victory lap around the house, you deserved it!
 
-### Level 2 -> 3:
-
-```console
-
-```
-
 ### Level 3 -> 4:
+This level was a bit easier than the previous one, just use what you learned from the previous levels to your advantage. Let's begin by seeing what we have at our disposal.
 
 ```console
-
+leviathan3@melinda:~$ ls -la
+total 32
+drwxr-xr-x   2 root       root       4096 Mar 21  2015 .
+drwxr-xr-x 172 root       root       4096 Jul 10 14:12 ..
+-rw-r--r--   1 root       root        220 Apr  9  2014 .bash_logout
+-rw-r--r--   1 root       root       3637 Apr  9  2014 .bashrc
+-rw-r--r--   1 root       root        675 Apr  9  2014 .profile
+-r-sr-x---   1 leviathan4 leviathan3 9962 Mar 21  2015 level3
 ```
+
+Alright, we have another executable called __level3__, let's run it and see what happens.
+
+```console
+leviathan3@melinda:~$ ./level3
+Enter the password> 1234
+bzzzzzzzzap. WRONG
+```
+
+Another password... great! Let's go ahead and run `ltrace` and see what the library calls are for this program.
+
+```console
+leviathan3@melinda:~$ ltrace ./level3
+__libc_start_main(0x80485fe, 1, 0xffffd794, 0x80486d0 <unfinished ...>
+strcmp("h0no33", "kakaka")                       = -1
+printf("Enter the password> ")                   = 20
+fgets(Enter the password> 1234
+"1234\n", 256, 0xf7fc9c20)                 = 0xffffd58c
+strcmp("1234\n", "snlprintf\n")                  = -1
+puts("bzzzzzzzzap. WRONG"bzzzzzzzzap. WRONG
+)                       = 19
++++ exited (status 0) +++
+```
+
+Looking at the `ltrace` we can see that `strcmp` is being called 2 times. This is trying to obfuscate us from the main password, but let's focus on the one that compares our input. We can see that it tries to compare the input against "__snlprintf__"; let's try it as the password.
+
+```console
+leviathan3@melinda:~$ ./level3
+Enter the password> snlprintf
+[You've got shell]!
+$ whoami
+leviathan4
+$ cat /etc/leviathan_pass/leviathan4
+vuH0coox6m
+```
+
+Wow, that was easier then pressing a Staples button! Okay... moving on to leviathan4!
 
 ### Level 4 -> 5:
 
