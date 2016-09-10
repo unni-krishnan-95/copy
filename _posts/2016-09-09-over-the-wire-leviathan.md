@@ -154,7 +154,7 @@ system("/bin/cat pass file.txt"/bin/cat: pass: No such file or directory
 
 I was right! You can see __/bin/cat__ call __pass file.txt__ as two separate files __pass__ and __file.txt__. We can actually exploit this! Let’s go ahead and create a [symbolic link](https://en.wikipedia.org/wiki/Symbolic_link) for __pass file.txt__ and link it to __/etc/leviathan_pass/leviathan3__.
 
-```cosnole
+```console
 leviathan2@melinda:/tmp/jhalon$ ln -s /etc/leviathan_pass/leviathan3 /tmp/jhalon/pass
 leviathan2@melinda:/tmp/jhalon$ ls -la
 total 7864
