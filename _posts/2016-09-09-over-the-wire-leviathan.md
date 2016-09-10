@@ -152,7 +152,7 @@ system("/bin/cat pass file.txt"/bin/cat: pass: No such file or directory
 +++ exited (status 0) +++
 ```
 
-I was right! As you can see, __/bin/cat__ calls __pass file.txt__ as two separate files, __pass__ and __file.txt__. We can actually exploit this! Let’s go ahead and create a [symbolic link](https://en.wikipedia.org/wiki/Symbolic_link) for the __pass__ part in __pass file.txt__, and link it to __/etc/leviathan_pass/leviathan3__.
+I was right! As you can see, __/bin/cat__ calls "__pass file.txt__" as two separate files, "__pass__" and "__file.txt__". We can actually exploit this! Let’s go ahead and create a [symbolic link](https://en.wikipedia.org/wiki/Symbolic_link) for the "__pass__" part in "__pass file.txt__", and link it to __/etc/leviathan_pass/leviathan3__.
 
 ```console
 leviathan2@melinda:/tmp/jhalon$ ln -s /etc/leviathan_pass/leviathan3 /tmp/jhalon/pass
