@@ -10,10 +10,13 @@ comments: true
 ---
 
 ### Level 0:
+For the first level we must log into leviathan, so we will SHH to leviathan0 with the username: __leviathan0__ and password: __leviathan0__
 
 ```console
 root@kali:~# ssh leviathan0@leviathan.labs.overthewire.org
 ```
+
+OverTheWire provides us only with one hint "Data for the levels can be found in the __homedirectories__." So we are on our own!
 
 ```console
 leviathan0@melinda:~$ ls -a
