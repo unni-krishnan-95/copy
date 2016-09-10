@@ -45,6 +45,8 @@ leviathan0@melinda:~/.backup$ grep leviathan1 bookmarks.html
 <DT><A HREF="http://leviathan.labs.overthewire.org/passwordus.html | This will be fixed later, the password for leviathan1 is rioGegei8m" ADD_DATE="1155384634" LAST_CHARSET="ISO-8859-1" ID="rdf:#$2wIU71">password to leviathan1</A>
 ```
 
+Alright, simple enough! We end up with the password `rioGegei8m` from __bookmarks.html__. Let's move on to leviathan1!
+
 ### Level 1 -> 2:
 This level was fairly easy, and you can use a plethora of methods to find the password for this. First let's see what we have to work with.
 
