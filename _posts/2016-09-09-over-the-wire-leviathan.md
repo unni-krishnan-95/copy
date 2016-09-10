@@ -11,7 +11,7 @@ comments: true
 
 __Leviathan__: The leviathan is a large aquatic creature of some kind. The Bible refers to it as a fearsome beast having monstrous ferocity and great power. This word has become synonymous with any large sea monster or creature. In literature it refers to great whales, and in Modern Hebrew, it simply means "whale". And trust me... you will have a "whale" of a time with this one! Eh? EH? No? -- Fine, I'll see my way out...
 
-Anyways, (hah "whale of a time"... I think I'm funny) ... anyways, Leviathan is a wargame that has been rescued from the demise of intruded.net, previously hosted on leviathan.intruded.net. And it can be found [HERE](http://overthewire.org/wargames/leviathan/) at OverTheWire. The wargame consists of 8 levels and is classified as 1/10 difficulty. It also states that "This wargame doesn't require any knowledge about programming - just a bit of common sense and some knowledge about basic *nix commands."
+Anyways, (hah "whale of a time"... I think I'm funny) ... anyways, Leviathan is a wargame that was rescued from the demise of intruded.net, previously hosted on __leviathan.intruded.net__. It can now be found [HERE](http://overthewire.org/wargames/leviathan/) at OverTheWire. The wargame consists of 8 levels and is classified as 1/10 difficulty. It also states that "This wargame doesn't require any knowledge about programming - just a bit of common sense and some knowledge about basic *nix commands."
 
 Though in all honesty, it requires a bit more then what they are stating. Before we begin, for anyone going through the levels and having a hard time, all I can say is focus on the output of code and utilize the `[ltrace](http://linux.die.net/man/1/ltrace)` command.
 
