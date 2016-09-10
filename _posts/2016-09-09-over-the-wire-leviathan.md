@@ -62,7 +62,7 @@ leviathan1@melissa:~$ ./check
 password: 1234
 Wrong password, Good Bye ...
 ```
-Hmm... Okay, so it seems that the executable is checking for a password. That means that it's comparing it to something hardcoded. Let's run an `ltrace` and see what the library calls are for this program.
+Hmm... Okay, so it seems that the executable is checking for a password. This means that __check__ is comparing our input to something hardcoded. Let's run an `ltrace` and see what the library calls are for this program.
 
 ```console
 leviathan1@melinda:~$ ltrace ./check
