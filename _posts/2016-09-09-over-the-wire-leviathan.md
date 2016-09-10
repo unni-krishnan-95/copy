@@ -132,7 +132,9 @@ system("/bin/cat test.txt" <no return ...>
 
 So, what is happening here is a small security hole in how this program functions. We can see that the function `access()` and __/bin/cat__ are being called on the file. What `access()` does is check permissions based on the process’ real user ID rather than the effective user ID.
 
-So, the real user id is who you really are (the one who owns the process), and the effective user id is what the operating system looks at to make a decision whether or not you are allowed to do something (most of the time, there are some exceptions).
+To explain: The real user id is who you really are (the one who owns the process), and the effective user id is what the operating system looks at to make a decision whether or not you are allowed to do something (most of the time, there are some exceptions). 
+
+And if we look back into the previous `ltrace` output we can see that __printfile__ is owned by levianthan3, so `access()` will call the process with that specific privilege.
 
 Looking into the code we also see that __/bin/cat__ is being called on the file to output the contents. While `access()` uses the full path's filename, __/bin/cat__ uses %s then the filename. What we can do here is try to add a space to a filename, and if we are correct, __/bin/cat__ will read the file as 2 separate files.
 
