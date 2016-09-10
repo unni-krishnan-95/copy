@@ -88,7 +88,7 @@ $ cat /etc/leviathan_pass/leviathan2
 ougahZi8Ta
 ```
 
-And there we have the password! Now, if you think this was hard... it get's harder, so strap in as we move to level 2!
+And there we have the password! Now, if you think this was hard... it get's harder, so strap in as we move to leviathan2!
 
 
 ### Level 1 -> 2:
@@ -165,7 +165,7 @@ Ahdiemoo1j
 /bin/cat: file.txt: No such file or directory
 ```
 
-And bingo was his name, OH! We got the password for level 3! Go do a victory lap around the house, you deserved it!
+And bingo was his name, OH! We got the password for leviathan3! Go do a victory lap around the house, you deserved it!
 
 ### Level 2 -> 3:
 
