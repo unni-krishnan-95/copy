@@ -250,7 +250,7 @@ leviathan4@melinda:~/.trash$ ./bin
 01010100 01101001 01110100 01101000 00110100 01100011 01101111 01101011 01100101 01101001 00001010 
 ```
 
-Interesting... Seems this is a Binary Output. Let's go online, and use a Binary to ASCII converter. I used [RapidTables](http://www.rapidtables.com/convert/number/binary-to-ascii.htm) to do my conversion. After converting the Binary, we get the password `Tith4cokei`.
+Interesting... it's a Binary Output. Let's go online, and use a Binary to ASCII converter. I used [RapidTables](http://www.rapidtables.com/convert/number/binary-to-ascii.htm) to do my conversion. After converting the Binary, we get the password `Tith4cokei`.
 
 Easy enough, not too hard if you know what you were looking at. Let's move on to leviathan5!
 
