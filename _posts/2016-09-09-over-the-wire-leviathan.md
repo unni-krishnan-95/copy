@@ -77,7 +77,7 @@ puts("Wrong password, Good Bye ..."Wrong password, Good Bye ...
 +++ exited (status 0) +++
 ```
 
-Looking at the output of the code we can see that the program is using `strcmp` which is a C library function to compare two strings against the word "sex"... let's see if "sex" will work.
+Looking at the output of the code we can see that the program is using `strcmp` which is a C library function to compare two strings against one another. In this example it's comparing the password input against the word "sex"; let's see if "sex" will work.
 
 ```console
 leviathan1@melinda:~$ ./check
