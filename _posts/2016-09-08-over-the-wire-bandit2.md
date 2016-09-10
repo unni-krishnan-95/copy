@@ -439,7 +439,7 @@ Once the command is ran, press V and it should take you to VIM, then type:
 :r /etc/bandit_pass/bandit26
 ```
 
-Press Enter, and you should get the password!
+Press `Enter`, and you should get the password!
 
 ```console
 5czgV9L3Xx8JPOyRbXh6lQbmIOWvPT6Z
