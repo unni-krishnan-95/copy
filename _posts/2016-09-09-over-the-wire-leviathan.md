@@ -192,7 +192,7 @@ Enter the password> 1234
 bzzzzzzzzap. WRONG
 ```
 
-Another password... great! Let's go ahead and run `ltrace` and see what the library calls are for this program.
+Another password... great! Let's go ahead and run `ltrace` to see what the library calls are for this program.
 
 ```console
 leviathan3@melinda:~$ ltrace ./level3
