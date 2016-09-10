@@ -10,7 +10,7 @@ comments: true
 ---
 
 ### Level 0:
-For the first level we must log into leviathan, so we will SHH to leviathan0 with the username: __leviathan0__ and password: __leviathan0__
+For the first level we must log into leviathan, so we will SSH to leviathan0 with the username: __leviathan0__ and password: __leviathan0__
 
 ```console
 root@kali:~# ssh leviathan0@leviathan.labs.overthewire.org
