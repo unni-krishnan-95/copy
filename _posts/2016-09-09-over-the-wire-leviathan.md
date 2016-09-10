@@ -224,10 +224,35 @@ vuH0coox6m
 Wow, that was easier then pressing a Staples button! Okay... moving on to leviathan4!
 
 ### Level 4 -> 5:
+As always, let's see what we have to work with.
 
 ```console
-
+leviathan4@melinda:~$ ls -la
+total 24
+drwxr-xr-x   3 root root       4096 Nov 14  2014 .
+drwxr-xr-x 172 root root       4096 Jul 10 14:12 ..
+-rw-r--r--   1 root root        220 Apr  9  2014 .bash_logout
+-rw-r--r--   1 root root       3637 Apr  9  2014 .bashrc
+-rw-r--r--   1 root root        675 Apr  9  2014 .profile
+dr-xr-x---   2 root leviathan4 4096 Nov 14  2014 .trash
 ```
+
+__.trash__ looks promising, let's go ahead and see what's stored in that directory.
+
+```console
+leviathan4@melinda:~$ cd .trash
+leviathan4@melinda:~/.trash$ ls -la
+total 16
+dr-xr-x--- 2 root       leviathan4 4096 Nov 14  2014 .
+drwxr-xr-x 3 root       root       4096 Nov 14  2014 ..
+-r-sr-x--- 1 leviathan5 leviathan4 7425 Nov 14  2014 bin
+leviathan4@melinda:~/.trash$ ./bin
+01010100 01101001 01110100 01101000 00110100 01100011 01101111 01101011 01100101 01101001 00001010 
+```
+
+Interesting... Seems this is a Binary Output. Let's go online, and use a Binary to ASCII converter. I used [RapidTables](http://www.rapidtables.com/convert/number/binary-to-ascii.htm) to do my conversion. After converting the Binary, we get the password `Tith4cokei`.
+
+Easy enough, not too hard if you know what you were looking at. Let's move on to leviathan5!
 
 ### Level 5 -> 6:
 
