@@ -49,7 +49,7 @@ Now, from here type `exit` and SSH back into the next level by running
 root@kali:~# ssh bandit1@bandit.labs.overthewire.org
 ```
 
-Remeber, you must SSH into the next level after getting the password. So just replace the user name before the `@` with the next level (Ex: `bandit0@bandit.labs...` will now be `bandit1@bandit.labs...`, and for the password, use what you attained from the previous level.
+Remember, you must SSH into the next level after getting the password. So just replace the user name before the `@` with the next level (Ex: `bandit0@bandit.labs...` will now be `bandit1@bandit.labs...`, and for the password, use what you attained from the previous level.
 
 ### Level 1 -> 2:
 
