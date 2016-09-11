@@ -313,7 +313,7 @@ leviathan6@melinda:~$ ./leviathan6
 usage: ./leviathan6 <4 digit code>
 ```
 
-Another executable, shocker... really. It seems that this one is asking for us to input a 4 digit pin. Let's try and brute force it! Let's start creating a tmp directory and opening `nano` to write a shell script.
+Another executable, shocker... really. This one in particular, is asking us to input a 4 digit pin. Let's try and brute force it! Let's start creating a tmp directory and opening `nano` to write a shell script.
 
 ```console
 leviathan6@melinda:~$ mkdir /tmp/jhalon
