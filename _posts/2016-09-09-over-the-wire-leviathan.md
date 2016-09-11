@@ -255,7 +255,7 @@ Interesting... it's a Binary Output. Let's go online, and use a Binary to ASCII 
 Easy enough, not too hard if you know what you were looking at. Let's move on to leviathan5!
 
 ### Level 5 -> 6:
-Alright, so far we had some easy ones and some hard ones... let's see what's in store for us on Leviathan5.
+Alright, so far we had some easy ones and some hard ones... let's see what's in store for us on leviathan5.
 
 ```console
 leviathan5@melinda:~$ ls -la
