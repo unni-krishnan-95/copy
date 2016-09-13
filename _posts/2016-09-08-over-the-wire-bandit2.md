@@ -36,7 +36,7 @@ The password for the next level is stored in the file __data.txt__, which is a h
 bandit12@melinda:~$ ls -a
 .  ..  .bash_logout  .bashrc  .profile  data.txt
 bandit12@melinda:~$ mkdir /tmp/jhalon
-bandit12@melinda:~$ xd -r data.txt > /tmp/jhalon/file.bin
+bandit12@melinda:~$ xxd -r data.txt > /tmp/jhalon/file.bin
 bandit12@melinda:~$ cd /tmp/jhalon
 bandit12@melinda:/tmp/jhalon$ ls -a
 .  ..  file.bin
