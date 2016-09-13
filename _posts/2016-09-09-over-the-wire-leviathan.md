@@ -351,7 +351,7 @@ Done! We got the password! Technically this is the last level... but let's SSH i
 ### Level 7
 
 ```console
-eviathan7@melinda:~$ ls -la
+leviathan7@melinda:~$ ls -la
 total 24
 drwxr-xr-x   2 root       root       4096 Nov 14  2014 .
 drwxr-xr-x 172 root       root       4096 Jul 10 14:12 ..
