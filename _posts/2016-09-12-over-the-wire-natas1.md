@@ -124,7 +124,6 @@ Cache-Control: max-age=0
 ### Level 6:
 
 ```php
-
 <?
 
 include "includes/secret.inc";
