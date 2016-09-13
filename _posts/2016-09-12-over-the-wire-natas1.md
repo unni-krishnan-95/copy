@@ -13,7 +13,7 @@ Web Hacking; one of the most dangerous attack vectors out on the internet in tod
 
 You might wonder how this is even possible?! But we need to understand, that many websites such as Facebook, Google, and even Amazon, store all your information in SQL Databases. These databases are connected to the web servers, allowing them to process user transactions, login requests, and a countless amount of other things! These servers also handle user encryption, session keys, etc. One coding mistake; allowing a malicious attacker to inject SQL code into a query, or even inject special characters into a form, or the URL, can be devastating!
 
-Today, White Hat Hackers (Penetration Testers) must be well versed in many disciplines including web hacking and secure coding, allowing them to find web vulnerabilities and coding exploits that could cause a loss of confidential data. From this, they provide companies information on how to secure their code, and websites to prevent such devastating attacks. 
+Today, White Hat Hackers (Penetration Testers) must be well versed in many disciplines including web hacking and secure coding. Learning these disciplines, allows pen testers to find web vulnerabilities, and coding exploits that could be used to cause a loss of confidentiality. From these assessments, pen testers provide companies information on how to secure their code, and websites to prevent such devastating attacks.
 
 Today, I will be going over __Natas__, which can be found at [OverTheWire]( http://overthewire.org/wargames/natas/). __Natas__ is here to help teach the basics of server side-web-security, ranging from Replay Attacks, Header Manipulation, Directory Traversal, etc.
 
