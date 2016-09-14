@@ -26,7 +26,11 @@ Since we are not using SSH, we will be using a web browser for this. Let's open 
 
 <a href="/images/natas0.png"><img src="/images/natas0.png"></a>
 
+Once we are logged in, the level hint will appear in the middle of the screen; such as below.
+
 <a href="/images/natas0-1.png"><img src="/images/natas0-1.png"></a>
+
+This level is pretty simple, just __Right Click__ > __View Page Source__.
 
 ```html
 <body>
@@ -39,11 +43,17 @@ You can find the password for the next level on this page.
 </body>
 ```
 
+Looking at the HTML code we can see the `<!-- -->` (comment) section displaying the code. Congrats, you passed level 0!
+
 ### Level 1:
 
 <a href="/images/natas1.png"><img src="/images/natas1.png"></a>
 
+For this level, sine we can't use __Right Click__ we will go ahead and press __F12__. This should bring up the developer window; such as below.
+
 <a href="/images/natas1-1.png"><img src="/images/natas1-1.png"></a>
+
+Go to the __console__ section, and you will be able to view the HTML code.
 
 ```html
 <div id="content">
@@ -57,6 +67,8 @@ You can find the password for the next level on this page, but rightclicking has
 
 <a href="/images/natas2.png"><img src="/images/natas2.png"></a>
 
+Nothing on the page? Yah, right... doubt it! Let's go ahead and View Page Source.
+
 ```html
 <body>
 <h1>natas2</h1>
@@ -66,8 +78,11 @@ There is nothing on this page
 </div>
 </body>
 ```
+It seems, that there is a image file linked in the HTML code. Let's go ahead and add __/files__ to the end of the URL. It should look like __http://natas2.natas.labs.overthewire.org/files/__. Once done you will see a page displayed; such as below.
 
 <a href="/images/natas2-1.png"><img src="/images/natas2-1.png"></a>
+
+__users.txt__ seems promising, let's click that and see what we get.
 
 ```
 # username:password
@@ -79,9 +94,13 @@ eve:zo4mJWyNj2
 mallory:9urtcpzBmH
 ```
 
+Alright, we got the password! Moving on to level 3!
+
 ### Level 3:
 
 <a href="/images/natas3.png"><img src="/images/natas3.png"></a>
+
+Agian? Liars! Let's View Page Source again.
 
 ```html
 <body>
@@ -92,25 +111,40 @@ There is nothing on this page
 </div>
 </body>
 ```
+"__Not even Google will find it this time...__" is our hint here. If you have some idea of HTML and websites you would know that the files it's referring too is __robots.txt__. If you have no idea what it is, then you can read more about it [here](http://www.robotstxt.org/)!
 
 ```
 User-agent: *
 Disallow: /s3cr3t/
 ```
 
+Okay, so the __robots.txt__ is disallowing crawlers to find __/s3cr3t/__. Let's go ahead and add it to the end of the webpage, which should look something like this: __http://natas3.natas.labs.overthewire.org/s3cr3t/__.
+
 <a href="/images/natsa3-1.png"><img src="/images/natas3-1.png"></a>
+
+__users.txt__ is the only file we can click... so let's do just that!
 
 ```
 natas4:Z9tkRkWmpt9Qr7XrR5jWRkgOU901swEZ
 ```
 
+Fairly easy, we got the password and can move on to level 4!
+
 ### Level 4:
 
 <a href="/images/natas4.png"><img src="/images/natas4.png"></a>
 
+This level is really interesting and is the first one to introduce us to [Burp](https://portswigger.net/burp/)! The website is telling us that we are not allowed access to the websites, and that the only authorized user should be coming from __http://natas5.natas.labs.overthewire.org/__ aka, the user has to be __natas5__. 
+
+In general, this is referring to the "[HTTP Referrer](https://en.wikipedia.org/wiki/HTTP_referer)". So let's go ahead and see if we can spoof it! Let's begin by firing up __Burp__ and making sure our proxy is set up for __localhost__ @ 127.0.0.1. Your set up should look something like the image below. If you are having trouble setting up Burp, please refer to [this video](https://portswigger.net/burp/tutorials/UsingBurpProxy.html).
+
 <a href="/images/natas4-1.png"><img src="/images/natas4-1.png"></a>
 
+Since I'm using __Firefox__, I have to set up my network settings, to allow Firefox to use my localhost proxy. To do that, __Open the Menu__ > __Preferences__ > __Advanced__ > __Network__ > __Connection Settings...__, and make sure you set it up like the image below.
+
 <a href="/images/natas4-2.png"><img src="/images/natas4-2.png"></a>
+
+Once we got Burp running, let's reload the website and go back to Burp. To see the intercepted packet in Burp, go to __Proxy__ > __Intercept__. You should see the following packet header information.
 
 ```html
 GET /index.php HTTP/1.1
@@ -124,11 +158,15 @@ Authorization: Basic bmF0YXM0Olo5dGtSa1dtcHQ5UXI3WHJSNWpXUmtnT1U5MDFzd0Va
 Connection: close
 ```
 
-`iX6IOfmpN7AYOQGPwtn3fXpbaJVJcHfq`
+As you can see the packet's __Referrer__ is set to: "http://natas4.natas.labs.overthewire.org/". Let's go ahead and change that to "http://natas5.natas.labs.overthewire.org/". Once done, click __Forward__, and we should get the password `iX6IOfmpN7AYOQGPwtn3fXpbaJVJcHfq`!
+
+__Note:__ Once done, go back to Network Settings and select "__Use System Proxy Settings__" so you can have normal connection without it routing through Burp.
 
 ### Level 5:
 
 <a href="/images/natas5.png"><img src="/images/natas5.png"></a>
+
+Again, we can see we don't have access to the webpage because we are not logged in. Let's fire up Burp Suite and see if we can intercept the packet for the natas5. 
 
 ```html
 GET /index.php HTTP/1.1
@@ -142,12 +180,15 @@ Authorization: Basic bmF0YXM1OmlYNklPZm1wTjdBWU9RR1B3dG4zZlhwYmFKVkpjSGZx
 Connection: close
 Cache-Control: max-age=0
 ```
+As we can see the packet header stores cookie information. Let's change __loogedin=0__ to __loggedin=1__, and Forward that packet.
 
-`aGoY4q2Dc6MgDq4oL4YtoKtyAg9PeHa1`
+If successfully done, we should get the password `aGoY4q2Dc6MgDq4oL4YtoKtyAg9PeHa1`!
 
 ### Level 6:
 
 <a href="/images/natas6.png"><img src="/images/natas6.png"></a>
+
+Alright, for this level we are to enter a secret, and the query __should__ return the password... hopefully! Let 's go ahead and click __View sourcedode__ and we should get the below PHP script.
 
 ```php
 <?
@@ -164,18 +205,22 @@ include "includes/secret.inc";
 ?>
 ```
 
+It seems that the PHP is including a link to a file stored on the webpage __/includes/secret.inc__. Let's go ahead and add that to the end of our URL, like so: __http://natas6.natas.labs.overthewire.org/includes/secret.inc__. We should come up to a blank webpage, so let's View Page Source.
+
 ```php
 <?
 $secret = "FOEIUWGHFEEUHOFUOIU";
 ?>
 ```
 
-`7z3hEENjQtflzgnT29q7wAvMNfZdh0i9`
+Another PHP script, with the secret code we need. Let's go back to the home page and enter it. If correct, we should get the password `7z3hEENjQtflzgnT29q7wAvMNfZdh0i9`!
 
 
 ### Level 7:
 
 <a href="/images/natas7.png"><img src="/images/natas7.png"></a>
+
+On this level it seems we are provided with 2 links, __Home__ and __About__. Let's View Page Source, and see if we can't find anything.
 
 ```html
 <div id="content">
@@ -190,11 +235,17 @@ this is the front page
 </div>
 ```
 
+Alright, the HTML comment is telling us that we can get the password from __etc/natas_webpass/natas8__. Judging by the hint, I assume this is a [Directory Traversal Attack](http://www.acunetix.com/websitesecurity/directory-traversal/). 
+
+If we click on __Home__ our URL should dispaly __http://natas7.natas.labs.overthewire.org/index.php?page=home__. Let's go ahead and remove __home__ and add __/etc/natas_webpass/natas8__. The URL should look like so: __http://natas7.natas.labs.overthewire.org/index.php?page=/etc/natas_webpass/natas8__. If done correctly, we should get the password!
+
 `DBfUBfqQG69KvJvJ1iAbMoIpwSNQ9bWe `
 
 ### Level 8:
 
 <a href="/images/natas8.png"><img src="/images/natas8.png"></a>
+
+Another secret key, let's go ahead and view sourcecode. We should see a PHP script like the one below...
 
 ```php
 <?
@@ -215,6 +266,10 @@ if(array_key_exists("submit", $_POST)) {
 ?>
 ```
 
+It seems that the secret code we need is encoded. Looking though the PHP code we can see that the "secret" entered is converted from bin to hex, reversed, and then base64 encoded.
+
+So for us to get the "secret" we have to reverse engineer this. So let's open up console and start up PHP with `php -a`. And start by base64 decoding it, reversing the string, and converting the hex back to bin.
+
 ```console
 root@kali:`# php -a
 Interactive mode enabled
@@ -223,11 +278,15 @@ php > echo base64_decode(strrev(hex2bin('3d3d516343746d4d6d6c315669563362')));
 oubWYf2kBq
 ```
 
-`W0mMhUcRRnG8dcghE4qvk3JA9lGt8nDl`
+If done correctly, we should get the secret key `oubWYf2kBq`. Let's enter that and see if it works.
+
+Congrats, we got the password `W0mMhUcRRnG8dcghE4qvk3JA9lGt8nDl`! Moving on to level 9!
 
 ### Level 9:
 
 <a href="/images/natas9.png"><img src="/images/natas9.png"></a>
+
+For this level, it seems that the query is looking for words containing our input. Let's view the sourcecode.
 
 ```php
 <?
@@ -243,11 +302,19 @@ if($key != "") {
 ?>
 ```
 
-`nOpp1igQAkUzaI1GUUjzn1bFVj7xCNzu`
+It seems that the way "key" is being used in the PHP script, we can probably insert arbitrary code. Let me explain... if we type in the word "password" then the passthru command will look like so: `grep -i password dictionary.txt`. Seeing the way that key is encapsulated in quotes, and there is no input filtering, then we can enter special characters.
+
+We can use the `;` command separator, which will allow us to use 2 command in one line. And we will also use the `#` comment command, which will comment out the rest of the text following the symbol.
+
+So, in the input field we will add `; cat /etc/natas_webpass/natas10 #` which in turn will run the command as such; `grep -i ; cat /etc/natas_webpass/natas10 #`, commenting out and removing __dictionary.txt__. 
+
+Congratulations, we got the password! `nOpp1igQAkUzaI1GUUjzn1bFVj7xCNzu` We can now move onto level 10!
 
 ### Level 10:
 
 <a href="/images/natas10.png"><img src="/images/natas10.png"></a>
+
+This level is similar to the previous level, so let's view the sourcecode and see what we can find in the PHP script.
 
 ```php
 <?
@@ -267,4 +334,10 @@ if($key != "") {
 ?>
 ```
 
-`U82q5TCMMQ9xuFoI3dYX61s7OZD9JKoK`
+Okay, so the script seems the same as level 9's, but now they are filtering the `;` and `&` command.
+
+Seems they still haven't fixed the way "key" is storing input. So we can exploit that the same way we did in 9, but this time just using regular expressions. Let's go ahead and enter `.* /etc/natas_webpass/natas11 #` inside the query. By entering `.*`, we tell `grep` to search for all wildcard, while ignoring case, and match it to __etc/natas_webpass/natas11__, the `#` comments out __dictionary.txt__, preventing any errors from occurring.
+
+Congrats! We got the password `U82q5TCMMQ9xuFoI3dYX61s7OZD9JKoK`! We can move on to level 11!
+
+Alright, that's all for now folks! Stay tuned for more __Natas__ coming soon! Also expect a Web Camera Hacking POP and some Raspberry PI projects!
