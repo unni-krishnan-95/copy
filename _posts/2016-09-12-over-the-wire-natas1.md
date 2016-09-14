@@ -22,7 +22,11 @@ Each level of Natas consists of its own website located at __http://natasX.natas
 So, let's begin!
 
 ### Level 0:
-Since we are not using SSH, we will be using a web browser for this. Let's open up a browser and login to Natas0 by going to __http://natas0.natas.labs.overthewire.org__ and useing the username: __natas0__ and the password: __natas0__.
+Since we are not using SSH, we will be using a web browser for this. Let's open up a browser and login to Natas0 by going to __http://natas0.natas.labs.overthewire.org__ and using the username: __natas0__ and the password: __natas0__.
+
+<a href="/images/natas0.png"><img src="/images/natas0.png"></a>
+
+<a href="/images/natas0-1.png"><img src="/images/natas0-1.png"></a>
 
 ```html
 <body>
@@ -37,6 +41,10 @@ You can find the password for the next level on this page.
 
 ### Level 1:
 
+<a href="/images/natas1.png"><img src="/images/natas1.png"></a>
+
+<a href="/images/natas1-1.png"><img src="/images/natas1-1.png"></a>
+
 ```html
 <div id="content">
 You can find the password for the next level on this page, but rightclicking has been blocked!
@@ -47,6 +55,8 @@ You can find the password for the next level on this page, but rightclicking has
 
 ### Level 2:
 
+<a href="/images/natas2.png"><img src="/images/natas2.png"></a>
+
 ```html
 <body>
 <h1>natas2</h1>
@@ -56,6 +66,8 @@ There is nothing on this page
 </div>
 </body>
 ```
+
+<a href="/images/natas2-1.png"><img src="/images/natas2-1.png"></a>
 
 ```
 # username:password
@@ -68,6 +80,8 @@ mallory:9urtcpzBmH
 ```
 
 ### Level 3:
+
+<a href="/images/natas3.png"><img src="/images/natas3.png"></a>
 
 ```html
 <body>
@@ -84,11 +98,19 @@ User-agent: *
 Disallow: /s3cr3t/
 ```
 
+<a href="/images/natsa3-1.png"><img src="/images/natas3-1.png"></a>
+
 ```
 natas4:Z9tkRkWmpt9Qr7XrR5jWRkgOU901swEZ
 ```
 
 ### Level 4:
+
+<a href="/images/natas4.png"><img src="/images/natas4.png"></a>
+
+<a href="/images/natas4-1.png"><img src="/images/natas4-1.png"></a>
+
+<a href="/images/natas4-2.png"><img src="/images/natas4-2.png"></a>
 
 ```html
 GET /index.php HTTP/1.1
@@ -106,6 +128,8 @@ Connection: close
 
 ### Level 5:
 
+<a href="/images/natas5.png"><img src="/images/natas5.png"></a>
+
 ```html
 GET /index.php HTTP/1.1
 Host: natas5.natas.labs.overthewire.org
@@ -122,6 +146,8 @@ Cache-Control: max-age=0
 `aGoY4q2Dc6MgDq4oL4YtoKtyAg9PeHa1`
 
 ### Level 6:
+
+<a href="/images/natas6.png"><img src="/images/natas6.png"></a>
 
 ```php
 <?
@@ -149,6 +175,8 @@ $secret = "FOEIUWGHFEEUHOFUOIU";
 
 ### Level 7:
 
+<a href="/images/natas7.png"><img src="/images/natas7.png"></a>
+
 ```html
 <div id="content">
 
@@ -165,6 +193,8 @@ this is the front page
 `DBfUBfqQG69KvJvJ1iAbMoIpwSNQ9bWe `
 
 ### Level 8:
+
+<a href="/images/natas8.png"><img src="/images/natas8.png"></a>
 
 ```php
 <?
@@ -197,6 +227,8 @@ oubWYf2kBq
 
 ### Level 9:
 
+<a href="/images/natas9.png"><img src="/images/natas9.png"></a>
+
 ```php
 <?
 $key = "";
@@ -214,6 +246,8 @@ if($key != "") {
 `nOpp1igQAkUzaI1GUUjzn1bFVj7xCNzu`
 
 ### Level 10:
+
+<a href="/images/natas10.png"><img src="/images/natas10.png"></a>
 
 ```php
 <?
