@@ -43,7 +43,9 @@ You can find the password for the next level on this page.
 </body>
 ```
 
-Looking at the HTML code we can see the `<!-- -->` (comment) section displaying the code. Congrats, you passed level 0!
+Looking at the HTML code we can see the `<!-- -->` (comment) section displaying the password. 
+
+Congrats, you passed level 0!
 
 ### Level 1:
 
