@@ -270,7 +270,7 @@ if(array_key_exists("submit", $_POST)) {
 
 It seems that the secret code we need is encoded. Looking though the PHP code we can see that the "secret" entered is converted from bin to hex, reversed, and then base64 encoded.
 
-So for us to get the "secret" we have to reverse engineer this. Let's begin by opening the console, and start up PHP with `php -a`. We can get the secret key from the encoded key by base64 decoding it, reversing the string, and converting the hex back to bin.
+So for us to get the "secret" we have to reverse engineer this. Let's begin by opening the console, and start up PHP with `php -a`. We can get the secret key from the encoded key by base64 decoding it, reversing the string, and converting the hex back to binary.
 
 ```console
 root@kali:`# php -a
