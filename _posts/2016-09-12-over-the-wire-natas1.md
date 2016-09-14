@@ -344,6 +344,6 @@ Let's go ahead and enter `.* /etc/natas_webpass/natas11 #` inside the query. By 
 
 Congrats! We got the password `U82q5TCMMQ9xuFoI3dYX61s7OZD9JKoK`! We can move on to level 11!
 
-<br>
+___
 
 Alright, that's all for now folks! Stay tuned for more __Natas__ coming soon! Also expect a Web Camera Hacking POC, and some Raspberry PI projects!
