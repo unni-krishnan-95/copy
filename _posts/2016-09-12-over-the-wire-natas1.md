@@ -102,7 +102,7 @@ Alright, we got the password! Moving on to level 3!
 
 <a href="/images/natas3.png"><img src="/images/natas3.png"></a>
 
-Agian? Liars! Let's View Page Source, again...
+Again? Liars! Let's View Page Source, again...
 
 ```html
 <body>
