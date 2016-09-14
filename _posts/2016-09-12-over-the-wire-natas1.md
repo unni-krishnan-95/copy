@@ -162,7 +162,7 @@ Connection: close
 
 As you can see the packet's __Referrer__ is set to: "__http://natas4.natas.labs.overthewire.org/__". Let's go ahead and change that to "__http://natas5.natas.labs.overthewire.org/__". Once done, click __Forward__, and we should get the password `iX6IOfmpN7AYOQGPwtn3fXpbaJVJcHfq`!
 
-__Note:__ Once done, go back to Network Settings and select "__Use System Proxy Settings__" so you can have normal connection, without it routing through Burp.
+__Note:__ Once done, go back to Network Settings and select "__Use System Proxy Settings__" so you can have a normal connection, without it routing through Burp.
 
 ### Level 5:
 
