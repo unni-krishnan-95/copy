@@ -346,4 +346,4 @@ Congrats! We got the password `U82q5TCMMQ9xuFoI3dYX61s7OZD9JKoK`! We can move on
 
 ___
 
-Alright, that's all for now folks! Stay tuned for more __Natas__ coming soon! Also expect a Web Camera Hacking POC, and some Raspberry PI projects!
+Alright, that's all for now folks! Stay tuned for more __Natas__, coming soon! Also expect a Web Camera Hacking POC, and some Raspberry PI projects!
