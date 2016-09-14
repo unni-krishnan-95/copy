@@ -142,7 +142,7 @@ In general, this is referring to the "[HTTP Referrer](https://en.wikipedia.org/w
 
 <a href="/images/natas4-1.png"><img src="/images/natas4-1.png"></a>
 
-Since I'm using __Firefox__, I have to set up my network settings, to allow Firefox to use my localhost proxy. To do that in Firefox, __Open the Menu__ > __Preferences__ > __Advanced__ > __Network__ > __Connection Settings...__, and make sure you set it up like the image below.
+Since I'm using __Firefox__, I have to set up my network settings to allow Firefox to use my localhost proxy. To do that in Firefox, __Open the Menu__ > __Preferences__ > __Advanced__ > __Network__ > __Connection Settings...__, and make sure you set it up like the image below.
 
 <a href="/images/natas4-2.png"><img src="/images/natas4-2.png"></a>
 
