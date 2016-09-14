@@ -222,7 +222,7 @@ Another PHP script, with the secret code we need. Let's go back to the home page
 
 <a href="/images/natas7.png"><img src="/images/natas7.png"></a>
 
-On this level it seems we are provided with 2 links, __Home__ and __About__. Let's View Page Source, and see if we can't find anything.
+On this level it seems we are provided with 2 links, __Home__ and __About__. Let's View Page Source, and see if we can find anything.
 
 ```html
 <div id="content">
@@ -239,7 +239,7 @@ this is the front page
 
 Alright, the HTML comment is telling us that we can get the password from __etc/natas_webpass/natas8__. Judging by the hint, I assume this is a [Directory Traversal Attack](http://www.acunetix.com/websitesecurity/directory-traversal/). 
 
-If we click on __Home__ our URL should dispaly __http://natas7.natas.labs.overthewire.org/index.php?page=home__. Let's go ahead and remove __home__ and add __/etc/natas_webpass/natas8__. The URL should look like so: __http://natas7.natas.labs.overthewire.org/index.php?page=/etc/natas_webpass/natas8__. 
+If we click on __Home__ our URL should display __http://natas7.natas.labs.overthewire.org/index.php?page=home__. Let's go ahead and remove __home__ and add __/etc/natas_webpass/natas8__. The URL should look like so: __http://natas7.natas.labs.overthewire.org/index.php?page=/etc/natas_webpass/natas8__. 
 
 If done correctly, we should get the password `DBfUBfqQG69KvJvJ1iAbMoIpwSNQ9bWe`.
 
