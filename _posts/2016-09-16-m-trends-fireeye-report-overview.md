@@ -75,4 +75,8 @@ The only downside to extortion based attacks is that it's hard to pinpoint if th
 
 ### Deleting & Damaging of Data/Systems
 
+The deleting and damaging of systems speaks for itself, the after effects of such an attack can be devastating to a company - putting production at a standstill, causing major outages worldwide for users, and incurring massive financial losses. In the M-Trend's report it is stated that in a lot of breaches, threat actors had access to system-level accounts which were capable of deleting and damaging data/system... but instead they decided to covertly steal credit card data, PII, and intellectual property; going to show that many malicious actors are financially motivated and really don’t care on disrupting the company’s operations. 
 
+Mandiant in the M-Trend's report also stated, and I quote "*We’ve investigated multiple incidents where attackers wiped critical business systems and, in some cases, forced companies to rely on paper and telephone-based processes for days or weeks as they recovered their systems and data. We have even seen attackers wipe system backup infrastructure in an effort to keep victims offline longer.*" Proving, that many of these companies either didn't have proper backups, or business continuity plans in case of such incidents.
+
+### Modification of Repositories and Critical Business Data
