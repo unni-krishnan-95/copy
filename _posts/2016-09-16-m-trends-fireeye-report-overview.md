@@ -81,6 +81,35 @@ Mandiant in the M-Trend's report also stated, and I quote:
 
 > "*We’ve investigated multiple incidents where attackers wiped critical business systems and, in some cases, forced companies to rely on paper and telephone-based processes for days or weeks as they recovered their systems and data. We have even seen attackers wipe system backup infrastructure in an effort to keep victims offline longer.*" 
 
-Proving, that many of these companies either didn't have proper backups, or business continuity plans in case of such incidents.
+Proving, that many of these companies either didn't have proper backups, or business continuity plans put in place, for such incidents.
 
 ### Modification of Repositories and Critical Business Data:
+
+Though not heard of, malicious actors at times will attempt to modify company repositories and critical business data to impact certain aspects of the company and its operations. For example, if a company was in charge of creating iOS and Android applications, a malicious actor can edit the code repositories for the applications and implement a back door in them for personal gain. Now, business critical data is any kind of information or data that a business would not be able to recover if it was lost. This could include things such as:
+
+* Customer information
+* Financial records
+* Emails
+* Sales records
+* Human resource information
+* Inventory
+* Specification documents
+* Vendor/Supplier contacts and information
+
+So if during a breach this information was modified, deleted, or tampered with any way, it can cause lots of confusion and damages to the company, partners, suppliers, and more!
+
+## PII Leaks
+
+PII or Personally Identifiable Information, is information that can be used on its own or with other information to identify, contact, or locate a single person, or to identify an individual in context. Much of this PII data can be used to gain private information such as Social Security, credit cards, etc. At times during breaches PII is also stolen as a byproduct of copying over files, and isn't of particular interest to an attacker, but other times - it's very highly sought. Mandiant so far has no idea how malicious attackers are leveraging the PII data, they do believe that they are using it for the following:
+
+* Bypassing Identify Verification and Access Management Schemes
+* Facilitating “Traditional” Espionage Operations & Identifying and Recruiting Insider Threats and Subject Matter Experts
+* Targeting Specific Populations for Identification and Monitoring
+
+### Phishing Emails:
+
+Phishing emails are not the thing of the past, year after year they come up with new spam campaigns to try and infect users with anything from backdoors to crypto ransomware. All the user has to do is click on a link or an attachment and the malicious actor can gain access to the users system. From their reconnaissance can take place to footprint servers and other computer in search of passwords, domain accounts, PII, and anything else the attacker might favorite. Phishing can come in many forms - spear phishing campaigns are carried out against certain users with relatable information including names, dates, and personal facts. While whaling attacks are carried out against c-level executives, and if successful can bode lots of success for an attacker. Phishing can also be carried out through the phone in the form of a vishing attack, where the malicious actor might try to harvest usernames, passwords, and anything else they might like, all though social engineering.
+
+There were many famous breaches from 2014-2016 that used social engineering and phishing to steal employee W-2 Forms, and Tax Information, along with their PII such as name, date of birth, address, and social security. You can read more about these types of breaches [here](http://www.csoonline.com/article/3048263/security/phishing-attacks-targeting-w-2-data-hit-41-organizations-in-q1-2016.html)!
+
+## Attack on Network Devices:
