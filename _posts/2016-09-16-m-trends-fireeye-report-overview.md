@@ -27,12 +27,28 @@ Even though, the numbers still seem big, we can say that a 59 day improvement si
 With the increase of breaches, there was also an increase in the way attacks were carried out on companies. Ranging from a huge increase in "disruptive attacks", to exporting of PII, and the exploitation of network devices. These three categories of attacks contained the following threat vectors, followed by their subcategories:
 
 * Disruptive Attacks
-  * Ransomware
-  * Extortion
+  * Ransomware and Extortion
   * Deleting & Damaging of Data/Systems
   * Modification of Repositories and Critical Business Data
 * PII Leaks
   * Phishing Emails
 * Attack on Network Devices
 
+## Disruptive Attacks
+
+Though all cyber-attacks on a company are disruptive to some extent, many specific ones listed in the M-Trends report related to attacks that tried to bring attention to the attacker, attacks that resulted in the release of information to the public - resulting in reputation loss and even consequential embarrassment, and the damaging of critical business functions. These disruptive attacks can bring major consequences to the company affected – from financial loss to the loss of intellectual property. 
+
+Praesidio - in their 2016 infographic - estimated that the average time to resolve a cyber-attack was 46 days, with an average cost to participating organizations of $1,988,544 during the 46-day period. This was representative of a 22% increase from last years estimated average of $1,593,627, which was based upon a 45-day resolution period.
+
+### Ransomware and Extortion
+
+With the first prominence of Ransomware in May of 2005, ransomware has grown to be one of the biggest threats in today’s digital world. Paired together with the increasing threats of blackmail and extortion, companies are having a hard time keeping their data safe, as well as differentiating from real and fake threats that might try to extort the company for money in exchange for stolen documents.
+
+The Russian software company Kaspersky, in their 2014-2016 KSN Ransomware Report, stated that between the years of 2014-2015 and 2015-2016, there was an 85% increase in the amount of Ransomware seen. As well as a 5.5 times increase in the amount of crypto ransomware used, along with a 4 times increase in the rise of Mobile Ransomware.
+
+<figure class="half">
+    <a href="/images/ms2.png"><img src="/images/ms2.png"></a>
+    <a href="/images/ms3.png"><img src="/images/ms3.png"></a>
+    <figcaption>[Source](https://securelist.com/analysis/publications/75145/pc-ransomware-in-2014-2016/)</figcaption>
+</figure>
 
