@@ -44,10 +44,16 @@ Praesidio - in their 2016 infographic - estimated that the average time to resol
 
 With the first prominence of Ransomware in May of 2005, ransomware has grown to be one of the biggest threats in today’s digital world. Paired together with the increasing threats of blackmail and extortion, companies are having a hard time keeping their data safe, as well as differentiating from real and fake threats that might try to extort the company for money in exchange for stolen documents.
 
-The Russian software company Kaspersky, in their 2014-2016 KSN Ransomware Report, stated that between the years of 2014-2015 and 2015-2016, there was an 85% increase in the amount of Ransomware seen. As well as a 5.5 times increase in the amount of crypto ransomware used, along with a 4 times increase in the rise of Mobile Ransomware.
+The Russian software company Kaspersky, in their [2014-2016 KSN Ransomware Report](https://securelist.com/analysis/publications/75145/pc-ransomware-in-2014-2016/), stated that between the years of 2014-2015 and 2015-2016, there was an 85% increase in the amount of Ransomware seen. As well as a 5.5 times increase in the amount of crypto ransomware used, along with a 4 times increase in the rise of Mobile Ransomware.
 
 <a href="/images/m2.png"><img src="/images/m2.png"></a>
+
 <a href="/images/m3.png"><img src="/images/m3.png"></a>
+
 <a href="/images/m4.png"><img src="/images/m4.png"></a>
+
+With that rise in Ransomware, there was also a 6.3% rise in the amount of corporate useres affected by Ransomware
+
+<a href="/images/m4.png"><img src="/images/ksn3.png"></a>
 
 
