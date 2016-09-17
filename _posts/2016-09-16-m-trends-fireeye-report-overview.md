@@ -34,13 +34,13 @@ With the increase of breaches, there was also an increase in the way attacks wer
   * Phishing Emails
 * Attack on Network Devices
 
-## Disruptive Attacks
+## Disruptive Attacks:
 
 Though all cyber-attacks on a company are disruptive to some extent, many specific ones listed in the M-Trends report related to attacks that tried to bring attention to the attacker, attacks that resulted in the release of information to the public - resulting in reputation loss and even consequential embarrassment, and the damaging of critical business functions. These disruptive attacks can bring major consequences to the company affected – from financial loss to the loss of intellectual property. 
 
 Praesidio - in their 2016 infographic - estimated that the average time to resolve a cyber-attack was 46 days, with an average cost to participating organizations of $1,988,544 during the 46-day period. This was representative of a 22% increase from last years estimated average of $1,593,627, which was based upon a 45-day resolution period.
 
-### Ransomware and Extortion
+### Ransomware and Extortion:
 
 With the first prominence of Ransomware in May of 2005, ransomware has grown to be one of the biggest threats in today’s digital world. Paired together with the increasing threats of blackmail and extortion, companies are having a hard time keeping their data safe, as well as differentiating from real and fake threats that might try to extort the company for money in exchange for stolen documents.
 
@@ -73,10 +73,14 @@ Based on Praesidio's infographic, it's estimated that around 10,000 records are 
 
 The only downside to extortion based attacks is that it's hard to pinpoint if the source is credible or not, and even if they are, and the ransomware is paid... what are the chances that the attackers will release the data anyways? Even if data is released, it can be taken down fairly quickly, that's why many attackers resort to pastebin and P2P sites like Tor or Torrents to spread the leak.
 
-### Deleting & Damaging of Data/Systems
+### Deleting & Damaging of Data/Systems:
 
 The deleting and damaging of systems speaks for itself, the after effects of such an attack can be devastating to a company - putting production at a standstill, causing major outages worldwide for users, and incurring massive financial losses. In the M-Trend's report it is stated that in a lot of breaches, threat actors had access to system-level accounts which were capable of deleting and damaging data/system... but instead they decided to covertly steal credit card data, PII, and intellectual property; going to show that many malicious actors are financially motivated and really don’t care on disrupting the company’s operations. 
 
-Mandiant in the M-Trend's report also stated, and I quote "*We’ve investigated multiple incidents where attackers wiped critical business systems and, in some cases, forced companies to rely on paper and telephone-based processes for days or weeks as they recovered their systems and data. We have even seen attackers wipe system backup infrastructure in an effort to keep victims offline longer.*" Proving, that many of these companies either didn't have proper backups, or business continuity plans in case of such incidents.
+Mandiant in the M-Trend's report also stated, and I quote:
 
-### Modification of Repositories and Critical Business Data
+> "*We’ve investigated multiple incidents where attackers wiped critical business systems and, in some cases, forced companies to rely on paper and telephone-based processes for days or weeks as they recovered their systems and data. We have even seen attackers wipe system backup infrastructure in an effort to keep victims offline longer.*" 
+
+Proving, that many of these companies either didn't have proper backups, or business continuity plans in case of such incidents.
+
+### Modification of Repositories and Critical Business Data:
