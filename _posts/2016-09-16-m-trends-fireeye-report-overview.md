@@ -36,7 +36,7 @@ With the increase of breaches, there was also an increase in the way attacks wer
 
 ## Disruptive Attacks:
 
-Though all cyber-attacks on a company are disruptive to some extent, many specific ones listed in the M-Trends report related to attacks that tried to bring attention to the attacker, attacks that resulted in the release of information to the public - resulting in reputation loss and even consequential embarrassment, and the damaging of critical business functions. These disruptive attacks can bring major consequences to the company affected – from financial loss to the loss of intellectual property. 
+Though all cyber-attacks on a company are disruptive to some extent, many specific ones listed in the M-Trends report related to attacks that tried to bring attention to the attacker. Also, attacks that release confidential of information to the public - resulted in reputation loss, even consequential embarrassment, and the damaging of critical business functions. Such disruptive attacks can bring major consequences to an affected company – from financial loss to the loss of intellectual property. 
 
 Praesidio - in their 2016 infographic - estimated that the average time to resolve a cyber-attack was 46 days, with an average cost to participating organizations of $1,988,544 during the 46-day period. This was representative of a 22% increase from last years estimated average of $1,593,627, which was based upon a 45-day resolution period.
 
