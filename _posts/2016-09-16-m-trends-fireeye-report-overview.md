@@ -2,7 +2,7 @@
 layout: single
 title: "M-Trends 2016: Cyber Threat Report Overview"
 header:
-  overlay_image: mtrends.jpg
+  overlay_image: ZenBG.png
   caption: "Mandiant"
 related: true
 comments: true
