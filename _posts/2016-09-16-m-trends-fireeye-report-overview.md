@@ -27,12 +27,12 @@ Even though, the numbers still seem big, we can say that a 59 day improvement si
 With the increase of breaches, there was also an increase in the way attacks were carried out on companies. Ranging from a huge increase in "disruptive attacks", to exporting of PII, and the exploitation of network devices. These three categories of attacks contained the following threat vectors, followed by their subcategories:
 
 * Disruptive Attacks
-..* Ransomware
-..* Extortion
-..* Deleting & Damaging of Data/Systems
-..* Modification of Repositories and Critical Business Data
+  * Ransomware
+  * Extortion
+  * Deleting & Damaging of Data/Systems
+  * Modification of Repositories and Critical Business Data
 * PII Leaks
-..* Phishing Emails
+  * Phishing Emails
 * Attack on Network Devices
 
 
