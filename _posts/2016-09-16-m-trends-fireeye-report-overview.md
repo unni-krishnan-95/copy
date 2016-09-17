@@ -47,8 +47,8 @@ With the first prominence of Ransomware in May of 2005, ransomware has grown to 
 The Russian software company Kaspersky, in their 2014-2016 KSN Ransomware Report, stated that between the years of 2014-2015 and 2015-2016, there was an 85% increase in the amount of Ransomware seen. As well as a 5.5 times increase in the amount of crypto ransomware used, along with a 4 times increase in the rise of Mobile Ransomware.
 
 <figure class="half">
-    <a href="/images/ms2.png"><img src="/images/ms2.png"></a>
-    <a href="/images/ms3.png"><img src="/images/ms3.png"></a>
+    <a href="/images/m2.png"><img src="/images/m2.png"></a>
+    <a href="/images/m3.png"><img src="/images/m3.png"></a>
     <figcaption>[Source](https://securelist.com/analysis/publications/75145/pc-ransomware-in-2014-2016/)</figcaption>
 </figure>
 
