@@ -48,5 +48,6 @@ The Russian software company Kaspersky, in their 2014-2016 KSN Ransomware Report
 
 <a href="/images/m2.png"><img src="/images/m2.png"></a>
 <a href="/images/m3.png"><img src="/images/m3.png"></a>
+<a href="/images/m4.png"><img src="/images/m4.png"></a>
 
 
