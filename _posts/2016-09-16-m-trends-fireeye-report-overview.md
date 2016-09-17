@@ -62,7 +62,7 @@ Much of the ransomware nowadays is requiered to be paid in deregulated currency 
 
 One of these recent extortion breaches can be linked to [Goldcorp's Extortion Bid](http://www.bloomberg.com/news/articles/2016-04-28/goldcorp-confirms-data-breach-and-starts-investigation). The hackers from that breach leaked data that included employee login IDs and passwords, salary and budget documents, and other sensitive corporate and personal information about Goldcorp and its employees.
 
-Based on Praesidio's infographic, it's estimated that around 10,000 records are stolen per incident, and can lead to the total average cost of $6.53 million in loses, an 11% increase from last year. These losses can be from abnormal turnover of customers, increased customer acquisition activities, reputation losses, and diminished goodwill. The average losses in a breach can include:
+Based on Praesidio's [infographic](http://betanews.com/wp-content/uploads/2016/02/Economic_Cost_of_Getting_Hacked.jpg), it's estimated that around 10,000 records are stolen per incident, and can lead to the total average cost of $6.53 million in loses, an 11% increase from last year. These losses can be from abnormal turnover of customers, increased customer acquisition activities, reputation losses, and diminished goodwill. The average losses in a breach can include:
 
 * $5 - $50 per notification of clients, customers, and other businesses.
 * $259 average per comprised record.
