@@ -22,9 +22,9 @@ Mandiant reported that with the increase of the activity, there have also been a
 <a href="/images/m1.png"><img src="/images/m1.png"></a>
 </p> 
 
-Even though, the numbers still seem big, we can say that a 59 day improvement since 2014 is a good thing! With the increase of the cyber security sector, and security awareness, we are slowly getting to a point where breaches are becoming more and more detectable. Mandiant also reported that besides the 146 days it takes them to discover that a company has been compromised, it takes approximately 56 days for a company to internally discover a breach, and a shocking 320 days before a 3rd party notifies the company. It is also stated that over 53% of the breaches are reported though external entities, while 47% of the breaches are reported internally.
+Even though, the numbers still seem big, we can say that a 59 day improvement since 2014 is a good thing! With the increase of the cyber security sector, and security awareness, we are slowly getting to a point where breaches are becoming more and more detectable. Mandiant also reported that besides the 146 days it takes them to discover that a company has been compromised, it takes approximately 56 days for a company to internally discover a breach, and a shocking 320 days before a 3rd party notifies the company. It is also stated that over 53% of the breaches are reported by external entities, while 47% of the breaches are reported internally.
 
-With the increase of breaches, there was also an increase in the way attacks were carried out on companies. Ranging from a huge increase in "disruptive attacks", to exporting of PII, and the exploitation of network devices. These three categories of attacks contained the following threat vectors, followed by their subcategories:
+With the increase of breaches, there was also an increase in the way attacks were carried out on companies. Ranging from a huge increase in "disruptive attacks", to exporting of PII, and the exploitation of network devices. These three categories of attacks contained the following threat vectors:
 
 * Disruptive Attacks
   * Ransomware and Extortion
