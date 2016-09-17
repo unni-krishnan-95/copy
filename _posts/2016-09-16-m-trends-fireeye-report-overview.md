@@ -18,9 +18,9 @@ The M-Trends Report begins by explaning to us that there has been an increased a
 
 Mandiant reported that with the increase of the activity, there have also been an increase in the amount of company breaches. One would think that a breach in a company would be spotted rather quickly, but the data is quite shocking. It is reported, that the "median" number of days a company is compromised - before the breach was discovered by Mandiant - is a whopping 146 days! This might seem a lot at first, but in all honesty it has improved over the years.
 
-<figure class="align-center">
+<p align="center">
 <a href="/images/m1.png"><img src="/images/m1.png"></a>
-</figure> 
+</p> 
 
 Even though, the numbers still seem big, we can say that a 59 day improvement since 2014 is a good thing! With the increase of the cyber security sector, and security awareness, we are slowly getting to a point where breaches are becoming more and more detectable. Mandiant also reported that besides the 146 days it takes them to discover that a company has been compromised, it takes approximately 56 days for a company to internally discover a breach, and a shocking 320 days before a 3rd party notifies the company. It is also stated that over 53% of the breaches are reported though external entities, while 47% of the breaches are reported internally.
 
