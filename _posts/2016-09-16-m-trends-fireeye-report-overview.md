@@ -56,4 +56,22 @@ With that rise in Ransomware, there was also a 6.3% rise in the amount of corpor
 
 <a href="/images/m4.png"><img src="/images/ksn3.png"></a>
 
+Even though Ransomware is done through the use of Malware or Malicious Software, Extortion kind of falls in line with "Ransom". In many cases, unpaid ransoms usually leads to the public release of confidential documents - it's simply done to embarrass the company and bring either financial losses, or reputation damage. Extortion can come in many forms; from emails to c-level executives threatening the use of a DDoS attack on the company, to the release of "possible" stolen documents and intellectual property. 
+
+Much of the ransomware nowadays is requiered to be paid in deregulated currency such as [Bitcoins](https://bitcoin.org/en/), a crypto currency that is hard to track. And based on Mandiat's report, the cost of the Ransomware is usually around the same value as the data they stole (giving us insight that many of these malicious attackers have a good idea of what they are dealing with).
+
+One of these recent extortion breaches can be linked to [Goldcorp's Extortion Bid](http://www.bloomberg.com/news/articles/2016-04-28/goldcorp-confirms-data-breach-and-starts-investigation). The hackers from that breach leaked data that included employee login IDs and passwords, salary and budget documents, and other sensitive corporate and personal information about Goldcorp and its employees.
+
+Based on Praesidio's infographic, it's estimated that around 10,000 records are stolen per incident, and can lead to the total average cost of $6.53 million in loses, an 11% increase from last year. These losses can be from abnormal turnover of customers, increased customer acquisition activities, reputation losses, and diminished goodwill. The average losses in a breach can includes:
+* $5 - $50 per notification of clients, customers, and other businesses.
+* $259 average per comprised record.
+* $500,000 average cost of legal proceedings.
+* $5,000 - $100,000 in Federal Fines.
+* $10 - $30 per person for credit monitoring if PII breach.
+* $200 - $2,000 per hour for the cost of a third party forensic examination.
+
+The only downside to extortion based attacks is that it's hard to pinpoint if the source is credible or not, and even if they are, and the ransomware is paid... what are the chances that the attackers will release the data anyways? Even if data is released, it can be taken down fairly quickly, that's why many attackers resort to pastebin and P2P sites like Tor or Torrents to spread the leak.
+
+## Deleting & Damaging of Data/Systems
+
 
