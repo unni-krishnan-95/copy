@@ -72,6 +72,6 @@ Based on Praesidio's infographic, it's estimated that around 10,000 records are 
 
 The only downside to extortion based attacks is that it's hard to pinpoint if the source is credible or not, and even if they are, and the ransomware is paid... what are the chances that the attackers will release the data anyways? Even if data is released, it can be taken down fairly quickly, that's why many attackers resort to pastebin and P2P sites like Tor or Torrents to spread the leak.
 
-## Deleting & Damaging of Data/Systems
+### Deleting & Damaging of Data/Systems
 
 
