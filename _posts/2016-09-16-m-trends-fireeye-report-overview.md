@@ -10,7 +10,7 @@ comments: true
 
 Another one... over a million records were released to the public; usernames, passwords, credit card information. It's just another breach in a long line of breaches. The year of 2015, and 2016 was pretty big for breaches, affecting major companies and many users worldwide. It's become of norm now, with the ever expanding field of technology... cyber security is gruelingly trying to keep up with the ever evolving threat of cyber crime.
 
-In February, 2016 - Mandiant (now acquired by FireEye) released its prominent 2016 M-Trend Report. This report, provided trends, along with statistics and case studies to show how advanced threats (malicious actors) have evolved over the years; relevantly from 2014-2015. After thoroughly reading this report, and compiling a wide range of data from other source such as [Kaspersky Labs]( http://usa.kaspersky.com/), and [Praesidio]( https://www.defensestorm.com/); I decided to provide a brief overview of the current Cyber Threat Trends Report, it’s data, and list possible mitigation techniques useful for defending companies, and home users alike.
+In February, 2016 - [Mandiant](https://www.fireeye.com/services.html) (now acquired by FireEye) released its prominent 2016 M-Trend Report. This report, provided trends, along with statistics and case studies to show how advanced threats (malicious actors) have evolved over the years; relevantly from 2014-2015. After thoroughly reading this report, and compiling a wide range of data from other source such as [Kaspersky Labs]( http://usa.kaspersky.com/), and [Praesidio]( https://www.defensestorm.com/); I decided to provide a brief overview of the current Cyber Threat Trends Report, it’s data, and list possible mitigation techniques useful for defending companies, and home users alike.
 
 
 ## Overview:
@@ -46,16 +46,19 @@ With the first prominence of Ransomware in May of 2005, ransomware has grown to 
 
 The Russian software company Kaspersky, in their [2014-2016 KSN Ransomware Report](https://securelist.com/analysis/publications/75145/pc-ransomware-in-2014-2016/), stated that between the years of 2014-2015 and 2015-2016, there was an 85% increase in the amount of Ransomware seen. As well as a 5.5 times increase in the amount of crypto ransomware used, along with a 4 times increase in the rise of Mobile Ransomware.
 
+<p align="center">
 <a href="/images/m2.png"><img src="/images/m2.png"></a>
-
+</p>
+<p align="center">
 <a href="/images/m3.png"><img src="/images/m3.png"></a>
-
+</p>
+<p align="center">
 <a href="/images/m4.png"><img src="/images/m4.png"></a>
-
+</p>
 With that rise in Ransomware, there was also a 6.3% rise in the amount of corporate useres affected by Ransomware
-
-<a href="/images/m4.png"><img src="/images/ksn3.png"></a>
-
+<p align="center">
+<a href="/images/ksn3.png"><img src="/images/ksn3.png"></a>
+</p>
 Even though Ransomware is done through the use of Malware or Malicious Software, Extortion kind of falls in line with "Ransom". In many cases, unpaid ransoms usually leads to the public release of confidential documents - it's simply done to embarrass the company and bring either financial losses, or reputation damage. Extortion can come in many forms; from emails to c-level executives threatening the use of a DDoS attack on the company, to the release of "possible" stolen documents and intellectual property. 
 
 Much of the ransomware nowadays is requiered to be paid in deregulated currency such as [Bitcoins](https://bitcoin.org/en/), a crypto currency that is hard to track. And based on Mandiat's report, the cost of the Ransomware is usually around the same value as the data they stole (giving us insight that many of these malicious attackers have a good idea of what they are dealing with).
@@ -115,3 +118,4 @@ Phishing can come in many forms - [spear phishing](http://us.norton.com/spear-ph
 There were many famous breaches from 2014-2016 that used social engineering and phishing to steal employee W-2 Forms, and Tax Information, along with their PII such as name, date of birth, address, and social security. You can read more about these types of breaches [here](http://www.csoonline.com/article/3048263/security/phishing-attacks-targeting-w-2-data-hit-41-organizations-in-q1-2016.html)!
 
 ## Attacks on Network Devices:
+
