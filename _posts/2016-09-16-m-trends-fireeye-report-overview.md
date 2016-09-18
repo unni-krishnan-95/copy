@@ -121,7 +121,7 @@ There were many famous breaches from 2014-2016 that used social engineering and 
 
 Reading about attackers compromising networking equipment such as switches, routers, and firewalls is kind of shocking. These devices are critical components to a company’s infrastructure and are usually overlooked by incident response teams and forensic experts as being compromised. Mandiant in their report stated that they have observed such compromises of these networking devices, and have identified backdoors and means of remote access to either control, damage, or circumvent security during a breach.
 
-Some of us reading this might be wondering - as to why attackers would want to compromise these networking devices? WEll it's pretty simple really, some examples provided by Madiant are:
+Some of us reading this might be wondering - as to why attackers would want to compromise these networking devices? Well it's pretty simple really, some examples provided by Madiant are:
 
 * Traffic Monitoring
 * Reconnaissance
