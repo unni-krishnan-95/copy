@@ -135,12 +135,9 @@ Such attacks on netwroking devices consisted of:
 
 * Modification of Cisco Router Images
 * XSS (Cross Site Scripting) a Cisco ASA VPN Concentrator
-
-..* Use of [CVE-2014-3393](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-3393)
-
+  * Use of [CVE-2014-3393](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-3393)
 * Cisco IOS Router Backdoors
-
-..* [SYNFUL Knocks](https://www.fireeye.com/blog/threat-research/2015/09/synful_knock_-_acis.html)
+  * [SYNFUL Knocks](https://www.fireeye.com/blog/threat-research/2015/09/synful_knock_-_acis.html)
 
 Overall much of these attacks are outdated, but we have to understand that these attacks were either possible though means of weak company security, or there weren’t proper policies and procedures in place to prevent such attacks. Some of you might think as to how policies and procedures could help in a situation like this, and I will explain so in the next section of “mitigation strategies” below.
 
