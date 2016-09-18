@@ -119,3 +119,26 @@ There were many famous breaches from 2014-2016 that used social engineering and 
 
 ## Attacks on Networking Devices:
 
+Reading about attackers compromising networking equipment such as switches, routers, and firewalls is kind of shocking. These devices are critical components to a company’s infrastructure and are usually overlooked by incident response teams and forensic experts as being compromised. Mandiant in their report stated that they have observed such compromises of these networking devices, and have identified backdoors and means of remote access to either control, damage, or circumvent security during a breach.
+
+Some of us reading this might be wondering - as to why attackers would want to compromise these networking devices? WEll it's pretty simple really, some examples provided by Madiant are:
+
+* Traffic Monitoring
+* Reconnaissance
+* Subversion of Security Controls
+* Persistence
+* Disruption
+
+The only problem with these attacks is that many tools that we lack the tools that can discover such compromises, and even if we are able to analyze such devices, it's very time consuming and analysis of many of these devices at a company is also very complex and difficult to scale properly to a incident reponse.
+
+Such attacks on netwroking devices consisted of:
+
+* Modification of Cisco Router Images
+* XSS (Cross Site Scripting) a Cisco ASA VPN Concentrator
+..* Use of [CVE-2014-3393](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-3393)
+* Cisco IOS Router Backdoors
+..* [SYNFUL Knocks](https://www.fireeye.com/blog/threat-research/2015/09/synful_knock_-_acis.html)
+
+Overall much of these attacks are outdated, but we have to understand that these attacks were either possible though means of weak company security, or there weren’t proper policies and procedures in place to prevent such attacks. Some of you might think as to how policies and procedures could help in a situation like this, and I will explain so in the next section of “mitigation strategies” below.
+
+## Mitigation Strategies and Recommendations:
