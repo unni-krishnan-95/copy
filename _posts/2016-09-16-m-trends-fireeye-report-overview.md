@@ -131,7 +131,7 @@ Some of us reading this might be wondering - as to why attackers would want to c
 
 The only problem with these types’ attacks is that we lack the tools that can discover such compromises, and even if we are able to analyze such devices, it's very time consuming and complex to scale properly during a single incident response or forensic examination.
 
-Such attacks on netwroking devices consisted of:
+Such attacks on networking devices consisted of:
 
 * Modification of Cisco Router Images
 * XSS (Cross Site Scripting) a Cisco ASA VPN Concentrator
@@ -142,3 +142,4 @@ Such attacks on netwroking devices consisted of:
 Overall much of these attacks are outdated, but we have to understand that these attacks were either possible though means of weak company security, or there weren’t proper policies and procedures in place to prevent such attacks. Some of you might think as to how policies and procedures could help in a situation like this, and I will explain so in the next section of “mitigation strategies” below.
 
 ## Mitigation Strategies and Recommendations:
+
