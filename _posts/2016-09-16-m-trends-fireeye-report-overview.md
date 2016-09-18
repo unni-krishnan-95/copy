@@ -129,7 +129,7 @@ Some of us reading this might be wondering - as to why attackers would want to c
 * Persistence
 * Disruption
 
-The only problem with these types attacks is that we lack the tools that can discover such compromises, and even if we are able to analyze such devices, it's very time consuming and analysis of of these devices at a company is also very complex and difficult to scale properly to a single incident reponse.
+The only problem with these types’ attacks is that we lack the tools that can discover such compromises, and even if we are able to analyze such devices, it's very time consuming and complex to scale properly during a single incident response or forensic examination.
 
 Such attacks on netwroking devices consisted of:
 
