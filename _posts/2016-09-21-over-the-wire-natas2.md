@@ -282,3 +282,49 @@ If done correctly we should get the password `Lg96M10TdfaPyVBkJdjymbllQ5L6qdl1`.
 Congrats! It was simple enough! I suggest you go read more about [Unrestricted File Uploads](https://www.owasp.org/index.php/Unrestricted_File_Upload) from __OWASP__ as they are an amazing source to learning Web Hacking! We're done here... so moving on to level 14!
 
 ### Level 14:
+
+```php
+<?
+if(array_key_exists("username", $_REQUEST)) {
+    $link = mysql_connect('localhost', 'natas14', '<censored>');
+    mysql_select_db('natas14', $link);
+    
+    $query = "SELECT * from users where username=\"".$_REQUEST["username"]."\" and password=\"".$_REQUEST["password"]."\"";
+    if(array_key_exists("debug", $_GET)) {
+        echo "Executing query: $query<br>";
+    }
+
+    if(mysql_num_rows(mysql_query($query, $link)) > 0) {
+            echo "Successful login! The password for natas15 is <censored><br>";
+    } else {
+            echo "Access denied!<br>";
+    }
+    mysql_close($link);
+} else {
+?> 
+```
+
+Looking at the PHP script we see that __MySql__ is being used, so we can assume that this login page is vulnerable to a [SQL Injection](https://www.owasp.org/index.php/SQL_Injection) Attack.
+
+Let's look at the query that is being used in the PHP Script.
+
+```php
+SELECT * from users where username=\"".$_REQUEST["username"]."\" and password=\"".$_REQUEST["password"]."\"
+```
+
+This can be translated as:
+
+```sql
+SELECT * from users where username = "username" and password = "password"
+```
+
+Looking at the code, it desn't seem to be preventing us from entering any "wrong" input. So for the username and password field, we can enter __"="__. The result is the following SQL Query:
+
+```sql
+SELECT * from users where username = ""="" and password = ""=""
+```
+The SQL query is thus valid, and will return all rows from the table Users, since WHERE ""="" is always true.
+
+If done succsefully, you should get the password `AwWj0w5cvxrZiONgZ9J5stNVkmxdk39J` and we can move on to level 15!
+
+### Level 15:
