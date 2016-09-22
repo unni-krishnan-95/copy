@@ -111,6 +111,10 @@ print base64_encode(xor_encrypt(json_encode($data)));
 ?>
 ```
 
-Once we run the new PHP script we should get an output of our cookie `ClVLIh4ASCsCBE8lAxMacFMOXTlTWxooFhRXJh4FGnBTVF4sFxFeLFMK`.
+Once we run the new PHP script we should get an output of our cookie: `ClVLIh4ASCsCBE8lAxMacFMOXTlTWxooFhRXJh4FGnBTVF4sFxFeLFMK`.
 
-Once we get the output, let's go ahead and submit it to the page. If done correctly, we should get the password `EDXp0pS26wLKHZy1rDBPUZk0RKfLGIR3`. Now we can move on to natas12!
+With this new cookie, let's go back to Burp and submit it to the page. If done correctly, we should get the password `EDXp0pS26wLKHZy1rDBPUZk0RKfLGIR3`. Now we can move on to natas12!
+
+### Level 12:
+
+
