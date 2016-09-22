@@ -328,7 +328,7 @@ The SQL query is thus valid, and will return all rows from the table Users, sinc
 If done successfully, you should get the password `AwWj0w5cvxrZiONgZ9J5stNVkmxdk39J` and we can move on to level 15!
 
 ### Level 15:
-My god... this level took me way longer then I am willing to admit! At the end I figured out that is a [Blind SQL Injection](https://www.owasp.org/index.php/Blind_SQL_Injection).
+My god... this level took me way longer then I am willing to admit! At the end, I figured out that this is a [Blind SQL Injection](https://www.owasp.org/index.php/Blind_SQL_Injection).
 
 Before we dig deeper let's look at the Source Code.
 
@@ -377,7 +377,7 @@ Now, I for one always laugh when I see quotes in inputs on web applications that
 
 Looking into the code we can also see that the comment states that a table called "__users__" was created, and contains two columns - "__username__" and "__password__"... at least we now know we can try to get the password. 
 
-So, we need to get the password for Natas16, and to do that we will have to brute force the password. In general, this will be similar to the brute forcing we did in Bandit, but a little more complex. I will be creating the script to brute force the password using [Python](https://www.python.org/), so I suggest brushing up on it before continuing, or use another language like Ruby, JavaScript, C, etc.
+So, we need to get the password for natas16, and to do that we will have to brute force the password. In general, this will be similar to the brute forcing we did in Bandit, but a little more complex. I will be creating the script to brute force the password using [Python](https://www.python.org/), so I suggest brushing up on it before continuing, or use another language like Ruby, JavaScript, C, etc.
 
 First, let's try and create a SQL Query that will allow us to see what letters are in the __password__ field for natas16. We will try to inject __natas16" and password LIKE BINARY "a%__, and it will bode us this query.
 
@@ -387,7 +387,7 @@ SELECT * from users where username = "natas16" and password LIKE BINARY "a%"
 
 What this query does is basically pull the username __natas16__ and check to see if a certain character is used in their associated password field. We use the [LIKE](http://www.w3schools.com/sql/sql_like.asp) statement to search for specified letters or patterns, and the MySQL Operator [BINARY](http://dev.mysql.com/doc/refman/5.5/en/cast-functions.html#operator_binary) to compare case sensitive letters.
 
-If we run this query, if the character we choose is in the password, the page will return __The user exists.__, if it isn’t in the password then we will get __The user doesn’t exist__. 
+When we run this query, if the character we chose are in the password, the page will return __The user exists__, if the character isn’t in the password, then we will get __The user doesn’t exist__. 
 
 So let's go ahead and write a python script to check for password characters, and then try to brute force the password.
 
