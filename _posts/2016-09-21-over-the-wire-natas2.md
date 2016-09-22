@@ -11,7 +11,8 @@ comments: true
 
 ### Level 11:
 
-So the cookies are protected with a XOR Encryption... interesting! Let's go ahead and grab the cookie first. Fire up burp suite, capture the packet and you should get: `Set Cookie: "data=ClVLIh4ASCsCBE8lAxMacFMZV2hdVVotEhhUJQNVAmhSEV4sFxFeaAw%3D"`
+So the cookies are protected with a XOR Encryption... interesting! Let's go ahead and grab the cookie that the site is using. Fire up Burp, capture the packet and you should get the following: 
+`Set Cookie: "data=ClVLIh4ASCsCBE8lAxMacFMZV2hdVVotEhhUJQNVAmhSEV4sFxFeaAw%3D"`
 
 Now let's go ahead and see what the source code holds for us.
 
@@ -64,8 +65,10 @@ saveData($data);
 ```
 
 If you know what a [XOR Cipher](https://en.wikipedia.org/wiki/XOR_cipher) is then you would remeber that _A_ __XOR__ _B_ = _C_.
+
 In this case, it would be: _Original_Data_ __XOR__ _KEY_ = _Encrypted_Data_.
-Thus to get the __Key__ we do the following: _Original_Data_ __XOR__ _Encrypted_Data_ = _KEY_ since we already are provided with the __Original_Data__ and __Encrypted_Data__.
+
+Thus to get the __Key__ we do the following: _Original_Data_ __XOR__ _Encrypted_Data_ = _KEY_, since we already are provided with the __Original_Data__ and __Encrypted_Data__.
 
 Sounds easy enough, right? Good! Let's fire up PHP and write the following script to reverse engineer the key.
 
@@ -87,7 +90,7 @@ print xor_encrypt(json_encode($data));
 ?>
 ```
 
-And we will get the __Key__ Output of `qw8Jqw8Jqw8Jqw8Jqw8Jqw8Jqw8Jqw8Jqw8Jqw8Jq`! Okay, great. So let's go back and edit our code, and replace the `$key` with our new key.
+And we will get the __Key__ Output of `qw8Jqw8Jqw8Jqw8Jqw8Jqw8Jqw8Jqw8Jqw8Jqw8Jq`. Okay, great. So let's go back and edit our code, and replace the `$key` with our newly found key, and also edit the __showpassword__ to __yes__.
 
 ```php
 <?
@@ -107,4 +110,6 @@ print base64_encode(xor_encrypt(json_encode($data)));
 ?>
 ```
 
-Once we run the new PHP script we should get an output of our cookie `ClVLIh4ASCsCBE8lAxMacFMOXTlTWxooFhRXJh4FGnBTVF4sFxFeLFMK`. Once we get the output, let's go ahead and submit it to the page. If done correctly, we should get the password `EDXp0pS26wLKHZy1rDBPUZk0RKfLGIR3`. And we can move on to natas12!
+Once we run the new PHP script we should get an output of our cookie `ClVLIh4ASCsCBE8lAxMacFMOXTlTWxooFhRXJh4FGnBTVF4sFxFeLFMK`.
+
+Once we get the output, let's go ahead and submit it to the page. If done correctly, we should get the password `EDXp0pS26wLKHZy1rDBPUZk0RKfLGIR3`. Now we can move on to natas12!
