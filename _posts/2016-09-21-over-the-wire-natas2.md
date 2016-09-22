@@ -12,6 +12,7 @@ comments: true
 ### Level 11:
 
 So the cookies are protected with a XOR Encryption... interesting! Let's go ahead and grab the cookie that the site is using. Fire up Burp, capture the packet and you should get the following: 
+
 `Set Cookie: "data=ClVLIh4ASCsCBE8lAxMacFMZV2hdVVotEhhUJQNVAmhSEV4sFxFeaAw%3D"`
 
 Now let's go ahead and see what the source code holds for us.
