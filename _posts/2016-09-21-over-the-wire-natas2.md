@@ -173,7 +173,7 @@ echo "<pre>$output</pre>";
 
 Once done, save it as __shell.php__. Go back to the website, click __Browse__ and select our shell. BUT! Before you click __Upload__, fire up Burp and set up the Burp Proxy to intercept packets. Once done, click __Upload__.
 
-Looking at the Burps Intercept we can see towards the bottom of the page the following lines:
+Looking at the Burp Intercept, towards the bottom of the page, we can see the following lines:
 
 ```js
 Content-Disposition: form-data; name="filename"
