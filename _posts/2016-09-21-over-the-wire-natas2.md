@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "OverTheWire: 'Natas' Solutions 11-20"
+title: "OverTheWire: 'Natas' Solutions 11-15"
 header:
   teaser: oth.png
   overlay_image: ZenBGG.png
