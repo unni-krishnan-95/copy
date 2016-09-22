@@ -175,7 +175,7 @@ Once done, save it as __shell.php__. Go back to the website, click __Browse__ an
 
 Looking at the Burps Intercept we can see towards the bottom of the page the following lines:
 
-```xml
+```html
 Content-Disposition: form-data; name="filename"
 
 zvot8u94ri.jpg
@@ -259,7 +259,7 @@ We will be doing a repeat of 12, so click __Browse__ and look for __shell.php__,
 
 In Burp's Intercept we should see something along the following lines:
 
-```xml
+```html
 Content-Disposition: form-data; name="filename"
 
 3hwxwqemk3.jpg
