@@ -65,7 +65,7 @@ saveData($data);
 ?>
 ```
 
-If you know what a [XOR Cipher](https://en.wikipedia.org/wiki/XOR_cipher) is then you would remeber that _A_ __XOR__ _B_ = _C_.
+If you know what a [XOR Cipher](https://en.wikipedia.org/wiki/XOR_cipher) is then you would remember that _A_ __XOR__ _B_ = _C_.
 
 In this case, it would be: _Original_Data_ __XOR__ _KEY_ = _Encrypted_Data_.
 
@@ -116,5 +116,4 @@ Once we run the new PHP script we should get an output of our cookie: `ClVLIh4AS
 With this new cookie, let's go back to Burp and submit it to the page. If done correctly, we should get the password `EDXp0pS26wLKHZy1rDBPUZk0RKfLGIR3`. Now we can move on to natas12!
 
 ### Level 12:
-
 
