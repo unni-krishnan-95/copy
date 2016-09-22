@@ -318,13 +318,13 @@ This can be translated as:
 SELECT * from users where username = "username" and password = "password"
 ```
 
-Looking at the code, it desn't seem to be preventing us from entering any "wrong" input. So for the username and password field, we can enter __"="__. The result is the following SQL Query:
+Looking at the code, it doesn’t seem to be preventing us from entering any "wrong" input. So for the username and password field, we can enter __"="__. The result is the following SQL Query:
 
 ```sql
 SELECT * from users where username = ""="" and password = ""=""
 ```
 The SQL query is thus valid, and will return all rows from the table Users, since WHERE ""="" is always true.
 
-If done succsefully, you should get the password `AwWj0w5cvxrZiONgZ9J5stNVkmxdk39J` and we can move on to level 15!
+If done successfully, you should get the password `AwWj0w5cvxrZiONgZ9J5stNVkmxdk39J` and we can move on to level 15!
 
 ### Level 15:
