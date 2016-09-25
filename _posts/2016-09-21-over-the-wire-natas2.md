@@ -205,7 +205,7 @@ echo "<pre>$output<pre>";
 -----------------------------15512856191759264131314404296--
 ```
 
-We can see that our filename is being changed to __.jpg__ and being renamed. So let's edit that back to __shell.php__, and forward the packet. You should see something along the lines of "__The file upload/etgklnh5pq.php has been uploaded__" come up.
+We can see that our filename is being changed to __.jpg__ and being renamed. So let's edit that back to __shell.php__, and forward the packet. You should see something along the lines of "__The file upload/yh33kxvyt8.php has been uploaded__" come up.
 
 <a href="/images/natas12-3.PNG"><img src="/images/natas12-3.PNG"></a>
 
