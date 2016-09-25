@@ -16,11 +16,11 @@ If you haven't already read my post from Solution 1-10, then I highly suggest yo
 So, without further adieu, let us begin!
 
 ### Level 11:
-<a href="/images/natas11.png"><img src="/images/natas11.png"></a>
+<a href="/images/natas11.PNG"><img src="/images/natas11.PNG"></a>
 
 So is seems like the cookies are protected with a XOR Encryption... interesting! Let's go ahead and grab the XOR Encrypted cookie that the site is using. Fire up Burp, intercept the packet, and you should get the following: 
 
-<a href="/images/natas11-2.png"><img src="/images/natas11-2.png"></a>
+<a href="/images/natas11-2.PNG"><img src="/images/natas11-2.PNG"></a>
 
 `Set Cookie: "data=ClVLIh4ASCsCBE8lAxMacFMZV2hdVVotEhhUJQNVAmhSEV4sFxFeaAw%3D"`
 
@@ -125,7 +125,7 @@ Once we run the new PHP script we should get an output of our cookie: `ClVLIh4AS
 With this new cookie, let's go back to Burp and submit it to the page. If done correctly, we should get the password `EDXp0pS26wLKHZy1rDBPUZk0RKfLGIR3`. Now we can move on to level 12!
 
 ### Level 12:
-<a href="/images/natas12.png"><img src="/images/natas12.png"></a>
+<a href="/images/natas12.PNG"><img src="/images/natas12.PNG"></a>
 
 It seems like for this level we are supposed to upload a JPEG File. Let's see what the source code does before we decide on how to exploit this.
 
@@ -206,14 +206,14 @@ echo "<pre>$output<pre>";
 
 We can see that our filename is being changed to __.jpg__ and being renamed. So let's edit that back to __shell.php__, and forward the packet. You should see something along the lines of "__The file upload/etgklnh5pq.php has been uploaded__" come up.
 
-<a href="/images/natas12-3.png"><img src="/images/natas12-3.png"></a>
+<a href="/images/natas12-3.PNG"><img src="/images/natas12-3.PNG"></a>
 
 Go ahead and click the __upload/yh33kxvyt8.php__ link, and we should get the password `jmLTY0qiPZBbaKc9341cqPQZBJv7MQbY`.
 
 Good job! Not as hard as 11... let's move on to level 13!
 
 ### Level 13:
-<a href="/images/natas13.png"><img src="/images/natas13.png"></a>
+<a href="/images/natas13.PNG"><img src="/images/natas13.PNG"></a>
 
 This level seems to be the same as 12. The only catch is that the upload accepts image files only. Let's see source code.
 
@@ -296,7 +296,7 @@ echo "<pre>$output</pre>";
 
 Let's change the name __3hwxwqemk3.jpg__ to __shell.php__, and forward the packet. You should now see something along the lines of "__The file upload/w0yzhafetj.php has been uploaded__". 
 
-<a href="/images/natas13-2.png"><img src="/images/natas13-2.png"></a>
+<a href="/images/natas13-2.PNG"><img src="/images/natas13-2.PNG"></a>
 
 Let's go ahead and click the __upload/4mi1msvukh.php__ link. 
 
@@ -305,7 +305,7 @@ If done correctly we should get the password `Lg96M10TdfaPyVBkJdjymbllQ5L6qdl1`.
 Congrats! It was simple enough! I suggest you go read more about [Unrestricted File Uploads](https://www.owasp.org/index.php/Unrestricted_File_Upload) from __OWASP__ as they are an amazing source to learning Web Hacking! We're done here... so moving on to level 14!
 
 ### Level 14:
-<a href="/images/natas14.png"><img src="/images/natas14.png"></a>
+<a href="/images/natas14.PNG"><img src="/images/natas14.PNG"></a>
 
 Okay, for this level is seems we have to enter a username and password. Let's read the source code and see if we can't find any clues to what this app does.
 
@@ -354,7 +354,7 @@ The SQL query is thus valid, and will return all rows from the table Users, sinc
 If done successfully, you should get the password `AwWj0w5cvxrZiONgZ9J5stNVkmxdk39J` and we can move on to level 15!
 
 ### Level 15:
-<a href="/images/natas15.png"><img src="/images/natas15.png"></a>
+<a href="/images/natas15.PNG"><img src="/images/natas15.PNG"></a>
 
 My god... this level took me way longer then I am willing to admit! Having only to work with a username I knew we would probably be doing a SQL Injection. At the end, I figured out that this is a [Blind SQL Injection](https://www.owasp.org/index.php/Blind_SQL_Injection).
 
@@ -519,7 +519,7 @@ Completed!
 Oh yah! We got the password for natas16! We are one step closer to becoming 1337 hackerz! On to level 16!
 
 ### Level 16:
-<a href="/images/natas16.png"><img src="/images/natas16.png"></a>
+<a href="/images/natas16.PNG"><img src="/images/natas16.PNG"></a>
 
 This level is actually similar to level 9 and 10 of natas. Though this time, there is more filtering being done, so we might have a tough time to inject code. Let's check the source code and see what we have.
 
