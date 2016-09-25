@@ -19,10 +19,11 @@ So, without further adieu, let us begin!
 <a href="/images/natas11.PNG"><img src="/images/natas11.PNG"></a>
 
 So is seems like the cookies are protected with a XOR Encryption... interesting! Let's go ahead and grab the XOR Encrypted cookie that the site is using. Fire up Burp, intercept the packet, and you should get the following: 
-
+<p align="center">
 <a href="/images/natas11-2.PNG"><img src="/images/natas11-2.PNG"></a>
+</p>
 
-`Set Cookie: "data=ClVLIh4ASCsCBE8lAxMacFMZV2hdVVotEhhUJQNVAmhSEV4sFxFeaAw%3D"`
+So our cookie should be - `Cookie: "data=ClVLIh4ASCsCBE8lAxMacFMZV2hdVVotEhhUJQNVAmhSEV4sFxFeaAw%3D"`
 
 Now let's go ahead and see what the source code holds for us.
 
