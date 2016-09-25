@@ -655,4 +655,4 @@ Completed!
 
 And there we have it folks! We are done with level 16, and can move on to level 17!
 
-That's all for now! Join me next time for a continution on Natas! Also expect futureRaspberry Pi Projects, Web Camera Hacking PoC, and more!
+That's all for now! Join me next time for a continution on Natas! Also expect future Raspberry Pi Projects, Web Camera Hacking PoC, and more!
