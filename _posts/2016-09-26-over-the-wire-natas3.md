@@ -204,9 +204,9 @@ Let's try and inject the following query:
 
 __natas18" AND IF(password LIKE BINARY "A%", sleep(5), null) #__
 
-You should see that it takes the server about __5 seconds__ to respond back. This is due to the fact that we are using the MySQL [SLEEP() Command](http://dev.mysql.com/doc/refman/5.7/en/miscellaneous-functions.html#function_sleep). This also means that the letter "__A__" exists in the password field for natas18 - so our query is __true__. But, if the server responded right away, then we would know that the letter does not exist, thus the query is __false__.
+You should see that it takes the server about __5 seconds__ to respond back. This is due to the fact that we are using the MySQL [Sleep() Command](http://dev.mysql.com/doc/refman/5.7/en/miscellaneous-functions.html#function_sleep). This also means that the letter "__A__" exists in the password field for natas18 - so our query is __true__. But, if the server responded right away, then we would know that the letter does not exist, thus the query is __false__.
 
-The way we are testing for __true__ and __false__ is by using the [IF() Command](http://dev.mysql.com/doc/refman/5.7/en/control-flow-functions.html#function_if). We are basically telling SQL that __IF__ the __password__ for natas18 __includes__ the character __A__, __THEN__ you must __SLEEP for 5 Seconds__, __ELSE IF FALSE__ do __NULL__ or nothing.
+The way we are testing for __true__ and __false__ is by using the [If() Command](http://dev.mysql.com/doc/refman/5.7/en/control-flow-functions.html#function_if). We are basically telling SQL that __IF__ the __password__ for natas18 __includes__ the character __A__, __THEN__ you must __SLEEP for 5 Seconds__, __ELSE IF FALSE__ do __NULL__ or nothing.
 
 So let's go ahead and edit our previous __brute.py__ script to work with this level. 
 
