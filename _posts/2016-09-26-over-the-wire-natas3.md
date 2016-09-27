@@ -153,7 +153,7 @@ Completed!
 
 And there we have it folks! We are done with level 16, and can move on to level 17!
 
-### Level 17
+### Level 17:
 
 Seems similar to 16... hmmm. Let's check out the source code and see what we have to work with.
 
