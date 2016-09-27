@@ -196,6 +196,16 @@ Well, look at that! It's the same a.... oh, wait a second... they commented out 
 
 Okay, that's fine! At least we still know that there is a __username__ and __password__ field in the database, and that the query is susceptible to SQL Injection.
 
+This is something called a __Total Blind SQL Inject__, where we do not have any generic errors or __true__ and __false__ statements that will provide us with some sort of acknowledgment that the query we are injecting is __true__ or __false__.
+
+We will be doing something called a [Time-Based Blind SQL Inject](http://www.sqlinjection.net/time-based/), where we will be judging our __true__ and __false__ statements based on the server delay - caused by our query.
+
+Let's try and inject the following: __natas18" AND IF(password LIKE BINARY "A%", sleep(5), null) #__. You should see that it takes the server about __5 seconds__ to respond back. This is due to the fact that we are using the MySQL [SLEEP() Command](http://dev.mysql.com/doc/refman/5.7/en/miscellaneous-functions.html#function_sleep), and, this also means that the letter __A__ exists in the password field for natas18 - meaning that it is __true__. Thus, if the server responded right away, we would know that the letter does not exist, thus it is __false__.
+
+The way we are testing for __true__ and __false__ is by using the [IF() Command](http://dev.mysql.com/doc/refman/5.7/en/control-flow-functions.html#function_if). We are basically telling SQL that __IF__ the __password__ for natas18 __is LIKE the BINARY__ of __A__, __THEN__ you must __SLEEP for 5 Seconds__, __ELSE IF FALSE__ do __NULL__ or nothing.
+
+So let's go head and edit our previous __brute.py__ script to work with this level. Notice that I am using __%23__ for the __#__ sign, since we need it in an URL, and the URL is encoded. You can read more about [encoding here](http://www.w3schools.com/tags/ref_urlencode.asp)!
+
 ```python
 #!/usr/bin/python
 
@@ -228,6 +238,8 @@ for i in range(32):
 
 print 'Completed!'
 ```
+
+Great! Once we got that script finished up, let's go ahead and run it!
 
 ```console
 root@kali:~# ./brute.py
@@ -291,3 +303,6 @@ Password: xvKIqDjy4OPv7wCRgDlmj0pFsCsDjhdP
 Completed!
 ```
 
+Perfect! We got the password for natas18 and we can move on! This level was pretty hard, but just study SQL Injection and you will know what to look for next time!
+
+### Level 18:
