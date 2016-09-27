@@ -200,7 +200,7 @@ This is something called a __Total Blind SQL Inject__, where we do not have any 
 
 We will be doing something called a [Time-Based Blind SQL Inject](http://www.sqlinjection.net/time-based/), where we will be judging our __true__ and __false__ statements based on the server delay - caused by our query.
 
-Let's try and inject the following: __natas18" AND IF(password LIKE BINARY "A%", sleep(5), null) #__. You should see that it takes the server about __5 seconds__ to respond back. This is due to the fact that we are using the MySQL [SLEEP() Command](http://dev.mysql.com/doc/refman/5.7/en/miscellaneous-functions.html#function_sleep), and, this also means that the letter __A__ exists in the password field for natas18 - meaning that it is __true__. Thus, if the server responded right away, we would know that the letter does not exist, thus it is __false__.
+Let's try and inject the following: __natas18" AND IF(password LIKE BINARY "A%", sleep(5), null) #__. You should see that it takes the server about __5 seconds__ to respond back. This is due to the fact that we are using the MySQL [SLEEP() Command](http://dev.mysql.com/doc/refman/5.7/en/miscellaneous-functions.html#function_sleep), and, this also means that the letter __A__ exists in the password field for natas18 - so it's __true__. Thus, if the server responded right away, we would know that the letter does not exist, thus it is __false__.
 
 The way we are testing for __true__ and __false__ is by using the [IF() Command](http://dev.mysql.com/doc/refman/5.7/en/control-flow-functions.html#function_if). We are basically telling SQL that __IF__ the __password__ for natas18 __is LIKE the BINARY__ of __A__, __THEN__ you must __SLEEP for 5 Seconds__, __ELSE IF FALSE__ do __NULL__ or nothing.
 
