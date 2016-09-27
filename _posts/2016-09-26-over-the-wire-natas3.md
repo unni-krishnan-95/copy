@@ -196,7 +196,7 @@ Well, look at that! It's the same a.... oh, wait a second... they commented out 
 
 Okay, that's fine! At least we still know that there is a __username__ and __password__ field in the database, and that the query is susceptible to SQL Injection.
 
-This is something called a __Total Blind SQL Inject__, where we do not have any generic errors or __true__ and __false__ statements that will provide us with some sort of acknowledgment that the query we are injecting is __true__ or __false__.
+This is something called a __Total Blind SQL Inject__, where we do not have any generic errors or statements that will provide us with some sort of acknowledgment that the query we are injecting is __true__ or __false__.
 
 We will be doing something called a [Time-Based Blind SQL Inject](http://www.sqlinjection.net/time-based/), where we will be judging our __true__ and __false__ statements based on the server delay - caused by our query.
 
