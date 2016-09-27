@@ -200,9 +200,9 @@ This is something called a __Total Blind SQL Inject__, where we do not have any 
 
 We will be doing something called a [Time-Based Blind SQL Inject](http://www.sqlinjection.net/time-based/), where we will be judging our __true__ and __false__ statements based on the server delay - caused by our query.
 
-Let's try and inject the following: 
+Let's try and inject the following query: 
 
-__natas18" AND IF(password LIKE BINARY "A%", sleep(5), null) #__. 
+__natas18" AND IF(password LIKE BINARY "A%", sleep(5), null) #__
 
 You should see that it takes the server about __5 seconds__ to respond back. This is due to the fact that we are using the MySQL [SLEEP() Command](http://dev.mysql.com/doc/refman/5.7/en/miscellaneous-functions.html#function_sleep). This also means that the letter "__A__" exists in the password field for natas18 - so our query is __true__. But, if the server responded right away, then we would know that the letter does not exist, thus the query is __false__.
 
