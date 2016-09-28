@@ -32,13 +32,13 @@ permalink: /categories.html
 </ul>
 
 
-<h3>VulnHub<h3>
+<h2>VulnHub<h2>
 <ul>
 <li>Mr. Robot</li>
 </ul>
 
 
-<h3>General<h3>
+<h2>General<h2>
 <ul>
 <li><a href="{{ https://jhalon.github.io/m-trends-fireeye-report-overview/ }}">{{ M-Trends 2016: Cyber Threat Report Overview }}</a></li>
 </ul>
