@@ -319,20 +319,13 @@ Okay, the first thing we notice is that we have a Username and Password field. W
 
 So before we do anything, let's go ahead and check the source code. 
 
+__Note:__ I removed the __isValidAdminLogin__ from the PHP Script since it was causing errors on my page, and it's useless for us anyways.
+
 ```php
 <?
 
 $maxid = 640; // 640 should be enough for everyone
 
-function isValidAdminLogin() { /* {{{ */
-    if($_REQUEST["username"] == "admin") {
-    /* This method of authentication appears to be unsafe and has been disabled for now. */
-        //return 1;
-    }
-
-    return 0;
-}
-/* }}} */
 function isValidID($id) { /* {{{ */
     return is_numeric($id);
 }
