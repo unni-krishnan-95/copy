@@ -26,10 +26,14 @@ permalink: /categories.html
 <li><a href="{{ https://jhalon.github.io/over-the-wire-natas3/ }}">{{ Natas Solutions 16-20 }}</a></li>
 </ul>
 
-<h3>VulnHub<h3>
-<li>Mr. Robot<li>
+</ul>
 
+<ul>
+<h3>VulnHub<h3>
+<li>Mr. Robot</li>
+</ul>
+
+<ul>
 <h3>General<h3>
 <li><a href="{{ https://jhalon.github.io/m-trends-fireeye-report-overview/ }}">{{ M-Trends 2016: Cyber Threat Report Overview }}</a></li>
-
 </ul>
