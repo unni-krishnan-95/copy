@@ -7,10 +7,10 @@ header:
 permalink: /categories.html
 ---
 
+
+
+<h2>OverTheWire</h2>
 <ul>
-
-<h3>OverTheWire</h3>
-
 <li>Bandit</li>
 <ul>
 <li><a href="https://jhalon.github.io/over-the-wire-bandit1/">Bandit Solutions 1-10</a></li>
