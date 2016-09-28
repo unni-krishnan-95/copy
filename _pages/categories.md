@@ -7,7 +7,7 @@ header:
 permalink: /categories.html
 ---
 
-
+A listing of all my posts, sorted by specific Categories - makes it easier to find what you are looking for! ;)
 
 <h2>OverTheWire</h2>
 <ul>
