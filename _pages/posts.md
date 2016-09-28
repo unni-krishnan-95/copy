@@ -7,15 +7,6 @@ header:
 permalink: /posts.html
 ---
 
-<!--right-side-panel
-Contents:
-
-* Over The Wire
-  * link
-* VulnHub
-* Write-Ups
--->
-
 <ul>
 {% for post in site.posts %}
   {% assign currentdate = post.date | date: "%Y" %}
