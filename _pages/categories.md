@@ -11,6 +11,7 @@ permalink: /categories.html
 
 <h2>OverTheWire</h2>
 <ul>
+
 <li>Bandit</li>
 <ul>
 <li><a href="https://jhalon.github.io/over-the-wire-bandit1/">Bandit Solutions 1-10</a></li>
@@ -32,13 +33,13 @@ permalink: /categories.html
 </ul>
 
 
-<h2>VulnHub<h2>
+<h2>VulnHub</h2>
 <ul>
 <li>Mr. Robot</li>
 </ul>
 
 
-<h2>General<h2>
+<h2>General</h2>
 <ul>
 <li><a href="{{ https://jhalon.github.io/m-trends-fireeye-report-overview/ }}">{{ M-Trends 2016: Cyber Threat Report Overview }}</a></li>
 </ul>
