@@ -154,6 +154,7 @@ Completed!
 And there we have it folks! We are done with level 16, and can move on to level 17!
 
 ### Level 17:
+<a href="/images/natas17.PNG"><img src="/images/natas17.PNG"></a>
 
 Seems similar to 16... hmmm. Let's check out the source code and see what we have to work with.
 
@@ -312,3 +313,137 @@ Completed!
 Perfect! We got the password for natas18 and we can move on! This level was pretty hard, but just study SQL Injection and you will know what to look for next time!
 
 ### Level 18:
+<a href="/images/natas18.PNG"><img src="/images/natas18.PNG"></a>
+
+Okay, the first thing we notice is that we have a Username and Password field. We also are told that we have to log into an "admin" account to recieve the credentials for natas19.
+
+So before we do anything, let's go ahead and check the source code. 
+
+```php
+<?
+
+$maxid = 640; // 640 should be enough for everyone
+
+function isValidAdminLogin() { /* {{{ */
+    if($_REQUEST["username"] == "admin") {
+    /* This method of authentication appears to be unsafe and has been disabled for now. */
+        //return 1;
+    }
+
+    return 0;
+}
+/* }}} */
+function isValidID($id) { /* {{{ */
+    return is_numeric($id);
+}
+/* }}} */
+function createID($user) { /* {{{ */
+    global $maxid;
+    return rand(1, $maxid);
+}
+/* }}} */
+function debug($msg) { /* {{{ */
+    if(array_key_exists("debug", $_GET)) {
+        print "DEBUG: $msg<br>";
+    }
+}
+/* }}} */
+function my_session_start() { /* {{{ */
+    if(array_key_exists("PHPSESSID", $_COOKIE) and isValidID($_COOKIE["PHPSESSID"])) {
+    if(!session_start()) {
+        debug("Session start failed");
+        return false;
+    } else {
+        debug("Session start ok");
+        if(!array_key_exists("admin", $_SESSION)) {
+        debug("Session was old: admin flag set");
+        $_SESSION["admin"] = 0; // backwards compatible, secure
+        }
+        return true;
+    }
+    }
+
+    return false;
+}
+/* }}} */
+function print_credentials() { /* {{{ */
+    if($_SESSION and array_key_exists("admin", $_SESSION) and $_SESSION["admin"] == 1) {
+    print "You are an admin. The credentials for the next level are:<br>";
+    print "<pre>Username: natas19\n";
+    print "Password: <censored></pre>";
+    } else {
+    print "You are logged in as a regular user. Login as an admin to retrieve credentials for natas19.";
+    }
+}
+/* }}} */
+
+$showform = true;
+if(my_session_start()) {
+    print_credentials();
+    $showform = false;
+} else {
+    if(array_key_exists("username", $_REQUEST) && array_key_exists("password", $_REQUEST)) {
+    session_id(createID($_REQUEST["username"]));
+    session_start();
+    $_SESSION["admin"] = isValidAdminLogin();
+    debug("New session started");
+    $showform = false;
+    print_credentials();
+    }
+} 
+
+if($showform) {
+?>  
+```
+
+After examining the code we can see that we are working with [$\_COOKKIE](http://www.w3schools.com/php/php_cookies.asp), so this is something that we can control. But, another varialbe that stands out is __$maxid__ which is set to 640. During the __createID__ function it takes in the username, and assigns it to a random integer between 1-640. It then initializes it as a [session\_id](http://php.net/manual/en/function.session-id.php).
+
+We can assime that __PHPSESSID__ is the assigned value from __session\_id__... so, this means that there is 1 session ID that is allocated to tbe the "admin" session ID. Let's fire up [Burp](https://portswigger.net/burp/), initiate our proxy and __Login__ without any credentials to see if we can capture a __PHPSESSID__ in our Interceptor.
+
+<a href="/images/natas18-2.PNG"><img src="/images/natas18-2.PNG"></a>
+
+We can see that Cookies are being sent with a __PHPSESSID__. We can no conclude that a [Session Hijacking Attack](https://www.exploit-db.com/papers/15990/) is possible. So let's go ahead and user Burp to carry out this attack.
+
+Let's right click on our Intercepted packet, and __Send to Intruder__.
+
+<a href="/images/natas18-3.PNG"><img src="/images/natas18-3.PNG"></a>
+
+Once we are in intrduer, let's go ahead and highlight the area around the PHPSESSID, as shown below. IF the integer is not 0, go ahead and change it to 0. Also - make sure our __Attack Type__ is set to __Sniper__.
+
+<a href="/images/natas18-4.PNG"><img src="/images/natas18-4.PNG"></a>
+
+Once we have compelted that, let's go over to the __Payloads__ tab. Set __Payload type:__ to __Numbers__ from the drop down. Once down let's change the __To:__ and __From:__ to be 1 to 640, with a __step__ of 1, and a __Minimal Integer Digits__ of 1, and __Maximum Integer Digits__ of 3 (so we can get to 640).
+
+<a href="/images/natas18-5.PNG"><img src="/images/natas18-5.PNG"></a>
+
+Next, let's jump over to our __Options__ tab, scroll down till you find __Extract Grep__ and press the __Add__ button to add a new grep atteibute. Highlight the selected area like below, and press __OK__. This will allow us to see what output we get per Session Id.
+
+<a href="/images/natas18-6.PNG"><img src="/images/natas18-6.PNG"></a>
+
+After we have set up our payload and intruder, go ahead and press __Attack__. THe following screen should come up, forwarding each packet with a diffrent __Payload__ which will be the __PHPSESSID__. This might take a while, so go grab a coffee, or beer, I don't judge!
+
+<a href="/images/natas18-7.PNG"><img src="/images/natas18-7.PNG"></a>
+
+Once our scan is complete, click the __"content"__ tab to sort it. The first value that should come up should be the "__You are an admin...__". It should look like something below. This means that the __Payload__ or __PHPSESSID__ is the "admin" one.
+
+<a href="/images/natas18-8.PNG"><img src="/images/natas18-8.PNG"></a>
+
+Go ahead and doouble click the line with the correct payload to view the packet. As we can see our __PHPSESSID__ = 610. Let's go ahead and right click inside, and select __Send to Repeater__. This will allow us to make sure the packet is working.
+
+<a href="/images/natas18-9.PNG"><img src="/images/natas18-9.PNG"></a>
+
+Once done, let's go back into Burps Repeater. Make sure that the __PHPSESSID__ is set to 610, and press __GO__. You should recieve the following response.
+
+```html
+<body>
+<h1>natas18</h1>
+<div id="content">
+
+You are an admin. The credentials for the next level are:<br><pre>Username: natas19
+Password: 4IwIrekcuZlA9OsjOkoUtwU6lhokCPYs</pre><div id="viewsource"><a href="index-source.html">View sourcecode</a></div>
+
+</div>
+</body>
+```
+
+Congrats! We finished level 18 and can move on to level 19!
