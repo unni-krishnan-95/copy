@@ -41,5 +41,5 @@ permalink: /categories.html
 
 <h2>General</h2>
 <ul>
-<li><a href="{{ https://jhalon.github.io/m-trends-fireeye-report-overview/ }}">{{ M-Trends 2016: Cyber Threat Report Overview }}</a></li>
+<li><a href="https://jhalon.github.io/m-trends-fireeye-report-overview/">M-Trends 2016: Cyber Threat Report Overview</a></li>
 </ul>
