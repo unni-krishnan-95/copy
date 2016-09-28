@@ -407,7 +407,7 @@ Password: <input name="password"><br>
 <? } ?>  
 ```
 
-After examining the code we can see that we are working with [$\_COOKIE](http://www.w3schools.com/php/php_cookies.asp), so this is something that we can control. But, another variable that stands out is __$maxid__ which is set to 640. During the __createID__ function it takes in the username, and assigns it to a random integer between 1-640. It then initializes it as a [session\_id](http://php.net/manual/en/function.session-id.php).
+After examining the code we can see that we are working with [$\_COOKIE](http://www.w3schools.com/php/php_cookies.asp), so this is something that we can control. But, another variable that stands out is __$maxid__ which is set to 640. During the __createID__ function it takes in the username, and assigns it to a random integer between 1 and 640 (or __$maxid__). It then initializes it as a [session\_id](http://php.net/manual/en/function.session-id.php).
 
 We can assume that __PHPSESSID__ is the assigned value from __session\_id__... so, this means that there is 1 session ID that is allocated to the the "admin" session ID. Let's fire up [Burp](https://portswigger.net/burp/), initiate our proxy and __Login__ without any credentials to see if we can capture a __PHPSESSID__ in our Interceptor.
 
@@ -419,11 +419,11 @@ Let's right click on our Intercepted packet, and __Send to Intruder__.
 
 <a href="/images/natas18-3.PNG"><img src="/images/natas18-3.PNG"></a>
 
-Once we are in intruder, let's go ahead and highlight the area around the PHPSESSID, as shown below. IF the integer is not 0, go ahead and change it to 0. Also - make sure our __Attack Type__ is set to __Sniper__.
+Once we are in intruder, let's go ahead and highlight the area around the PHPSESSID, as shown below. If the integer is not 0, go ahead and change it to 0. Also - make sure our __Attack Type__ is set to __Sniper__.
 
 <a href="/images/natas18-4.PNG"><img src="/images/natas18-4.PNG"></a>
 
-Once we have completed that, let's go over to the __Payloads__ tab. Set __Payload type:__ to __Numbers__ from the drop down. Once down let's change the __To:__ and __From:__ to be 1 to 640, with a __step__ of 1, and a __Minimal Integer Digits__ of 1, and __Maximum Integer Digits__ of 3 (so we can get to 640).
+Once we have completed that, let's go over to the __Payloads__ tab. Set __Payload type:__ to __Numbers__ from the drop down. Once done, let's change the __To:__ and __From:__ to be 1 to 640, with a __step__ of 1, and a __Minimal Integer Digits__ of 1, and __Maximum Integer Digits__ of 3 (so we can get to 640).
 
 <a href="/images/natas18-5.PNG"><img src="/images/natas18-5.PNG"></a>
 
