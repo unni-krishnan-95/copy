@@ -43,3 +43,6 @@ A listing of all my posts, sorted by specific Categories - makes it easier to fi
 <ul>
 <li><a href="https://jhalon.github.io/m-trends-fireeye-report-overview/">M-Trends 2016: Cyber Threat Report Overview</a></li>
 </ul>
+
+* TOC
+{:toc}
