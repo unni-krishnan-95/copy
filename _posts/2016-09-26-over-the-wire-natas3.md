@@ -315,7 +315,7 @@ Perfect! We got the password for natas18 and we can move on! This level was pret
 ### Level 18:
 <a href="/images/natas18.PNG"><img src="/images/natas18.PNG"></a>
 
-Okay, the first thing we notice is that we have a Username and Password field. We also are told that we have to log into an "admin" account to recieve the credentials for natas19.
+Okay, the first thing we notice is that we have a Username and Password field. We also are told that we have to log into an "admin" account to receive the credentials for natas19.
 
 So before we do anything, let's go ahead and check the source code. 
 
@@ -407,9 +407,9 @@ Password: <input name="password"><br>
 <? } ?>  
 ```
 
-After examining the code we can see that we are working with [$\_COOKKIE](http://www.w3schools.com/php/php_cookies.asp), so this is something that we can control. But, another varialbe that stands out is __$maxid__ which is set to 640. During the __createID__ function it takes in the username, and assigns it to a random integer between 1-640. It then initializes it as a [session\_id](http://php.net/manual/en/function.session-id.php).
+After examining the code we can see that we are working with [$\_COOKIE](http://www.w3schools.com/php/php_cookies.asp), so this is something that we can control. But, another variable that stands out is __$maxid__ which is set to 640. During the __createID__ function it takes in the username, and assigns it to a random integer between 1-640. It then initializes it as a [session\_id](http://php.net/manual/en/function.session-id.php).
 
-We can assime that __PHPSESSID__ is the assigned value from __session\_id__... so, this means that there is 1 session ID that is allocated to tbe the "admin" session ID. Let's fire up [Burp](https://portswigger.net/burp/), initiate our proxy and __Login__ without any credentials to see if we can capture a __PHPSESSID__ in our Interceptor.
+We can assume that __PHPSESSID__ is the assigned value from __session\_id__... so, this means that there is 1 session ID that is allocated to the the "admin" session ID. Let's fire up [Burp](https://portswigger.net/burp/), initiate our proxy and __Login__ without any credentials to see if we can capture a __PHPSESSID__ in our Interceptor.
 
 <a href="/images/natas18-2.PNG"><img src="/images/natas18-2.PNG"></a>
 
@@ -419,19 +419,19 @@ Let's right click on our Intercepted packet, and __Send to Intruder__.
 
 <a href="/images/natas18-3.PNG"><img src="/images/natas18-3.PNG"></a>
 
-Once we are in intrduer, let's go ahead and highlight the area around the PHPSESSID, as shown below. IF the integer is not 0, go ahead and change it to 0. Also - make sure our __Attack Type__ is set to __Sniper__.
+Once we are in intruder, let's go ahead and highlight the area around the PHPSESSID, as shown below. IF the integer is not 0, go ahead and change it to 0. Also - make sure our __Attack Type__ is set to __Sniper__.
 
 <a href="/images/natas18-4.PNG"><img src="/images/natas18-4.PNG"></a>
 
-Once we have compelted that, let's go over to the __Payloads__ tab. Set __Payload type:__ to __Numbers__ from the drop down. Once down let's change the __To:__ and __From:__ to be 1 to 640, with a __step__ of 1, and a __Minimal Integer Digits__ of 1, and __Maximum Integer Digits__ of 3 (so we can get to 640).
+Once we have completed that, let's go over to the __Payloads__ tab. Set __Payload type:__ to __Numbers__ from the drop down. Once down let's change the __To:__ and __From:__ to be 1 to 640, with a __step__ of 1, and a __Minimal Integer Digits__ of 1, and __Maximum Integer Digits__ of 3 (so we can get to 640).
 
 <a href="/images/natas18-5.PNG"><img src="/images/natas18-5.PNG"></a>
 
-Next, let's jump over to our __Options__ tab, scroll down till you find __Extract Grep__ and press the __Add__ button to add a new grep atteibute. Highlight the selected area like below, and press __OK__. This will allow us to see what output we get per Session Id.
+Next, let's jump over to our __Options__ tab, scroll down till you find __Extract Grep__ and press the __Add__ button to add a new grep attribute. Highlight the selected area like below, and press __OK__. This will allow us to see what output we get per Session Id.
 
 <a href="/images/natas18-6.PNG"><img src="/images/natas18-6.PNG"></a>
 
-After we have set up our payload and intruder, go ahead and press __Attack__. THe following screen should come up, forwarding each packet with a diffrent __Payload__ which will be the __PHPSESSID__. This might take a while, so go grab a coffee, or beer, I don't judge!
+After we have set up our payload and intruder, go ahead and press __Attack__. The following screen should come up, forwarding each packet with a different __Payload__ which will be the __PHPSESSID__. This might take a while, so go grab a coffee, or beer, I don't judge!
 
 <a href="/images/natas18-7.PNG"><img src="/images/natas18-7.PNG"></a>
 
@@ -439,11 +439,11 @@ Once our scan is complete, click the __"content"__ tab to sort it. The first val
 
 <a href="/images/natas18-8.PNG"><img src="/images/natas18-8.PNG"></a>
 
-Go ahead and doouble click the line with the correct payload to view the packet. As we can see our __PHPSESSID__ = 610. Let's go ahead and right click inside, and select __Send to Repeater__. This will allow us to make sure the packet is working.
+Go ahead and double click the line with the correct payload to view the packet. As we can see our __PHPSESSID__ = 610. Let's go ahead and right click inside, and select __Send to Repeater__. This will allow us to make sure the packet is working.
 
 <a href="/images/natas18-9.PNG"><img src="/images/natas18-9.PNG"></a>
 
-Once done, let's go back into Burps Repeater. Make sure that the __PHPSESSID__ is set to 610, and press __GO__. You should recieve the following response.
+Once done, let's go back into Burps Repeater. Make sure that the __PHPSESSID__ is set to 610, and press __GO__. You should receive the following response.
 
 ```html
 <body>
