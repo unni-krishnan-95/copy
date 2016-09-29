@@ -9,9 +9,6 @@ permalink: /categories.html
 
 A listing of all my posts, sorted by specific Categories - makes it easier to find what you are looking for!
 
-* This is my TOC
-{:toc}
-
 <h2>OverTheWire</h2>
 <ul>
 
@@ -34,16 +31,13 @@ A listing of all my posts, sorted by specific Categories - makes it easier to fi
 </ul>
 
 </ul>
-{:toc}
 
 <h2>VulnHub</h2>
 <ul>
 <li>Mr. Robot</li>
 </ul>
-{:toc}
 
 <h2>General</h2>
 <ul>
 <li><a href="https://jhalon.github.io/m-trends-fireeye-report-overview/">M-Trends 2016: Cyber Threat Report Overview</a></li>
 </ul>
-{:toc}
