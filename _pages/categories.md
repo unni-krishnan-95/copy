@@ -13,7 +13,7 @@ permalink: /categories.html
 <div class="container">
 <h1>typeWriter.js Example</h1>
 <div class="box">
- <p id="demo">Hello.</p>
+ <p id="demo">Hello World!.</p>
 </div>
 </div>
 
