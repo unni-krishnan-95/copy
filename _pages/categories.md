@@ -7,10 +7,10 @@ header:
 permalink: /categories.html
 ---
 
-* TOC
-{:toc}
-
 A listing of all my posts, sorted by specific Categories - makes it easier to find what you are looking for!
+
+* This is my TOC
+{:toc}
 
 <h2>OverTheWire</h2>
 <ul>
@@ -34,13 +34,13 @@ A listing of all my posts, sorted by specific Categories - makes it easier to fi
 </ul>
 
 </ul>
-
+{:toc}
 
 <h2>VulnHub</h2>
 <ul>
 <li>Mr. Robot</li>
 </ul>
-
+{:toc}
 
 <h2>General</h2>
 <ul>
