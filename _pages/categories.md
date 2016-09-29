@@ -7,18 +7,6 @@ header:
 permalink: /categories.html
 ---
 
-<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
-<script src="https://raw.githubusercontent.com/albburtsev/jquery.typist/master/src/jquery.typist.js"></script>
-
-<p class="typist"></p>
-
-jQuery(function($) {
-    $('.typist').typist({
-        speed: 12,
-        text: 'Hello! World!'
-    });
-});
-
 A listing of all my posts, sorted by specific Categories - makes it easier to find what you are looking for!
 
 <h2>OverTheWire</h2>
