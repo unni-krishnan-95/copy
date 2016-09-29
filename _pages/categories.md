@@ -30,7 +30,7 @@ permalink: /categories.html
     </script>
     
     
-    <div class="type-wrap">
+<div class="type-wrap">
             <div id="typed-strings">
                 <span>Typed.js is a <strong>jQuery</strong> plugin.</span>
                 <p>It <em>types</em> out sentences.</p>
@@ -38,7 +38,7 @@ permalink: /categories.html
                 <p>Try it out!</p>
             </div>
             <span id="typed" style="white-space:pre;"></span>
-        </div>
+</div>
 
 A listing of all my posts, sorted by specific Categories - makes it easier to find what you are looking for!
 
