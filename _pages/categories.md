@@ -7,7 +7,6 @@ header:
 permalink: /categories.html
 ---
 
-<head>
     $(function(){
         $("#typed").typed({
             // strings: ["Typed.js is a <strong>jQuery</strong> plugin.", "It <em>types</em> out sentences.", "And then deletes them.", "Try it out!"],
@@ -66,7 +65,6 @@ permalink: /categories.html
             100% { opacity:1; }
         }
     </style>
-</head>
 
 
 A listing of all my posts, sorted by specific Categories - makes it easier to find what you are looking for!
