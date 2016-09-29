@@ -7,39 +7,6 @@ header:
 permalink: /categories.html
 ---
 
-<script>
-    $(function(){
-        $("#typed").typed({
-            // strings: ["Typed.js is a <strong>jQuery</strong> plugin.", "It <em>types</em> out sentences.", "And then deletes them.", "Try it out!"],
-            stringsElement: $('#typed-strings'),
-            typeSpeed: 30,
-            backDelay: 500,
-            loop: false,
-            contentType: 'html', // or text
-            // defaults to false for infinite loop
-            loopCount: false,
-            callback: function(){ foo(); },
-            resetCallback: function() { newTyped(); }
-        });
-        $(".reset").click(function(){
-            $("#typed").typed('reset');
-        });
-    });
-    function newTyped(){ /* A new typed object */ }
-    function foo(){ console.log("Callback"); }
-    </script>
-    
-    
-<div class="type-wrap">
-  <div id="typed-strings">
-    <span>Typed.js is a <strong>jQuery</strong> plugin.</span>
-    <p>It <em>types</em> out sentences.</p>
-    <p>And then deletes them.</p>
-    <p>Try it out!</p>
-    </div>
-    <span id="typed" style="white-space:pre;"></span>
-</div>
-
 A listing of all my posts, sorted by specific Categories - makes it easier to find what you are looking for!
 
 <h2>OverTheWire</h2>
