@@ -7,6 +7,16 @@ header:
 permalink: /categories.html
 ---
 
+<script src="http://www.cssscript.com/demo/pure-javascript-typewriter-typing-effect-typewriter-js/typeWriter.js"></script>
+<script>typeWriter("#demo","true",20);</script>
+
+<div class="container">
+<h1>typeWriter.js Example</h1>
+<div class="box">
+ <p id="demo">Hello.</p>
+</div>
+</div>
+
 A listing of all my posts, sorted by specific Categories - makes it easier to find what you are looking for!
 
 <h2>OverTheWire</h2>
