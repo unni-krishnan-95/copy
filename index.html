@@ -7,20 +7,6 @@ header:
   overlay_image: ZenBG.png
 ---
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-<script src="typed.js"></script>
-<script>
-  $(function(){
-      $(".element").typed({
-        strings: ["First sentence.", "Second sentence."],
-        typeSpeed: 25
-      });
-  });
-</script>
-
-<div class="element">
-  <span id="element"></span></div>
-
 {% include base_path %}
 
 <h3 class="archive__subtitle">{{ site.data.ui-text[site.locale].recent_posts | default: "Recent Posts" }}</h3>
