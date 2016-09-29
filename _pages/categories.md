@@ -29,6 +29,7 @@ permalink: /categories.html
     function foo(){ console.log("Callback"); }
     </script>
     
+    
     <div class="type-wrap">
             <div id="typed-strings">
                 <span>Typed.js is a <strong>jQuery</strong> plugin.</span>
