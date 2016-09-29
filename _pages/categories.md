@@ -28,7 +28,6 @@ permalink: /categories.html
     function newTyped(){ /* A new typed object */ }
     function foo(){ console.log("Callback"); }
     </script>
-    <link href="main.css" rel="stylesheet"/>
     
     <div class="type-wrap">
             <div id="typed-strings">
