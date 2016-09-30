@@ -470,7 +470,7 @@ Intresting, it seems as if the cookie is encoded in some way. Let's go ahead and
 
 <a href="/images/natas19-3.PNG"><img src="/images/natas19-3.PNG"></a>
 
-Okay... Everything changed, except for 2 bits - __2d__ didn't change. So we can assume that this character will appear in all cookies.
+Okay... Everything changed, except for 2 bits - __2d__ - which didn't change. So we can assume that this character will appear in all cookies.
 
 After doing some research I figured out that __2d__ is `-` in [hex](http://www.rapidtables.com/convert/number/hex-to-ascii.htm). So, that means that our cookies are in hexadecimal format. Let's go ahead and highlight that cookie, right-click it, and send it to decoder.
 
