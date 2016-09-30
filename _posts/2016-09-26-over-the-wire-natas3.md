@@ -480,7 +480,7 @@ Once in Decoder, from the __Decode as:__ drop down, choose __ASCII HEX__. This t
 
 <a href="/images/natas19-5.PNG"><img src="/images/natas19-5.PNG"></a>
 
-Okay, before we continue - let's considering that the code has changed to allow the __isValidAdminLogin__ to work, let's assume that "admin" will return __true__, keep the hexadecimal PHPSESSID __2d61646d696e__ as is, and enumerate everything before __2d__. We will thus try to enumerate up to __640__ numbers, since that's what the codes __$maxid__ was set to. End when we enumerate it, we will add __-admin__ to the end, and encode it to hex. So let's write a python script for that.
+Okay, before we continue - let's consider that the code has changed to allow the __isValidAdminLogin__ to work. Let's assume that "admin" will return __true__, keep the hexadecimal PHPSESSID __2d61646d696e__ as is, and enumerate everything before __2d__. We will thus try to enumerate __640__ numbers, since that's what the codes __$maxid__ was set to. And when we enumerate it, we will add __-admin__ to the end, and encode it to hex. So let's write a python script for that.
 
 ```python
 #!/usr/bin/python
