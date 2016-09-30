@@ -462,7 +462,7 @@ Congrats! We finished level 18 and can move on to level 19!
 ### Level 19:
 <a href="/images/natas19.PNG"><img src="/images/natas19.PNG"></a>
 
-Okay, so it seems that the code is being reused from the previous level... but this time they went ahead and changed the way the __PHPSESSID__ works. So let's fire up Burp and login without any username or password see what the cookies infomration shows us.
+Okay, so it seems that the code is being reused from the previous level... but this time they went ahead and changed the way the __PHPSESSID__ works. So let's fire up Burp and login without any username or password see what the cookies information shows us.
 
 <a href="/images/natas19-2.PNG"><img src="/images/natas19-2.PNG"></a>
 
