@@ -466,7 +466,7 @@ Okay, so it seems that the code is being reused from the previous level... but t
 
 <a href="/images/natas19-2.PNG"><img src="/images/natas19-2.PNG"></a>
 
-Intresting, it seems as if the cookie is encoded in some way. Let's go ahead and capture another packet, this time using the login name __admin__.
+Intresting, it seems as if the cookie is encoded in some way. Let's go ahead and capture another packet, this time using the username: __admin__.
 
 <a href="/images/natas19-3.PNG"><img src="/images/natas19-3.PNG"></a>
 
