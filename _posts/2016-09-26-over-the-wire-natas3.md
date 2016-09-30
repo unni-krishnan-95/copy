@@ -476,7 +476,7 @@ After doing some research I figured out that __2d__ is `-` in [hex](http://www.r
 
 <a href="/images/natas19-4.PNG"><img src="/images/natas19-4.PNG"></a>
 
-Once in Decoder, from the __Decode as:__drop down, choose __ASCII HEX__. This then translates __33332d61646d696e__ to __33-admin__. 
+Once in Decoder, from the __Decode as:__ drop down, choose __ASCII HEX__. This then translates __33332d61646d696e__ to __33-admin__. 
 
 <a href="/images/natas19-5.PNG"><img src="/images/natas19-5.PNG"></a>
 
