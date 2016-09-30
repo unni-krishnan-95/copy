@@ -462,17 +462,25 @@ Congrats! We finished level 18 and can move on to level 19!
 ### Level 19:
 <a href="/images/natas19.PNG"><img src="/images/natas19.PNG"></a>
 
+Okay, so it seems that the code is being reused from the previous level... but this time they went ahead and changed the way the __PHPSESSID__ works. So let's fire up Burp and login without any username or password see what the cookies infomration shows us.
 
 <a href="/images/natas19-2.PNG"><img src="/images/natas19-2.PNG"></a>
+
+Intresting, it seems as if the cookie is encoded in some way. Let's go ahead and capture another packet, this time using the login name __admin__.
+
 <a href="/images/natas19-3.PNG"><img src="/images/natas19-3.PNG"></a>
+
+Okay... Everything changed, except for 2 bits - __2d__ didn't change. So we can assume that this character will appear in all cookies.
+
+After doing some research I figured out that __2d__ is `-` in [hex](http://www.rapidtables.com/convert/number/hex-to-ascii.htm). So, that means that our cookies are in hexadecimal format. Let's go ahead and highlight that cookie, right-click it, and send it to decoder.
+
 <a href="/images/natas19-4.PNG"><img src="/images/natas19-4.PNG"></a>
+
+Once in Decoder, from the __Decode as:__drop down, choose __ASCII HEX__. This then translates __33332d61646d696e__ to __33-admin__. 
+
 <a href="/images/natas19-5.PNG"><img src="/images/natas19-5.PNG"></a>
 
-__2d__ is `-` in [hex](http://www.rapidtables.com/convert/number/hex-to-ascii.htm)
-
-__33332d61646d696e__ trasnaltes to __33-admin__. 
-
-Considering that the code has changed to allow the __isValidAdminLogin__ to work, let's assume that "admin" will return __true__ and keep the hexidecimaled PHPSESSIDs __2d61646d696e__ as is, and enumerate everything before __2d__. We will try up to __640__ numbers, since that's what the last codes __$maxid__ was set to.
+Okay, before we continue - let's considering that the code has changed to allow the __isValidAdminLogin__ to work, let's assume that "admin" will return __true__, keep the hexadecimal PHPSESSID __2d61646d696e__ as is, and enumerate everything before __2d__. We will thus try to enumerate up to __640__ numbers, since that's what the codes __$maxid__ was set to. End when we enumerate it, we will add __-admin__ to the end, and encode it to hex. So let's write a python script for that.
 
 ```python
 #!/usr/bin/python
@@ -494,6 +502,8 @@ for x in range(1,641):
 		print r.content
 		break
 ```
+
+Once done, let's go ahead and run the script!
 
 ```console
 root@kali:~# ./brute.py
@@ -524,3 +534,7 @@ Password: eofm3Wsshxc5bwtVnEuGIlr7ivb9KABF</pre></div>
 </body>
 </html>
 ```
+
+Perfect! We got the password to level 20! This was a pretty medium level, considering the fact that you had to figure out the encoding.
+
+### Level 20:
