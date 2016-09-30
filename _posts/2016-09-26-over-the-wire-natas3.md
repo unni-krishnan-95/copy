@@ -540,7 +540,7 @@ Perfect! We got the password to level 20! This was a pretty medium level, consid
 ### Level 20:
 
 ```php
-?
+<?
 
 function debug($msg) { /* {{{ */
     if(array_key_exists("debug", $_GET)) {
