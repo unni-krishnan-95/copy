@@ -538,6 +538,9 @@ Password: eofm3Wsshxc5bwtVnEuGIlr7ivb9KABF</pre></div>
 Perfect! We got the password to level 20! This was a pretty medium level, considering the fact that you had to figure out the encoding.
 
 ### Level 20:
+<a href="/images/natas20.PNG"><img src="/images/natas20.PNG"></a>
+
+Well this is an interesting challenge... it seems that we are already logged in and we need to log in as an admin. Since we have a __Change Name__ button, I’m guessing that we are capable of injecting code - or we cam check PHPSESSSID's... let's go ahead and first see what the source code contains.
 
 ```php
 <?
@@ -646,3 +649,50 @@ if(array_key_exists("name", $_SESSION)) {
 
 ?> 
 ```
+
+Complicated huh? In all honesty, it really isn't. I suggest that you read about the [session_set_save_handler](http://php.net/manual/en/function.session-set-save-handler.php), as well as the [functions](http://www.hackingwithphp.com/10/3/7/files-vs-databases) that it carries out.
+
+Let's look at the __mywrite__ function. The first few lines are useless to us as it just makes sure the __$sid__ is valid. What's interesting is how the data is written into the file name. For each session it writes in data to the file as __$key $value\n__.
+
+The __myread__ function is actually the reverse of __mywrite__. As it takes in the data, splits the data into lines using the [explode](http://php.net/manual/en/function.explode.php) function (hence __foreach(explode("\n", $data) as $line__), then splits the lines by spaces, taking the first part and making it the __$key__ and the second part as __$value__.
+
+So far we understand that the file writes data in simple logic - variables are separated by a new line, while key and variable by a space. So, what we will do is take the __name__ check and inject code to it - assuming that the __print_credentials__ function is the same and __admin__ is == to 1, or true.
+
+So what we want to do is inject the name __admin__ and make it true. Thus, let's fire up Burp and intercept a packet when __Change name__ is pressed.
+
+<a href="/images/natas20-2.PNG"><img src="/images/natas20-2.PNG"></a>
+
+Change the __name__ in the header to __%0Aadmin%201__, and press __GO__.
+
+This will write the following to the file:
+
+```
+name admin
+admin 1
+```
+
+<a href="/images/natas20-3.PNG"><img src="/images/natas20-3.PNG"></a>
+
+You should see something along these lines in the Response section of Burps Repeater.
+
+```html
+<body>
+<h1>natas20</h1>
+<div id="content">
+
+You are an admin. The credentials for the next level are:<br><pre>Username: natas21
+Password: IFekPyrQXftziDEsUr3x21sYuahypdgJ</pre>
+
+<form action="index.php" method="POST">
+
+Your name: <input name="name" value="admin
+admin 1"><br>
+
+<input type="submit" value="Change name" />
+</form>
+<div id="viewsource"><a href="index-source.html">View sourcecode</a></div>
+</div>
+</body>
+```
+
+And there we have it! Another successful run on Natas! Stay tuned for more!
