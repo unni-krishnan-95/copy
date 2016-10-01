@@ -658,7 +658,7 @@ The __myread__ function is actually the reverse of __mywrite__. As it takes in t
 
 So far we understand that the file writes data in simple logic - variables are separated by a new line, while key and variable by a space. So, what we will do is take the __name__ check and inject code to it - assuming that the __print_credentials__ function is the same and __admin__ is == to 1, or true.
 
-So what we want to do is inject the name __admin__ and make it true. Thus, let's fire up Burp and intercept a packet when __Change name__ is pressed.
+So what we want to do is inject the name __admin__ and make it true. Thus, let's fire up Burp and intercept a packet when __Change name__ is pressed. One done, let's send it to repeater.
 
 <a href="/images/natas20-2.PNG"><img src="/images/natas20-2.PNG"></a>
 
