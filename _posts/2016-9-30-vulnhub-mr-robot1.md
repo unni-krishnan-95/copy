@@ -20,7 +20,7 @@ If you never heard of [VulnHub](https://www.vulnhub.com/about/), then let me bri
 
 Before we begin, if you would like to try out the __Mr.Robot VM__, or follow along and learn as I go, then you can download it [here](https://www.vulnhub.com/entry/mr-robot-1,151/)!
 
-Almighty then, I know you're as eager as me to get your hands dirty with this CTF - so, let's begin!
+Alrighty then, I know you're as eager as me to get your hands dirty with this CTF - so, let's begin!
 
 ## Description:
 Based on the show, Mr. Robot.
