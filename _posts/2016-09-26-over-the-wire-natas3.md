@@ -52,7 +52,7 @@ Because all words were returned, I knew the command I injected - to __grep a__ i
 
 So what we have to do from here is similar to 16. We need to take our python code, edit it, and try to brute force the password. I used the word __Fridays__ at the end of my command - __$(grep a /etc/natas_webpass/natas17)Fridays__ - so in case the command failed, __Fridays__ would return in the output and my script could pick up on that as __false__.
 
-So let's go head and edit our __brute.py__ script like so:
+So let's go ahead and edit our __brute.py__ script like so:
 
 ```python
 #!/usr/bin/python
