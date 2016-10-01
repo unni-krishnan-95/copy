@@ -10,6 +10,6 @@ comments: true
 ---
 
 > When a bug finally makes itself known, it can be exhilarating, like you just unlocked something. A grand opportunity waiting to be taken advantage of.
-- *Mr. Robot, 2016*
+\- *Mr. Robot, 2016*
 
 
