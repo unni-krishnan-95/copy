@@ -603,7 +603,7 @@ Mode              Size     Type  Last modified              Name
 40755/rwxr-xr-x   4096     dir   2015-09-16 05:49:06 -0500  var
 100600/rw-------  5821984  fil   2015-09-16 05:49:06 -0500  vmlinuz
 
-eterpreter > cd /home
+meterpreter > cd /home
 meterpreter > ls
 Listing: /home
 ==============
@@ -671,7 +671,7 @@ cat key-2-of-3.txt
 822c73956184f694993bede3eb39f959
 ```
 
-Okay, go do a victory lap around the house! You deserve it! Though... we're still not done. Still got 1 more flag to find!
+Okay, go do a victory lap around the house! You deserve it! Though... we're still not done. Still got 1 more key to find!
 
 Since we exploited the host, and got in - our next step is to carry out [Post-Explotation](http://www.pentest-standard.org/index.php/Post_Exploitation) and further Enumeration on the internal side.
 
@@ -708,7 +708,7 @@ Crap... looks like I have to do some [privilege escalation](https://en.wikipedia
 
 The host has nmap installed, which could possibly allow me to run commands as root, due to the way [SUID](http://www.linuxnix.com/suid-set-suid-linuxunix/) flags might be set.
 
-Let's check the version first!
+Let's check the nmap version first!
 
 ```console
 robot@linux:/$ /usr/local/bin/nmap --version
