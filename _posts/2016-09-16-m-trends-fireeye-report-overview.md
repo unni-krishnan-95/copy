@@ -143,13 +143,13 @@ Overall much of these attacks are outdated, but we have to understand that these
 
 ## Mitigation Strategies and Recommendations:
 
-In today's world nothing is 100% secure, and your company will at least once encounter a breach. Even though a breach in inevitable, you can takes steps to protect yourself, your data, and make it much harder for a malicious actor to exploit your company.
+In today's world nothing is 100% secure, and your company will encounter a breach at least once. Even though a breach in inevitable, you can takes steps to protect yourself, your data, and make it much harder for a malicious actor to exploit your company.
 
 Mandiant in their M-Trends report stated that many of the companies they worked with were unable to identify ongoing security threats within their company. For example, during a Red Team test, less than 10% of the companies responded appropriately to a [Mimikatz](https://github.com/gentilkiwi/mimikatz) AV detection. For those that don't know what mimikatz is, it's a tool that can extract plaintext passwords, hashes, Kerberos tickets from memory, and also preform pass-the-hash. Malicious actors can also dump the [SAM File](https://en.wikipedia.org/wiki/Security_Account_Manager) that can provide them with user passwords.
 
 Many malicious actors can gain these credentials from hashes, or memory dumps due to weak password policies, and improper hashing + salting. So to protect yourself and increase security, make sure you do the following:
 
-* __Implement Strong Password Polices__: Make sure you are using a minimum of 8 characters, with the use of upper case, lower case, numbers and symbols. Also enable password history to prevent the reuse of old passwords. At the same time prevent the use of dictionary words and words relating to any PII. If you like, you can also have your password policy use a wordlist to make sure that the passwords do no correlate to any leaked passwords from recent breaches.
+* __Implement Strong Password Polices__: Make sure you are using a minimum of 8 characters, with the use of upper case, lower case, numbers and symbols. Also enable password history to prevent the reuse of old passwords. At the same time prevent the use of dictionary words and words relating to any PII. If you like, you can also have your password policy use a wordlist to make sure that the passwords do not correlate to any leaked passwords from recent breaches.
 * __Encryption, Hashing, and Salting__: Make sure any data files that include propriety information, company secrets, PII, or critical data is encrypted with a strong encryption passphrase. This includes: file encryption, database filed encryption, and hard disk encryption, as well as SSL/TLS encryption for information being transported across the net. PGP/GPG can also be used with signatures in emails to provide integrity and confidentiality. Hashing passwords along with salting them in AD will prevent malicious actors from cracking cached passwords from SAM files, Kerberos ticket, etc. I suggest you use SHA Hashing instead of MD5 due to its susceptibility of being cracked.
 
 As for your infrastructure devices, security infrastructure, and tools such as SIEM’s, vaults, HIPS, Firewall, ACLs: 
@@ -163,7 +163,7 @@ As for your infrastructure devices, security infrastructure, and tools such as S
 
 With those suggestions there are also a few things to consider about your current security:
 
-* __Are we properly monitoring our perimeter? WAF Implementation, alerting?__: Even though there is monitoring and lots of background noise from port scanners, brute force attacks, exploitation tools, and any other "loud" noise making tool, are we properly monitoring against manual attacks - such as sql injection, directory traversal, etc? Are we properly detecting such successful perimeter attacks?
-* __How is our Egress Control and Monitoring?__: Are we using all our device capabilities and tools to block malicious or suspicious egress traffic via SSH, RDP, DNS, etc? Are your teams able to detect data theft in progress? Even if DLP, email protection, and network monitoring prevent a connection or traffic, can your team be alerted of such occurring incidents?
+* __Are we properly monitoring our perimeter? WAF Implementation, alerting?__: Even though there is monitoring and lots of background noise from port scanners, brute force attacks, exploitation tools, and any other "loud" tools. We must ask, are we properly monitoring against manual attacks - such as sql injection, directory traversal, etc? Are we properly detecting any successful perimeter attacks?
+* __How is our Egress Control and Monitoring?__: Are we using all our device capabilities and tools to block malicious or suspicious egress traffic via SSH, RDP, DNS, etc? Are your teams able to detect data theft in progress? Even if DLP, email protection, and network monitoring prevent a connection or certain traffic, can your team be alerted of such occurring incidents?
 
 That's all for this post! Hope you enjoyed reading it as much as I enjoyed writing it. Please provide any feedback, comments, or suggestions in the comments below! Thanks!
