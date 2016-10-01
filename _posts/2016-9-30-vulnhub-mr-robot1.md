@@ -124,7 +124,7 @@ A few interesting things come up in the scan.
 4. OSVDB-3092: /admin/: This might be interesting... if we have a login. Good to keep that in the back of our mind.
   * __/admin/index.html__: Admin login page/section found - also relates to the above scan.
 5. __/readme.html__: This WordPress file reveals the installed version.
-  * Basically tells us that this is a WordPress Site! So we know we can look for WordPress Vulnerabilities 
+  * Basically tells us that this is a WordPress Site! So we know we can look for WordPress Vulnerabilities.
   * __/wp-links-opml.php__: This WordPress script reveals the installed version.
   * __/wp-login/__: Admin login page/section found.
   * __/wp-admin/wp-login.php__: Wordpress login found.
