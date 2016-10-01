@@ -29,7 +29,7 @@ This VM has __three keys hidden__ in different locations. Your goal is to find a
 
 The VM isn't too difficult. There isn't any advanced exploitation or reverse engineering. The level is considered beginner-intermediate.
 
-## Enumeration:
+## The Hack:
 
 So the first step in any Pentest - whether it's Network or Web - (besides OSINT!) - is __Intelligence Gathering__. That includes [Footprinting](http://www.infosecwriters.com/text_resources/pdf/Footprinting.pdf) and [Fingerprinting](https://en.wikipedia.org/wiki/TCP/IP_stack_fingerprinting) hosts, servers, etc. If you want to learn more about the proper procedures and steps then I suggest you read the [PTES Technical Guidelines](http://www.pentest-standard.org/index.php/Main_Page).
 
@@ -149,7 +149,7 @@ key-1-of-3.txt
 
 Nice! We got 2 locations we can navigate to __fsocity.dic__ and __key-1-of-3.txt__. Of course... I want the key! So let's navigate to __http://192.168.1.9/key-1-of-3.txt__.
 
-### Key 1:
+### Flag 1:
 ```
 073403c8a58a1f80d943455fb30724b9
 ```
