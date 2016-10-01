@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "VulnHub "Mr.Robot 1" - CTF"
+title: "VulnHub 'Mr.Robot 1' - CTF"
 header:
   teaser: oth.png
   overlay_image: mr-robot-banner.jpg
