@@ -245,7 +245,7 @@ With this, I will go ahead and run [wpscan](https://github.com/wpscanteam/wpscan
 So far - we know the WordPress Version is 4.6.3, and we know the plugin versions that are used on the page. This can be used to rule out any false positives by the wpscan.
 
 ```console
-root@cryptic:~# wpscan -u 192.168.1.9 -e vp
+root@kali:~# wpscan -u 192.168.1.9 -e vp
 _______________________________________________________________
         __          _______   _____                  
         \ \        / /  __ \ / ____|                 
@@ -537,7 +537,7 @@ fail_with(Failure::NotFound, 'The target does not appear to be using WordPress')
 So I went ahead and opened the exploit to edit it...
 
 ```console
-root@cryptic:~# gedit /usr/share/metasploit-framework/modules/exploits/unix/webapp/wp_admin_shell_upload.rb
+root@kali:~# gedit /usr/share/metasploit-framework/modules/exploits/unix/webapp/wp_admin_shell_upload.rb
 ```
 
 Once open, I commented out the __fail_with__ error (usign the # character) to prevent the shell from failing upon WordPress detection.
