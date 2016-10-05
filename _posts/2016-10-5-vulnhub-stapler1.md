@@ -3,7 +3,7 @@ layout: single
 title: "VulnHub 'Stapler: 1' - CTF"
 header:
   teaser: oth.png
-  overlay_image: mr-robot-banner.jpg
+  overlay_image: stapler-banner.jpg
   caption: "[__VulnHub__](https://www.vulnhub.com/entry/stapler-1,150/)"
 related: true
 comments: true
