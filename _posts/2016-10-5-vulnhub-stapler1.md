@@ -9,7 +9,7 @@ related: true
 comments: true
 ---
 
-Welcome back to my 2nd - VulnHub CTF! This time we will be tackling [Stapler: 1]((https://www.vulnhub.com/entry/stapler-1,150/)!
+Welcome back to my 2nd - VulnHub CTF! This time we will be tackling [Stapler: 1](https://www.vulnhub.com/entry/stapler-1,150/)!
 
 So if you're ready... let's strap in - and pwn this box!
 
