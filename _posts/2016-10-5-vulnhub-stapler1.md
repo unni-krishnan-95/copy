@@ -943,7 +943,8 @@ b6b545dc11b7a270f4bad23432190c75162c4a2b
 
 Awesome! We pwnd the stapler and got root! - Sorry Milton!
 
-<a href="http://i.imgur.com/YTEVMeh.gif"></a>
+<a href="http://i.imgur.com/YTEVMeh.gif"><img src="http://i.imgur.com/YTEVMeh.gif"></a>
+
 
 In my honest opinion, this VM was a tough one to beat! It took me a while and a whole lot of research before figuring out how to attack the target.
 
