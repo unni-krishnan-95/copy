@@ -890,7 +890,7 @@ User peter may run the following commands on red:
     (ALL : ALL) ALL
 ```
 
-From here, I learned that peter had sudo permission from the sudoer file. This I went and changed my shell from Z to bash, and went to capturing the flag!
+From here, I learned that Peter has root privilege in the sudoers file. Thus, I went and changed my shell from Z to bash, and went to capturing the flag!
 
 ```console
 red% sudo usermod -s /bin/bash peter
