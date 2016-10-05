@@ -35,6 +35,7 @@ A listing of all my posts, sorted by specific Categories - makes it easier to fi
 <h2>VulnHub</h2>
 <ul>
 <li><a href="https://jhalon.github.io/vulnhub-mr-robot1/">Mr.Robot - CTF</a></li>
+<li><a href="https://jhalon.github.io/vulnhub-stapler1/">Stapler 1 - CTF</a></li>
 </ul>
 
 <h2>General</h2>
