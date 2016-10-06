@@ -66,7 +66,7 @@ As mentioned previously- if you want to learn more about the proper procedures a
 
 So let's start the process by running `netdiscover` on our network to find the IP of our Target VM.
 
-```bash
+```console
  Currently scanning: 192.168.23.0/16   |   Screen View: Unique Hosts           
                                                                                
  4 Captured ARP Req/Rep packets, from 4 hosts.   Total size: 240               
@@ -153,7 +153,7 @@ We can see that there are a ton of valuable (and possibly vulnerable) ports open
 
 The first thing that caught my eye was the fact that FTP was allowing anonymous logins. So I made this my first target. Let's go ahead and login to FTP with the username: **anonymous** and the password: **anonymous**.
 
-```bash
+```console
 root@kali:~# ftp 192.168.1.13
 Connected to 192.168.1.13.
 220-
@@ -718,7 +718,7 @@ Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
 
 From here, I went ahead and tried to find the passwords in WordPress.
 
-```sql
+```console
 mysql> show databases;
 +--------------------+
 | Database           |
