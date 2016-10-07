@@ -15,7 +15,7 @@ Today I will be covering Solutions 11 through 25, so if you haven't completed Le
 
 And remember folks, if you get stuck on a level... don't just look up the solution! Google the question you have, and read any of the "__Helpful Reading Materials__" posted in each level. The point of these wargames is to learn, and not just copy!
 
-So, without further adieu... let's begin!
+So, without further do... let's begin!
 
 ### Level 11 -> 12:
 The password for the next level is stored in the file __data.txt__, where all lowercase (a-z) and uppercase (A-Z) letters have been rotated by 13 positions
