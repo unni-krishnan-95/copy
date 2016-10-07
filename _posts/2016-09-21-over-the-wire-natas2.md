@@ -13,7 +13,7 @@ Welcome back! This post is the continuation of the __Natas__ wargame from [OverT
 
 If you haven't already read my post from Solution 1-10, then I highly suggest you do so before continuing on to the higher end levels, as the lower levels will provide you the basics of web hacking. You can read that post [here](https://jhalon.github.io/over-the-wire-natas1/)!
 
-So, without further adieu, let us begin!
+So, without further ado, let us begin!
 
 ### Level 11:
 <a href="/images/natas11.PNG"><img src="/images/natas11.PNG"></a>
