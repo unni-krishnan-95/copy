@@ -752,6 +752,6 @@ If this was a real engagement, we would be able to do a lot more damage, now tha
 
 This box was really well put together and honestly challenged me - at the same time I learned a lot about the hacking process and some new exploitations, along with many valuable lessons.
 
-Stay tuned for more VulnHub Write-Ups, OTH, and more! Also - I will be competing in this year’s [NCL - National Cyber League](http://www.nationalcyberleague.org/), so expect some future write-ups on that!
+Stay tuned for more VulnHub Write-Ups, OTW, and more! Also - I will be competing in this year’s [NCL - National Cyber League](http://www.nationalcyberleague.org/), so expect some future write-ups on that!
 
 Cheers!
