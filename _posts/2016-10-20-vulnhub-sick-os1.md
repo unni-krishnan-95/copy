@@ -27,9 +27,13 @@ Alright, I'm eager to take down SickOS - so let's get to it!
 ## Description
 
 Name........: SickOs1.1
+
 Date Release: 11 Dec 2015
+
 Author......: D4rk
+
 Series......: SickOs
+
 Objective...: Get /root/a0216ea4d51874464078c618298b1367.txt
 
 This CTF gives a clear analogy how hacking strategies can be performed on a network to compromise it in a safe environment. The vm is very similar to labs faced in OSCP. The objective is to compromise the network/machine and gain Administrative/root privileges on them.
