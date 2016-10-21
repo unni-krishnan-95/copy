@@ -80,7 +80,7 @@ So let's start the process by running `netdiscover` on our network to find the I
 
 The IP of **192.168.1.13** will be our target. The next step will be to run an nmap scan on our target, so that we can enumerate any open ports, services, versions, and OS's.
 
-```bash
+```console
 root@kali:~# nmap -sS -A -O -n -p1-60000 192.168.1.13
 
 Starting Nmap 7.25BETA2 ( https://nmap.org ) at 2016-10-04 18:33 CDT
