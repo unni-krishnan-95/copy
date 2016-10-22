@@ -134,7 +134,9 @@ Awesome, we were right! There is a website sitting behind that proxy - and, it's
 
 Since we always want to constantly be gathering new information on a machine/server we are compromising, let's go ahead and set up our proxy to talk with the Squid Proxy, and then try to connect to the website.
 
-Since I'm using Firefox we will go to __Options__ > __Advanced__ > __Network Settings__ > __Connection Settings__. In the new tab we will select __Manual proxy configuration__ then set the HTTP Proxy to __192.168.1.9__, and the port to __3128__.
+Since I'm using Firefox we will go to __Options__ > __Advanced__ > __Network Settings__ > __Connection Settings__. 
+
+In the new window we will select __Manual proxy configuration__ then set the HTTP Proxy to __192.168.1.9__, and the port to __3128__.
 
 <a href="/images/squidos1.png"><img src="/images/squidos1.png"></a>
 
