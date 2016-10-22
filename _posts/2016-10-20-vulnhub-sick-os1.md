@@ -169,7 +169,7 @@ listening on [any] 1234 ...
 
 Now before we exploit Shellshock, we need to understand what the vulnerability is, and how it works. So let me explain before we begin exploiting it.
 
-Shellshock ([CVE-2014-6271}(http://www.cvedetails.com/cve/cve-2014-6271) and [CVE-2014-6278](http://www.cvedetails.com/cve/cve-2014-6278)) was a serious vulnerability found in the Bash command shell, which is commonly used in Linux distributions. The vulnerability allowed attackers to run arbitrary commands on an affected system. Most commonly affected webs servers where the ones using the [CGI Environment](http://www.cgi101.com/book/ch3/text.html).
+Shellshock - [CVE-2014-6271}(http://www.cvedetails.com/cve/cve-2014-6271) and [CVE-2014-6278](http://www.cvedetails.com/cve/cve-2014-6278) - was a serious vulnerability found in the Bash command shell, which is commonly used in Linux distributions. The vulnerability allowed attackers to run arbitrary commands on an affected system. Most commonly affected webs servers where the ones using the [CGI Environment](http://www.cgi101.com/book/ch3/text.html).
 
 In general - Bash allows the exporting of shell function to other bash instances on the server. It is done by creating an environmental variable with the function definition as such...
 
