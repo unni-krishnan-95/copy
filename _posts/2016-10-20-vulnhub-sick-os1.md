@@ -169,7 +169,7 @@ listening on [any] 1234 ...
 
 Now before we exploit Shellshock, we need to understand what the vulnerability is, and how it works. So let me explain before we begin exploiting it.
 
-Shellshock - [CVE-2014-6271](http://www.cvedetails.com/cve/cve-2014-6271) and [CVE-2014-6278](http://www.cvedetails.com/cve/cve-2014-6278) - was a serious vulnerability found in the Bash command shell, which is commonly used in Linux distributions. The vulnerability allowed attackers to run arbitrary commands on an affected system. Most commonly affected webs servers where the ones using the [CGI Environment](http://www.cgi101.com/book/ch3/text.html).
+Shellshock - [CVE-2014-6271](http://www.cvedetails.com/cve/cve-2014-6271) and [CVE-2014-6278](http://www.cvedetails.com/cve/cve-2014-6278) - was a serious vulnerability found in the Bash command shell, which is commonly used in Linux distributions. The vulnerability allowed attackers to run arbitrary commands on an affected system. The most commonly affected webs server where the ones using the [CGI Environment](http://www.cgi101.com/book/ch3/text.html).
 
 In general - Bash allows the exporting of shell function to other bash instances on the server. It is done by creating an environmental variable with the function definition as such...
 
@@ -183,7 +183,7 @@ The __ENV\_VAR\_FN__ is the function that is executed in the bash instance. Unfo
 env ENV_VAR_FN=’() { <your function> }; <attacker code here>’
 ```
 
-Many services were affected by this bug. Any web server that consumed user input and add them to the bash environment were vulnerable. A possible exploit in the CGI Environment would look like this.
+Many services were affected by this bug. Any web server that consumed user input and added the input to the bash environment, was vulnerable. A possible exploit in the CGI Environment would look like this.
 
 ```
 GET /<server path> HTTP/1.1
@@ -191,7 +191,7 @@ GET /<server path> HTTP/1.1
 User-agent: () { :;}; echo something>/var/www/html/new_file
 ```
 
-This would then create a file called __new\_file__ that the attacker could use to their advantage. So, since we now know that __cgi-bin/status__ is exploitable, and we know "how" to exploit it, let go ahead and do so!
+This command would create a file called __new\_file__, which an attacker could use to their advantage. So, since we now know that __cgi-bin/status__ is exploitable, and we know "how" to exploit it, let go ahead and do so!
 
 We will be leveraging the [cURL](https://curl.haxx.se/docs/manpage.html) command for this vulnerability. This way we can send edited User-Agent header information that will be accepted by the CGI's Bash environment.
 
@@ -289,7 +289,7 @@ sickos:x:1000:1000:sickos,,,:/home/sickos:/bin/bash
 mysql:x:106:114:MySQL Server,,,:/nonexistent:/bin/false
 ```
 
-The name __SickOS__ was the first one that caught my eye. I decided to try and grab the "low hanging fruit" and try to log into the machine though SSH with the username: __SickOS__ and the MySQL root password: __jhon@123__.
+The name __SickOS__ was the first one that caught my eye. I decided to try and grab the "low hanging fruit" and try to log into the machine though SSH with the username: __SickOS__ and the MySQL root password: __john@123__.
 
 ```console
 root@cryptic:~# ssh sickos@192.168.1.9
@@ -318,7 +318,7 @@ Run 'do-release-upgrade' to upgrade to it.
 Last login: Tue Sep 22 08:32:44 2015
 ```
 
-Wow, so much for password re-use! Well at least we got a now established shell on the machine! Let's find out what permissions SickOS has.
+Wow, so much for password re-use! Well at least we established an SSH connection to the machine! Let's go ahead and find out what kind of permissions SickOS has.
 
 ```console
 sickos@SickOs:~$ sudo -l
@@ -364,7 +364,7 @@ And there we have it! We got root access and pwnd SickOS!
 
 This VM was much easier than the previous ones I did, and it provided me some good insight on how the OSCP labs are structured.
 
-It was great learning about the Shellshock vulnerability and how to exploit it, it really got you thinking on how secure some CGI Environments are since we see a lot of vulnerabilities spawn from there.
+It was great learning about the Shellshock vulnerability and how to exploit it. At the same time, it really got you thinking on how secure some CGI Environments are since we see a lot of vulnerabilities spawn from there.
 
 Overall, it was a great system and another educational night for me! 
 
