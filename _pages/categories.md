@@ -9,6 +9,20 @@ permalink: /categories.html
 
 A listing of all my posts, sorted by specific Categories - makes it easier to find what you are looking for!
 
+<h2>General</h2>
+<ul>
+<li><a href="https://jhalon.github.io/m-trends-fireeye-report-overview/">M-Trends 2016: Cyber Threat Report Overview</a></li>
+</ul>
+
+<h2>National Cyber League (NCL)</h2>
+<ul>
+<li><a href="https://jhalon.github.io/ncl-intro-osint/">Preseason - Intro & OSINT</a></li>
+<li><a href="">Preseason - Cryptography</a></li>
+<li><a href="">Preseason - Log Analysis</a></li>
+<li><a href="">Preseason - Network Traffic Analysis (Part 1)</a></li>
+<li><a href="">Preseason - Network Traffic Analysis (Part 2</a></li>
+</ul>
+
 <h2>OverTheWire</h2>
 <ul>
 
@@ -37,18 +51,4 @@ A listing of all my posts, sorted by specific Categories - makes it easier to fi
 <li><a href="https://jhalon.github.io/vulnhub-mr-robot1/">Mr.Robot - CTF</a></li>
 <li><a href="https://jhalon.github.io/vulnhub-stapler1/">Stapler 1 - CTF</a></li>
 <li><a href="https://jhalon.github.io/vulnhub-sick-os1/">SickOS 1.1 - CTF</a></li>
-</ul>
-
-<h2>National Cyber League (NCL)</h2>
-<ul>
-<li><a href="https://jhalon.github.io/ncl-intro-osint/">Preseason - Intro & OSINT</a></li>
-<li><a href="">Preseason - Cryptography</a></li>
-<li><a href="">Preseason - Log Analysis</a></li>
-<li><a href="">Preseason - Network Traffic Analysis (Part 1)</a></li>
-<li><a href="">Preseason - Network Traffic Analysis (Part 2</a></li>
-</ul>
-
-<h2>General</h2>
-<ul>
-<li><a href="https://jhalon.github.io/m-trends-fireeye-report-overview/">M-Trends 2016: Cyber Threat Report Overview</a></li>
 </ul>
