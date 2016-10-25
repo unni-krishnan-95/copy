@@ -13,6 +13,8 @@ Today we will be covering the __Cryptography__ portion of the NCL Preseason game
 
 Alright, let's begin!
 
+## Crypto 1:
+
 <a href="/images/ncl3.png"><img src="/images/ncl3.png"></a>
 
 <div class="rBorder" markdown="1">
@@ -50,6 +52,8 @@ This password was in binary form. You can go [BinaryHexConverter](http://www.bin
 
 __Answer: mattersail62__
 </div>
+
+## Crypto 2:
 
 <a href="/images/ncl4.png"><img src="/images/ncl4.png"></a>
 
@@ -93,6 +97,7 @@ We see that __mattersail__ is being used again - as it was previously. So we can
 __Answer: mattersail__
 </div>
 
+## Crypto 3:
 
 <a href="/images/ncl5.png"><img src="/images/ncl5.png"></a>
 
@@ -103,6 +108,8 @@ This one was pretty simple if you know what you are looking at. This password wa
 
 __Answer: PROUDIRON__
 </div>
+
+## Crypto 4:
 
 <a href="/images/ncl6.png"><img src="/images/ncl6.png"></a>
 
