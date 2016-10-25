@@ -81,7 +81,7 @@ These were all pretty easy to solve, but involved some Google Fu Skills! I'm not
 <div class="rBorder" markdown="1">
 <span style="color:red">1. __What is the CVE of the original POODLE attack?__</span>
 
-You can follow [this]((https://cve.mitre.org/cgi-bin/cvename.cgi?name=cve-2014-3566) link to find the answer.
+You can follow [this](https://cve.mitre.org/cgi-bin/cvename.cgi?name=cve-2014-3566) link to find the answer.
 
 __Answer: CVE-2014-3566__
 </div>
