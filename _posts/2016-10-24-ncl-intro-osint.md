@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "National Cyber League (NCL) - Preseason Into & OSINT"
+title: "National Cyber League (NCL) - Preseason Intro & OSINT"
 header:
   teaser: oth.png
   overlay_image: nebula.jpg
