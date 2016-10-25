@@ -128,7 +128,7 @@ def encrypt(str):
 
 Since we already have the code, and know how the password is encrypted - all we have to do is reverse engineer it.
 
-The code is basically taking a string, and for each character in the string it rotates the latter +3, then +7 and adds it to ret. Once done, it returns the string. So for us to get the password from the encryption, all we need to do is the opposite. So rotate the characters +7 then +3. The code will look like the following:
+The code is basically taking a string, and for each character in the string it rotates the letter +3, then +7 and adds it to ret. Once done, it returns the string ret. So for us to get the password from the encryption, all we need to do is the opposite. So rotate the characters +7 then +3. The code will look like the following:
 
 ```python
 def encrypt(str):
