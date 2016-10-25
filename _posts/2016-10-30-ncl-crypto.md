@@ -15,7 +15,7 @@ Alright, let's begin!
 
 ## Crypto 1:
 
-<a href="/images/ncl3.png"><img src="/images/ncl3.png"></a>
+<a href="/images/ncl4.png"><img src="/images/ncl4.png"></a>
 
 <div class="rBorder" markdown="1">
 <span style="color:red">1. __0x616761696e74687265653538__</span>
@@ -55,7 +55,7 @@ __Answer: mattersail62__
 
 ## Crypto 2:
 
-<a href="/images/ncl4.png"><img src="/images/ncl4.png"></a>
+<a href="/images/ncl5.png"><img src="/images/ncl5.png"></a>
 
 <div class="rBorder" markdown="1">
 <span style="color:red">1. __znggrefnvy__</span>
@@ -99,7 +99,7 @@ __Answer: mattersail__
 
 ## Crypto 3:
 
-<a href="/images/ncl5.png"><img src="/images/ncl5.png"></a>
+<a href="/images/ncl6.png"><img src="/images/ncl6.png"></a>
 
 <div class="rBorder" markdown="1">
 <span style="color:red">1. __.--. .-. --- ..- -.. .. .-. --- -.__</span>
@@ -111,7 +111,7 @@ __Answer: PROUDIRON__
 
 ## Crypto 4:
 
-<a href="/images/ncl6.png"><img src="/images/ncl6.png"></a>
+<a href="/images/ncl7.png"><img src="/images/ncl7.png"></a>
 
 For this question we are provided with the following encryption algorithm - written in Python..
 
