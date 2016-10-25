@@ -60,7 +60,7 @@ __Answer: mattersail62__
 <div class="rBorder" markdown="1">
 <span style="color:red">1. __znggrefnvy__</span>
 
-Our hint here was "__shift cipher__" so we can assume that this is a [Caesar Cipher](http://practicalcryptography.com/ciphers/caesar-cipher/). Since we do not know the total amount the letters were shifted by, we will have to brute force the cipher.
+Our hint here was "__shift cipher__", so we can assume that this is a [Caesar Cipher](http://practicalcryptography.com/ciphers/caesar-cipher/). Since we do not know the total amount the letters were shifted by, we will have to brute force the cipher.
 
 To do this I went to [Decode.fr](http://www.dcode.fr/caesar-cipher) and used their Brute Force Attack to decrypt all possible passwords.
 
