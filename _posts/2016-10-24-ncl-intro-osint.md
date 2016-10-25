@@ -11,7 +11,7 @@ comments: true
 
 > If you give a hacker a new toy, the first thing he'll do is take it apart to figure out how it works. - _Jamie Zawinski_
 
-The [National Cyber League](http://www.nationalcyberleague.org/) Fall 2016 Season has officially started! And I and way beyond excited to be competing this year, and testing my knowledge against thousands of college students across the nation.
+The [National Cyber League](http://www.nationalcyberleague.org/) Fall 2016 Season has officially started! And I am way beyond excited to be competing this year, and to be testing my knowledge against thousands of college students across the nation.
 
 For those that do not know what the National Cyber League is (or NCL for short), let me give you a brief breakdown before I jump into more details and the Preseason Write-ups.
 
