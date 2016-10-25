@@ -117,7 +117,7 @@ __Answer: 15__
 <div class="rBorder" markdown="1">
 <span style="color:red">5. __How large (in bytes) was the SQL Slammer worm?__</span>
 
-You can follow [this]https://en.wikipedia.org/wiki/SQL_Slammer() link to find the answer.
+You can follow [this](https://en.wikipedia.org/wiki/SQL_Slammer) link to find the answer.
 
 __Answer: 376__
 </div>
