@@ -13,7 +13,7 @@ The [National Cyber League](http://www.nationalcyberleague.org/) Fall 2016 Seaso
 
 For those that do not know what the National Cyber League is (or NCL for short), let me give you a brief breakdown before I jump into more details and the Preseason Write-ups.
 
-## About the NCL:
+## About the NCL
 
 The NCL was founded in May 2011 to provide an ongoing virtual training ground for collegiate students to develop, practice, and validate their cybersecurity skills using next-generation high-fidelity simulation environments.
 
@@ -31,7 +31,7 @@ The NCL challenges students in the following cyber disciplines:
 * Cryptography
 * Web Application Security
 
-## Fall Season:
+## Fall Season
 
 The 2016 Fall Season is broken down into 2 portions; the Preseason, and the Regular Season.
 
@@ -54,7 +54,7 @@ The regular season on the other hand is broken down into 2, 8 hour games - CTF S
 
 You can read more about the NCL [here](http://www.nationalcyberleague.org/fall-season)!
 
-## Preseason - Content Overview:
+## Preseason - Content Overview
 
 Now that we know more about what the NCL is, and what it includes - let's jump into the more technical side of things.
 
@@ -68,7 +68,7 @@ This years NCL Preseason consisted of the following content.
 
 Since we now have a better grasp of what we can expect, let's jump into the first challenge - [OSINT](https://en.wikipedia.org/wiki/Open-source_intelligence)!
 
-## OSINT - Open Source Intelligence:
+## OSINT - Open Source Intelligence
 
 Our first OSINT challenge begins with the following questions.
 
@@ -120,7 +120,7 @@ You can follow [this](https://en.wikipedia.org/wiki/SQL_Slammer) link to find th
 __Answer: 376__
 </div>
 
-## Email Analysis:
+## Email Analysis
 
 <a href="/images/ncl3.png"><img src="/images/ncl3.png"></a>
 
