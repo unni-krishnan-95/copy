@@ -56,7 +56,7 @@ The regular season on the other hand is broken down into 2, 8 hour games - CTF S
 
 You can read more about the NCL [here](http://www.nationalcyberleague.org/fall-season)!
 
-### Preseason - Content Overview
+## Preseason - Content Overview
 
 Now that we know more about what the NCL is, and what it includes - let's jump into the more technical side of things.
 
@@ -70,7 +70,7 @@ This years NCL Preseason consisted of the following content.
 
 Since we now have a better grasp of what we can expect, let's jump into the first challenge - [OSINT](https://en.wikipedia.org/wiki/Open-source_intelligence)!
 
-### OSINT - Open Source Intelligence
+## OSINT - Open Source Intelligence
 
 Our first OSINT challenge begins with the following questions.
 
