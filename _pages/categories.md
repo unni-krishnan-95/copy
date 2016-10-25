@@ -42,10 +42,10 @@ A listing of all my posts, sorted by specific Categories - makes it easier to fi
 <h2>National Cyber League (NCL)</h2>
 <ul>
 <li><a href="https://jhalon.github.io/ncl-intro-osint/">Preseason Intro & OSINT</a><li>
-<li><a href="">Preseason - Cryptography</a><li>
-<li><a href="">Preseason - Log Analysis</a><li>
-<li><a href="">Preseason - Network Traffic Analysis (Part 1)</a><li>
-<li><a href="">Preseason - Network Traffic Analysis (Part 2</a><li>
+<li><a href="">Preseason - Cryptography</a></li>
+<li><a href="">Preseason - Log Analysis</a></li>
+<li><a href="">Preseason - Network Traffic Analysis (Part 1)</a></li>
+<li><a href="">Preseason - Network Traffic Analysis (Part 2</a></li>
 </ul>
 
 <h2>General</h2>
