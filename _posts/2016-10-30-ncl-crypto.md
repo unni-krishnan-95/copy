@@ -35,7 +35,7 @@ __Answer: againthree58__
 <div class="rBorder" markdown="1">
 <span style="color:red">2. __cGVvcGxlY3Jvd2Q1MQ==__</span>
 
-This password was Base64 Encoded. We can decode it in our Linux terminal.
+This password was [Base64 Encoded](https://en.wikipedia.org/wiki/Base64). We can decode it in our Linux terminal.
 
 ```console
 root@kali:~# echo cGVvcGxlY3Jvd2Q1MQ== | base64 --decode
