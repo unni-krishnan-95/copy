@@ -19,7 +19,7 @@ Just a fair warning that this post will be fairly long - so let's strap in, and 
 
 <a href="/images/ncl8.png"><img src="/images/ncl8.png"></a>
 
-For this challenge we are provided the following file: {{ site.url }}/download/NCL-2016-Pre-Firefox.sqlite
+For this challenge we are provided the following file: [NCL-2016-Pre-Firefox.sqlite](https://jhalon.github.io/download/NCL-2016-Pre-Firefox.sqlite)
 
 You must download the file and open it up in a SQL database to solve the challenge. I used the [SQLite Viewer](http://inloop.github.io/sqlite-viewer/) online to access this information.
 
@@ -111,7 +111,7 @@ __Answer: 176.223.201.198__
 
 <a href="/images/ncl9.png"><img src="/images/ncl9.png"></a>
 
-For this challenge we are provided the following file: {{ site.url }}/download/NCL-2016-Pre-access.log
+For this challenge we are provided the following file: [NCL-2016-Pre-access.log](https://jhalon.github.io/download/NCL-2016-Pre-access.log)
 
 All of my work done with this log involved the use of the Linux [CLI](https://en.wikipedia.org/wiki/Command-line_interface).
 
@@ -260,7 +260,9 @@ __Answer: 6__
 
 <a href="/images/ncl10.png"><img src="/images/ncl10.png"></a>
 
-For this challenge we are provided the following file: {{ site.url }}/download/NCL-2017-Pre-squid_access.log
+For this challenge we are provided the following file: <a href="https://cdn3.iconfinder.com/data/icons/chooseanycolor/128/log-128.png"><img src="https://jhalon.github.io/download/NCL-2017-Pre-squid_access.log"></a>
+
+[NCL-2017-Pre-squid_access.log](https://jhalon.github.io/download/NCL-2017-Pre-squid_access.log)
 
 <div class="rBorder" markdown="1">
 <span style="color:red">1. __In what year was this log saved?	__</span>
