@@ -119,7 +119,7 @@ All of my work done with this log involved the use of the Linux [CLI](https://en
 <span style="color:red">1. __How many different IP addresses reached the server?__</span>
 
 ```console
-root@kali cat NCL-2016-Pre-access.log | cut -d' ' -f 1 | sort | uniq -c | wc -l
+root@kali:~# cat NCL-2016-Pre-access.log | cut -d' ' -f 1 | sort | uniq -c | wc -l
 47
 ```
 
@@ -130,7 +130,7 @@ __Answer: 47__
 <span style="color:red">2. __How many requests yielded a 200 HTTP status?__</span>
 
 ```console
-root@kali cat NCL-2016-Pre-access.log | grep '" 200' | wc -l
+root@kali:~# cat NCL-2016-Pre-access.log | grep '" 200' | wc -l
 19
 ```
 
@@ -141,7 +141,7 @@ __Answer: 19__
 <span style="color:red">3. __How many requests yielded a 400 HTTP status?__</span>
 
 ```console
-root@kali cat NCL-2016-Pre-access.log | grep '" 400' | wc -l
+root@kali:~# cat NCL-2016-Pre-access.log | grep '" 400' | wc -l
 38
 ```
 
@@ -152,7 +152,7 @@ __Answer: 38__
 <span style="color:red">4. __What IP address rang at the doorbell?__</span>
 
 ```console
-root@kali cat NCL-2016-Pre-access.log | grep "bell" | cut -d' ' -f 1
+root@kali:~# cat NCL-2016-Pre-access.log | grep "bell" | cut -d' ' -f 1
 186.64.69.141
 ```
 
@@ -163,7 +163,7 @@ __Answer: 186.64.69.141__
 <span style="color:red">5. __What version of the Googlebot visited the website?__</span>
 
 ```console
-root@kali cat NCL-2016-Pre-access.log | grep "Googlebot"
+root@kali:~# cat NCL-2016-Pre-access.log | grep "Googlebot"
 66.249.67.130 - - [01/Oct/2015:03:08:10 -0400] "GET /robots.txt HTTP/1.1" 502 166 "-" "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)"
 ---snip---
 ```
@@ -175,7 +175,7 @@ __Answer: 2.1__
 <span style="color:red">6. __Which IP address attempted to exploit the shellshock vulnerability?__</span>
 
 ```console
-root@kali cat NCL-2016-Pre-access.log | grep "/bin/bash" | cut -d' ' -f 1
+root@kali:~# cat NCL-2016-Pre-access.log | grep "/bin/bash" | cut -d' ' -f 1
 61.161.130.241
 ```
 
@@ -186,7 +186,7 @@ __Answer: 61.161.130.241__
 <span style="color:red">7. __What was the most popular version of Firefox used for browsing the website?__</span>
 
 ```console
-root@kali cat NCL-2016-Pre-access.log | grep "Firefox" | cut -d' ' -f 18 | sort | uniq -c 
+root@kali:~# cat NCL-2016-Pre-access.log | grep "Firefox" | cut -d' ' -f 18 | sort | uniq -c 
       4 en-US;
       9 Firefox/31.0"
       1 Gecko/20100101
@@ -200,7 +200,7 @@ __Answer: 31__
 <span style="color:red">8. __What is the most common HTTP method used?__</span>
 
 ```console
-root@kali cat NCL-2016-Pre-access.log | cut -d' ' -f 6 | sort | uniq -c
+root@kali:~# cat NCL-2016-Pre-access.log | cut -d' ' -f 6 | sort | uniq -c
       6 ""
      15 "CONNECT
      60 "GET
@@ -220,7 +220,7 @@ __Answer: GET__
 <span style="color:red">9. __What is the second most common HTTP method used?__</span>
 
 ```console
-root@kali cat NCL-2016-Pre-access.log | cut -d' ' -f 6 | sort | uniq -c
+root@kali:~# cat NCL-2016-Pre-access.log | cut -d' ' -f 6 | sort | uniq -c
       6 ""
      15 "CONNECT
      60 "GET
@@ -240,7 +240,7 @@ __Answer: CONNECT__
 <span style="color:red">10. __How many requests were for \x04\x01\x00P\xC6\xCE\x0Eu0\x00?__</span>
 
 ```console
-root@kali cat NCL-2016-Pre-access.log | cut -d' ' -f 6 | sort | uniq -c
+root@kali:~# cat NCL-2016-Pre-access.log | cut -d' ' -f 6 | sort | uniq -c
       6 ""
      15 "CONNECT
      60 "GET
@@ -263,7 +263,7 @@ __Answer: 6__
 For this challenge we are provided the following file: [NCL-2017-Pre-squid_access.log](https://jhalon.github.io/download/NCL-2017-Pre-squid_access.log)
 
 <div class="rBorder" markdown="1">
-<span style="color:red">1. __In what year was this log saved?__span>
+<span style="color:red">1. __In what year was this log saved?__</span>
 
 With this question, let's start by looking at the first line.
 
@@ -347,7 +347,7 @@ root@kali:~# cat NCL-2017-Pre-squid_access.log | grep "192.168.0.224" | cut -d' 
 http://liveupdate.symantecliveupdate.com/streaming/norton$202009$20streaming$20virus$20definitions_1.0_symalllanguages_livetri.zip
 ```
 
-__Answer: http://liveupdate.symantecliveupdate.com/streaming/norton$202009$20streaming$20virus$20definitions_1.0_symalllanguages_livetri.zip__
+__Answer: http://liveupdate.symantecliveupdate.com/streaming/...
 </div>
 
 That's all for now, thanks for reading - and stay tuned for more!
