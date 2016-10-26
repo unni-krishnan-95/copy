@@ -260,9 +260,7 @@ __Answer: 6__
 
 <a href="/images/ncl10.png"><img src="/images/ncl10.png"></a>
 
-For this challenge we are provided the following file: <a href="https://cdn3.iconfinder.com/data/icons/chooseanycolor/128/log-128.png"><img src="https://jhalon.github.io/download/NCL-2017-Pre-squid_access.log"></a>
-
-[NCL-2017-Pre-squid_access.log](https://jhalon.github.io/download/NCL-2017-Pre-squid_access.log)
+For this challenge we are provided the following file: [NCL-2017-Pre-squid_access.log](https://jhalon.github.io/download/NCL-2017-Pre-squid_access.log)
 
 <div class="rBorder" markdown="1">
 <span style="color:red">1. __In what year was this log saved?	__</span>
