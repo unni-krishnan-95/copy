@@ -18,7 +18,7 @@ A listing of all my posts, sorted by specific Categories - makes it easier to fi
 <ul>
 <li><a href="https://jhalon.github.io/ncl-intro-osint/">Preseason - Intro & OSINT</a></li>
 <li><a href="https://jhalon.github.io/ncl-crypto/">Preseason - Cryptography</a></li>
-<li><a href="">Preseason - Log Analysis</a></li>
+<li><a href="https://jhalon.github.io/ncl-log-analysis/">Preseason - Log Analysis</a></li>
 <li><a href="">Preseason - Network Traffic Analysis (Part 1)</a></li>
 <li><a href="">Preseason - Network Traffic Analysis (Part 2</a></li>
 </ul>
