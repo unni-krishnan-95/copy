@@ -355,7 +355,7 @@ root@kali:~# cat NCL-2017-Pre-squid_access.log | grep "192.168.0.224" | cut -d' 
 http://liveupdate.symantecliveupdate.com/streaming/norton$202009$20streaming$20virus$20definitions_1.0_symalllanguages_livetri.zip
 ```
 
-__Answer: http://liveupdate.symantecliveupdate.com/streaming/...
+__Answer: http://liveupdate.symantecliveupdate.com/streaming/...__
 </div>
 
 That's all for now, thanks for reading - and stay tuned for more!
