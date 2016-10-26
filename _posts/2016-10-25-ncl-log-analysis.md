@@ -283,6 +283,10 @@ __Answer: 2010__
 
 Just eyeing the log we can see that at the end, on line 111 we have the fastest request.
 
+```
+1286536331.040      5 192.168.0.227 TCP_MISS/503 855 GET http://s2.youtube.com/s? - NONE/- text/html
+```
+
 __Answer: 5__
 </div>
 
@@ -290,6 +294,10 @@ __Answer: 5__
 <span style="color:red">3. __How many milliseconds did the longest request take?__</span>
 
 Just eyeing the log we can see that at the end, on line 113 we have the longest request.
+
+```
+1286536351.746  41762 192.168.0.227 TCP_MISS/200 5340945 GET http://v15.lscache3.c.youtube.com/videoplayback? - DIRECT/122.160.120.150 video/x-flv
+```
 
 __Answer: 41762__
 </div>
