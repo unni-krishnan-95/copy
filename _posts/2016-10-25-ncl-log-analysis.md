@@ -263,7 +263,7 @@ __Answer: 6__
 For this challenge we are provided the following file: [NCL-2017-Pre-squid_access.log](https://jhalon.github.io/download/NCL-2017-Pre-squid_access.log)
 
 <div class="rBorder" markdown="1">
-<span style="color:red">1. __In what year was this log saved?	__</span>
+<span style="color:red">1. __In what year was this log saved?__span>
 
 With this question, let's start by looking at the first line.
 
