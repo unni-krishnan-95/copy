@@ -42,7 +42,7 @@ Looking for "__craiglist__" in the __url__ column, we see that line 244 will pro
 
 <a href="/images/sql4.png"><img src="/images/sql4.png"></a>
 
-__Answer: __
+__Answer: bitcoin__
 </div>
 
 <div class="rBorder" markdown="1">
