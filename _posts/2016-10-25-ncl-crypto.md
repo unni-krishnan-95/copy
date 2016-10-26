@@ -126,19 +126,18 @@ def encrypt(str):
 <div class="rBorder" markdown="1">
 <span style="color:red">1. __qbkl dro owksvc ypp dro wksvcobfob__</span>
 
-Since we already have the code, and know how the password is encrypted - all we have to do is reverse engineer it.
+Since we already have the code, and know how the password is encrypted - all we have to do is enter our encyrpted string.
 
-The code is basically taking a string, and for each character in the string it rotates the letter +3, then +7 and adds it to ret. Once done, it returns the string ret. So for us to get the password from the encryption, all we need to do is the opposite. So rotate the characters +7 then +3. The code will look like the following:
+The code is basically taking a string, and for each character in the string it rotates the letter +3, then +7 and adds it to ret. Once done, it returns the string ret. So for us to get the password from the encryption, just enter the encrypted password and it will reverse it for us.
 
 ```python
+str = "qbkl dro owksvc ypp dro wksvcobfob"
 def encrypt(str):
 	ret = ""
 	for char in str:
-		ret += rot3(rot7(char))
+		ret += rot7(rot3(char))
 	return ret
 ```
-
-Once you tune the code (__str__ being the encrypted password) we get the answer.
 
 __Answer: grab the emails off the mailserver__
 </div>
