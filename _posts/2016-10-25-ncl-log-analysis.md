@@ -9,7 +9,7 @@ related: true
 comments: true
 ---
 
-Welcome back to the continuation of my NCL Preseason Posts! Today we will be covering the __Log Analysis__ portion of the NCL Preseason game. If you don't know what the NCL is, or what these posts are about, then I suggest you go back and read my Introduction Post which can be found [here](https://jhalon.github.io/ncl-intro-osint/)!
+Welcome back to the continuation of the NCL Preseason Posts! Today we will be covering the __Log Analysis__ portion of the NCL Preseason game. If you don't know what the NCL is, or what these posts are about, then I suggest you go back and read my Introduction Post which can be found [here](https://jhalon.github.io/ncl-intro-osint/)!
 
 Also, if you missed my previous Cryptography write-up for the preseason, you can find that [here](https://jhalon.github.io/ncl-crypto/).
 
