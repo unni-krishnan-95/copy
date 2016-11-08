@@ -21,8 +21,6 @@ Just a fair warning that this post will be fairly long and will be broken down i
 
 For this challenge we are provided the following file: [NCL-2016-Pre-FTP.pcap](https://jhalon.github.io/download/NCL-2016-Pre-FTP.pcap)
 
-<a href="/images/sql3.png"><img src="/images/sql3.png"></a>
-
 <div class="rBorder" markdown="1">
 <span style="color:red">1. __What was the first username/password combination attempt made to log in to the server? e.g. 'user/password'__</span>
 
