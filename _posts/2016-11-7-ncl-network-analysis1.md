@@ -311,7 +311,7 @@ __Answer: 173__
 <div class="rBorder" markdown="1">
 <span style="color:red">8. __What packet number requests the first successfully delivered payload?__</span>
 
-Working in IT Security, I know when a payload is successfully ran since you see __This program cannot be run in DOS mode.__ in the packet captures... so if we go through the streams, we will see packet 213 is the first one to initiate the payload.
+Working in IT Security, I know when a payload is successfully ran since you see "__This program cannot be run in DOS mode.__" in the packet captures... so if we go through the streams, we will see packet 213 is the first one to initiate the payload.
 
 <a href="/images/ncl-http2-4.png"><img src="/images/ncl-http2-4.png"></a>
 
