@@ -198,7 +198,7 @@ __Answer: Nginx__
 
 Going back to our packets, let's fine the __GET__ command and look at __Source__.
 
-<a href="/images/ncl-http1-2.png"><img src="/images/ncl-http1-2.png"></a>
+<a href="/images/ncl-http1-3.png"><img src="/images/ncl-http1-3.png"></a>
 
 __Answer: 192.168.1.140__
 </div>
@@ -208,7 +208,7 @@ __Answer: 192.168.1.140__
 
 Same packet, just look at __Destination__.
 
-<a href="/images/ncl-http1-2.png"><img src="/images/ncl-http1-2.png"></a>
+<a href="/images/ncl-http1-3.png"><img src="/images/ncl-http1-3.png"></a>
 
 __Answer: 174.143.213.184__
 </div>
@@ -218,7 +218,7 @@ __Answer: 174.143.213.184__
 
 For this one, we have to go to __File__ > __Export Objects__ > __HTTP__ and you will see a pop up like below.
 
-<a href="/images/ncl-http1-3.png"><img src="/images/ncl-http1-3.png"></a>
+<a href="/images/ncl-http1-2.png"><img src="/images/ncl-http1-2.png"></a>
 
 Go ahead and save that image to the root directory, and let's run the __md5sum__ command against the image to the get MD5 Hash.
 
