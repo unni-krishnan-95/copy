@@ -44,7 +44,7 @@ __Answer: FileZilla 0.9.53__
 <div class="rBorder" markdown="1">
 <span style="color:red">3. __What is the first username/password combination that allows for successful authentication?__</span>
 
-In our TCP stream view, we can go up to the next stream and we will be presented with annother login attempt.
+In our TCP stream view, we can go up to the next stream and we will be presented with another login attempt.
 
 <a href="/images/ncl-ftp2.png"><img src="/images/ncl-ftp2.png"></a>
 
