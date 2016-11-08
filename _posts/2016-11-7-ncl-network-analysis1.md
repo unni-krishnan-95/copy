@@ -294,7 +294,7 @@ __Answer: zivvgmyrwy.3razbave.info__
 
 Just exit out of the TCP stream, and the first packet there should provide us the source IP.
 
-<a href="/images/ncl-http2-4.png"><img src="/images/ncl-http2-4.png"></a>
+<a href="/images/ncl-http2-5.png"><img src="/images/ncl-http2-5.png"></a>
 
 __Answer: 192.168.40.10__
 </div>
@@ -304,7 +304,7 @@ __Answer: 192.168.40.10__
 
 Just as above, the packet where we got the IP also will be the packet # for the .SWF request.
 
-<a href="/images/ncl-http2-4.png"><img src="/images/ncl-http2-4.png"></a>
+<a href="/images/ncl-http2-5.png"><img src="/images/ncl-http2-5.png"></a>
 
 __Answer: 173__
 </div>
@@ -313,7 +313,7 @@ __Answer: 173__
 
 Working in IT Security, I know when a payload is successfully ran since you see __This program cannot be run in DOS mode.__ in the packet captures... so if we go through the streams, we will see packet 213 is the first one to initiate the payload.
 
-<a href="/images/ncl-http2-5.png"><img src="/images/ncl-http2-5.png"></a>
+<a href="/images/ncl-http2-4.png"><img src="/images/ncl-http2-4.png"></a>
 
 __Answer: 213__
 </div>
