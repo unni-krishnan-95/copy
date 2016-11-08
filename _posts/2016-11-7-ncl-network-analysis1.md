@@ -74,7 +74,7 @@ __Answer: bank.cap__
 <div class="rBorder" markdown="1">
 <span style="color:red">6. __What file is uploaded to the ftp server?__</span>
 
-The __STOR__ command allows you to uplaod files to an FTP server. THe file name after the command is our answer.
+The __STOR__ command allows you to upload files to an FTP server. THe file name after the command is our answer.
 
 <a href="/images/ncl-ftp2.png"><img src="/images/ncl-ftp2.png"></a>
 
