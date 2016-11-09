@@ -80,7 +80,7 @@ And we are also provided these instructions for how the protocol works.
 <a href="/images/ncl17.png"><img src="/images/ncl17.png"></a>
 
 <div class="rBorder" markdown="1">
-<span style="color:red">1. What is the IP address of the server?__</span>
+<span style="color:red">1. __What is the IP address of the server?__</span>
 
 <a href="/images/ncl-pan-1.png"><img src="/images/ncl-pan-1.png"></a>
 
@@ -134,7 +134,7 @@ root@kali:~# echo $((16#00000058))
 88
 ```
 
-__Answer: 78__
+__Answer: 88__
 </div>
 
 <div class="rBorder" markdown="1">
@@ -147,7 +147,7 @@ root@kali:~# echo $((16#00000048))
 72
 ```
 
-__Answer: 64__
+__Answer: 72__
 </div>
 
 <div class="rBorder" markdown="1">
