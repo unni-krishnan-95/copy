@@ -196,7 +196,7 @@ __Answer: Nginx__
 <div class="rBorder" markdown="1">
 <span style="color:red">3. __From what IP address did the request originate?__</span>
 
-Going back to our packets, let's fine the __GET__ command and look at __Source__.
+Going back to our packets, let's find the __GET__ command and look at __Source__.
 
 <a href="/images/ncl-http1-3.png"><img src="/images/ncl-http1-3.png"></a>
 
@@ -220,7 +220,7 @@ For this one, we have to go to __File__ > __Export Objects__ > __HTTP__ and you 
 
 <a href="/images/ncl-http1-2.png"><img src="/images/ncl-http1-2.png"></a>
 
-Go ahead and save that image to the root directory, and let's run the __md5sum__ command against the image to the get MD5 Hash.
+Go ahead and save that image to the root directory. Then we can run the __md5sum__ command in our CLI against the image - this will return the images MD5 Hash.
 
 ```console
 root@kali:~# ls
@@ -242,7 +242,7 @@ For this challenge we are provided the following file: [NCL-2016-Pre-HTTP 2.pcap
 <div class="rBorder" markdown="1">
 <span style="color:red">1. __What was the compromised website that was used to infect users with malware?__</span>
 
-Looking though the streams we come across __Referer__ in stream 4. This shows us that someone is requesting another webpage, looking at the __Referer__ URL will provide us the compromised website name.
+Looking through the streams, we come across __Referer__ in stream 4. This shows us that someone is requesting another webpage, looking at the __Referer__ URL will provide us the compromised website name.
 
 <a href="/images/ncl-http2-1.png"><img src="/images/ncl-http2-1.png"></a>
 
