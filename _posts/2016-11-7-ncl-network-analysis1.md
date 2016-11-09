@@ -150,7 +150,7 @@ __Answer: 4__
 <div class="rBorder" markdown="1">
 <span style="color:red">4. __What is the TTL for all of the records?__</span>
 
-Dig into on of the answers, and look for the __Time to live__.
+Dig into one of the answers, and look for the __Time to live__.
 
 <a href="/images/ncl-dns3.png"><img src="/images/ncl-dns3.png"></a>
 
