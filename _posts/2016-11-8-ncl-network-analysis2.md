@@ -98,7 +98,7 @@ And we are also provided these instructions for how the protocol works.
 
 This challenge was very tricky and required some in depth knowledge of how [TCP/IP](https://en.wikipedia.org/wiki/Internet_protocol_suite) functions. Looking at the Custom Protocol instructions we can see that the first communication is between the Client > Server.
 
-The Client initializes the communication by sending the total number of encryption requests that it wishes to make. IF you know TPC/IP then you would understand that the Client will send out a TPC packet with the __PSH__ Flag, as well as the __ACK__ Flag since the server would be acknowledging the receiving data. You can read more about it [here](https://ask.wireshark.org/questions/20423/pshack-wireshark-capture).
+The Client initializes the communication by sending the total number of encryption requests that it wishes to make. If you know TPC/IP then you would understand that the Client will send out a TPC packet with the __PSH__ Flag, as well as the __ACK__ Flag since the server would be acknowledging the receiving data. You can read more about it [here](https://ask.wireshark.org/questions/20423/pshack-wireshark-capture).
 
 So first thing we must do is set a filter in Wireshark to filter out only __PSH__ and __ACK__. To do that we enter "__tcp.flags.push == 1 && tcp.flags.ack == 1__" in the filter. When we have that set, scroll down till we find the first __[PSH, ACK]__ packet. From here, we are able to tell is the Client IP Address is (source) and what the Server IP Address is (destination).
 
