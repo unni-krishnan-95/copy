@@ -56,7 +56,7 @@ __Answer: uname__
 <div class="rBorder" markdown="1">
 <span style="color:red">4. __In what year was this capture created?__</span>
 
-Just look at line 8 and look at what date uname returned.
+Just look at line 8, and look for what "__date__" uname returned.
 
 <a href="/images/ncl-telnet-1.png"><img src="/images/ncl-telnet-1.png"></a>
 
