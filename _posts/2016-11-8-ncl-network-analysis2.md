@@ -130,7 +130,7 @@ __Answer: 42455__
 <div class="rBorder" markdown="1">
 <span style="color:red">4. __What is the magic 2-byte ID in decimal?__</span>
 
-Since we already know that the client first sends the number of encryptions it wants to do in its initialization message - we can see in the instructions that the next thing the client sends is the "__check__" or a "__fixed 2-bytes integer__". So, let's simply follow the packets TPC Stream to see the information it's sending. After you do, change the "__Show data as:__" to __RAW__. The second line will be the 2-bytes "magic" ID.
+Since we already know that the client first sends the number of encryptions it wants to do in its initialization message - we can see in the instructions that the next thing the client sends is the "__check__" or a "__fixed 2-bytes integer__". So let's simply follow the packets TPC Stream to see the information it's sending. After you do, change the "__Show data as:__" to __RAW__. The second line will be the 2-bytes "magic" ID.
 
 <a href="/images/ncl-pan-2.png"><img src="/images/ncl-pan-2.png"></a>
 
