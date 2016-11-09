@@ -17,7 +17,7 @@ So without any further ado - let's get to it!
 
 ## Telnet:
 
-<a href="/images/ncl14.png"><img src="/images/ncl14.png"></a>
+<a href="/images/ncl15.png"><img src="/images/ncl15.png"></a>
 
 For this challenge we are provided the following file: [NCL-2016-Pre-Telnet.pcap](https://jhalon.github.io/download/NCL-2016-Pre-Telnet.pcap)
 
@@ -71,13 +71,13 @@ __Answer: armv4tl__
 
 ## Pandora’s Box:
 
-<a href="/images/ncl15.png"><img src="/images/ncl15.png"></a>
+<a href="/images/ncl16.png"><img src="/images/ncl16.png"></a>
 
 For this challenge we are provided the following file: [NCL-2016-Pre-Pandora.pcap](https://jhalon.github.io/download/NCL-2016-Pre-Pandora.pcap)
 
 And we are also provided these instructions for how the protocol works.
 
-<a href="/images/ncl16.png"><img src="/images/ncl16.png"></a>
+<a href="/images/ncl17.png"><img src="/images/ncl17.png"></a>
 
 <div class="rBorder" markdown="1">
 <span style="color:red">1. What is the IP address of the server?__</span>
