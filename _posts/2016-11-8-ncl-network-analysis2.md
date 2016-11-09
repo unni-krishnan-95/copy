@@ -66,7 +66,7 @@ __Answer: 2011__
 <div class="rBorder" markdown="1">
 <span style="color:red">5. __What is the hostname of the machine that was logged in to?__</span>
 
-Knowing how [name](https://linux.die.net/man/2/uname) prints out the system information will help us decipher which is the hostname. Uname displays the hostname as the second object.
+Knowing how [uname](https://linux.die.net/man/2/uname) prints out the system information will help us decipher which one is the hostname. Uname displays the hostname as the second object.
 
 <a href="/images/ncl-telnet-1.png"><img src="/images/ncl-telnet-1.png"></a>
 
