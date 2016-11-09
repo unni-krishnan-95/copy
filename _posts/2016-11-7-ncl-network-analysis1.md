@@ -318,6 +318,6 @@ Working in IT Security, I know when a payload is successfully ran since you see 
 __Answer: 213__
 </div>
 
-Alright, that's enough for Part 1 - you can read Part 2 [here]()!
+Alright, that's enough for Part 1 - you can read Part 2 [here](https://jhalon.github.io/ncl-network-analysis2/)!
 
 Thanks for reading - and as always, stay tuned for more!
