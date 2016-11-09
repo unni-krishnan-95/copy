@@ -74,7 +74,7 @@ __Answer: bank.cap__
 <div class="rBorder" markdown="1">
 <span style="color:red">6. __What file is uploaded to the ftp server?__</span>
 
-The __STOR__ command allows you to upload files to an FTP server. THe file name after the command is our answer.
+The __STOR__ command allows you to upload files to an FTP server. The file name after the command is our answer.
 
 <a href="/images/ncl-ftp2.png"><img src="/images/ncl-ftp2.png"></a>
 
@@ -84,7 +84,7 @@ __Answer: compcodes.zip__
 <div class="rBorder" markdown="1">
 <span style="color:red">7. __What is the MD5 sum of the uploaded file?__</span>
 
-To do this we have to increment our TPC stream till we find the __FTP-DATA__ of the file being uploaded. We find the data in stream 6. TO get the MD5 sum of the file, we have to change the __Show data as__ to __RAW__ as shown below. Once done, go ahead and save that file to the root directory. 
+To do this we have to increment our TPC stream till we find the __FTP-DATA__ of the file being uploaded. We find the data in stream 6. To get the MD5 sum of the file, we have to change the __Show data as__ to __RAW__ as shown below. Once done, go ahead and save that file to the root directory. 
 
 <a href="/images/ncl-ftp3.png"><img src="/images/ncl-ftp3.png"></a>
 
