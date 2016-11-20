@@ -50,7 +50,7 @@ __Answer: 23writtenchange43__
 <div class="rBorder" markdown="1">
 <span style="color:red">3. __00110100 00110001 01100011 01101111 01101111 01101011 01110011 01110100 01100001 01110010 00110111 00110010__</span>
 
-Just go to this [Binary to Ascii Converter](http://www.binaryhexconverter.com/binary-to-ascii-text-converter) and you will get the answer
+Just go to this [Binary to Ascii Converter](http://www.binaryhexconverter.com/binary-to-ascii-text-converter) and you will get the answer.
 
 __Answer: 41cookstar72__
 </div>
@@ -153,7 +153,7 @@ __Answer: 8882__
 <div class="rBorder" markdown="1">
 <span style="color:red">3. __What is the PID of the program that the hacker killed?__</span>
 
-Back in the output let's look for the [ps](https://linux.die.net/man/1/ps) command and see what PID it's killing.
+Back in the output - let's look for the [ps](https://linux.die.net/man/1/ps) command and see what PID its killing.
 
 ```console
 root@kali:~/Downloads/NCL-2016-Game2-Compromise/dir# cat .bash_history 
@@ -333,7 +333,7 @@ __Answer: vim /etc/hosts__
 <div class="rBorder" markdown="1">
 <span style="color:red">7. __What is the URL that the hacker uses to process uploads of the /etc/shadow file (use the full URL, including port)?__</span>
 
-For this one the answer won't be in the bash history... but it will be in the bash shell script. This might be due to the fact that the hacker had no admin permissions and needed a way to upload the file - thus the .bashrc might have had improper permissions set giving all users "root" privilege.
+For this one the answer won't be in the bash history... but it will be in the bash shell script. This might be due to the fact that the hacker had no admin permissions and needed a way to upload the file - thus the __.bashrc__ might have improper permissions set, giving all users "root" privilege.
 
 ```console
 root@kali:~/Downloads/NCL-2016-Game2-Compromise/dir# ls -a
@@ -383,7 +383,7 @@ __Answer: 5012__
 <div class="rBorder" markdown="1">
 <span style="color:red">2. __What is the first file entry that does not match the official checksum?__</span>
 
-Here is where it get's sort of hard. First we have to navigate to the [NodeJS Distribution Page](https://nodejs.org/dist/). This page contains all the Checksums per version.
+Here is where it gets a little hard. First we have to navigate to the [NodeJS Distribution Page](https://nodejs.org/dist/). This page contains all the Checksums per version.
 
 <a href="/images/ncl-nj-1.png"><img src="/images/ncl-nj-1.png"></a>
 
@@ -391,7 +391,7 @@ In each version link we will have something called __SHASUMS256.txt__.
 
 <a href="/images/ncl-nj-2.png"><img src="/images/ncl-nj-2.png"></a>
 
-This text contains the SHA256 Hash Checksum for each "offical" version. Which will look like something below. 
+This text contains the SHA256 Hash Checksum for each "official" version, which will look like something below...
 
 ```
 623d9157017ca3805cbbca653724f8e25a52be689f821d0c608f94717342e1e2  node-v0.1.100.tar.gz
@@ -399,7 +399,7 @@ This text contains the SHA256 Hash Checksum for each "offical" version. Which wi
 
 From here we need to grab each Hash Text File and compare it to the Corrupted Hash file we have. To accomplish this, we will use a tool called [WGET](https://www.gnu.org/software/wget/) to grab the contents of each file and print them out to a text file.
 
-we will thus run the following command, which will grab each version file -- this might take a while, so let it run!
+We will thus run the following command, which will grab each version file -- this might take a while, so let it run!
 
 ```console
 root@cryptic:~# wget -O - https://nodejs.org/dist/v{0..7}.{0..12}.{0..48}/SHASUMS256.txt >> file
@@ -418,9 +418,9 @@ HTTP request sent, awaiting response... 404 Not Found
 ---snip---
 ```
 
-Once that has completed... you will have a full listing of all the SHA256 Check Sums in the file called "__file__"
+Once that's completed... you will have a full listing of all the SHA256 Check Sums in the file called "__file__"
 
-What I did to make life easy was go to [QuickDiff](http://www.quickdiff.com/) to compare the list we made against the Corrupted Hashes we downloaded. Now all we need to do, is scroll down the list and find the RED/GREEN Highlight and we will have our answer.
+What I did to make life easy was go to [QuickDiff](http://www.quickdiff.com/) to compare the list we made against the Corrupted Hashes we downloaded. Now all we need to do is scroll down the list and find the RED/GREEN highlights, which will be our answer.
 
 <a href="/images/ncl-nj-3.png"><img src="/images/ncl-nj-3.png"></a>
 
