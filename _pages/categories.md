@@ -27,7 +27,7 @@ A listing of all my posts, sorted by specific Categories - makes it easier to fi
 <li><a href="https://jhalon.github.io/ncl-network-analysis1/">Preseason - Network Traffic Analysis (Part 1)</a></li>
 <li><a href="https://jhalon.github.io/ncl-network-analysis2/">Preseason - Network Traffic Analysis (Part 2)</a></li>
 <li><a href="https://jhalon.github.io/ncl-regular-season-1/">Regular Season - Crypto & Log Analysis</a></li>
-<li><a href="">Regular Season - WiFi Cracking & Exploitation</a></li>
+<li><a href="https://jhalon.github.io/ncl-regular-season-2/">Regular Season - WiFi Cracking & Exploitation</a></li>
 </ul>
 
 <h2>OverTheWire</h2>
