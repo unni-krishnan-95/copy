@@ -14,6 +14,11 @@ A listing of all my posts, sorted by specific Categories - makes it easier to fi
 <li><a href="https://jhalon.github.io/m-trends-fireeye-report-overview/">M-Trends 2016: Cyber Threat Report Overview</a></li>
 </ul>
 
+<h2>Capture the Flag</h2>
+<ul>
+<li><a href="">Kaizen 2016</a></li>
+</ul>
+
 <h2>National Cyber League (NCL)</h2>
 <ul>
 <li><a href="https://jhalon.github.io/ncl-intro-osint/">Preseason - Intro & OSINT</a></li>
@@ -21,6 +26,8 @@ A listing of all my posts, sorted by specific Categories - makes it easier to fi
 <li><a href="https://jhalon.github.io/ncl-log-analysis/">Preseason - Log Analysis</a></li>
 <li><a href="https://jhalon.github.io/ncl-network-analysis1/">Preseason - Network Traffic Analysis (Part 1)</a></li>
 <li><a href="https://jhalon.github.io/ncl-network-analysis2/">Preseason - Network Traffic Analysis (Part 2)</a></li>
+<li><a href="https://jhalon.github.io/ncl-regular-season-1/">Regular Season - Crypto & Log Analysis</a></li>
+<li><a href="">Regular Season - WiFi Cracking & Exploitation</a></li>
 </ul>
 
 <h2>OverTheWire</h2>
