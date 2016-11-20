@@ -102,7 +102,7 @@ __Answer: noWEP__
 For this challenge we are provided the following file: [NCL-2016-Game2-HardWifi.cap](https://jhalon.github.io/download/NCL-2016-Game2-HardWifi.cap)
 
 <div class="rBorder" markdown="1">
-<span style="color:red">1. __What is the SSID of the vulnerable WiFi Network?</span>
+<span style="color:red">1. __What is the SSID of the vulnerable WiFi Network?__</span>
 
 Once we open the pcap in Wireshark, all you really have to do is click on __Wireless__ in the tool bar, and from the drop down click __WLAN Traffic__.
 
@@ -128,7 +128,7 @@ __Answer: 15__
 <div class="rBorder" markdown="1">
 <span style="color:red">3. __What is the password of the vulnerable WiFi Network?__</span>
 
-Just as we have done with the previous question, we will have to run aircrack-ng. But... aircrack-ng will not have the password by default! So we will have to use a wordlist! So I simply used the __rockyou__ password dump by default!
+Just as we have done with the previous question, we will have to run aircrack-ng. But... aircrack-ng will not have the password by default! So we will have to use a wordlist! I simply used the __rockyou__ password.
 
 ```console
 root@kali:~/Downloads# aircrack-ng -w /root/rockyou.txt NCL-2016-Game2-HardWifi.cap 
@@ -244,8 +244,7 @@ Since we have the code, all we really have to do is reverse engineer it - more l
 root@kali:~/Downloads# gedit pass.py
 ```
 
-Once we open our new file, let's go ahead and write the following Python code. Notice how I included __#!/usr/bin/python
-__, so that our Terminal will run the code with Python and avoid any errors. At the same time I removed __defmain():__ from the code and just allowed Python to print the characters for us, without us having to call the function.
+Once we open our new file, let's go ahead and write the following Python code. Notice how I included __#!/usr/bin/python__, so that our Terminal will run the code with Python and avoid any errors. At the same time I removed __def main():__ from the code and just allowed Python to print the characters for us, without us having to call the __main__ function.
 
 ```python
 #!/usr/bin/python
@@ -363,13 +362,14 @@ int main(void)
 Looking at the code, we can see that it is written in C. Now two things really stand out here.
 
 1) __char buff[15];__
+
 2) __gets(buff);__
 
-Let me explain to you what is occurring - for those who don't understand C language. The char (or character - used for strings) ‘buff’ represents an array of 10 bytes where buff[0] is the left boundary and buff[9] is the right boundary of the buffer.
+Let me explain to you what is occurring - for those who don't understand C language. The char (or character - used for strings) ‘buff’ represents an array of 15 bytes where buff[0] is the left boundary and buff[14] is the right boundary of the buffer.
 
 A buffer, in terms of a program in execution, can be thought of as a region of computer’s main memory that has certain boundaries in context with the program variable that references this memory.
 
-Since the C function [gets](https://www.tutorialspoint.com/c_standard_library/c_function_gets.htm) is being used, we instantly know that the program is insecure and a Buffer Overflow is present, due to the fact that "gets" does not terminate the end of the strings buffer (or 15 chars).
+Since the C function [gets](https://www.tutorialspoint.com/c_standard_library/c_function_gets.htm) is being used, we instantly know that the program is insecure and a Buffer Overflow is present. This is due to the fact that __gets__ does not terminate the end of the strings buffer (or 15 chars).
 
 A buffer is said to be overflown when the data (meant to be written into memory buffer) gets written past the left or the right boundary of the buffer. This way the data gets written to a portion of memory which does not belong to the program variable that references the buffer.
 
@@ -424,7 +424,7 @@ __Answer: 10__
 <div class="rBorder" markdown="1">
 <span style="color:red">4. __Without entering the "correct" password, what is the minimum number of input characters needed to bypass the password check?__</span>
 
-If you read my deep explanation in question 1, then you would know that since __gets__ is being used, and the buffer is not being terminated at 15 chars, we would have to use a minimum number of 16 chars to overrun the buffer's boundary and overwrite to adjacent memory locations.
+If you actually read my explanation in question 1, then you would know that since __gets__ is being used, and the buffer is not being terminated at 15 chars... we would have to use a minimum number of 16 chars to overrun the buffer's boundary and overwrite to adjacent memory locations.
 
 ```c
 #include <stdio.h>
