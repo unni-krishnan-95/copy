@@ -37,7 +37,7 @@ __Answer: 76sortlove21__
 <div class="rBorder" markdown="1">
 <span style="color:red">2. __MjN3cml0dGVuY2hhbmdlNDM=__</span>
 
-The __=__ at the end of the file should be a clue that this is a base64 encoded password. We can decode it in our Terminal.
+The "__=__" at the end of the file should be a clue that this is a base64 encoded password. We can decode it in our Terminal.
 
 ```console
 root@kali:~# echo MjN3cml0dGVuY2hhbmdlNDM= | base64 --decode
