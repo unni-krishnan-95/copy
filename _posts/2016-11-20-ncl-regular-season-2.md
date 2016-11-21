@@ -48,7 +48,7 @@ __Answer: c0:4a:00:80:76:e4__
 <div class="rBorder" markdown="1">
 <span style="color:red">3. __What is the MAC address of the connected client that had the most combined send/received packets?__</span>
 
-For this answer look down the __Beacons__ and __Data Pkts__ columns. We can see that __e0:55:3d:18:0c:a8__ sent/received the most packets combined!
+For this answer look down the __Beacons__ and __Data Pkts__ columns. We can see that __e0:55:3d:18:0c:a8__ sent/received the most packets combined.
 
 <a href="/images/ncl-cm-1.png"><img src="/images/ncl-cm-1.png"></a>
 
