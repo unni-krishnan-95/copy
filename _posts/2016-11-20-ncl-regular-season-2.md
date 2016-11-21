@@ -36,9 +36,9 @@ __Answer: NCL-Secure-Legacy__
 </div>
 
 <div class="rBorder" markdown="1">
-<span style="color:red">2. __What is the BSID of the vulnerable WiFi Network?__</span>
+<span style="color:red">2. __What is the BSSID of the vulnerable WiFi Network?__</span>
 
-Jast as above, look at line 1, right under __BSSID__.
+Just as above, look at line 1, right under __BSSID__.
 
 <a href="/images/ncl-cm-1.png"><img src="/images/ncl-cm-1.png"></a>
 
