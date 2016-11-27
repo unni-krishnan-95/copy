@@ -402,7 +402,7 @@ From here we need to grab each Hash Text File and compare it to the Corrupted Ha
 We will thus run the following command, which will grab each version file -- this might take a while, so let it run!
 
 ```console
-root@cryptic:~# wget -O - https://nodejs.org/dist/v{0..7}.{0..12}.{0..48}/SHASUMS256.txt >> file
+root@kali:~# wget -O - https://nodejs.org/dist/v{0..7}.{0..12}.{0..48}/SHASUMS256.txt >> file
 
 --2016-11-20 14:42:59--  https://nodejs.org/dist/v0.0.0/SHASUMS256.txt
 Resolving nodejs.org (nodejs.org)... 104.20.22.46, 104.20.23.46, 2400:cb00:2048:1::6814:172e, ...
