@@ -178,7 +178,7 @@ http
 ---snip---
 ```
 
-Seems like a word list of some kind... It's possible that we can use this for brute forcing mod_negotiation... but let's save that for later!
+Seems like a word list of some kind... It's possible that we can use this for brute forcing... but let's save that for later!
 
 We can now go ahead and try the next two locations that we got from our scan - __index.html__ and  __index.php__. After trying the .html file, my browser got stuck loading something... so I had to kill it. The .php file just took me back to the main page - but let's go ahead and view the source to see what we can find!
 
