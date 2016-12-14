@@ -12,7 +12,6 @@ A listing of all my posts, sorted by specific Categories - makes it easier to fi
 <h2>General</h2>
 <ul>
 <li><a href="https://jhalon.github.io/m-trends-fireeye-report-overview/">M-Trends 2016: Cyber Threat Report Overview</a></li>
-<li><a href="">SANS Holiday Hack Challenge 2016</a> (Coming Soon!)</li>
 </ul>
 
 <h2>Capture the Flag</h2>
@@ -54,12 +53,6 @@ A listing of all my posts, sorted by specific Categories - makes it easier to fi
 
 </ul>
 
-<h2>Pentestit Labs</h2>
-<ul>
-<li><a href="">Pentestit v10 - Part 1</a> (Coming Soon!)</li>
-<li><a href="">Pentestit v10 - Part 2</a> (Coming Soon!)</li>
-<li><a href="">Pentestit v10 - Part 3</a> (Coming Soon!)</li>
-</ul>
 
 <h2>VulnHub</h2>
 <ul>
