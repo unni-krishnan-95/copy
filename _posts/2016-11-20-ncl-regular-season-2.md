@@ -128,7 +128,7 @@ __Answer: 15__
 <div class="rBorder" markdown="1">
 <span style="color:red">3. __What is the password of the vulnerable WiFi Network?__</span>
 
-Just as we have done with the previous question, we will have to run aircrack-ng. But... aircrack-ng will not have the password by default! So we will have to use a wordlist! I simply used the __rockyou__ password.
+Just as we have done with the previous question, we will have to run aircrack-ng. But... aircrack-ng will not have the password by default! So we will have to use a wordlist! I simply used the __rockyou__ wordlist.
 
 ```console
 root@kali:~/Downloads# aircrack-ng -w /root/rockyou.txt NCL-2016-Game2-HardWifi.cap 
