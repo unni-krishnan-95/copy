@@ -2,7 +2,7 @@
 layout: single
 title: "NCL CTF - Regular Season: WiFi Cracking & Exploitation"
 header:
-  teaser: oth.png
+  teaser: /assets/images/tweet.jpg
   overlay_image: nebula.jpg
   caption: "[__NCL__](http://www.nationalcyberleague.org/)"
 related: true
