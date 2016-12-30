@@ -3,6 +3,7 @@ layout: single
 author_profile: true
 title: Posts
 header:
+  teaser: /assets/images/tweet.jpg
   overlay_image: ZenBG.png
 permalink: /posts.html
 ---
