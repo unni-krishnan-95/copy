@@ -30,7 +30,7 @@ This Kioptrix VM Image are easy challenges. The object of the game is to acquire
 ## The Hack:
 The first step that we need to do is to carry out some __Intelligence Gathering__. That includes [Footprinting](http://www.infosecwriters.com/text_resources/pdf/Footprinting.pdf) and [Fingerprinting](https://en.wikipedia.org/wiki/TCP/IP_stack_fingerprinting) hosts, servers, etc. If you want to learn more about the proper procedures and steps then I suggest you read the [PTES Technical Guidelines](http://www.pentest-standard.org/index.php/Main_Page).
 
-Since the VM is being hosted on my Lab PC using a [Bridged Adapter](https://www.vmware.com/support/ws4/doc/network_bridged_ws.html) over VMWare, we will go ahead and scan our network to see if we can't get the IP of our VM. To do so, type in `netdiscover` in your terminal.
+Since the VM is being hosted on my Lab PC using a [Bridged Adapter](https://www.vmware.com/support/ws4/doc/network_bridged_ws.html) over VMWare, we will go ahead and scan our network to see if we can't get the IP address. To do so, type in `netdiscover` in your terminal.
 
 ```console
  Currently scanning: 172.24.166.0/16   |   Screen View: Unique Hosts           
