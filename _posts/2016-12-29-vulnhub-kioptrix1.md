@@ -126,7 +126,7 @@ So, let's go ahead and download that exploit to your kali machine - you can also
 
 Now - before we save the file, we have to edit the exploit for it to work - since it is pretty old!
 
-So here are the steps to make it work!
+So here are the steps to make it work:
 
 __1) Add the following headers:__
 
