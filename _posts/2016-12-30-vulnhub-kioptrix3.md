@@ -359,7 +359,7 @@ root
 
 ## Closing:
 
-Oh yea we rooted Kioptrix 3! 
+Oh yea! We rooted Kioptrix 3! 
 
 Overall this level of Kioptrix was way harder then the two other ones that we did. Initially some basic SQL Injection knowledge was required to be able to exploit the web application. The privilege escalation also required some decent knowledge of Linux and different vectors that we can attack to exploit our privileges. 
 
