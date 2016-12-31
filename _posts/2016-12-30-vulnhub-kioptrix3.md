@@ -98,7 +98,7 @@ Nmap done: 1 IP address (1 host up) scanned in 9.29 seconds
 
 Initially we see that only two ports are open TCP/22 (SSH) and TCP/80 (HTTP). From this I can infer that much of our exploitation will be taken place on the website. So let's go ahead and browse to the website by entering the IP address of the machine.
 
-<a href="/images/kiop3-1.PNG"><img src="/images/kiop3-1.PNG"></a>
+<a href="/images/kiop3-1.png"><img src="/images/kiop3-1.png"></a>
 
 Interesting... It seems like some sort of security website, with a blog and login. Let's start by running [nikto]() to see if we can't find any website vulnerabilities and misconfigurations.
 
@@ -140,7 +140,7 @@ root@kali:~# nikto -h 192.168.1.13
 
 [phpMyAdmin](https://www.phpmyadmin.net/) caught my eye which is a free software tool written in PHP, intended to handle the administration of MySQL over the Web. So let's navigate to __/phpmyadmin/__ to see if we can't find any more information.
 
-<a href="/images/kiop3-2.PNG"><img src="/images/kiop3-2.PNG"></a>
+<a href="/images/kiop3-2.png"><img src="/images/kiop3-2.png"></a>
 
 Quickly looking at this, we can tell that the phpMyAdmin version is 2.11.3 - so initially let's run a Google search to see if there are any public vulnerabilities/exploits.
 
@@ -150,17 +150,17 @@ But that's okay... we still have a lot of ground to cover on the website, and I'
 
 Let's take a look at their Blog page!
 
-<a href="/images/kiop3-3.PNG"><img src="/images/kiop3-3.PNG"></a>
+<a href="/images/kiop3-3.png"><img src="/images/kiop3-3.png"></a>
 
 It seems that they are promoting a new gallery page... which they are selling the source code to. Huh, let's go ahead and browse to the gallery page!
 
 After browsing the gallery page I saw that in one of the links I was able to sort the photos by certain values.
 
-<a href="/images/kiop3-4.PNG"><img src="/images/kiop3-4.PNG"></a>
+<a href="/images/kiop3-4.png"><img src="/images/kiop3-4.png"></a>
 
 The thing that really caught my eye here was the "__id__" parameter in the URL. So I attempted to inject a __'__ to try and see if the application was vulnerable to SQL Injection.
 
-<a href="/images/kiop3-5.PNG"><img src="/images/kiop3-5.PNG"></a>
+<a href="/images/kiop3-5.png"><img src="/images/kiop3-5.png"></a>
 
 I was right! The __id__ parameter was vulnerable to SQL Injection - notice the SQL Error that the page returned.
 
@@ -178,7 +178,7 @@ So in the URL after the __id__ variable, we will type in the following
 
 You should see the website return the following:
 
-<a href="/images/kiop3-6.PNG"><img src="/images/kiop3-6.PNG"></a>
+<a href="/images/kiop3-6.png"><img src="/images/kiop3-6.png"></a>
 
 From this we can see that the application has 6 columns (read the link above that I posted on how to find this out), and columns 2 and 3 are vulnerable to SQL Injection.
 
@@ -192,7 +192,7 @@ So since column 2 is vulnerable, we will be injecting our code in place of __2__
 
 You should see the website return the following:
 
-<a href="/images/kiop3-7.PNG"><img src="/images/kiop3-7.PNG"></a>
+<a href="/images/kiop3-7.png"><img src="/images/kiop3-7.png"></a>
 
 SQL Version 5.0.51a is actually MySQL - great, we now know how to better format our SQL Syntax.
 
@@ -204,7 +204,7 @@ Our next step in the SQL Injection would be to find what tables are located in t
 
 The website should then return the following:
 
-<a href="/images/kiop3-8.PNG"><img src="/images/kiop3-8.PNG"></a>
+<a href="/images/kiop3-8.png"><img src="/images/kiop3-8.png"></a>
 
 Nice! We now are able to see all the tables stored in the database! The __dev\_accounts__ looks really promising, let's go ahead and see if we can't find out the columns contained in that table.
 
@@ -216,7 +216,7 @@ The __CHAR()__ section in the SQL Query us actually the __dev\_accounts__ table 
 
 The website should thus return the following after running the query:
 
-<a href="/images/kiop3-9.PNG"><img src="/images/kiop3-9.PNG"></a>
+<a href="/images/kiop3-9.png"><img src="/images/kiop3-9.png"></a>
 
 Alright! Let's go ahead and print out the username, and password columns.
 
@@ -224,7 +224,7 @@ Alright! Let's go ahead and print out the username, and password columns.
 -1 union select 1,group_concat(username,0x3a,password),3,4,5,6 FROM dev_accounts--
 ```
 
-<a href="/images/kiop3-10.PNG"><img src="/images/kiop3-10.PNG"></a>
+<a href="/images/kiop3-10.png"><img src="/images/kiop3-10.png"></a>
 
 Alright! We got 2 Usernames and Passwords. We can copy the hashes for both passwords into a text editor in Kali. 
 
@@ -339,19 +339,19 @@ loneferret@Kioptrix3:~$ sudo ht /etc/sudoers
 
 We should see the sudoers file open up like so.
 
-<a href="/images/kiop3-11.PNG"><img src="/images/kiop3-11.PNG"></a>
+<a href="/images/kiop3-11.png"><img src="/images/kiop3-11.png"></a>
 
 From here press ALT+F then with your arrow keys navigate to Open, and then press Enter.
 
-<a href="/images/kiop3-12.PNG"><img src="/images/kiop3-12.PNG"></a>
+<a href="/images/kiop3-12.png"><img src="/images/kiop3-12.png"></a>
 
 Once you press Open, you will be promoted to enter a file name. Type in __/etc/sudoers__ to open the sudoers file for editing.
 
-<a href="/images/kiop3-13.PNG"><img src="/images/kiop3-13.PNG"></a>
+<a href="/images/kiop3-13.png"><img src="/images/kiop3-13.png"></a>
 
 Once the file is open, let's add __/bin/sh__ right after __/usr/local/bin/ht__, and don't forget the comma (__,__)!
 
-<a href="/images/kiop3-14.PNG"><img src="/images/kiop3-14.PNG"></a>
+<a href="/images/kiop3-14.png"><img src="/images/kiop3-14.png"></a>
 
 Once you did that press ALF+F > Save > then CTRL+Z to exit.
 
