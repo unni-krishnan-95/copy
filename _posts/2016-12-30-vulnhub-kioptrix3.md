@@ -13,8 +13,10 @@ Welcome back to the Kioptrix VM Series!
 These write-ups were created in aiding those starting the PWK Course, or who are training for the OSCP Course. The Kioptrix VM's were created to closely resemble those in the PWK Course. To read more about this, or if you haven't already read my first post for Kioptrix 1 - then I suggest you do so.
 
 __Links:__
- - [Opening & Kioptrix 1]()
- - [Kioptrix 2]()
+
+ - [Opening & Kioptrix 1](https://jhalon.github.io/vulnhub-kioptrix1/)
+ 
+ - [Kioptrix 2](https://jhalon.github.io/vulnhub-kioptrix2/)
 
  Alright - let's get to pwning Kioptrix 3!
 
