@@ -159,7 +159,7 @@ root@kali:~# apt-get update && apt-get install libssl-dev
 
 __4) Update declaration of variables:__
 
-In line 916, change:
+On line 916, change:
 
 ```c
 unsigned char *p, *end;
