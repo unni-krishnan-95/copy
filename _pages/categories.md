@@ -59,4 +59,7 @@ A listing of all my posts, sorted by specific Categories - makes it easier to fi
 <li><a href="https://jhalon.github.io/vulnhub-mr-robot1/">Mr.Robot</a></li>
 <li><a href="https://jhalon.github.io/vulnhub-stapler1/">Stapler 1</a></li>
 <li><a href="https://jhalon.github.io/vulnhub-sick-os1/">SickOS 1.1</a></li>
+<li><a href="https://jhalon.github.io/vulnhub-sick-os1/">Kioptrix 1</a>https://jhalon.github.io/vulnhub-kioptrix1/</li>
+<li><a href="https://jhalon.github.io/vulnhub-sick-os1/">Kioptrix 2</a>https://jhalon.github.io/vulnhub-kioptrix2/</li>
+<li><a href="https://jhalon.github.io/vulnhub-sick-os1/">Kioptrix 3</a>https://jhalon.github.io/vulnhub-kioptrix3/</li>
 </ul>
