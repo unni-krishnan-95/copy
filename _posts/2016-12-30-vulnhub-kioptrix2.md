@@ -146,7 +146,7 @@ Perfect! The SQL Injection worked and we are able to access the next page, which
 
 So let's go ahead and test this by trying to ping our localhost or 127.0.0.1.
 
-<a href="/images/kiop2-3.PNG"><img src="/images/kiop2-3.PNG"></a>
+<a href="/images/kiop2-3.png"><img src="/images/kiop2-3.png"></a>
 
 Okay! It seems that the ping command works and the backend php code is executing system commands. At this point, we can try to see if the php script is vulnerable to [Command Injection](https://www.owasp.org/index.php/Command_Injection).
 
