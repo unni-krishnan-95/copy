@@ -343,7 +343,7 @@ Once you press Open, you will be promoted to enter a file name. Type in __/etc/s
 
 <a href="/images/kiop3-13.png"><img src="/images/kiop3-13.png"></a>
 
-Once the file is open, let's add __/bin/sh__ right after __/usr/local/bin/ht__, and don't forget the comma (__,__)!
+Once the file is open, let's add __/bin/sh__ right after __/usr/local/bin/ht__, and don't forget the comma!
 
 <a href="/images/kiop3-14.png"><img src="/images/kiop3-14.png"></a>
 
