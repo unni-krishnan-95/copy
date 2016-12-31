@@ -164,7 +164,7 @@ There is a very good SQL Injection Tutorial by [Break The Security](http://break
 
 So, the first thing we want to do is find the amount of columns the SQL Database has, and also find which one of the columns is vulnerable to SQL Injection.
 
-So in the URL after the __id__ variable, we will type in the following
+So in the URL after the __id__ variable, we will type in the following:
 
 ```sql
 -1 union select 1,2,3,4,5,6
