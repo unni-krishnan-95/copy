@@ -18,7 +18,7 @@ Okay then - let's get to pwning Kioptrix 2!
 This Kioptrix VM Image are easy challenges. The object of the game is to acquire root access via any means possible (except actually hacking the VM server or player). The purpose of these games are to learn the basic tools and techniques in vulnerability assessment and exploitation. There are more ways than one to successfully complete the challenges.
 
 ## The Hack:
-As I have stated in many previous VulnHub write-ups, the first step in tackling a vulnerable VM (or first step in a pentest) is to carry out Intelligence Gathering. So let's start off with running `netdiscover` to find out what devices on our network.
+As I have stated in many previous VulnHub write-ups, the first step in tackling a vulnerable VM (or first step in a pentest) is to carry out Intelligence Gathering. So let's start off with running `netdiscover` to find out what devices are on our network.
 
 ```console
  Currently scanning: 192.168.8.0/16   |   Screen View: Unique Hosts            
