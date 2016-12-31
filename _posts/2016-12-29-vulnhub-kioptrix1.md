@@ -8,8 +8,6 @@ related: true
 comments: true
 ---
 
-> Try Harder! \- *OSCP*
-
 "Try Harder"... the quote that brings fear and confusion into every [PWK](https://www.offensive-security.com/information-security-training/penetration-testing-training-kali-linux/) participant; all working hard to obtain the prestigious [OSCP](https://www.offensive-security.com/information-security-certifications/oscp-offensive-security-certified-professional/) Certificate.
 
 It goes without saying that the OSCP challenges the students to prove they have a clear and practical understanding of the penetration testing process and life-cycle, all through an arduous twenty-four (24) hour certification exam.
