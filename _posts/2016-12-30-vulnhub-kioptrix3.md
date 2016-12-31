@@ -27,7 +27,7 @@ There’s a web application involved, so to have everything nice and properly di
 
 Hope you enjoy Kioptrix VM Level 1.2 challenge.
 
-##The Hack:
+## The Hack:
 Alright, let's run `netdiscover` to see what devices on our network and see if we can't pinpoint our Kioptrix VM.
 
 ```console
@@ -357,7 +357,7 @@ loneferret@Kioptrix3:~$ sudo /bin/sh
 root
 ```
 
-##Closing:
+## Closing:
 
 Oh yea we rooted Kioptrix 3! 
 
