@@ -150,7 +150,11 @@ So let's go ahead and test this by trying to ping our localhost or 127.0.0.1.
 
 Okay! It seems that the ping command works and the backend php code is executing system commands. At this point, we can try to see if the php script is vulnerable to [Command Injection](https://www.owasp.org/index.php/Command_Injection).
 
-Back at the main Ping Command page, let's go ahead and type in: `127.0.0.1; id`
+Back at the main Ping Command page, let's go ahead and type in: 
+
+```
+127.0.0.1; id
+```
 
 What this does, is basically tells the system to run __ping__ against our localhost machine (127.0.0.1), then run the __id__ command. Technically the "__;__" is a command separator.
 
