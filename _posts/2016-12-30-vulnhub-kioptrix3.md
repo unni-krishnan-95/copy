@@ -10,7 +10,7 @@ comments: true
 
 Welcome back to the Kioptrix VM Series!
 
-These write-ups were created in aiding those starting the PWK Course, or who are training for the OSCP Course. The Kioptrix VM's were created to closely resemble those in the PWK Course. To read more about this, or if you haven't already read my first post for Kioptrix 1 - then I suggest you do so. That post can be found [here](https://jhalon.github.io/vulnhub-kioptrix1/).
+These write-ups were created in aiding those starting the PWK Course, or who are training for the OSCP Certificate. The Kioptrix VM's were created to closely resemble those in the PWK Course. To read more about this, or if you haven't already read my first post for Kioptrix 1 - then I suggest you do so. That post can be found [here](https://jhalon.github.io/vulnhub-kioptrix1/).
 
  Alright - let's get to pwning Kioptrix 3!
 
@@ -28,7 +28,7 @@ There’s a web application involved, so to have everything nice and properly di
 Hope you enjoy Kioptrix VM Level 1.2 challenge.
 
 ## The Hack:
-Alright, let's run `netdiscover` to see what devices on our network and see if we can't pinpoint our Kioptrix VM.
+Alright, let's begin by running `netdiscover` to see what devices are on our network, and to see if we can't pinpoint our Kioptrix VM.
 
 ```console
  Currently scanning: 192.168.9.0/16   |   Screen View: Unique Hosts            
@@ -43,13 +43,13 @@ Alright, let's run `netdiscover` to see what devices on our network and see if w
  192.168.1.13    00:0c:29:3d:0e:fd      1      60  VMware, Inc.
 ```
 
-Okay, now that we have the IP of 192.168.13 for the Kioptrix VM, let's go ahead and edit our __/etc/hosts___ files to make sure we don't encounter any errors in the future.
+Okay, now that we have the IP of 192.168.13 for the Kioptrix VM, let's go ahead and edit our __/etc/hosts__ files to make sure we don't encounter any errors in the future.
 
 ```console
 root@kali:~# gedit /etc/hosts
 ```
 
-Once we open up the hosts file, make sure it looks similar to below:
+Once we open up and edit the hosts file, make sure it looks similar to below:
 
 ```
 127.0.0.1	localhost
@@ -57,7 +57,7 @@ Once we open up the hosts file, make sure it looks similar to below:
 192.168.1.13 kioptrix3.com
 ```
 
-Once we edit our hosts file, and have saved it - let's run nmap to see what ports and services are on the Kioptrix VM.
+After we edit our hosts file, and save it - let's run nmap to see what ports and services are open/running on the Kioptrix VM.
 
 ```console
 root@kali:~# nmap -sS -A -n 192.168.1.13
@@ -90,11 +90,11 @@ OS and Service detection performed. Please report any incorrect results at https
 Nmap done: 1 IP address (1 host up) scanned in 9.29 seconds
 ```
 
-Initially we see that only two ports are open TCP/22 (SSH) and TCP/80 (HTTP). From this I can infer that much of our exploitation will be taken place on the website. So let's go ahead and browse to the website by entering the IP address of the machine.
+Initially we see that only two ports are open TCP/22 (SSH) and TCP/80 (HTTP). From this I can infer that much of our exploitation will be taken place on the website. So let's go ahead and browse to the website by entering the IP address of the machine in our browser.
 
 <a href="/images/kiop3-1.png"><img src="/images/kiop3-1.png"></a>
 
-Interesting... It seems like some sort of security website, with a blog and login. Let's start by running [nikto]() to see if we can't find any website vulnerabilities and misconfigurations.
+Interesting... It seems like some sort of security website, with a blog and a login page. Let's start by running [nikto](http://sectools.org/tool/nikto/) to see if we can't find any website vulnerabilities and misconfigurations.
 
 ```console
 root@kali:~# nikto -h 192.168.1.13
@@ -132,13 +132,17 @@ root@kali:~# nikto -h 192.168.1.13
 + 1 host(s) tested
 ```
 
-[phpMyAdmin](https://www.phpmyadmin.net/) caught my eye which is a free software tool written in PHP, intended to handle the administration of MySQL over the Web. So let's navigate to __/phpmyadmin/__ to see if we can't find any more information.
+[phpMyAdmin](https://www.phpmyadmin.net/) was the first thing that caught my eye - which is a free software tool written in PHP, intended to handle the administration of MySQL over the Web. 
+
+Let's navigate to __/phpmyadmin/__ to see if we can't find any more information.
 
 <a href="/images/kiop3-2.png"><img src="/images/kiop3-2.png"></a>
 
-Quickly looking at this, we can tell that the phpMyAdmin version is 2.11.3 - so initially let's run a Google search to see if there are any public vulnerabilities/exploits.
+Quickly looking at this, we can tell that the phpMyAdmin version is 2.11.3 - so initially, let's run a Google search to see if there are any public vulnerabilities/exploits.
 
-After a quick search I came across [CVE-2009-1151](https://www.cvedetails.com/cve/CVE-2009-1151/) which was a RCE exploit by injection of arbitrary PHP code. Unfortunately it seems that this vulnerability can only be exploited against environments where the administrator has chosen to install phpMyAdmin following the wizard method, rather than manual method. The difference is that the wizard method would result in the phpMyAdmin page being __/phpMyAdmin/__, but for us we have __/phpmyadmin/__ which makes it seem as if the developer installed it manually - which would also explain why this exploit failed for me.
+After a quick search I came across [CVE-2009-1151](https://www.cvedetails.com/cve/CVE-2009-1151/), which is an RCE exploit by injection of arbitrary PHP code. Unfortunately it seems that this vulnerability can only be exploited against environments where the administrator has chosen to install phpMyAdmin following the wizard method, rather than manual method. 
+
+The difference is that the wizard method would result in the phpMyAdmin page being __/phpMyAdmin/__, but for us we have __/phpmyadmin/__ which makes it seem as if the developer installed it manually - which would also explain why this exploit failed for me.
 
 But that's okay... we still have a lot of ground to cover on the website, and I'm sure we can find another attack vector.
 
@@ -152,7 +156,7 @@ After browsing the gallery page I saw that in one of the links I was able to sor
 
 <a href="/images/kiop3-4.png"><img src="/images/kiop3-4.png"></a>
 
-The thing that really caught my eye here was the "__id__" parameter in the URL. So I attempted to inject a __'__ to try and see if the application was vulnerable to SQL Injection.
+The thing that really caught my eye here was the "__id__" parameter in the URL. So I attempted to inject a single qoute to try and see if the application was vulnerable to SQL Injection.
 
 <a href="/images/kiop3-5.png"><img src="/images/kiop3-5.png"></a>
 
@@ -162,7 +166,7 @@ At this point many people will invoke SQLMap to try and exploit this vulnerabili
 
 There is a very good SQL Injection Tutorial by [Break The Security](http://breakthesecurity.cysecurity.org/2010/12/hacking-website-using-sql-injection-step-by-step-guide.html) that I suggest you read before exploiting this application, just so you have a decent understanding of what we are doing. Either way, I will try to explain the best I can as we go along.
 
-So, the first thing we want to do is find the amount of columns the SQL Database has, and also find which one of the columns is vulnerable to SQL Injection.
+So, the first thing we want to do is find the amount of columns the SQL Database has, and also find out which one of those columns is vulnerable to SQL Injection.
 
 So in the URL after the __id__ variable, we will type in the following:
 
@@ -170,11 +174,9 @@ So in the URL after the __id__ variable, we will type in the following:
 -1 union select 1,2,3,4,5,6
 ```
 
-You should see the website return the following:
-
 <a href="/images/kiop3-6.png"><img src="/images/kiop3-6.png"></a>
 
-From this we can see that the application has 6 columns (read the link above that I posted on how to find this out), and columns 2 and 3 are vulnerable to SQL Injection.
+From this we can see that the application has 6 columns (read the link above that I posted on how to find the total amount of columns), and that columns 2 and 3 are vulnerable to SQL Injection.
 
 Our next step would be to find out what Version of SQL is running. This will aid us in better formatting our SQL Syntax depending on what SQL Database is being used (NoSQL, MySQL, MSSQL, etc).
 
@@ -183,8 +185,6 @@ So since column 2 is vulnerable, we will be injecting our code in place of __2__
 ```sql
 -1 union select 1,@@version,3,4,5,6
 ```
-
-You should see the website return the following:
 
 <a href="/images/kiop3-7.png"><img src="/images/kiop3-7.png"></a>
 
@@ -196,8 +196,6 @@ Our next step in the SQL Injection would be to find what tables are located in t
 -1 union select 1,2,group_concat(table_name),4,5,6 from information_schema.tables where table_schema=database()--
 ```
 
-The website should then return the following:
-
 <a href="/images/kiop3-8.png"><img src="/images/kiop3-8.png"></a>
 
 Nice! We now are able to see all the tables stored in the database! The __dev\_accounts__ looks really promising, let's go ahead and see if we can't find out the columns contained in that table.
@@ -206,9 +204,7 @@ Nice! We now are able to see all the tables stored in the database! The __dev\_a
 -1 union select 1,group_concat(column_name),3,4,5,6 FROM information_schema.columns WHERE table_name=CHAR(100, 101, 118, 95, 97, 99, 99, 111, 117, 110, 116, 115)--
 ```
 
-The __CHAR()__ section in the SQL Query us actually the __dev\_accounts__ table name. This needs to be done otherwise the SQL Query will fail.
-
-The website should thus return the following after running the query:
+The __CHAR()__ section in the SQL Query is actually the __dev\_accounts__ table name. This needs to be done otherwise the SQL Query will fail.
 
 <a href="/images/kiop3-9.png"><img src="/images/kiop3-9.png"></a>
 
@@ -335,7 +331,7 @@ We should see the sudoers file open up like so.
 
 <a href="/images/kiop3-11.png"><img src="/images/kiop3-11.png"></a>
 
-From here press ALT+F then with your arrow keys navigate to Open, and then press Enter.
+From here press ALT+, then with your arrow keys navigate to Open, and then press Enter.
 
 <a href="/images/kiop3-12.png"><img src="/images/kiop3-12.png"></a>
 
@@ -343,7 +339,7 @@ Once you press Open, you will be promoted to enter a file name. Type in __/etc/s
 
 <a href="/images/kiop3-13.png"><img src="/images/kiop3-13.png"></a>
 
-Once the file is open, let's add __/bin/sh__ right after __/usr/local/bin/ht__, and don't forget the comma!
+After the file is open, let's add __/bin/sh__ right after __/usr/local/bin/ht__, and don't forget the comma!
 
 <a href="/images/kiop3-14.png"><img src="/images/kiop3-14.png"></a>
 
@@ -361,8 +357,8 @@ root
 
 Oh yea! We rooted Kioptrix 3! 
 
-Overall this level of Kioptrix was way harder then the two other ones that we did. Initially some basic SQL Injection knowledge was required to be able to exploit the web application. The privilege escalation also required some decent knowledge of Linux and different vectors that we can attack to exploit our privileges. 
+Overall this level of Kioptrix was way harder than the two other ones that we did. Initially some basic SQL Injection knowledge was required to be able to exploit the web application. The privilege escalation also required some decent knowledge of Linux and different vectors that we can attack to exploit our privileges. 
 
-Either way, Google is always your friend and you can find anything on there. So if you ever get stuck on something, Google it first before you read write-ups - trust me - you learn better this way.
+Either way, Google is always your friend and you can find anything on there. So if you ever get stuck on something, Google it first before you read write-ups - trust me - you'll learn better this way.
 
 Thanks for reading!
