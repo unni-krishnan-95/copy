@@ -16,9 +16,9 @@ The OSCP Websites states that:
 
 > The successful examinee will demonstrate their ability to research the network (information gathering), identify any vulnerabilities and successfully execute attacks. This often includes modifying exploit code with the goal to compromise the systems and gain administrative access.
 
-These Kioptrix VM write-ups are done to provide a learning experience to anyone starting in the pentesting field, or for anyone interested in going after the OSCP Certificate - since the Kioptrix VM's are closely similar to what one might experience in the PWK Course.
+These Kioptrix VM write-ups are done to provide a learning experience to anyone starting in the pentesting field, or for anyone interested in going after the OSCP Certificate - due to the fact that the Kioptrix VM's are closely similar to what one might experience in the PWK Course.
 
-Since these Kioptrix VM's closely resemble to what the PWK course will be like, then I will be limiting the use of tools such as SQLMap, and Metasploit; only relying on manual testing and other tools at my disposal. This is done due to the fact that during the OSCP Exam you will not be able to use "automated" tools. Also, doing this manually allows you to get a better look and understanding behind the actual exploit that you are carrying out - requiring you to have a decent amount of understanding of the underlying vulnerability before attempting anything.
+Since these Kioptrix VM's closely resemble to what the PWK course will be like, then I will be limiting the use of tools such as SQLMap, and Metasploit; only relying on manual testing and other tools at my disposal. This is done because during the OSCP Exam you will not be able to use "automated" tools. Also, doing this manually allows you to get a better look and understanding behind the actual exploit that you are carrying out - requiring you to have a decent amount of understanding of the underlying vulnerability before attempting anything.
 
 Before we begin, if you would like to try out the Kioptrix 1 VM, or just follow along as we go - then you can download it [here](https://www.vulnhub.com/entry/kioptrix-level-1-1,22/)!
 
@@ -118,13 +118,13 @@ Nmap done: 1 IP address (1 host up) scanned in 23.17 seconds
 
 If you don't understand what my nmap commands are doing, then I suggest you read up on nmap switches, which can be found [here](https://nmap.org/book/man-briefoptions.html)!
 
-Taking a look at the open ports we see that we have TCP/22 Open (SSH) and TCP/80 Open (HTTP). Upon further examination of the namp output we can see that Apache is running on version 1.3.20 - which is seriously outdated! At the same time, we can see that Apache is also running OpenSSL 2.8.4.
+Taking a look at the open ports we see that we have TCP/22 Open (SSH) and TCP/80 Open (HTTP). Upon further examination of the namp output we can see that Apache is running version 1.3.20 - which is seriously outdated! At the same time, we can see that Apache is also running OpenSSL 2.8.4.
 
 After a quick Google search for the Apache and OpenSSL Versions, we stumble across the OpenSSL [OpenF**k](https://www.exploit-db.com/exploits/764/) Exploit!
 
 So, let's go ahead and download that exploit to your kali machine - you can also copy over the exploit script and save it using any text editor. Just make sure you save the file as __[filename].c__ so we can compile it with [GCC](https://gcc.gnu.org/).
 
-Now - before we save the file, we have to edit the exploit for it to work - since it is pretty old!
+Now - before you save anything, we have to edit the exploit for it to work - since it is pretty old!
 
 So here are the steps to make it work:
 
@@ -177,7 +177,9 @@ __5) Go ahead and save the file, compile the code, and we are done!__
 root@kali:~# gcc -o OpenFu**k 764.c -lcrypto
 ```
 
-__NOTE:__ 764.c is the file that I saved my exploit script to. __\-o__ just means to output to a new exactuable called OpenF**k. And yes - I did redact the words, just trying to keep it professional here folks! :)
+__NOTE:__ 764.c is the file that I saved my exploit script to. __\-o__ just means to output to a new exactuable called OpenF\*\*k. 
+
+And yes - I did redact the words, just trying to keep it professional here folks! :)
 
 Great! Now that we have our compiled exploit code, let's go ahead and run it to see its usage.
 
@@ -202,7 +204,7 @@ oot@kali:~# ./OpenFuck
   -c open N connections. (use range 40-50 if u dont know)
 ```
 
-Since our Apache Version is 1.3.20 I will go ahead with the __target__ as __0x6b__. You can see more of the targets, but I redacted it from the output to save space.
+Since the VM's Apache Version is 1.3.20, I will select __0x6b__ as our __target__. You can see a list of the target coes from the exploit's usageoutput, but I redacted here to save some space.
 
 Now that we know our target version, the IP, and HTTP Port - let's go ahead and run the exploit!
 
