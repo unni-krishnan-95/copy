@@ -610,8 +610,8 @@ Here's a good article from SANS on how to [Mount a Raspberry Pi File System Imag
 
 So first things first. Let's run the [fdisk](https://www.debian.org/releases/woody/i386/fdisk.txt) utility to read some data from the image.
 
- ```console
- root@kali:~/Downloads# cd cranbian.img/
+```console
+root@kali:~/Downloads# cd cranbian.img/
 root@kali:~/Downloads/cranbian.img# ls
 cranbian-jessie.img
 root@kali:~/Downloads/cranbian.img# fdisk -l cranbian-jessie.img
@@ -626,6 +626,7 @@ Device               Boot  Start     End Sectors  Size Id Type
 cranbian-jessie.img1        8192  137215  129024   63M  c W95 FAT32 (LBA)
 cranbian-jessie.img2      137216 2713599 2576384  1.2G 83 Linux
 ```
+
 Here, fdisk reveals a few portions of information that we need to be able to mount the image.
 
 * The sector size is (512 bytes)
