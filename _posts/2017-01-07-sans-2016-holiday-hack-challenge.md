@@ -1605,7 +1605,7 @@ Date:   Fri Nov 18 22:20:08 2016 -0800
     Remove unnecessary data from the database dump
 ```
 
-Let's go ahead and checkout that commit point and look at the SQL source code again.
+Let's go ahead and checkout that commit point. After we do that, we can then look at the SQL source code for any changes.
 
 ```console
 root@kali:~/analytics.northpolewonderland.com# git checkout 1908b71d42bce15345cabb7a63f57b5c79b85d15
