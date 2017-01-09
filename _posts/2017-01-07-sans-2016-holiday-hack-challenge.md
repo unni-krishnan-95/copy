@@ -1440,7 +1440,7 @@ The __sprusage.sql__ file looks interesting, let's open that up to see if there 
 
 Toward the bottom of the file, we see that there is a table for audio. But, there isn't anything else that we can use.
 
-What we can actually do is run `git log` to see if there were any change to the SQL file. This is because they might have left information in during testing which they removed before production release.
+What we can actually do is run `git log` to see if there were any change to the SQL file. This is because the developers might have left information in during testing, which they then removed before production release.
 
 ```console
 root@kali:~/analytics.northpolewonderland.com# git log
