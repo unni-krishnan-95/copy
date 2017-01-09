@@ -12,6 +12,8 @@ A listing of all my posts, sorted by specific Categories - makes it easier to fi
 <h2>General</h2>
 <ul>
 <li><a href="https://jhalon.github.io/m-trends-fireeye-report-overview/">M-Trends 2016: Cyber Threat Report Overview</a></li>
+<li><a href="https://jhalon.github.io/sans-2016-holiday-hack-challenge/">SANS 2016 Holiday Hack Challenge</a></li>
+
 </ul>
 
 <h2>Capture the Flag</h2>
