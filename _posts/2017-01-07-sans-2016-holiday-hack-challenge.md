@@ -736,7 +736,7 @@ Answer: __yummycookies__
 
 Now that we have completed the CranPi, we can access the terminals across the North Pole. There are 5 in total, each one having a challenge you must beat to get access to the doors - which offer clues on finding Santa and tips for later.
 
-#### Elf House 2
+### Elf House 2
 
 <a href="/images/hh9.png"><img src="/images/hh9.png"></a>
 
@@ -839,7 +839,7 @@ part2:ttlehelper
 
 Password: __santaslittlehelper__
 
-#### Workshop
+### Workshop
 
 <a href="/images/hh10.png"><img src="/images/hh10.png"></a>
 
@@ -902,7 +902,7 @@ key: open_sesame
 
 Password: __open\_sesame__
 
-#### Santa's Office
+### Santa's Office
 
 When you open the terminal we are greeted with the following:
 
@@ -924,7 +924,7 @@ One the next screen, type in "Las Vegas" and we should get our password!
 
 Password: __LOOK AT THE PRETTY LIGHTS__
 
-#### Workshop - Top Stairs
+### Workshop - Top Stairs
 
 <a href="/images/hh14.png"><img src="/images/hh14.png"></a>
 
@@ -989,7 +989,7 @@ Password: __WUMPUS IS MISUNDERSTOOD__
 
 Easy!
 
-#### Workshop - Train Station
+### Workshop - Train Station
 
 <a href="/images/hh15.png"><img src="/images/hh15.png"></a>
 
@@ -1053,7 +1053,7 @@ A quick look into the __strings.xml__ of the APK will reveal to us all hardcoded
 
 <a href="/images/hh22.png"><img src="/images/hh22.png"></a>
 
-#### Mobile Analytics (Credentailed Login)
+### Mobile Analytics (Credentailed Login)
 
 • [https://analytics.northpolewonderland.com/login.php](https://analytics.northpolewonderland.com/login.php) - (104.198.252.157)
 
@@ -1073,7 +1073,7 @@ Once logged in, you will find a link at the top called __MP3__, clicking that wi
 
 {% include audio.html file="/audio/discombobulatedaudio2.mp3" %}
 
-#### Dungeon Game
+### Dungeon Game
 
 • [http://dungeon.northpolewonderland.com/](http://dungeon.northpolewonderland.com/) - (35.184.47.139) 
 
@@ -1143,7 +1143,7 @@ Once you send an email, you should get a response back, along with the download 
 
 {% include audio.html file="/audio/discombobulatedaudio3.mp3" %}
 
-#### Debug Server
+### Debug Server
 
 • [http://dev.northpolewonderland.com/index.php](http://dev.northpolewonderland.com/index.php) - (35.184.63.245)
 
@@ -1224,7 +1224,7 @@ Let’s navigate to [http://dev.northpolewonderland.com/debug-20161224235959-0.m
 
 {% include audio.html file="/audio/debug-20161224235959-0.mp3" %}
 
-#### Banner Ad Server
+### Banner Ad Server
 
 • [http://ads.northpolewonderland.com/](http://ads.northpolewonderland.com/) - (104.198.221.240)
 
@@ -1286,7 +1286,7 @@ We found a link to an audio source. Navigating to that, grants as access to down
 
 {% include audio.html file="/audio/discombobulatedaudio5.mp3" %}
 
-#### Uncaught Exception Handler Server
+### Uncaught Exception Handler Server
 
 • [http://ex.northpolewonderland.com/exception.php](http://ex.northpolewonderland.com/exception.php) - (104.154.196.33)
 
@@ -1355,7 +1355,7 @@ We found another mp3 file called __discombobulated-audio-6-XyzE3N9YqKNH.mp3__. L
 
 {% include audio.html file="/audio/discombobulated-audio-6-XyzE3N9YqKNH.mp3" %}
 
-#### Mobile Analytics (Post)
+### Mobile Analytics (Post)
 
 • [https://analytics.northpolewonderland.com/report.php?type=usage](https://analytics.northpolewonderland.com/report.php?type=usage) - (104.198.252.157)
 
