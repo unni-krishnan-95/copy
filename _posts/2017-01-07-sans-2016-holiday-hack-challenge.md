@@ -908,7 +908,7 @@ Password: __open\_sesame__
 When you open the terminal we are greeted with the following:
 
 ```console
-GREETING PROFESSOR FALKEN.
+GREETINGS PROFESSOR FALKEN.
 ```
 
 We instantly realize that this is from the Movie "War Games", and we are playing the role of David. A quick Google search of the movie script will give us the answers!
