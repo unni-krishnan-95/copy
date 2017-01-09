@@ -1308,7 +1308,7 @@ At the same time I remembered what __Sugarplum Mary__ said about a Local File In
 
 <a href="/images/hh40.png"><img src="/images/hh40.png"></a>
 
-So, let's go ahead and write data with `"php://filter/base64-encode/resource=index` and see if anything happens.
+So, let's go ahead and write data with `php://filter/base64-encode/resource=index` and see if anything happens.
 
 <a href="/images/hh42.png"><img src="/images/hh42.png"></a>
 
