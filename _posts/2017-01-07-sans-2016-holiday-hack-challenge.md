@@ -625,7 +625,7 @@ Disk identifier: 0x5a7089a1
 Device               Boot  Start     End Sectors  Size Id Type
 cranbian-jessie.img1        8192  137215  129024   63M  c W95 FAT32 (LBA)
 cranbian-jessie.img2      137216 2713599 2576384  1.2G 83 Linux
- ```
+```
 Here, fdisk reveals a few portions of information that we need to be able to mount the image.
 
 * The sector size is (512 bytes)
