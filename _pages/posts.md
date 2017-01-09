@@ -15,7 +15,7 @@ permalink: /posts.html
     <h3>{{ currentdate }}</h3>
     {% assign date = currentdate %} 
   {% endif %}
-    <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+    <a href="{{ post.url }}">{{ post.title }}</a>
     {{ post.excerpt }}
 {% endfor %}
 </ul>
