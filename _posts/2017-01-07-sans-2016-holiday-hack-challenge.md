@@ -1319,7 +1319,7 @@ Nice! It seems that we successfully wrote data into a php file called __crashdum
 
 Nice! It seems that we are able to read anything that we wrote to the file - but the LFI didn't work. Hmmm....
 
-Let's try using the [LFI[(https://www.owasp.org/index.php/Testing_for_Local_File_Inclusion) to read our php file!
+Let's try using the [LFI](https://www.owasp.org/index.php/Testing_for_Local_File_Inclusion) to read our php file!
 
 <a href="/images/hh44.png"><img src="/images/hh44.png"></a>
 
@@ -1358,7 +1358,7 @@ We found another mp3 file called __discombobulated-audio-6-XyzE3N9YqKNH.mp3__. L
 
 ### Mobile Analytics (Post)
 
-• [https://analytics.northpolewonderland.com/report.php?type=usage](https://analytics.northpolewonderland.com/report.php?type=usage) - (104.198.252.157)
+• [https://analytics.northpolewonderland.com/](https://analytics.northpolewonderland.com/) - (104.198.252.157)
 
 Checking with Tom to see if the IP is in scope.
 
