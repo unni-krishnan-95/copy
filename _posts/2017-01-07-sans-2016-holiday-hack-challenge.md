@@ -19,65 +19,65 @@ For others, the challenges are still available to play through - and will be til
 ## Introduction
 
 > 'Twas the night before Christmas, and all through the house, not a creature was stirring, except for...
-
+>
 > Josh Dosis.
-
+>
 > Although quite snuggled in his bed, the precocious 7-year old couldn't sleep a wink, what with Christmas Morning just a few hours away. Josh climbed out of his bed and scurried down the hallway to his sister Jessica's room.
-
+>
 > "Wake up, Sis! I can't sleep!"
-
+>
 > With her visions of dancing sugar plums rudely interrupted, Jess slowly stirred, yawned, and rubbed her eyes. "What do you want, Josh?"
-
+>
 > "Jess! Christmas is almost here. I can't wait!" Josh exploded.
-
+>
 > Jess lectured her over-eager brother, "I'm excited too, but it's time to sleep. I'm looking forward to a restful holiday tomorrow, one where no one tries to destroy Christmas."
-
+>
 > Josh recognized his sister's reference to last year's trouble with ATNAS Corporation and their quest to foil its criminal plot. "Awww.... That was actually great fun! We always have such wonderful holiday adventures together. I almost wish we had a Twime Machine to relive all those great Christmases of the past," Josh responded as his loose tooth wriggled in his mouth.
-
+>
 > "We have had some wonderful fun, my dear brother, but it's time to go back to bed," Jessica responded as she rolled over, hoping her brother would get the message.
-
+>
 > And then quite suddenly, the kids were startled by a most unusual sound emanating above their heads: a soft thump followed by a subtle scraping sound, as though something was sliding across their rooftop. "What was that?" Jessica jumped up in surprise.
-
+>
 > Immediately afterwards, they heard a muffled jingling of bells.
-
+>
 > Josh blurted out, "Oh my gosh, Jess, Santa must have just landed on our house!"
-
+>
 > The kids then heard the sound of boots walking across the roof, followed by yet more sliding sounds.
-
+>
 > "He must be coming down the chimney. I can't believe it!" Josh squealed.
-
+>
 > The sounds continued without pause as they listened to a master of efficiency get to his work downstairs in their living room. They heard the rumpling of wrapped presents being stacked around the tree, the munching of the cookies they had left for Santa's refreshment, and even a slight gulping sound as their visitor polished off a glass of eggnog by the cookies. Why they even heard a quiet but deeply jolly, "Ho Ho Ho."
-
+>
 > "Let's sneak a peak at him!" Josh said.
-
+>
 > Jess shook her head and responded, "Oh, we can't do that... it might interfere with his operation. Plus, it's highly unorthodox for kids to see Santa himself."
-
+>
 > As the children debated whether to go downstairs to see Santa, their discussion was interrupted as the sounds coming from their living room took a rather startling turn. A loud "Oooomph!" was followed by what sounded like a scuffle of sorts.
-
+>
 > "What's happening, Sis?" Josh asked.
-
+>
 > "I don't know," came the response from his quite frightened sister.
-
+>
 > Just then, they heard crashing sounds and the tearing of paper, as if their presents were being smashed by a wild brawl. It all culminated with a sharp snapping sound, as though their Christmas tree itself had been split in half in the melee.
-
+>
 > And then....
-
+>
 > ...Nothing.
-
+>
 > Utter silence came from their living room.
 
 ## Part 1: A Most Curious Business Card
 
 > Despite their palpable fear, the Dosis children knew that they had to investigate what had happened. They left Jessica's room and tiptoed down the stairs warily, making sure to remain hidden in the shadows. As they peered around the corner at the bottom of the steps, what they saw astonished them.
-
+>
 > Ruined presents. A shattered Christmas tree. Needles strewn all about. Obvious signs of a fight. And there, beside it all, was Santa's big blue sack. But Santa himself was nowhere to be found.
-
+>
 > In shock, Jessica uttered, "Someone has abducted Santa Claus!"
-
+>
 > Josh was horrified. "Who would do such a thing? And on Christmas Eve, no less. They'll destroy Christmas! But why?"
-
+>
 > The kids scanned for clues, and there on the floor, they found a most unexpected item: a small, rectangular piece of cardstock. Picking it up, Joshua announced, "Hey! This looks like Santa's business card. It must have fallen out of his pocket while someone was kidnapping him."
-
+>
 > Jess took the card from Joshua's hands and read it. "It is his business card. And we're the only ones who know that Santa has disappeared. We've got to do something. If we don't find and rescue Santa, Christmas will be destroyed! Let's look closer at this card to see if it can be any help in finding out what happened."
 
 ### What is the secret message in Santa's tweets?
@@ -86,7 +86,7 @@ Once we get in game and talk to the Dorris Children, we are able to pick up and 
 
 <a href="/images/hh1.png"><img src="/images/hh1.png"></a>
 
-Let's go ahead and navigate to the [@santawclaus](https://twitter.com/santawclaus Twitter Account!
+Let's go ahead and navigate to the [@santawclaus](https://twitter.com/santawclaus) Twitter Account!
 
 <a href="/images/hh2.png"><img src="/images/hh2.png"></a>
 
@@ -513,13 +513,13 @@ Answer: __SantaGram APK__
 ## Part 2: Awesome Package Konveyance
 
 > The two siblings were dazed as they materialized in a snow-covered glade. "W-w-where are we?" Josh shivered.
-
+>
 > "Given all the snow and the elves roaming about, I'd say there's a good chance we're at the North Pole itself," Jessica replied.
-
+>
 > Thinking through what had just happened, Josh had a realization. "So that's how Santa transports all those holiday packages on Christmas! He carries that bag around the world and then reaches inside to pull presents directly from the North Pole. Ingenious!"
-
+>
 > Jessica added, "And, that's not all... it looks like Santa is really big into social networking! Not only does he use Twitter and Instagram, it seems that he and the elves use their own homegrown social networking platform called SantaGram. They seem to share information about vulnerabilities they find in software as part of bug bounty programs. Why, they've even set up their own bug-finding program."
-
+>
 > "Wow!" Josh responded, "That's really cool. Let's take a close look at that SantaGram mobile application. It might help us find out who kidnapped Santa."
 
 ### What username and password are embedded in the APK file?
@@ -591,13 +591,13 @@ Answer: __discombobulatedaudio1.mp3__
 ## Part 3: A Fresh-Baked Holiday Pi
 
 > Jessica was perplexed. "That audio inside of the SantaGram application sounds really strange. I wonder what it means."
-
+>
 > The children quickly realized that they could only get so far in their analysis of SantaGram using the phones they had brought with them to the North Pole. Jessica summarized their situation, "Gosh, I wish I had brought my laptop with me. Without it, we're not going to be able to dissect that application. And, time is of the essence. We need to find and rescue Santa so he can continue to deliver presents, or else Christmas is sunk this year."
-
+>
 > Josh replied, "And, making matters worse, I've noticed that some of the doors here at the North Pole have little computer terminals next to them. If we want to open those doors, we're going to need a machine to interface with those terminals."
-
+>
 > Just then, Jessica noticed something curious and positively useful. "Heeeey! It looks like someone has left piece parts of a computer system called a 'Cranberry Pi' strewn all about the North Pole. Perhaps we can fetch all of those pieces and put together a computer we can then use to open those terminals and work on the SantaGram application!"
-
+>
 > Josh was excited again. "I'll bet that with a fully operational Cranberry Pi, we'll be able to find Santa Claus and save Christmas!"
 
 ### What is the password for the "cranpi" account on the Cranberry Pi system?
@@ -1028,21 +1028,21 @@ Great... Santa has memory loss! Guess we can't ask him about the kidnapping - an
 ## Part 4: My Gosh... It's Full of Holes
 
 > Jessica proclaimed, "We found Santa Claus! We've saved Christmas." The children were exuberant!
-
+>
 > Josh added, "And what a wonderful and diligent man Santa is, Jess. He thanked us so very kindly and then immediately returned to his holiday duties delivering presents."
-
+>
 > But, the children's happiness was soon muted as they realized that Santa's kidnapper was still on the loose. Jessica pointed out, "Too bad Santa was suffering short-term memory loss from getting hit over the head with our Christmas tree. Sadly, even he doesn't know who his assailant was."
-
+>
 > Joshua came to the obvious conclusion, "You know, Jess, we should probably find the villain who tried to kidnap Santa and bring him to justice. If we don't, Santa's kidnapper could strike again! Neither Santa nor Christmas are really safe with this nefarious villain on the loose. How are we ever going to find this bad guy?"
-
+>
 > Jessica responded, "I've noticed some really interesting issues in that SantaGram application that might help us get to the bottom of this whole caper. But, I'd need to exploit SantaGram and its associated servers to do so. Do you think we're allowed to attack these systems?"
-
+>
 > Josh, always impulsive, replied, "Well, Santa is running a bug bounty program, so he wants us to find these flaws. I think it's ok to attack those targets!"
-
+>
 > "Yeah, Josh, but how do we know for sure a given machine is included in the scope of the bug bounty program? We don't want to hit something that is outside of Santa's enterprise and cause yet another big Christmas disaster. It's almost like we need an oracle to vet our target IP addresses, like we had last year when Mr. Tom Hessman confirmed which machines were in scope for our work."
-
+>
 > Josh lit up. "Hey, sis, in wandering around the North Pole, you'll never believe who I ran into. Mr. Tom Hessman himself! As it turns out, he is up here, and is happy to confirm which IP addresses we are allowed to attack."
-
+>
 > "Well, let's get to it then. Let's participate in Santa's bug bounty program!" Jessica announced.
 
 ### Remote Exploit of Websites
@@ -1717,11 +1717,11 @@ discombobulatedaudio7.mp3: Audio file with ID3 version 2.3.0, contains: MPEG ADT
 ## Part 5: Discombobulated Audio
 
 > Josh sighed as he scratched his head. "Hey, sis. We've managed to own much of the SantaGram infrastructure, but all we've got to show for it is these strangely distorted audio files. They sound weird, as though they've been all discombobulated somehow. We certainly haven't found the criminal who abducted Santa. Also, there's that one door at the North Pole we haven't been able to get open yet. Very curious, I tell you."
-
+>
 > Something Joshua just said triggered Jessica's memory. "I recall seeing a weird machine here at the North Pole called 'The Audio Discombobulator.' Remember it? It mentioned how it cuts, mixes, and stirs songs together, and then distributes them throughout the North Pole. I guess that explains the music that saturates everything up here. Perhaps these weird audio files came from that machine... but they don't sound much like music, and certainly not whole songs."
-
+>
 > "What if..." Josh contemplated, "...the villain walked by the Audio Discombobulator and uttered something... Not a song, which the machine is used to dealing with, but instead a sentence or a phrase. The machine might have heard that, cut it up, mixed it, and then distributed it throughout the North Pole!"
-
+>
 > Jess concluded the thought, "Wow! Let's see if we can put the pieces of this crazy audio puzzle back together. It might help us find the bad guy."
 
 ### Who is the villain behind the nefarious plot.
@@ -1750,7 +1750,7 @@ Asking the Doctor on why he kidnapped Santa - we get the following:
 ## Epilogue: Bringing It All Home
 
 > With Santa's rescue and the discovery of his abductor, the Dosis children were finally satisfied that Christmas was now safe. They contacted their father's friends in law enforcement to ensure the villain would pay for his crime.
-
+>
 > And that, Dear Reader, is the story of how you helped the Dosis children save Christmas and preserve the whole holiday season yet again.
 
 ## Closing
