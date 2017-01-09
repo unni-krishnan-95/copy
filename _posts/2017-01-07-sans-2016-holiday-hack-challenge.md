@@ -586,9 +586,7 @@ root@kali:~/Downloads/SantaGram_4.2# find . -name "*.mp3" -exec echo -e {} \;
 
 Answer: __discombobulatedaudio1.mp3__
 
-<div class="rBorder" markdown="1">
 {% include audio.html file="/audio/discombobulatedaudio1.mp3" %}
-</div>
 
 ## Part 3: A Fresh-Baked Holiday Pi
 
