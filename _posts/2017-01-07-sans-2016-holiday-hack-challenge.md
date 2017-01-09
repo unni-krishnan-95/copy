@@ -1013,7 +1013,7 @@ Let's press enter and travel though time!
 
 Passing this level - we end up in 1978!
 
-#### Finding Santa
+### Finding Santa
 
 Once the train took us to 1978 - we can go ahead to the Wupus door and we will find Santa!
 
