@@ -1595,7 +1595,7 @@ Date:   Sun Nov 13 18:10:45 2016 -0800
     Added the start of a reporting page
 ```
 
-Nice we found one edit to the database!
+Nice, we found one edit to the database!
 
 ```console
 commit 43970092ea851cff05e44aba3e0a67eb351304f3
