@@ -1364,7 +1364,7 @@ Checking with Tom to see if the IP is in scope.
 
 <a href="/images/hh47.png"><img src="/images/hh47.png"></a>
 
-Since the website is the same as the first one we did, I remembered something __Minty Candycane__ told me
+Since the website is the same as the first one we did, I remembered something __Minty Candycane__ told me.
 
 <a href="/images/hh48.png"><img src="/images/hh48.png"></a>
 
