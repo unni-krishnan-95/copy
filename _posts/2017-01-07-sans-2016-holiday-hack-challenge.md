@@ -82,7 +82,7 @@ For others, the challenges are still available to play through - and will be til
 
 ### What is the secret message in Santa's tweets?
 
-Once we get in game and talk to the Dorris Children, we are able to pick up and see Santa's Business Card, along with his Social Media Accounts (What kind of Santa has a Twitter).
+Once we get into the game and talk to the Dorris Children, we are able to pick up and see Santa's Business Card, along with his Social Media Accounts (What kind of Santa has a Twitter).
 
 <a href="/images/hh1.png"><img src="/images/hh1.png"></a>
 
@@ -90,9 +90,9 @@ Let's go ahead and navigate to the [@santawclaus](https://twitter.com/santawclau
 
 <a href="/images/hh2.png"><img src="/images/hh2.png"></a>
 
-Taking a look at the twitter account we can see a lot of random text. This could be an issue for us trying to grab and decipher all the text. Fortunately, twitter has an API that can help us grab all the tweets.
+Taking a look at the twitter account we can see a lot of random text. This could be an issue for us trying to grab and decipher all the text. Fortunately, twitter has an API that can help us.
 
-After a quick Google search I came across this Python Script that will help us pull all tweets.
+After a quick Google search, I came across this Python Script that will allow us to grab all the tweets off an account.
 
 ```
 http://www.craigaddyman.com/mining-all-tweets-with-python/
@@ -498,7 +498,7 @@ We can see that there is an image with a laptop and dirty desk. Taking a closer 
     <a href="/images/hh5.png"><img src="/images/hh5.png"></a>
 </figure>
 
-We can see that on the right side, next to the Violent Python book, there is a URL point to [https://northpolewonderland.com](https://northpolewonderland.com). If we look to the left, at the top of the laptop we see a Destination Path to __SantaGram_v4.2.zip__.
+We can see that on the right side, next to the Violent Python book, there is a URL pointing to [https://northpolewonderland.com](https://northpolewonderland.com). If we look to the left, at the top of the laptop we see a Destination Path to __SantaGram_v4.2.zip__.
 
 From here you can navigate to [http://northpolewonderland.com/SantaGram_v4.2.zip](http://northpolewonderland.com/SantaGram_v4.2.zip) and we will be prompted to download the ZIP file.
 
@@ -526,12 +526,12 @@ Answer: __SantaGram APK__
 
 For this part I decided to open the APK in [jadx](https://github.com/skylot/jadx).
 
-Once I downloaded and installed jadx, I ran the following code to get the GUI and just used the GUI to open the SnataGram APK.
+Once I downloaded and installed jadx, I ran the following command to start up the GUI, and then opened the SnataGram APK.
 
 ```console
 root@kali:~/jadx/build/jadx# bin/jadx-gui lib/jadx-core-0.6.1.jar 
 ```
-I decided to analyze the __com.northpolewonderland.santagram__ location for the password and username. Sure enough, in the __SplashScreen__ source code, we can find the Username and Password.
+I started off with analyzing the __com.northpolewonderland.santagram__ location for the password and username. Sure enough, in the __SplashScreen__ source code, we can find the Username and Password.
 
 <a href="/images/hh8.png"><img src="/images/hh8.png"></a>
 
@@ -539,7 +539,7 @@ Answer: (Username:Password) __guest:busyreindeer78__
 
 ### What is the name of the audible component (audio file) in the SantaGram APK file?
 
-For this question I decided that trying to go through all the files in jadax was going to be a pain in my butt. So, I decided to decompile the APK using [Apktool](https://ibotpeaches.github.io/Apktool/) and use regex to search for the file.
+For this question I decided that trying to go through all the files in jadax was going to be a pain in my butt. So, what I did was decompile the APK using [Apktool](https://ibotpeaches.github.io/Apktool/) and use regex to search for the file.
 
 ```console
 root@kali:~/Downloads# apktool d SantaGram_4.2.apk 
@@ -562,7 +562,7 @@ root@kali:~/Downloads/SantaGram_4.2# ls
 AndroidManifest.xml  apktool.yml  assets  original  res  smali
 ```
 
-Once the file is decompiled, let's go ahead and see the type of files there are.
+Once the file is decompiled, let's go ahead and see what kind of files are in the folder.
 
 ```console
 root@kali:~/Downloads/SantaGram_4.2# find . -type f -exec file -b {} \; | cut -d, -f1 | sort | uniq -c | sort -n
@@ -577,7 +577,7 @@ root@kali:~/Downloads/SantaGram_4.2# find . -type f -exec file -b {} \; | cut -d
    1769 ASCII text
 ```
 
-Great! We can see that there is an Audio file present in the folder somewhere. Let's find that file!
+Great! We can see that there is an Audio file present somewhere in the folder. Let's find that file!
 
 ```console
 root@kali:~/Downloads/SantaGram_4.2# find . -name "*.mp3" -exec echo -e {} \; 
@@ -602,7 +602,7 @@ Answer: __discombobulatedaudio1.mp3__
 
 ### What is the password for the "cranpi" account on the Cranberry Pi system?
 
-For this section, we have to scour for the Cranberry Pi pieces across the North Pole. Once you get all five (5) pieces of the Cranberry Pi - go ahead to Holly Evergreen and you will be able to download the [CranPi](https://www.northpolewonderland.com/cranbian.img.zip) Image.
+For this section, we have to scour for the Cranberry Pi pieces across the North Pole. Once you get all five (5) pieces of the Cranberry Pi - go to __Holly Evergreen__ and you will be able to download the [CranPi](https://www.northpolewonderland.com/cranbian.img.zip) Image.
 
 Holly Evergreen wants us to find the password to the CranPi - so let's unzip the Image and mount it!
 
@@ -627,12 +627,12 @@ cranbian-jessie.img1        8192  137215  129024   63M  c W95 FAT32 (LBA)
 cranbian-jessie.img2      137216 2713599 2576384  1.2G 83 Linux
 ```
 
-Here, fdisk reveals a few portions of information that we need to be able to mount the image.
+Here, fdisk, reveals a few portions of information that we need to be able to mount the image.
 
 * The sector size is (512 bytes)
 * The starting offset in the sector for our file systems.
 
-Using our sector size of 512 bytes and the start sector for our Linux File System (cranbian-jessie.img2), we can then calculate the number of bytes to the beginning of the system using our CLI.
+Using our sector size of 512 bytes and the start sector for our Linux File System (__cranbian-jessie.img2__), we can then calculate the number of bytes to the beginning of the system using our CLI.
 
 ```console
 root@kali:~/Downloads/cranbian.img# echo $((512*137216))
@@ -649,7 +649,7 @@ root@kali:~/Downloads/cranbian.img# mount -v -o offset=70254592 -t ext4 cranbian
 mount: /dev/loop0 mounted on /root/Downloads/cranbian.img/mnt.
 ```
 
-Once we have completed that! Let's see if we can access the __/etc/shadow__ file on the CranPi Image.
+Once we have completed that. let's see if we can access the __/etc/shadow__ file on the CranPi Image.
 
 ```console
 root@kali:~/Downloads/cranbian.img# cd mnt/
@@ -735,7 +735,7 @@ Answer: __yummycookies__
 
 ### How did you open each terminal door and where had the villain imprisoned Santa?
 
-Now that we have completed the CranPi, we can access the terminals across the North Pole. There are 5 in total, each one having a challenge you must beat to get access to the doors - which offer clues on finding Santa and tips for later.
+Now that we have completed the CranPi, we can access the terminals across the North Pole. There are 5 in total, each one contains a small challenge that you must beat, to acquire a password so you can access the doors. Inside each of these doors, you wull find clues for future challanges, and tips on finding Santa.
 
 ### Elf House 2
 
@@ -787,7 +787,7 @@ ength 0
 ---snip---
 ```
 
-Great! This allows us to read the PCAP. So now let's dissect the packets so we can read them!
+Great! This allows us to read the PCAP. So now let's dissect the packets to try and find the password!
 
 ```console
 scratchy@8f867cf8f567:/$ sudo -u itchy tcpdump -qns 0 -A -r out.pcap 
@@ -844,7 +844,7 @@ Password: __santaslittlehelper__
 
 <a href="/images/hh10.png"><img src="/images/hh10.png"></a>
 
-Okay, this might be a little tedious trying to find a file deep in the directories... but fortunately we can use [find](http://man7.org/linux/man-pages/man1/find.1.html) to try and search for everything in a certain directory.
+This might be a little tedious trying to find a file deep in the directories... but fortunately we can use [find](http://man7.org/linux/man-pages/man1/find.1.html) to try and search for everything in a certain directory.
 
 I see that we are logged in as __elf__, so let's see if we can't enumerate any files with the keyword "elf".
 
@@ -860,9 +860,9 @@ find: `./var/cache/ldconfig': Permission denied
 
 It seems that the file __key_for_the_door.txt__ is our target, and it's in our home directory!
 
-Normally I would use the find command, grep it, and print it out suing cat... but! Since this is a learning experience, let's have some fun and do it manually!
+Normally I would use the find command, grep it, and print it out using cat... but! Since this is a learning experience, let's have some fun and do it manually!
 
-Remember: __\__ is used to escape characters such as spaces, hyphens, periods, etc.!
+Remember: __\\__ is used to escape characters such as spaces, hyphens, periods, etc.!
 
 ```console
 elf@bf0684f81315:/$ cd home
@@ -996,7 +996,7 @@ Easy!
 
 Okay, it seems like we need to start the train. Let's read the HELP file to see if we can't get any clues!
 
-Upon reading the help file, I can see that [less](https://linux.die.net/man/1/less) is being used to display the HELP prompt. Let's type in __:e__ and press enter, then type in __*__ to examine all files on the system.
+Upon reading the help file, I can see that [less](https://linux.die.net/man/1/less) is being used to display the HELP prompt. Let's type in __:e__ and press enter, then type in __\*__ to examine all files on the system.
 
 <a href="/images/hh16.png"><img src="/images/hh16.png"></a>
 
@@ -1086,7 +1086,7 @@ In the game __Alabaster Snowball__ gives us a good hint that there’s a way of 
 
 <a href="/images/hh27.png"><img src="/images/hh27.png"></a>
 
-When you get your hands on the Dungeon Game [Download](http://northpolewonderland.com/Dungeon.zip) from __Pepper__ go ahead and unzip and extract it.
+When you get your hands on the Dungeon Game [Download](http://northpolewonderland.com/Dungeon.zip) from __Pepper__ go ahead and unzip it, and then extract it.
 
 A quick Google Search on the Dungeon Game reveals that it is based of [Zork](https://en.wikipedia.org/wiki/Zork) and that there is a Debug command called __GDT__. We can actually use that to our advantage to find all the strings in the game!
 
@@ -1168,7 +1168,7 @@ At this point I was reminded of what __Alabaster Snowball__ said.
 
 <a href="/images/hh27.png"><img src="/images/hh27.png"></a>
 
-What we can do now is use [cURL](https://curl.haxx.se/) to send these parameters over to the website and grab any response.
+What we can do now is use [cURL](https://curl.haxx.se/) to send these parameters to the website and grab any response.
 
 ```console
 root@kali:~# curl -s -H "Content-Type: application/json" -d '{"date": "20170101010101", "udid": "123456789", "debug": "com.northpolewonderland.santagram.EditProfile, EditProfile", "freemem": "1000"}' http://dev.northpolewonderland.com/index.php | python -mjson.tool
@@ -1257,7 +1257,7 @@ Taking a quick look at the source code of the page reveals to use the following:
 </html>
 ```
 
-It seems that the website is running the [Meteor](https://www.meteor.com/) JavaScript Framework. There was actually a very good post on SANS about [Mining Meteor](https://pen-testing.sans.org/blog/2016/12/06/mining-meteor) that we can use on this website.
+It seems that the website is running the [Meteor](https://www.meteor.com/) JavaScript Framework. There was actually a very good post on SANS about [Mining Meteor](https://pen-testing.sans.org/blog/2016/12/06/mining-meteor) that we can use to our advantage.
 
 From SANS website I downloaded the [Tampermonkey](https://tampermonkey.net/) plugin, and the [MeteorMiner](https://github.com/nidem/MeteorMiner) script that I used against this website.
 
@@ -1317,7 +1317,7 @@ Nice! It seems that we successfully wrote data into a php file called __crashdum
 
 <a href="/images/hh43.png"><img src="/images/hh43.png"></a>
 
-Nice! It seems that we are able to read anything that we wrote to the file - but the LFI didn't work. Hmmm....
+The good thing is that we are able to read anything that we wrote to the file - but the LFI didn't work. Hmmm....
 
 Let's try using the [LFI](https://www.owasp.org/index.php/Testing_for_Local_File_Inclusion) to read our php file!
 
@@ -1403,9 +1403,9 @@ OS and Service detection performed. Please report any incorrect results at https
 Nmap done: 1 IP address (1 host up) scanned in 122.15 seconds
 ```
 
-Perfect! It seems like there is public [git](https://en.wikipedia.org/wiki/Git) repository, which isn't good as this could reveal us the source code of the page!
+Perfect! It seems like there is a public [git](https://en.wikipedia.org/wiki/Git) repository, which isn't good as this could reveal us the source code of the page!
 
-Navigating to [https://analytics.northpolewonderland.com/.git/]https://analytics.northpolewonderland.com/.git/) gives us the following:
+Navigating to [https://analytics.northpolewonderland.com/.git/](https://analytics.northpolewonderland.com/.git/) gives us the following:
 
 <a href="/images/hh49.png"><img src="/images/hh49.png"></a>
 
@@ -1440,7 +1440,7 @@ The __sprusage.sql__ file looks interesting, let's open that up to see if there 
 
 Toward the bottom of the file, we see that there is a table for audio. But, there isn't anything else that we can use.
 
-What we can actually do is run `git log` to see if there were any change to the SQL file. This is because the developers might have left information in during testing, which they then removed before production release.
+What we can actually do now, is run `git log` to see if there were any change to the SQL file. This is due to the fact that the developers might have left information in during testing, which they then removed before a production release.
 
 ```console
 root@kali:~/analytics.northpolewonderland.com# git log
@@ -1647,7 +1647,7 @@ Okay - it seems we can actually enter this data into the Edit screen. So let's d
 
 <a href="/images/hh56.png"><img src="/images/hh56.png"></a>
 
-Okay, it seems that the Edit function runs a SQL Query... maybe we can find [SQLi](http://www.acunetix.com/).
+Looking at the output, we see that the Edit function runs a SQL Query... maybe we can find [SQLi](http://www.acunetix.com/).
 
 One thing that really caught my eye here was that the URL was passing parameters of the query - which looked like the following.
 
@@ -1669,7 +1669,7 @@ Well it seems that the Query was edited... but how can we be sure that it worked
 
 <a href="/images/hh58.png"><img src="/images/hh58.png"></a>
 
-Okay! So it seems that there in an MP3 file located in the Database, but it's stored as a blob and not a file that we can directly access.
+Okay! So we can see that there in an MP3 file located in the Database, but it's stored as a blob and not a file that we can directly access.
 
 A quick Google search gave me [this](https://dev.mysql.com/doc/refman/5.6/en/string-functions.html#function_to-base64
 ) link on how to extract blob data as Base64.
