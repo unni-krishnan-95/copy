@@ -526,7 +526,7 @@ Answer: __SantaGram APK__
 
 For this part I decided to open the APK in [jadx](https://github.com/skylot/jadx).
 
-Once I downloaded and installed jadx, I ran the following command to start up the GUI, and then opened the SnataGram APK.
+Once I downloaded and installed jadx, I ran the following command to start up the GUI, and then opened the SantaGram APK.
 
 ```console
 root@kali:~/jadx/build/jadx# bin/jadx-gui lib/jadx-core-0.6.1.jar 
