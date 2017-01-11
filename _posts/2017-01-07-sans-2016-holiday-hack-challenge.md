@@ -1086,9 +1086,9 @@ In the game __Alabaster Snowball__ gives us a good hint that there’s a way of 
 
 <a href="/images/hh27.png"><img src="/images/hh27.png"></a>
 
-When you get your hands on the Dungeon Game [Download](http://northpolewonderland.com/Dungeon.zip) from __Pepper__ go ahead and unzip it, and then extract it.
+When you get your hands on the Dungeon Game [Download](http://northpolewonderland.com/Dungeon.zip) from __Pepper__, go ahead and unzip it, and then extract it.
 
-A quick Google Search on the Dungeon Game reveals that it is based of [Zork](https://en.wikipedia.org/wiki/Zork) and that there is a Debug command called __GDT__. We can actually use that to our advantage to find all the strings in the game!
+A quick Google Search on the Dungeon Game reveals that it is based of [Zork](https://en.wikipedia.org/wiki/Zork), and that there is a Debug command called __GDT__. We can actually use this to our advantage to find all the strings in the game!
 
 ```console
 root@kali:~/Downloads/dungeon# ./dungeon 
@@ -1152,7 +1152,7 @@ Let's check with Tom to see if the IP is in scope!
 
 <a href="/images/hh29.png"><img src="/images/hh29.png"></a>
 
-Navigating to the webpage we only see if a blank screen. Looking at the source code and scanning the IP with nmap doesn’t really provide us with any clues.
+Navigating to the webpage, we see a blank white screen. Looking at the source code and scanning the IP with nmap doesn’t really provide us with any clues.
 
 So, I decided that at this point I should search though the APK for anything relating to "__debug__" using jadx.
 
@@ -1219,7 +1219,7 @@ root@kali:~# curl -s -H "Content-Type: application/json" -d '{"date": "201701010
 
 Awesome! It looks like the response came back with additional information on files stored on the website, one of them being an mp3 file!
 
-Let’s navigate to [http://dev.northpolewonderland.com/debug-20161224235959-0.mp3](http://dev.northpolewonderland.com/debug-20161224235959-0.mp3) and we should be able to download out next mp3 file!
+Let’s navigate to [http://dev.northpolewonderland.com/debug-20161224235959-0.mp3](http://dev.northpolewonderland.com/debug-20161224235959-0.mp3) and we should be able to download our next mp3 file!
 
 <a href="/images/hh32.png"><img src="/images/hh32.png"></a>
 
@@ -1261,7 +1261,7 @@ It seems that the website is running the [Meteor](https://www.meteor.com/) JavaS
 
 From SANS website I downloaded the [Tampermonkey](https://tampermonkey.net/) plugin, and the [MeteorMiner](https://github.com/nidem/MeteorMiner) script that I used against this website.
 
-Once we got the plugin and script running I started to enumerate though the pages while looking for anything interesting in the Meteor Miner.
+Once we got the plugin and script running, I started to enumerate though the pages while looking for anything interesting in the Meteor Miner.
 
 One thing that was interesting to me was the __HomeQuotes__ collections.
 
@@ -1299,11 +1299,11 @@ Alright, let's access the website and see what we got to work with.
 
 <a href="/images/hh41.png"><img src="/images/hh41.png"></a>
 
-It seems that the website is only accepting POST parameters. We can dig into the APK again by looking for __postExceptionData__, which will provide us with the jSON Object we can use.
+It seems that the website is only accepting POST parameters. We can dig into the APK again by looking for __postExceptionData__, which will provide us with the jSON Objects we can use.
 
 <a href="/images/hh44-1.png"><img src="/images/hh44-1.png"></a>
 
-We see that though the jSON Parameters we can __WriteCrashDump__ along with other data. So let's fire up [Burp](https://portswigger.net/burp/) and try to write some data.
+We see that through the jSON Parameters we are able to write data using __WriteCrashDump__. So let's fire up [Burp](https://portswigger.net/burp/) and try to write some data.
 
 At the same time I remembered what __Sugarplum Mary__ said about a Local File Inclusion. This also reminded me of a SANS Post on [Getting MOAR Value out of PHP Local File Include Vulnerabilities](https://pen-testing.sans.org/blog/2016/12/07/getting-moar-value-out-of-php-local-file-include-vulnerabilities) by using the php filter capability.
 
@@ -1317,7 +1317,7 @@ Nice! It seems that we successfully wrote data into a php file called __crashdum
 
 <a href="/images/hh43.png"><img src="/images/hh43.png"></a>
 
-The good thing is that we are able to read anything that we wrote to the file - but the LFI didn't work. Hmmm....
+The good thing is that we are able to read the data that we wrote to the file - but the LFI didn't work. Hmmm....
 
 Let's try using the [LFI](https://www.owasp.org/index.php/Testing_for_Local_File_Inclusion) to read our php file!
 
@@ -1635,7 +1635,7 @@ After a little scouring around the page I came across the query engine where you
 
 <a href="/images/hh53.png"><img src="/images/hh53.png"></a>
 
-After we save the query we get the following output:
+After we save the query, we get the following output:
 
 <a href="/images/hh54.png"><img src="/images/hh54.png"></a>
 
