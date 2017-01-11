@@ -735,7 +735,7 @@ Answer: __yummycookies__
 
 ### How did you open each terminal door and where had the villain imprisoned Santa?
 
-Now that we have completed the CranPi, we can access the terminals across the North Pole. There are 5 in total, each one contains a small challenge that you must beat, to acquire a password so you can access the doors. Inside each of these doors, you wull find clues for future challanges, and tips on finding Santa.
+Now that we have completed the CranPi, we can access the terminals across the North Pole. There are 5 in total, each one contains a small challenge that you must beat, to acquire a password so you can access the doors. Inside each of these doors, you will find clues for future challenges, and tips on finding Santa.
 
 ### Elf House 2
 
