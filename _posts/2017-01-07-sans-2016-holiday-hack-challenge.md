@@ -1004,7 +1004,7 @@ From here, let's type in __:n__ and __:n__ to move through the files. We should 
 
 <a href="/images/hh17.png"><img src="/images/hh17.png"></a>
 
-Nice! Let's go back to the main page, release the breaks with __BREAKOFF__ and then type in __START__ followed by the password we just got!
+Nice! Let's go back to the main page, release the breaks with __BRAKEOFF__ and then type in __START__ followed by the password we just got!
 
 <a href="/images/hh18.png"><img src="/images/hh18.png"></a>
 
