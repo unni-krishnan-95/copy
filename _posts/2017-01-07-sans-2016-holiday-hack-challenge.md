@@ -639,7 +639,7 @@ root@kali:~/Downloads/cranbian.img# echo $((512*137216))
 70254592
 ```
 
-Great! We now know that the Linix filesystem is 70,254,592 bytes into the crabian.img file. From here we can create a new folder, and mount the image with its offset using the [mnt](http://www.tldp.org/LDP/Linux-Filesystem-Hierarchy/html/mnt.html) command.
+Great! We now know that the Linux filesystem is 70,254,592 bytes into the crabian.img file. From here we can create a new folder, and mount the image with its offset using the [mnt](http://www.tldp.org/LDP/Linux-Filesystem-Hierarchy/html/mnt.html) command.
 
 ```console
 root@kali:~/Downloads/cranbian.img# mkdir mnt
