@@ -10,7 +10,7 @@ comments: true
 
 Happy Holidays and a Happy New Year 2017 readers! Thanks for joining me today as we go over the [SANS 2016 Holiday Hack Challenge](https://holidayhackchallenge.com/2016/)! Which honestly, was the most fun I ever had!
 
-Just a quick heads up - this is a very comprehensive and long post. I will include an Index for you to be able to jump to a certain portions of the challenge; if you are only looking for solutions.
+Just a quick heads up - this is a very comprehensive and long post. I will include an Index for you to be able to jump to a certain portion of the challenge; if you are only looking for solutions.
 
 For others, the challenges are still available to play through - and will be till next year! So if you want to follow along, or give it a go by yourself, then you can start [here](https://holidayhackchallenge.com/2016/)!
 
