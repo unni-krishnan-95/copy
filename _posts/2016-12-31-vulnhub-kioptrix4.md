@@ -389,7 +389,7 @@ root
 
 And there we have it folks! We just rooted Kioptrix 4!
 
-This level was a tad harder than level 3 since it required for you to think a little "outside" the box and utilize MySQL for your exploitation of privileges. This just goes to show - don't leave any stone unturned! At the same time we got to use SQL Injection again and it allowed us to refresh our memory on how this exploit worked.
+This level was a tad harder than level 3 since it required for you to think a little "outside" the box and utilize MySQL for your exploitation of privileges. This just goes to show - don't leave any stone unturned! At the same time we got to use SQL Injection again and it allowed us to refresh our memory on how this vulnerability worked.
 
 As always guys - when you get stuck, refer to Google first - after some digging you'll find what you need, just don't give up and... __Try Harder__!
 
