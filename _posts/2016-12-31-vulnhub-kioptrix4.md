@@ -193,7 +193,7 @@ Let's start by putting a comma `'` in the Username and Password fields.
 
 <a href="/images/kiop4-2.png"><img src="/images/kiop4-2.png"></a>
 
-Lovely, we found a SQL Injection! Let's go back and grab one of the usernames from the SMB Enumeration, and let's see if we can't break into their account using this exploit.
+Lovely, we found a SQL Injection! Let's go back and grab one of the usernames from the SMB Enumeration, and let's see if we can't break into their account using this vulnerability.
 
 I decided to go with __john__ for this one. So in the Username field type in `john` and in the password field type in `1' or '1'='1`.
 
