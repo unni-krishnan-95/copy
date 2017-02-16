@@ -256,7 +256,7 @@ john:~$ echo os.system('/bin/bash')
 john@Kioptrix4:~$ 
 ```
 
-Bingo! Okay, now that we have more access, let's run [ps](http://linuxcommand.org/man_pages/ps1.html)and see what running processes we have.
+Bingo! Okay, now that we have more access, let's run [ps](http://linuxcommand.org/man_pages/ps1.html) and see what running processes we have.
 
 ```console
 john@Kioptrix4:~$ ps -ef | grep root
