@@ -29,7 +29,7 @@ I also had lots of troubles exporting this one. So please take the time to read 
 
 Keeping in the spirit of things, this challenge is a bit different than the others but remains in the realm of the easy. Repeating myself I know, but things must always be made clear: These VMs are for the beginner. It’s a place to start.
 
-I’d would love to code some small custom application for people to exploit. But I’m an administrator not a coder. It would take too much time to learn/code such an application. Not saying I’ll never try doing one, but I wouldn’t hold my breath. If someone wants more difficult challenges, I’m sure the Inter-tubes holds them somewhere. Or you can always enroll in Offsec’s PWK course. *shameless plug
+I’d would love to code some small custom application for people to exploit. But I’m an administrator not a coder. It would take too much time to learn/code such an application. Not saying I’ll never try doing one, but I wouldn’t hold my breath. If someone wants more difficult challenges, I’m sure the Inter-tubes holds them somewhere. Or you can always enroll in Offsec’s PWK course!
 
 ## The Hack:
 As always, when we do these VulnHub VM's we always want to start off by running `netdiscover` so we can see what devices are on our network. If you're running the Kioptrix VM in VirtualBox or VMWare - it should come up in the vendor name list, and that will be your Kioptrix VM.
