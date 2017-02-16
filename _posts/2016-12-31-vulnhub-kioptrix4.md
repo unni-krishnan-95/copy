@@ -247,9 +247,9 @@ Allowed:
 
 So we are limited in the commands we can use, thus it seems like we are in a [Restricted Shell](https://en.wikipedia.org/wiki/Restricted_shell). 
 
-Well we are hackers after all... let's break out of this restriction shall we?
-
 SANS had a very good post on [Escaping Restricted Shells](https://pen-testing.sans.org/blog/2012/06/06/escaping-restricted-linux-shells) that I suggest you read up on!
+
+Alright - let's break out of this shell!
 
 ```console
 john:~$ echo os.system('/bin/bash')
