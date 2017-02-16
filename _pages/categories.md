@@ -55,6 +55,23 @@ A listing of all my posts, sorted by specific Categories - makes it easier to fi
 
 </ul>
 
+<h2>Pentestit Lab</h2>
+<ul>
+<li><a href="">Pentestit Lab v10 - Introduction & Network</a> (Coming Soon!)</li>
+<li><a href="">Pentestit Lab v10 - Mail Token</a> (Coming Soon!)</li>
+<li><a href="">Pentestit Lab v10 - Site Token</a> (Coming Soon!)</li>
+<li><a href="">Pentestit Lab v10 - SSH Token</a> (Coming Soon!)</li>
+<li><a href="">Pentestit Lab v10 - SSH-Test Token</a> (Coming Soon!)</li>
+<li><a href="">Pentestit Lab v10 - Store Token</a> (Coming Soon!)</li>
+<li><a href="">Pentestit Lab v10 - Blog Token</a> (Coming Soon!)</li>
+<li><a href="">Pentestit Lab v10 - Captcha Token</a> (Coming Soon!)</li>
+<li><a href="">Pentestit Lab v10 - News Token</a> (Coming Soon!)</li>
+<li><a href="">Pentestit Lab v10 - Hall of Fame Token</a> (Coming Soon!)</li>
+<li><a href="">Pentestit Lab v10 - Web-Control Token</a> (Coming Soon!)</li>
+<li><a href="">Pentestit Lab v10 - WIN-TERM Token</a> (Coming Soon!)</li>
+<li><a href="">Pentestit Lab v10 - WIN-DC0 Token</a> (Coming Soon!)</li>
+<li><a href="">Pentestit Lab v10 - Cloud Token</a> (Coming Soon!)</li>
+</ul>
 
 <h2>VulnHub</h2>
 <ul>
@@ -64,4 +81,6 @@ A listing of all my posts, sorted by specific Categories - makes it easier to fi
 <li><a href="https://jhalon.github.io/vulnhub-kioptrix1/">Kioptrix 1</a></li>
 <li><a href="https://jhalon.github.io/vulnhub-kioptrix2/">Kioptrix 2</a></li>
 <li><a href="https://jhalon.github.io/vulnhub-kioptrix3/">Kioptrix 3</a></li>
+<li><a href="https://jhalon.github.io/vulnhub-kioptrix4/">Kioptrix 4</a></li>
+<li><a href="https://jhalon.github.io/vulnhub-kioptrix5/">Kioptrix 5</a></li>
 </ul>
