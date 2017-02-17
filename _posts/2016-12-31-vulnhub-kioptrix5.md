@@ -108,7 +108,7 @@ root@kali:~# nikto -h 192.168.1.159
 
 It seems that the website is vulnerable to CVE-2002-0082 - but when I attempted to exploit this, it failed.
 
-Fair enough - this is the last Kioptrix Machine, it wouldn't be that easy! At this point I decide to run [dirb](http://tools.kali.org/web-applications/dirb) to see if I can't enumerate any directories.
+Fair enough - this is the last Kioptrix Machine, it wouldn't be that easy! At this point I decide to run [dirb](http://tools.kali.org/web-applications/dirb) to see if I can't enumerate any hidden directories.
 
 ```console
 root@kali:~# dirb http://192.168.1.159
@@ -135,7 +135,7 @@ END_TIME: Thu Dec 29 13:19:04 2016
 DOWNLOADED: 4612 - FOUND: 2
 ```
 
-Huh... nothing? Really? Well alright then, let's see if there is anything hidden in the Index source code.
+Huh... nothing? Really? Well alright then, let's see if there is anything hidden in the source code.
 
 ```html
 <html>
