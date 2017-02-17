@@ -10,7 +10,7 @@ comments: true
 
 Welcome back to the Kioptrix VM Series!
 
-These write-ups were created in aiding those starting the PWK Course, or who are training for the OSCP Certificate. The Kioptrix VM's were created to closely resemble those in the PWK Course. To read more about this, or if you haven't already read my first post for Kioptrix 1 - then I suggest you do so. That post can be found [here](https://jhalon.github.io/vulnhub-kioptrix1/).
+These write-ups were created in aiding those starting the PWK Course, and who are training for the OSCP Certificate. The Kioptrix VM's were created to closely resemble those in the PWK Course. To read more about this, or if you haven't already read my first post for Kioptrix 1 - then I suggest you do so. That post can be found [here](https://jhalon.github.io/vulnhub-kioptrix1/).
 
  Alright - let's get to pwning Kioptrix 4!
 
@@ -32,7 +32,7 @@ Keeping in the spirit of things, this challenge is a bit different than the othe
 I’d would love to code some small custom application for people to exploit. But I’m an administrator not a coder. It would take too much time to learn/code such an application. Not saying I’ll never try doing one, but I wouldn’t hold my breath. If someone wants more difficult challenges, I’m sure the Inter-tubes holds them somewhere. Or you can always enroll in Offsec’s PWK course!
 
 ## The Hack:
-As always, when we do these VulnHub VM's we always want to start off by running `netdiscover` so we can see what devices are on our network. If you're running the Kioptrix VM in VirtualBox or VMWare - it should come up in the vendor name list, and that will be your Kioptrix VM.
+As always, when we do these VulnHub VM's we always want to start off by running `netdiscover` so we can see what devices are on our network. If you're running the Kioptrix VM in VirtualBox or VMWare - it should come up in the vendor name list.
 
 ```console
  Currently scanning: 192.168.4.0/16   |   Screen View: Unique Hosts            
@@ -101,7 +101,7 @@ Nmap done: 1 IP address (1 host up) scanned in 20.75 seconds
 
 From the initial scans and the default nmap script scan, we can see that NetBIOS on TCP/139 and NetBIOS over TCP/IP on TCP/445 is open. This is good because we can enumerate SMB for any public facing shares, as well as usernames. 
 
-We also see that TCP/80 is open and running and Apache HTTPD Web Server - which we can also use for exploitation purposes.
+We also see that TCP/80 is open and running an Apache HTTPD Web Server - which we can also use for exploitation purposes.
 
 But before we dig into the website - let's start by enumerating usernames through NetBIOS using nmap.
 
@@ -141,9 +141,9 @@ Host script results:
 Nmap done: 1 IP address (1 host up) scanned in 2.85 seconds
 ```
 
-Awesome! We got 5 usernames from our enumeration step. Let's save this someplace, as we will need them for later!
+Awesome! We got 5 usernames from our enumeration. Let's save these someplace, as we will need them for later!
 
-Once we got that done, our next step should be to try and connect to the SMB shares on Kioptrix. This allows us to see if we have any anonymous access, and to check if there are any public facing shares.
+Once we got that done, our next step should be to try and connect to the SMB shares on Kioptrix. This allows us to see if we have anonymous access, and to check if there are any public facing shares.
 
 We can accomplish this step by using [smbclient](https://www.samba.org/samba/docs/man/manpages-3/smbclient.1.html)!
 
@@ -193,7 +193,7 @@ Let's start by putting a comma `'` in the Username and Password fields.
 
 <a href="/images/kiop4-2.png"><img src="/images/kiop4-2.png"></a>
 
-Lovely, we found a SQL Injection! Let's go back and grab one of the usernames from the SMB Enumeration, and let's see if we can't break into their account using this vulnerability.
+Lovely, we found a SQL Injection! Let's go back and grab one of the usernames from our SMB Enumeration, and see if we can't break into one of the accounts using this vulnerability.
 
 I decided to go with __john__ for this one. So in the Username field type in `john` and in the password field type in `1' or '1'='1`.
 
@@ -201,7 +201,7 @@ Now, if I guessed correctly, the backend SQL Query should look like the followin
 
 `SELECT * FROM users where username='john' and password='1' or '1'='1'`
 
-This basically tells SQL that if username is john, and the password is TRUE, then log in.
+This basically tells SQL that if the username is john, and the password is TRUE, then log in.
 
 <a href="/images/kiop4-3.png"><img src="/images/kiop4-3.png"></a>
 
@@ -210,7 +210,7 @@ Well look at that, I was right! And, it also seems like we got John's password!
 From here, let's SSH into the Kioptrix Machine with John's credentials and see if we can't get root!
 
 ```console
-oot@kali:~# ssh john@192.168.1.14
+root@kali:~# ssh john@192.168.1.14
 john@192.168.1.14's password: 
 Welcome to LigGoat Security Systems - We are Watching
 == Welcome LigGoat Employee ==
@@ -389,7 +389,7 @@ root
 
 And there we have it folks! We just rooted Kioptrix 4!
 
-This level was a tad harder than level 3 since it required for you to think a little "outside" the box and utilize MySQL for your exploitation of privileges. This just goes to show - don't leave any stone unturned! At the same time we got to use SQL Injection again and it allowed us to refresh our memory on how this vulnerability worked.
+This level was a tad harder than level 3 since it required you to think a little "outside" the box and utilize MySQL for your exploitation of privileges. This just goes to show - don't leave any stone unturned! At the same time we got to use SQL Injection again, which allowed us to refresh our memory on how this vulnerability worked.
 
 As always guys - when you get stuck, refer to Google first - after some digging you'll find what you need, just don't give up and... __Try Harder__!
 
