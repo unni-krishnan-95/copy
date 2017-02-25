@@ -62,7 +62,7 @@ A listing of all my posts, sorted by specific Categories - makes it easier to fi
 <li><a href="https://jhalon.github.io/pentestit-lab-10-site-token/">Pentestit Lab v10 - Site Token</a></li>
 <li><a href="https://jhalon.github.io/pentestit-lab-10-ssh-token/">Pentestit Lab v10 - SSH Token</a></li>
 <li><a href="https://jhalon.github.io/pentestit-lab-10-ssh-test-token/">Pentestit Lab v10 - SSH-Test Token</a></li>
-<li><a href="">Pentestit Lab v10 - Store Token</a> (Coming Soon!)</li>
+<li><a href="https://jhalon.github.io/pentestit-lab-10-store-token/">Pentestit Lab v10 - Store Token</a></li>
 <li><a href="">Pentestit Lab v10 - Blog Token</a> (Coming Soon!)</li>
 <li><a href="">Pentestit Lab v10 - Captcha Token</a> (Coming Soon!)</li>
 <li><a href="">Pentestit Lab v10 - News Token</a> (Coming Soon!)</li>
