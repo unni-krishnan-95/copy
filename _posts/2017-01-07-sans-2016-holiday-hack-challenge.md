@@ -1048,7 +1048,7 @@ Great... Santa has memory loss! Guess we can't ask him about the kidnapping - an
 
 ### Remote Exploit of Websites
 
-Reading the above intro gives us a clue that there are URL's in the APK that we can use to attack. If we continue reading questions 7, then we know that there are 6 Target IP Addresses.
+Reading the above intro gives us a clue that there are URL's in the APK that we can use to attack. If we continue reading question 7, then we know that there are 6 Target IP Addresses.
 
 A quick look into the __strings.xml__ of the APK will reveal to us all hardcoded URL's to the websites we must exploit.
 
@@ -1331,7 +1331,7 @@ root@kali:~# echo PD9waHAgcHJpbnQoJyJwaHA6XC9cL2ZpbHRlclwvY29udmVydC5iYXNlNjQtZW
 <?php print('"php:\/\/filter\/convert.base64-encode\/resource=index"');
 ```
 
-Awesome! We found the Local File Inclusion! At this point we can try to read anything, including the contents from the __exclusion.php__ web page!
+Awesome! We found the Local File Inclusion! At this point we can try to read anything, including the contents from the __exception.php__ web page!
 
 <a href="/images/hh45.png"><img src="/images/hh45.png"></a>
 
