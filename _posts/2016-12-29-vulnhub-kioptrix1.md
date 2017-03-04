@@ -153,8 +153,12 @@ __3) Get the libssl-dev lib__
 
 To install the library, type the following in your [CLI](https://en.wikipedia.org/wiki/Command-line_interface):
 
+Just a heads up: exploit (764) doesn't seem to be compatible with the newer version of libssl, so you need to install v1.0.
+
+Props to [Kimput](https://pentestimonials.wordpress.com/) for pointing this out!
+
 ```console
-root@kali:~# apt-get update && apt-get install libssl-dev
+root@kali:~# apt-get install libssl1.0-dev
 ```
 
 __4) Update declaration of variables:__
