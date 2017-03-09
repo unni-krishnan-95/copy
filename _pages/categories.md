@@ -68,7 +68,7 @@ permalink: /categories.html
 <li><a href="https://jhalon.github.io/pentestit-lab-10-web-control-token/">Pentestit Lab v10 - Web-Control Token</a></li>
 <li><a href="https://jhalon.github.io/pentestit-lab-10-win-term-token/">Pentestit Lab v10 - WIN-TERM Token</a></li>
 <li><a href="https://jhalon.github.io/pentestit-lab-10-win-dc0-token/">Pentestit Lab v10 - WIN-DC0 Token</a></li>
-<li><a href="">Pentestit Lab v10 - Cloud Token</a> (Coming Soon!)</li>
+<li><a href="https://jhalon.github.io/pentestit-lab-10-cloud-token/">Pentestit Lab v10 - Cloud Token</a></li>
 </ul>
 
 <h2>VulnHub</h2>
