@@ -55,6 +55,9 @@ permalink: /categories.html
 
 <h2>Pentestit Lab</h2>
 <ul>
+
+<li>Pentestit Lab v10</li>
+<ul>
 <li><a href="https://jhalon.github.io/pentestit-lab-10-intro/">Pentestit Lab v10 - Introduction & Network</a></li>
 <li><a href="https://jhalon.github.io/pentestit-lab-10-mail-token/">Pentestit Lab v10 - Mail Token</a></li>
 <li><a href="https://jhalon.github.io/pentestit-lab-10-site-token/">Pentestit Lab v10 - Site Token</a></li>
@@ -69,6 +72,12 @@ permalink: /categories.html
 <li><a href="https://jhalon.github.io/pentestit-lab-10-win-term-token/">Pentestit Lab v10 - WIN-TERM Token</a></li>
 <li><a href="https://jhalon.github.io/pentestit-lab-10-win-dc0-token/">Pentestit Lab v10 - WIN-DC0 Token</a></li>
 <li><a href="https://jhalon.github.io/pentestit-lab-10-cloud-token/">Pentestit Lab v10 - Cloud Token</a></li>
+</ul>
+
+<li>Pentestit Lab v11</li>
+<ul>
+<li><a href="https://jhalon.github.io/pentestit-lab-11-intro/">Pentestit Lab v11 - Introduction & Network</a></li>
+</ul>
 </ul>
 
 <h2>VulnHub</h2>
