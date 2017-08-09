@@ -78,6 +78,7 @@ permalink: /categories.html
 <ul>
 <li><a href="https://jhalon.github.io/pentestit-lab-11-intro/">Pentestit Lab v11 - Introduction & Network</a></li>
 <li><a href="https://jhalon.github.io/pentestit-lab-11-crm-token/">Pentestit Lab v11 - CRM Token</a></li>
+<li><a href="https://jhalon.github.io/pentestit-lab-11-site-token/">Pentestit Lab v11 - Site Token</a></li>
 </ul>
 </ul>
 
