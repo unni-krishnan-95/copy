@@ -82,7 +82,7 @@ permalink: /categories.html
 <li><a href="https://jhalon.github.io/pentestit-lab-11-rdp-token/">Pentestit Lab v11 - RDP Token</a></li>
 <li><a href="https://jhalon.github.io/pentestit-lab-11-ad-token/">Pentestit Lab v11 - AD Token</a></li>
 <li><a href="https://jhalon.github.io/pentestit-lab-11-cups-token/">Pentestit Lab v11 - CUPS Token</a></li>
-
+<li><a href="https://jhalon.github.io/pentestit-lab-11-director-token/">Pentestit Lab v11 - Director Token</a></li>
 </ul>
 </ul>
 
