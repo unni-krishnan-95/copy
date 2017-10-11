@@ -86,6 +86,8 @@ permalink: /categories.html
 <li><a href="https://jhalon.github.io/pentestit-lab-11-connect-token/">Pentestit Lab v11 - Connect Token</a></li>
 <li><a href="https://jhalon.github.io/pentestit-lab-11-cloud-token/">Pentestit Lab v11 - Cloud Token</a></li>
 <li><a href="https://jhalon.github.io/pentestit-lab-11-clamav-token/">Pentestit Lab v11 - ClamAV Token</a></li>
+<li><a href="https://jhalon.github.io/pentestit-lab-11-access-control-token/">Pentestit Lab v11 - Access Control Token</a></li>
+<li><a href="https://jhalon.github.io/pentestit-lab-11-help-desk-token/">Pentestit Lab v11 - Help Desk Token</a></li>
 </ul>
 </ul>
 
