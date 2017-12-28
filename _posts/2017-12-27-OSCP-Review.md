@@ -187,7 +187,7 @@ As with everything, there are always certain things that you should know and be 
 11. Have an idea? But it seem impossible? Try it... you never know! =)
 12. Take frequent breaks. Opt for 10 minute break every 2 hours.
 13. Eat and drink! Make time for Lunch, and Dinner. Your brain needs food to function.
-14. Limit caffeine intake, 1-2 cups is okay! Otherwise, drink Tea or Water.
+14. Limit caffeine intake, 1-2 cups of coffee is okay! But, drink Tea and Water.
 15. Don't have any snacks next to you. If you're hungry, walk to the kitchen for a snack, this will make you walk away from your PC and will help clear your mind.
 16. Breath... relax... you got 24 hours!
 17. Organize your notes, take screenshots, and document everything!
