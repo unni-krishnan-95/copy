@@ -178,7 +178,7 @@ As with everything, there are always certain things that you should know and be 
     - `smbclient -L \\[IP]`
       - Username: `root` Password: None
 8. Check for WebDav! Nmap script scan should pick it up! If not...
-    - `davtest -url http://[IP]`
+    - `davtest -url http(s)://[IP]`
 9. Don't overthink it! Try low hanging fruit first!
     - Password the same as Username?
     - Username/Password combo of `admin:admin`?
