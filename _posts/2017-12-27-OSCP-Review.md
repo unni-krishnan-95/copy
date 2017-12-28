@@ -17,11 +17,11 @@ Man was I ecstatic! After a grueling 2 months of training in the OffSec Lab's an
 
 I could have only dreamed of this certificate, I never really expected it to become a reality so soon! All of that training, sleepless nights, and the enthusiasm to learn brought me here. So as I write this post, I want to share my thoughts, experiences, and some tips for those who are aiming to achieve the OSCP!
 
-### Background & Experience
+## Background & Experience
 
 Before I delve into the PWK Course and the OSCP I want to provide you with some information on my background and experience. At time of writing this post I have been in the InfoSec Industry for ~3 years now. A lot of my experience came from self-education, spending countless hours at home and in front of my books learning new tools and techniques. Much of what I learned was put to the test at work where I carried out internal pen tests, security assessments, reverse engineering of malware (more like debugging), and such of that matter. At the same time, I supplicated my studies with practice - such as competing in CTF's, practicing on VulnHub VM's, and in the HackTheBox Labs. For those curious on the specifics of my studies, keep reading as I will delve more into this in the tips section. But for now, let's get into the real meat of things!
 
-### The PWK Course
+## The PWK Course
 
 The overall OSCP experience can be seen as 3 part process. The PWK Course, PWK Lab, and the OSCP Exam. You have an option to register for 30, 60, or 90 days of lab time. Once you register, you select the week you want to start your studies - specifically a Saturday/Sunday is when a new course beings. It is encouraged to register 10-30 days before your expected start week, since time slots fill up really fast! On your assigned course start date, you’ll be provided access to download all your course materials, including the 8-hour Offensive Security PWK course videos, the 375-page PWK PDF course, and your VPN lab access. Once your lab time starts - it will be a continuous block, meaning that you can't stop/start it at any time after the start date.
 
@@ -33,7 +33,7 @@ I spent about a week going through the whole PWK Course and a few of the Exercis
 
 Now do note, that the PWK Course doesn't provide you with everything you need to know! The Course is there to help build the foundation and teach you the initial basics you need to succeed. There will be countless things that you will still need to learn/research yourself during your time in the labs - so I suggest you brush up on your Google Fu!
 
-### The PWK Lab
+## The PWK Lab
 
 The PWK Lab is the meat of the PWK Course. This is where most of your learning takes place. The lab has about 50 Machines total of varying OS's, vulnerabilities, and misconfigurations separated in 4 different network sections - Public, IT, Dev, and Admin. Your goal is to get access to the Admin network, but for some, the goal might be different - so don't let it get to you if you can't get into the Admin network!
 
@@ -45,7 +45,7 @@ Upon jumping into the lab, I ran a small set of scans with Nmap and came to noti
 
 At first, I went through the Lab using Metasploit and some manual exploitation. For the last 30 days, I went back through all the machines I exploited via Metasploit and managed to do them all manually - either by porting over the Metasploit Exploits via Python, or using third party scripts and tools to connect to services such as MSSQL, etc. In all honesty, this was a great idea as it helped me better understand exploit writing, and it aided me during my OSCP Exam.
 
-### The OSCP Exam
+## The OSCP Exam
 
 This arduous 24-hour exam in all honesty is brutal, and it has every right to be! Its initial goal is to prove that you have a good foundation of the penetration testing cycle, and to prove that you actually learned and retained your training. For the exam you will be allocated 6 machines, 5 Exam Machines and 1 Windows Test VM just like in the Labs - this VM will be your debugger for exploit writing. Each machine has certain objectives that you need complete in order for your points to count. Along with that, Metasploit is restricted to only one machine, but I suggest that you don't use Metasploit, and save it as a last resort. In order to pass you need to score 70/100 points, each machine having a different amount of points depending on the objectives. I highly suggest you read the [OSCP Exam Guide](https://support.offensive-security.com/#!oscp-exam-guide.md) for more details on what is and isn't allowed during the exam.
 
@@ -65,17 +65,17 @@ At this point I was exhausted, 18 hours into the exam and I was so close! I told
 
 I came back to the machine with a fresh mind and the mindset of "think simple". And it worked! I ran another Nikto scan on a directory and it bestowed me with a simple vulnerability. But even at this point I wasn't able to exploit it... till I saw something interesting. A quick Google search led me to a few thing and after some trial and error, by 3AM I had another limited shell, brining me up to 77.5 points - enough to pass!
 
-### Wrapping it Up
+## Wrapping it Up
 
 At this point I called it quits, I went back to gather all the screenshots and to make sure that I had all the requirements. By 4AM I was happily asleep - knowing that I passed! I woke up around 1PM the next day and began working on my report which was about 89 pages long and pretty detailed. I submitted my report at around 4AM Monday morning - I went to a concert with my brother that evening haha - and by Tuesday morning I got my response that I passed!
 
 All I can say is - wow! I have the upmost respect for anyone that takes the OSCP Challenge and passes it. This is by far one of the hardest challenge that I have done to date and it has taught me a plethora of new things that I can utilize in my day to day work activities. I sincerely want to thank OffSec for this amazing experience and opportunity, maybe I'll do the OSCE next!
 
-### Tips & Recommendations
+## Tips & Recommendations
 
 I know that many of you who will be reading this post will ask for tips/recommendations on either preparing to take the OSCP or on how/what to do during the exam. Well not to worry - in this section I will break down and include a lot of the materials I used to prepare for the OSCP as well as some tips/tricks to use for the exam.
 
-__Prerequsites__:
+### Prerequsites:
 
 In the PWK Course, OffSec states that you need to understand the following fundamentals to take the course...
 
@@ -95,7 +95,7 @@ If you are somewhat unfamiliar with these basics, here are some links to help yo
   - [Codecademy - Python](https://www.codecademy.com/learn/learn-python)
   - [Python 2.7.14 Documentation](https://docs.python.org/2/index.html)
 
-__Practice__:
+### Practice:
 
 Now that you have a fundamental understanding of the basics, you need to practice... a lot! If are pretty new to Penetration Testing and think that taking the OSCP will teach you - then you are dead wrong! You need a lot of previous training and experience to even attempt something like the OSCP.
 
@@ -154,7 +154,7 @@ The following materials below will help you take the first steps into Penetratio
 
 I know that there is a ton of material here, and it might seem overwhelming at first - but do know that much of these topics overlap each other once you begin studying offensive security. Remember, it takes time to learn - you need to enjoy the process of learning, or you will never get to your end goal! Take it slow, start with the basics, and work your way up.
 
-__Exam Tips:__
+### Exam Tips:
 
 As with everything, there are always certain things that you should know and be doing during the PWK Lab and OSCP Exam, these following tips should help you stay on focus and to stray away from rabbit holes.
 
