@@ -192,5 +192,5 @@ As with everything, there are always certain things that you should know and be 
 16. Breath... relax... you got 24 hours!
 17. Organize your notes, take screenshots, and document everything!
 18. A few days before the exam create and edit your report outline.
-19. In the PWK Lab, practice the Buffer Overflows till you can do them from heart and without notes.
+19. In the PWK Lab, practice the Buffer Overflows till you can do them by heart and without notes.
 20. Don't give up to easily, and most importantly... "__Try Harder!__".
