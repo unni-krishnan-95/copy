@@ -53,19 +53,21 @@ Finally - December 16th came around. I woke up around 7:30AM - ate some breakfas
 
 2 hours after my initial start time, I finished my Buffer Overflow machine - but not without any issues. I actually had to reach out to OffSec to reset the machine as the service wasn't properly working. Once reset, I was able to exploit the machine and attained a root shell! I was a nervous wreck, and the butterflies in my stomach were acting up, but by 12PM I had two machines rooted with 35 points under my belt! At this point I decided to step away for an hour and take a small break.
 
-After a relaxing break, and some food in me, an hour later I was able to attain a limited shell on another device using an actually pretty complex and interesting method. Shortly after,  I was able to attain a high privilege shell, brining me to 55 points! In all honesty I overcomplicated the process and missed a critical piece of information - I only found it when I went back and enumerated again!
+After a relaxing break, and some food in me, an hour later I was able to attain a limited shell on another device using an actually pretty complex and interesting method. Shortly after, I was able to attain a high privilege shell, brining me to 55 points! In all honesty I overcomplicated the process and missed a critical piece of information - I only found it when I went back and enumerated again!
 
-At around 6PM I hit a road block, with two machines left I couldn't for the life of me find an entry point. I enumerated all I could but kept coming up with blanks or kept going down rabbit holes. After about an hour of hitting dead ends I opted to take a small 1 hour break to eat and watch some TV. Once my break was over I got back and started enumerating again, and quickly spotted something while using Burp. After a few hours of trial and error, by 11PM I was able to get a limited shell, brining me up to 67.5 points!
+At around 6PM I hit a road block, with two machines left I couldn't for the life of me find an entry point. I enumerated all I could but kept coming up with blanks or kept going down rabbit holes. After about an hour of hitting dead ends I opted to take a small 1 hour break to eat and watch some TV. Once my break was over, I got back and started enumerating again, and quickly spotted something while using Burp. After a few hours of trial and error, by 11PM I was able to get a limited shell, brining me up to 67.5 points!
 
 Oh man, was I ecstatic - I did a victory lap around the house and played the [Try Harder](https://www.offensive-security.com/offsec/say-try-harder/) song to celebrate! All I needed was a root shell and I pass, easy! Right...? Wrong!
 
-For the next 4 hours I was at another roadblock. I couldn't find a way to escalate privileges - even though I went through the process twice. Nothing seemed to work. I found myself bouncing back between the privilege escalation and the other machine, hoping to find either another limited shell, or to attain root. By 2AM I gave up trying to get root and made up my mind that I need the other limited shell to pass.
+For the next 4 hours I was at another roadblock. I couldn't find a way to escalate privileges - even though I went through the process twice. Nothing seemed to work. I found myself bouncing back between the privilege escalation and the other machine, hoping to find a way to get the final limited shell, or to attain root. By 2AM I gave up trying to get root and made up my mind that I need the other limited shell to pass.
 
-At this point I was exhausted, 18 hours into the exam and I was so close! I told myself that I will not fail, that I will "__Try Harder__"... and then it hit me. The second I came to realize that I was trying "too hard" was like someone taking a bat to the back of my head... I was following a dead end for the last few hours! The vulnerability that I was trying to exploit was never taught in the OSCP, it was never found in the labs - I only knew of it because of my studies! I took a step back, and took a few minutes to breathe and make some tea. I came back to the machine with a fresh mind and the mindset of "think simple". And it worked! I ran another Nikto scan on a directory and it bestowed me with a simple vulnerability. But even at this point I wasn't able to exploit it... till I saw something interesting. A quick Google search led me to a few thing and after some trial and error, by 3AM I had another limited shell, brining me up to 77.5 points - enough to pass!
+At this point I was exhausted, 18 hours into the exam and I was so close! I told myself that I will not fail, that I will "__Try Harder__"... and then it hit me. The second I came to realize that I was trying "too hard" was like someone taking a bat to the back of my head... I was following a dead end for the last few hours! The vulnerability that I was trying to exploit was never taught in the OSCP, it was never found in the labs - I only knew of it because of my studies! I took a step back, and took a few minutes to breathe and make some tea. 
+
+I came back to the machine with a fresh mind and the mindset of "think simple". And it worked! I ran another Nikto scan on a directory and it bestowed me with a simple vulnerability. But even at this point I wasn't able to exploit it... till I saw something interesting. A quick Google search led me to a few thing and after some trial and error, by 3AM I had another limited shell, brining me up to 77.5 points - enough to pass!
 
 ### Wrapping it Up
 
-At this point I called it quits, I went back to gather all the screenshots and to make sure that I have all the requirements. By 4AM I was happily asleep - knowing that I passed! I woke up around 1PM the next day and began working on my report which was about 89 pages long and pretty detailed. I submitted my report at around 4AM Monday morning - I went to a concert with my brother that evening haha - and by Tuesday morning I got my response that I passed!
+At this point I called it quits, I went back to gather all the screenshots and to make sure that I had all the requirements. By 4AM I was happily asleep - knowing that I passed! I woke up around 1PM the next day and began working on my report which was about 89 pages long and pretty detailed. I submitted my report at around 4AM Monday morning - I went to a concert with my brother that evening haha - and by Tuesday morning I got my response that I passed!
 
 All I can say is - wow! I have the upmost respect for anyone that takes the OSCP Challenge and passes it. This is by far one of the hardest challenge that I have done to date and it has taught me a plethora of new things that I can utilize in my day to day work activities. I sincerely want to thank OffSec for this amazing experience and opportunity, maybe I'll do the OSCE next!
 
@@ -158,7 +160,7 @@ As with everything, there are always certain things that you should know and be 
 
 1. Enumerate, Enumerate, Enumerate!
 2. Simple Nmap Scans w/ Script Scanning are your friends!
-    - TCP: ` nmap -sS -sV -sC -n [IP]`
+    - TCP: `nmap -sS -sV -sC -n [IP]`
     - UDP: `nmap -sU -sV -n --top-ports 200 [IP]`
 3. Enumerate SNMP (UDP 161) if it's open!
     - `snmp-check -t [IP] -c public`
@@ -171,8 +173,10 @@ As with everything, there are always certain things that you should know and be 
 6. DirBuster over dirb. Opt for using the medium wordlist for better results!
     - `/usr/share/dirbuster/wordlists/directory-list-2.3-medium.txt`
 7. Check for anonymous logins for FTP/SMB!
-    - `ftp [IP]` - Username: `anonymous` Password: ‘anonymous`
-    - `smbclient -L \\[IP]` - Username: `root` Password:` `
+    - `ftp [IP]` 
+      - Username: `anonymous` Password: `anonymous`
+    - `smbclient -L \\[IP]`
+      - Username: `root` Password: None
 8. Check for WebDav! Nmap script scan should pick it up! If not...
     - `davtest -url http://[IP]`
 9. Don't overthink it! Try low hanging fruit first!
