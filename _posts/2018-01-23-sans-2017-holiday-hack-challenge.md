@@ -20,24 +20,6 @@ For others, the challenges are still available to play through - and will be til
 
 ## Introduction
 
-> If I live to be a hundred, I'll never be able to forget the giant snowball disaster going on right now! The North Pole itself is under siege as boulder-sized snowballs cascade down our mountain, leaving destruction and mayhem in their wake.
-> 
-> Oh, excuse me! Call me Sam. What's the matter? Haven't you ever seen a talking snowman before? Oh, you think I look like that Heisenberg character from a TV show? No, that's not me. I'm Sam the Snowman.
-> 
-> Well now, let me tell you about these giant snowballs careening through the North Pole. The elves and I need your help to stop the destruction and find the nefarious culprit behind them. With the North Pole under siege, these snowballs might not only ruin Christmas this year, but they could also destroy our infrastructure so we'll have to cancel Christmas for years! It's a total disaster. The elves are really upset.
-> 
-> What's that? You're wondering why Rudolph can't help solve this situation, like he saved Christmas all those years ago with his shiny red nose? Well, I don't like to talk bad about my reindeer friends, but... it appears that Rudolph's... um... non-conformity has really worn on him. In the years after he saved Christmas, he went through a very dark time. This letter was recently found on the door of the reindeer barn:
-> 
-<a href="https://holidayhackchallenge.com/2017/images/rudolph_letter.png"><img src="https://holidayhackchallenge.com/2017/images/rudolph_letter.png"></a>
-
-> It really was an ugly time for Rudolph. And, I can't help but think that somehow Rudolph is behind these giant snowballs.
-> 
-> And if the snowballs aren't bad enough, the North Pole was hit last week with the worst Inter-Dimensional Tornado ever known, scrambling things up here pretty badly. Why, that blasted tornado even shredded The Great Book!
-> 
-> What's that? You haven't heard of The Great Book? Why, it's a wonderful tome that describes the epic history of the elves. I gotta tell you, they revere that book, but now its pages are scattered all over the place! We need your help to find the missing seven pages of The Great Book so we can stitch this priceless relic back together.
-> 
-> The whole North Pole - the elves, the reindeer, and Santa himself, as well as yours truly - are counting on you! Please help us redirect the destructive snowballs, apprehend the villain, and restore The Great Book by answering the following questions as you explore the [North Pole and Beyond](https://puzzler2017.holidayhackchallenge.com/).
-
 ### Scope
 
 For this entire challenge, we are authorized to attack ONLY the Letters to Santa system at [l2s.northpolechristmastown.com](https://l2s.northpolechristmastown.com/) AND other systems on the internal 10.142.0.0/24 network that we access through the Letters to Santa system. We are also authorized to download data from [nppd.northpolechristmastown.com](https://nppd.northpolechristmastown.com/), but are not authorized to exploit that machine or any of the North Pole and Beyond puzzler, chat, and video game components of the Holiday Hack Challenge.
