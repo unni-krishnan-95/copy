@@ -2128,7 +2128,9 @@ The villain causing the giant snowball problem is Glinda, the "Good" Witch. She 
 
 ## Conclusion
 
-As always, SANS has done an amazing job for this year’s Holiday Hack! Although I liked the mini-game from last year, this years was, ok. But - the technical portion, including the LDAP Injection, XXE, Phishing, DDE Attack, XSS Attacks, and some Crypto was a great learning experience and especially showed much of what can occur in the real world, and the outcome of it.
+As always, SANS has done an amazing job for this year’s Holiday Hack! 
+
+Although I liked the mini-game from last year, this years was, ok. But - the technical portion, including the LDAP Injection, XXE, Phishing, DDE Attack, XSS Attacks, and some Crypto was a great learning experience and especially showed much of what can occur in the real world, and the outcome of it.
 
 Really looking forward to what's to come next year!
 
