@@ -10,7 +10,7 @@ comments: true
 
 {% include toc title="Solutions Index" icon="file-text" %}
 
-Happy Holidays and a Happy New Year 2018 readers! Thanks for joining me today as we go over the [SANS 2016 Holiday Hack Challenge](https://holidayhackchallenge.com/2017/)! And as always, SANS has done an amazing job at making this as fun as possible, while also being very educational!
+Happy Holidays and a Happy New Year 2018 readers! Thanks for joining me today as we go over the [SANS 2017 Holiday Hack Challenge](https://holidayhackchallenge.com/2017/)! And as always, SANS has done an amazing job at making this as fun as possible, while also being very educational!
 
 I also want to give a quick shout out to the amazing Community from the CentralSec Slack Channel and from SANS for always helping everyone out and continuously teaching the community. This is what makes the InfoSec community amazing! 
 
