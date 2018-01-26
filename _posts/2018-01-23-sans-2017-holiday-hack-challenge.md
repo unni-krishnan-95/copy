@@ -226,12 +226,6 @@ Once you obtain the Great Book Page in the __Winter Wonder Landing__ level, you 
 
 <a href="/images/ssh4.png"><img src="/images/ssh4.png"></a>
 
-#### Answer #1:
-
-Q: What is the title of that page?
-
-A: __About This Book...__
-
 ## The Great Book: Page 2
 
 ### North Pole and Beyond - Winconceivable: The Cliffs of Winsanity
@@ -489,16 +483,6 @@ alabaster_snowball@hhc17-apache-struts2:/tmp/asnow.mUMEH44K1qfu6InxlP2pXWdK$
 ```
 
 Great - we found Alabaster's password, and were able to answer all the questions for #2.
-
-#### Answer #2:
-
-Q: What is the topic of The Great Book page available in the web root of the server? 
-
-A: __On the Topic of Flying Animals__
-
-Q: What is Alabaster Snowball's password?
-
-A: __stream\_unhappy\_buy\_loss__
 
 ## The Great Book: Page 3
 
