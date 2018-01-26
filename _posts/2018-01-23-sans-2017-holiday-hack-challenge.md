@@ -2080,24 +2080,24 @@ After we unlock all the page, we can go back to our Stocking and see a new NPC C
 
 Now that we have everything unlocked and completed, let's answer the questions:
 
-1. Visit the North Pole and Beyond at the Winter Wonder Landing Level to collect the first page of The Great Book using a giant snowball. What is the title of that page?
+1) Visit the North Pole and Beyond at the Winter Wonder Landing Level to collect the first page of The Great Book using a giant snowball. What is the title of that page?
 
 The title of the first page of The Great Book is "__About This Book...__".
 
-2. Investigate the Letters to Santa application at https://l2s.northpolechristmastown.com. What is the topic of The Great Book page available in the web root of the server? What is Alabaster Snowball's password?
+2) Investigate the Letters to Santa application at https://l2s.northpolechristmastown.com. What is the topic of The Great Book page available in the web root of the server? What is Alabaster Snowball's password?
 The topic of the second page of The Great Book is the creation of flying animals in Oz, which lead to the creation of flying reindeers.
 
 Alabaster Snowball's password is __stream_unhappy_buy_loss__.
 
-3. The North Pole engineering team uses a Windows SMB server for sharing documentation and correspondence. Using your access to the Letters to Santa server, identify and enumerate the SMB file-sharing server. What is the file server share name?
+3) The North Pole engineering team uses a Windows SMB server for sharing documentation and correspondence. Using your access to the Letters to Santa server, identify and enumerate the SMB file-sharing server. What is the file server share name?
 
 The name of the share on hhc17-smb-server is __FileStor__.
 
-4. Elf Web Access (EWA. is the preferred mailer for North Pole elves, available internally at http://mail.northpolechristmastown.com. What can you learn from The Great Book page found in an e-mail on that server?
+4) Elf Web Access (EWA. is the preferred mailer for North Pole elves, available internally at http://mail.northpolechristmastown.com. What can you learn from The Great Book page found in an e-mail on that server?
 
 The fourth page of The Great Book speaks of the battles between Munchkins and Elves, the creation of the Lollipop Guild, and their infiltration in the North Pole population.
 
-5. How many infractions are required to be marked as naughty on Santa's Naughty and Nice List? What are the names of at least six insider threat moles? Who is throwing the snowballs from the top of the North Pole Mountain and what is your proof?
+5) How many infractions are required to be marked as naughty on Santa's Naughty and Nice List? What are the names of at least six insider threat moles? Who is throwing the snowballs from the top of the North Pole Mountain and what is your proof?
 
 It takes four infractions to be marked as naughty on Santa's list. And the 6 Moles are as follows:
 
@@ -2110,19 +2110,19 @@ It takes four infractions to be marked as naughty on Santa's list. And the 6 Mol
 
 The discussion between us, Sam the Snowman, and Bumble informs us that the person throwing giant snowballs is Bumble, the Abominable Snow Monster.
 
-6. The North Pole engineering team has introduced an Elf as a Service (EaaS. platform to optimize resource allocation for mission-critical Christmas engineering projects at http://eaas.northpolechristmastown.com. Visit the system and retrieve instructions for accessing The Great Book page from C:\greatbook.txt. Then retrieve The Great Book PDF file by following those directions. What is the title of The Great Book page?
+6) The North Pole engineering team has introduced an Elf as a Service (EaaS. platform to optimize resource allocation for mission-critical Christmas engineering projects at http://eaas.northpolechristmastown.com. Visit the system and retrieve instructions for accessing The Great Book page from C:\greatbook.txt. Then retrieve The Great Book PDF file by following those directions. What is the title of The Great Book page?
 
 The title of the first page of The Great Book is "__The Dreaded Inter-Dimensional Tornadoes.__"
 
-7. Like any other complex SCADA systems, the North Pole uses Elf-Machine Interfaces (EMI. to monitor and control critical infrastructure assets. These systems serve many uses, including email access and web browsing. Gain access to the EMI server through the use of a phishing attack with your access to the EWA server. Retrieve The Great Book page from C:\GreatBookPage7.pdf. What does The Great Book page describe?
+7) Like any other complex SCADA systems, the North Pole uses Elf-Machine Interfaces (EMI. to monitor and control critical infrastructure assets. These systems serve many uses, including email access and web browsing. Gain access to the EMI server through the use of a phishing attack with your access to the EWA server. Retrieve The Great Book page from C:\GreatBookPage7.pdf. What does The Great Book page describe?
 
 The seventh page of The Great Book gives us details regarding the Witches of Oz, their power, and their neutrality during the Great Schism.
 
-8. Fetch the letter to Santa from the North Pole Elf Database at http://edb.northpolechristmastown.com. Who wrote the letter?
+8) Fetch the letter to Santa from the North Pole Elf Database at http://edb.northpolechristmastown.com. Who wrote the letter?
 
 The letter was written by the Wizard of Oz, Santa's good friend.
 
-9. Which character is ultimately the villain causing the giant snowball problem? What is the villain's motive?
+9) Which character is ultimately the villain causing the giant snowball problem? What is the villain's motive?
 
 The villain causing the giant snowball problem is Glinda, the "Good" Witch. She cast a spell on Bumble to make him throw giant snowballs, in order to create an all-out war between Elves and Munchkins. This would have allowed her to make a profit, by selling spells to both sides of the war.
 
