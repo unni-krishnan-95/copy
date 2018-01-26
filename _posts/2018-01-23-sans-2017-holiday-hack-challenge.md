@@ -92,8 +92,6 @@ All right, now that we know all that - let's get into answering the questions!
 
 The first page is available at the North Pole and Beyond __Winter Wonder Landing__ level. We must direct the snowball over the First Page to obtain it. But first, let's solve the Cranberry Pi Challenge.
 
-#### Terminal Challenge:
-
 Upon accessing the Terminal we are presented with the following output:
 
 ```console
@@ -214,7 +212,7 @@ Commencing Elf Talk Daemon (pid=6021)... done!
 Background daemon...
 ```
 
-#### Obtaining Page 1:
+### Obtaining Page 1:
 
 Once we complete the CranberyPI Terminal challenge, we are able to unlock the "__Convery Belt__" tool, which can be used to re-direct the snowball across the Great Book Page.
 
@@ -229,8 +227,6 @@ Once you obtain the Great Book Page in the __Winter Wonder Landing__ level, you 
 ## The Great Book: Page 2
 
 ### North Pole and Beyond - Winconceivable: The Cliffs of Winsanity
-
-#### Terminal Challenge:
 
 Upon accessing CanberryPI Terminal in the __Winconceivable: The Cliffs of Winsanity__ level we are presented with the following:
 
@@ -343,9 +339,7 @@ Perfect! The process has been successfully killed! Upon completing the Terminal 
 
 <a href="/images/ssh7.png"><img src="/images/ssh7.png"></a>
 
-### North Pole Christmas Town Infrastructure
-
-#### Letters to Santa App:
+### Letters to Santa App:
 
 Upon accessing the [Letters to Santa](https://l2s.northpolechristmastown.com/) Application, we are presented with the following screen.
 
@@ -488,8 +482,6 @@ Great - we found Alabaster's password, and were able to answer all the questions
 
 ### North Pole and Beyond - Cryokinetic Magic
 
-#### Terminal Challenge:
-
 Upon accessing the CranPI Terminal we are presented with the following:
 
 ```console
@@ -593,9 +585,7 @@ Awesome, we were able to successfully execute our binary file, and competed the 
 
 <a href="/images/ssh20.png"><img src="/images/ssh20.png"></a>
 
-### North Pole Christmas Town Infrastructure
-
-#### Windows SMB Server:
+### Windows SMB Server:
 
 For this challenge, we need to identify and enumerate a SMB file-sharing server on the internal network.
 
@@ -823,8 +813,6 @@ getting file \Naughty and Nice List.docx of size 60344 as Naughty and Nice List.
 
 ### North Pole and Beyond - There's Snow Place Like Home
 
-#### Terminal Challange:
-
 Upon accessing the CranPI Terminal, we are presented with the following:
 
 ```console
@@ -920,9 +908,7 @@ Once you complete the challenge you will unlock a new tool that will help you na
 
 <a href="/images/ssh25.png"><img src="/images/ssh25.png"></a>
 
-### North Pole Christmas Town Infrastructure
-
-#### Elf Web Access (EWA):
+### Elf Web Access (EWA):
 
 For this portion we know that Elf Web Access (EWA) is the preferred mailer for North Pole elves, available internally at http://mail.northpolechristmastown.com.
 
@@ -1017,8 +1003,6 @@ Accessing that link allows us to read the 4th Page.
 ## The Great Book: Page 5
 
 ### North Pole and Beyond - Bumbles Bounce
-
-#### Terminal Challenge:
 
 Upon accessing the CranberryPI Terminal, we are presented with the following:
 
@@ -1140,9 +1124,7 @@ At the same time, the new tools will help you get the 5th page of the Great Book
 
 <a href="/images/ssh41.png"><img src="/images/ssh41.png"></a>
 
-### North Pole Christmas Town Infrastructure
-
-#### North Pole Police Department (NPPD):
+### North Pole Police Department (NPPD):
 
 Upon accessing https://nppd.northpolechristmastown.com/ we are presented with the following website. 
 
@@ -1264,9 +1246,7 @@ Infractions needed to be marked as Naughty: 4
 
 ## The Great Book: Page 6
 
-### North Pole and Beyond - I Don’t Think We're In Kansas Anymore
-
-#### Terminal Challenge:
+### North Pole and Beyond - I Don’t Think We're In Kansas Anymore:
 
 Upon accessing the CranberryPI Terminal, we are presented with the following:
 
@@ -1402,9 +1382,7 @@ Awesome, we are right! Once you complete this terminal challenge, you will unloc
 
 <a href="/images/ssh48.png"><img src="/images/ssh48.png"></a>
 
-### North Pole Christmas Town Infrastructure
-
-#### Elf as a Service (EaaS):
+### Elf as a Service (EaaS):
 
 For this challenge we know that the North Pole engineering team has introduced an Elf as a Service (EaaS) platform to optimize resource allocation for mission-critical Christmas engineering projects at http://eaas.northpolechristmastown.com. 
 
@@ -1526,8 +1504,6 @@ From here, all we need to do is navigate to http://eaas.northpolechristmastown.c
 
 ### North Pole and Beyond - Oh Wait! Maybe We Are…
 
-#### Terminal Challenge:
-
 Upon accessing the CranPI Challenge we are presented with the following:
 
 ```console
@@ -1599,9 +1575,7 @@ Once that's completed and after you get the snowball to the end, you will unlock
 
 <a href="/images/ssh57.png"><img src="/images/ssh57.png"></a>
 
-### North Pole Christmas Town Infrastructure
-
-#### Elf-Machine Interfaces (EMI) SCADA:
+### Elf-Machine Interfaces (EMI) SCADA:
 
 For this challenge we know that the North Pole uses Elf-Machine Interfaces (EMI) to monitor and control critical infrastructure assets. These systems serve many uses, including email access and web browsing. 
 
@@ -1671,8 +1645,6 @@ Once completed, we can read Page 7 of the Great Book.
 ## Who's Behind This?
 
 ### North Pole and Beyond - We're Off To See The…
-
-#### Terminal Challenge:
 
 Upon accessing the CranPI Challenge, we are presented with the following:
 
@@ -1783,9 +1755,7 @@ Congratulations! You've won, and have successfully completed this challenge.
 
 <a href="/images/ssh65.png"><img src="/images/ssh65.png"></a>
 
-### North Pole Christmas Town Infrastructure
-
-#### Elf Database (EDB):
+### Elf Database (EDB):
 
 For this challenge we have to fetch the letter to Santa from the North Pole Elf Database at http://edb.northpolechristmastown.com.
 
