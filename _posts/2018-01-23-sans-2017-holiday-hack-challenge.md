@@ -4,7 +4,7 @@ layout: single
 title: "SANS 2017 Holiday Hack Challenge"
 header:
   overlay_image: hh-banner.png
-  caption: "[__SANS Holiday Hack Challenge__](https://holidayhackchallenge.com/2017/)"
+  caption: "[SANS Holiday Hack Challenge](https://holidayhackchallenge.com/2017/)"
 related: true
 comments: true
 ---
