@@ -1,4 +1,3 @@
-
 ---
 layout: single
 title: "SANS 2017 Holiday Hack Challenge"
