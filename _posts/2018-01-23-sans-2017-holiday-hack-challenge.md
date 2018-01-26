@@ -1886,7 +1886,7 @@ Accept-Language: en-US,*
 Host: 18.218.75.54:8000
 ```
 
-Perfect! So we have our token! From the looks of it, and from the hints provided to us - this is a JWT Token. To decipher this, we can go to https://jwt.io/ and just past in our token to see the decoded payload.
+Perfect! So we have our token! From the looks of it, and from the hints provided to us - this is a JWT Token. To decipher this, we can go to [jwt.io](https://jwt.io/) and just past in our token to see the decoded payload.
 
 <a href="/images/ssh79.png"><img src="/images/ssh79.png"></a>
 
