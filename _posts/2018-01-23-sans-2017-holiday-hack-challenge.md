@@ -80,7 +80,7 @@ For us to be able to unlock hints and some of the __Great Book__ pages, we will 
 
 When accessing __North Pole and Beyond__ we can see there are 8 levels total.
 
-<a href="https://jhalon.github.io/images/shh1.png"><img src="https://jhalon.github.io/images/shh1.png"></a>
+<a href="/images/shh1.png"><img src="/images/shh1.png"></a>
 
 I suggest beating all the terminal levels and finish the levels before answering the questions since this will provide us with specific hints on what we should do.
 
