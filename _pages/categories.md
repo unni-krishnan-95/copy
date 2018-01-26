@@ -11,6 +11,7 @@ permalink: /categories.html
 <ul>
 <li><a href="https://jhalon.github.io/m-trends-fireeye-report-overview/">M-Trends 2016: Cyber Threat Report Overview</a></li>
 <li><a href="https://jhalon.github.io/sans-2016-holiday-hack-challenge/">SANS 2016 Holiday Hack Challenge</a></li>
+<li><a href="https://jhalon.github.io/sans-2017-holiday-hack-challenge/">SANS 2017 Holiday Hack Challenge</a></li>
 <li><a href="https://jhalon.github.io/OSCP-Review/">Offensive Security’s PWK & OSCP Review</a></li>
 </ul>
 
