@@ -8,6 +8,8 @@ related: true
 comments: true
 ---
 
+{% include toc title="Solutions Index" icon="file-text" %}
+
 Happy Holidays and a Happy New Year 2018 readers! Thanks for joining me today as we go over the [SANS 2016 Holiday Hack Challenge](https://holidayhackchallenge.com/2017/)! And as always, SANS has done an amazing job at making this as fun as possible, while also being very educational!
 
 I also want to give a quick shout out to the amazing Community from the CentralSec Slack Channel and from SANS for always helping everyone out and continuously teaching the community. This is what makes the InfoSec community amazing! 
@@ -15,8 +17,6 @@ I also want to give a quick shout out to the amazing Community from the CentralS
 Just a quick heads up - this is a very comprehensive and long post. I will include an Index for you to be able to jump to a certain portion of the challenge; if you are only looking for solutions.
 
 For others, the challenges are still available to play through - and will be till next year! So if you want to follow along, or give it a go by yourself, then you can start [here](https://holidayhackchallenge.com/2017/)!
-
-{% include toc title="Solutions Index" icon="file-text" %}
 
 ## Introduction
 
