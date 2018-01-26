@@ -219,13 +219,13 @@ Background daemon...
 Once we complete the CranberyPI Terminal challenge, we are able to unlock the "__Convery Belt__" tool, which can be used to re-direct the snowball across the Great Book Page.
 
 
-<a href="https://jhalon.github.io/images/shh2.png"><img src="https://jhalon.github.io/images/shh2.png"></a>
+<a href="/images/shh2.png"><img src="/images/shh2.png"></a>
 
 Once you obtain the Great Book Page in the __Winter Wonder Landing__ level, you will be able to see it in your __Stocking__.
 
-<a href="https://jhalon.github.io/images/shh3.png"><img src="https://jhalon.github.io/images/shh3.png"></a>
+<a href="/images/shh3.png"><img src="/images/shh3.png"></a>
 
-<a href="https://jhalon.github.io/images/shh4.png"><img src="https://jhalon.github.io/images/shh4.png"></a>
+<a href="/images/shh4.png"><img src="/images/shh4.png"></a>
 
 #### Answer #1:
 
