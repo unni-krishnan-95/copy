@@ -2070,9 +2070,8 @@ After we unlock all the page, we can go back to our Stocking and see a new NPC C
 
 <a href="/images/shh97.png"><img src="/images/shh97.png"></a>
 
---------
 ## Answers
---------
+
 Now that we have everything unlocked and completed, let's answer the questions:
 
 1) Visit the North Pole and Beyond at the Winter Wonder Landing Level to collect the first page of The Great Book using a giant snowball. What is the title of that page?
@@ -2121,9 +2120,8 @@ The letter was written by the Wizard of Oz, Santa's good friend.
 
 The villain causing the giant snowball problem is Glinda, the "Good" Witch. She cast a spell on Bumble to make him throw giant snowballs, in order to create an all-out war between Elves and Munchkins. This would have allowed her to make a profit, by selling spells to both sides of the war.
 
---------
 ## Conclusion
---------
+
 As always, SANS has done an amazing job for this year’s Holiday Hack! 
 
 Although I liked the mini-game from last year, this years was, OK. But - the technical portion, including the LDAP Injection, XXE, Phishing, DDE Attack, XSS Attack, and some Crypto was a great learning experience which showed what can occur in a real world scenario along with the outcome of it.
