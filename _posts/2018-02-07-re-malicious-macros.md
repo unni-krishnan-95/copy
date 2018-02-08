@@ -205,7 +205,7 @@ After that's done, let's take a look at our watch window, and we should see that
 
 This shows that __mshta.exe__ reaches out to the malicious URL and downloads our malicious HTA file. 
 
-## Reverse Engineering the HTA File
+## Decoding the HTA File
 
 Now that we know what our macro does, we can go ahead and close out the debugging window as we don't need it anymore. 
 
