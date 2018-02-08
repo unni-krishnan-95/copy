@@ -15,9 +15,10 @@ permalink: /categories.html
 <li><a href="https://jhalon.github.io/OSCP-Review/">Offensive Security’s PWK & OSCP Review</a></li>
 </ul>
 
-<h2>Capture the Flag</h2>
+<h2>CTutorials</h2>
 <ul>
-<li><a href="">Kaizen 2016</a> (Coming Soon!)</li>
+<li><a href="https://jhalon.github.io/re-malicious-macros/"></a>Reverse Engineering Malicious Macros for Fun & Profit
+</li>
 </ul>
 
 <h2>OverTheWire</h2>
