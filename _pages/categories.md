@@ -15,7 +15,7 @@ permalink: /categories.html
 <li><a href="https://jhalon.github.io/OSCP-Review/">Offensive Security’s PWK & OSCP Review</a></li>
 </ul>
 
-<h2>CTutorials</h2>
+<h2>Tutorials</h2>
 <ul>
 <li><a href="https://jhalon.github.io/re-malicious-macros/"></a>Reverse Engineering Malicious Macros for Fun & Profit
 </li>
