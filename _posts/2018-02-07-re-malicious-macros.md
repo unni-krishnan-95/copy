@@ -15,7 +15,7 @@ This post contains materials that can be potentially damaging or dangerous. If y
 
 ## Introduction
 
-Over the past few weeks I have been working tirelessly to keep up with a new wave of vendor breaches which ultimately result in the receival of malicious MS Word documents aimed to further compromise a user or even a company. 
+Over the past few weeks I have been working tirelessly to keep up with a new wave of malicious MS Word documents aimed to compromise user credentials, banking information, and even company data. 
 
 Much of these Word documents contain a malicious macro that when "__Enable Content__" is clicked, the macro runs and executes whatever commands it was programmed to run. This macro can do anything from downloading [droppers](https://blog.malwarebytes.com/threats/trojan-dropper/), to installing malicious applications and even back-dooring a device.
 
