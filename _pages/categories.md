@@ -17,8 +17,7 @@ permalink: /categories.html
 
 <h2>Tutorials</h2>
 <ul>
-<li><a href="https://jhalon.github.io/re-malicious-macros/"></a>Reverse Engineering Malicious Macros for Fun & Profit
-</li>
+<li><a href="https://jhalon.github.io/re-malicious-macros/">Reverse Engineering Malicious Macros for Fun & Profit</a></li>
 </ul>
 
 <h2>OverTheWire</h2>
