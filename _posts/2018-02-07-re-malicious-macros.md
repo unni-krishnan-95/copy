@@ -177,6 +177,8 @@ From here if we keep stepping through we should see more letters being added to 
 
 I have added a small video below that demonstrates me stepping through the macro. Pay attention to how the expressions variables change and how they start forming a command in the `erasable` variable. Toward the end I just held down __F8__ to step-in faster just to show you the initial start of the command.
 
+__NOTE:__ I suggest that you open this video in a new tab to better see what's going on.
+
 <video width="800" height="400" controls="controls">
   <source src="/images/stepin.mp4" type="video/mp4">
 </video>
