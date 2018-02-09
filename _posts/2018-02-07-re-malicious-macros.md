@@ -266,13 +266,13 @@ These IP's can then be added to our firewall to prevent any outbound connection 
 So just a quick recap on what we did.
 
 1. We received a malicious word document and extracted the macro via oledump.
-2. Debugged the malicious macro to see that it's utilizing mshta.exe to download and execute and HTA file.
+2. Debugged the malicious macro to see that it's utilizing mshta.exe to download and execute an HTA file.
 3. Decoded the HTA file to see that a PowerShell command was being executed, which downloaded and executed 2 more files.
 4. We found URLS, IP's and other information that provided us with possible IOC's.
 
 At this point what we can do is blacklist the URL's and the certain IP's on our firewalls, and even write YARA/NSM signatures to detect and prevent this malicious document from downloading and executing the files.
 
-Simply by just blacklisting the URLS where the files are downloaded makes this malware useless.
+Simply by just blacklisting the URL's where the files are downloaded makes this malware useless.
 
 Well, that's pretty much it! It's not too complicated and any Blue Teamer can do this to quickly learn what a Malicious Macro is doing.
 
