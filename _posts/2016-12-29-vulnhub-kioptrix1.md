@@ -208,7 +208,7 @@ root@kali:~# ./OpenF**k
   -c open N connections. (use range 40-50 if u dont know)
 ```
 
-Since the VM's Apache Version is 1.3.20, I will select __0x6b__ as our __target__. You can see a list of the target coes from the exploit's usageoutput, but I redacted here to save some space.
+Since the VM's Apache Version is 1.3.20, I will select __0x6b__ as our __target__. You can see a list of the targets from the exploit's usage output, but I redacted it here to save some space.
 
 Now that we know our target version, the IP, and HTTP Port - let's go ahead and run the exploit!
 
