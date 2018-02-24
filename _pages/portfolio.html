@@ -6,8 +6,8 @@ header:
 permalink: /portfolio/ 
 ---
 
-{% for image in site.images %}
-    {% if image.path contains 'images/slider' %}
-        <img src="{{ site.baseurl }}{{ image.path }}" alt="image" />
-    {% endif %}
-{% endfor %}
+<div class="grid__wrapper">
+  {% for post in site.posts %}
+    {% include archive-single.html type="grid" %}
+  {% endfor %}
+</div>
