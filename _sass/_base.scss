@@ -91,13 +91,20 @@ abbr[data-original-title] {
 }
 
 /* blockquotes */
-
+$border-color: rgba(0, 0, 0, 0.1); // rgba recommended if using feature images
 blockquote {
-  margin: 2em 1em 2em 0;
+  /*margin: 2em 1em 2em 0;
   padding-left: 1em;
   padding-right: 1em;
   font-style: italic;
-  border-left: 0.25em solid $primary-color;
+  border-left: 0.25em solid $primary-color;*/
+  // Color #EEF7FA
+  
+  border-left: 2px solid darken(#EEF7FA, 20%);
+  margin: 1em 1em;
+  padding: 0.75em 1em;
+  background-color: #EEF7FA;
+  box-shadow: 0 2px 2px $border-color;
 
   cite {
     font-style: italic;
