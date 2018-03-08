@@ -8,11 +8,11 @@ related: true
 comments: true
 ---
 
-{% include toc title="Solutions Index" icon="file-text" %}
-
 Happy Holidays and a Happy New Year 2018 readers! 
 
 Thanks for joining me today as we go over the [SANS 2017 Holiday Hack Challenge](https://holidayhackchallenge.com/2017/)!
+
+{% include toc title="Solutions Index" icon="file-text" %}
 
 As always, SANS has done an amazing job at making this as fun as possible, while also being very educational!
 
