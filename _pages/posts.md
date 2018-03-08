@@ -16,6 +16,5 @@ permalink: /posts.html
   {% endif %}
     <a href="{{ post.url }}">{{ post.title }}</a>
     {{ post.excerpt }}
-  ----
 {% endfor %}
 </ul>
