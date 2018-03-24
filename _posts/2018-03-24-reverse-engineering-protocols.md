@@ -53,7 +53,7 @@ Alright, so now that we have our tools, let's dig into actually capturing the ne
 
 For this post I will be using the [SuperFunkyChat](https://github.com/tyranid/SuperFunkyChat) application, which is a C# binary protocol application that can be used to learn Protocol Reverse Engineering. This application was originally built by James Forshaw to teach CANAPE. 
 
-This application will run on Windows, Linux, and OS X. You can download the latest prebuilt applications and source code from the [GitHub page](https://github.com/tyranid/ExampleChatApplication/releases/). Just make sure to choose the release binaries appropriate for your platform.
+This application will run on Windows, Linux, and OS X. You can download the latest prebuilt applications and source code from [GitHub](https://github.com/tyranid/ExampleChatApplication/releases/). Just make sure to choose the release binaries appropriate for your platform.
 
 I'm not going to go into detail or explain how to get this application up and running since it's pretty easy and self-explanatory. What you will need though is to install [.NET Core](https://www.microsoft.com/net/learn/get-started/windows) for your OS for the application to properly work.
 
