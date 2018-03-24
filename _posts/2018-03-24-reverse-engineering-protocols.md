@@ -234,7 +234,7 @@ Since we now have that separated down and have some basic knowledge of the struc
 
 Let's start by looking at the four byte block at `00000004`. 
 
-We see 3 bytes are all null, so there really is no data in there. At the end we have the hexadecimal value of `0x12`. Judging by the fact that Wireshark put a `.` character would mean that this isn't ASCII data, otherwise we would see the `` symbol. 
+We see 3 bytes are all null, so there really is no data in there. At the end we have the hexadecimal value of `0x12`. Judging by the fact that Wireshark put a `.` character would mean that this isn't ASCII data, otherwise we would see the ` ` symbol. 
 
 So if it's not ASCII our next best bet would be Decimal. Converting `0x12` to decimal gives us `18`.  Hmm... 18? What could that represent?
 
@@ -344,10 +344,10 @@ print ("Connection: %s" % read_bytes(f, 4))
 # Keep reading until file is empty.
 while f.tell() < file_size:
     length = read_int(f)
-    unk1 = read_int(f)
-    unk2 = read_byte(f)
+    val1 = read_int(f)
+    val2 = read_byte(f)
     data = read_bytes(f, length - 1)
-    print("Len: %d, Unk1: %d, Unk2: %d, Data: %s" % (length, unk1, unk2, data))
+    print("Len: %d, Val1: %d, Val2: %d, Data: %s" % (length, val1, val2, data))
 ```
 
 This script should be self-explanatory but let's quickly break it down so we have a better understanding of what's going on.
@@ -363,8 +363,8 @@ Once the file is opened, we read in the first 4 bytes which should be our connec
 
 Next, we iterate through the file until it's empty and there are no more bytes that we can read. While iterating through the file we do a few things;
 1. Unpack the first four bytes of the packet in network byte order to read the bytes as an integer and set that to length. This technically should be the first block of the packets that dictates data length, just as we assumed during our structure analysis.
-2. Unpack the next four bytes of the packet, read them as an integer and set it to "__Unk1__ which would be our first unknown value.
-3. Read in the next block which is a single byte and set that to "__Unk2__" which would be our second unknown value.
+2. Unpack the next four bytes of the packet, read them as an integer and set it to "__Val1__ which would be our first unknown value.
+3. Read in the next block which is a single byte and set that to "__Val2__" which would be our second unknown value.
 4. Read in the rest of the packet data by using the length we found in block one, minus one. Remember, we need to subtract that additional byte that was added - in which we assumed was the null string terminator.
 5. Print out the Length, Unknown Value 1 & 2, and the Data on a single line which would represent a single packet.
 
@@ -375,10 +375,10 @@ So let's go ahead and run the Python script and include the name of our bin file
 ```console
 kkb@kkb-ubuntu:~$ python3 read_protocol.py outbound.bin 
 Connection: b'BINX'
-Len: 18, Unk1: 1494, Unk2: 0, Data: b'\x04test\nkkb-ubuntu\x00'
-Len: 30, Unk1: 2553, Unk2: 3, Data: b'\x04test\x17This is a test message!'
-Len: 23, Unk1: 1879, Unk2: 3, Data: b'\x04test\x10Hello - testing!'
-Len: 21, Unk1: 1677, Unk2: 2, Data: b"\x13I'm going away now!"
+Len: 18, Val1: 1494, Val2: 0, Data: b'\x04test\nkkb-ubuntu\x00'
+Len: 30, Val1: 2553, Val2: 3, Data: b'\x04test\x17This is a test message!'
+Len: 23, Val1: 1879, Val2: 3, Data: b'\x04test\x10Hello - testing!'
+Len: 21, Val1: 1677, Val2: 2, Data: b"\x13I'm going away now!"
 ```
 
 Awesome! So as you can see we have the length, unknown values, and data from each packet printed out in an easy to read format for us. We can now continue determining the protocols structure.
@@ -388,7 +388,7 @@ Awesome! So as you can see we have the length, unknown values, and data from eac
 Now that we have our protocol data parsed, let's go back and look at the first Connection Packet that we sent:
 
 ```
-Len: 18, Unk1: 1494, Unk2: 0, Data: b'\x04test\nkkb-ubuntu\x00'
+Len: 18, Val1: 1494, Val2: 0, Data: b'\x04test\nkkb-ubuntu\x00'
 ```
 
 Our assumptions were right about the first block and the fact that it was supplying the length of our sent data +1 for the null terminator! Just don't get confused with the `\x00` in the packet as the null-terminator, because it's not! The null-terminator is supplied by the Server once it receives the packet.
@@ -400,7 +400,7 @@ If we look closely at the "__Data__" portions of the packet we see three bytes i
 So judging by this it seems that the first byte in data is the length of the username. We can verify this by looking at the next packet that we sent, which was our Chat Message.
 
 ```
-Len: 30, Unk1: 2553, Unk2: 3, Data: b'\x04test\x17This is a test message!'
+Len: 30, Val1: 2553, Val2: 3, Data: b'\x04test\x17This is a test message!'
 ```
 
 As you can see `\x04` shows up again because our username "__test__" is 4 characters long! Looking further down we also see another byte in hexadecimal, this time it's `\x17` which when converted to decimal is `23` which is the exact length of the message that we sent.
@@ -409,22 +409,22 @@ Awesome, so now we know that the Data Portion of the Packet also has it's on TLV
 
 Okay so now that we know that those provide the length of the data, let's do some math to see if that actually fits in with what the Length Value displays. So 4 characters for the username, and 23 for the data would be `4 + 23 = 27`. Wait, 27? But the Length packet shows 30... what are we missing?
 
-Is the Length also adding the value in __Unk2__? It would make sense, because `4 + 23 + 3 = 30`. Right, so now we know that the Length is calculated like so: `Unk2 + Username Length + Message Length = Data Length`.
+Is the Length also adding the value in __Val2__? It would make sense, because `4 + 23 + 3 = 30`. Right, so now we know that the Length is calculated like so: `Val2 + Username Length + Message Length = Data Length`.
 
-So now our question would be, what is __Unk2__ representing? Well let's look back at our parsed data and compare the __Unk2__ values for each packet.
+So now our question would be, what is __Val2__ representing? Well let's look back at our parsed data and compare the __Val2__ values for each packet.
 
 ```console
 kkb@kkb-ubuntu:~$ python3 read_protocol.py outbound.bin 
 Connection: b'BINX'
-Len: 18, Unk1: 1494, Unk2: 0, Data: b'\x04test\nkkb-ubuntu\x00'
-Len: 30, Unk1: 2553, Unk2: 3, Data: b'\x04test\x17This is a test message!'
-Len: 23, Unk1: 1879, Unk2: 3, Data: b'\x04test\x10Hello - testing!'
-Len: 21, Unk1: 1677, Unk2: 2, Data: b"\x13I'm going away now!"
+Len: 18, Val1: 1494, Val2: 0, Data: b'\x04test\nkkb-ubuntu\x00'
+Len: 30, Val1: 2553, Val2: 3, Data: b'\x04test\x17This is a test message!'
+Len: 23, Val1: 1879, Val2: 3, Data: b'\x04test\x10Hello - testing!'
+Len: 21, Val1: 1677, Val2: 2, Data: b"\x13I'm going away now!"
 ```
 
-Hmm - that's interesting! Take a look at Packet 2 and 3. The __Unk2__ value is the same - both of them display `3`. While the other packets display other values, but they seem to be in a range of `0-9`.
+Hmm - that's interesting! Take a look at Packet 2 and 3. The __Val2__ value is the same - both of them display `3`. While the other packets display other values, but they seem to be in a range of `0-9`.
 
-Packet 1 and 2 were both Chat Messages, I believe that we can safely assume that __Unk2__ is a representation of the command that the Client/Server is carrying out. 3 being a Chat Message, 0 possibly being the connection command, and 2 would be the quit command!
+Packet 1 and 2 were both Chat Messages, I believe that we can safely assume that __Val2__ is a representation of the command that the Client/Server is carrying out. 3 being a Chat Message, 0 possibly being the connection command, and 2 would be the quit command!
 
 | Command # | Direction | Description |
 |---|---|---|
@@ -432,7 +432,7 @@ Packet 1 and 2 were both Chat Messages, I believe that we can safely assume that
 | 2  | Both  | Sent when /quit command is used for both server/client  |
 | 3  | Both  | Sent when a message is sent to the server and received by clients  |
 
-Alright - so we got like 90% of the protocol structure determined, all that's left is to figure out what __Unk1__ is. 
+Alright - so we got like 90% of the protocol structure determined, all that's left is to figure out what __Val1__ is. 
 
 After some thinking I came to ask myself - _What's the chance that this value is a checksum?_. It could be possible, since we are sending chat messages there has to be some sort of checksum to verify that the data sent from the Client to the Server was not modified or corrupted in anyway... at least I would hope so!
 
@@ -466,17 +466,17 @@ So let's say the message that was passed was `test` which in hexadecimal is `74 
 
 It's seems pretty easy to guess since the number is an integer. So as an attacker if we know that, the integrity of that data would not be safe since we could easily edit or create our custom packets with a valid checksum!
 
-Okay... so now that we explained that in detail you might be wondering why the second "Custom Rolled Algorithm" looks pretty similar to the __Unk1__ value in the packets from the Chat protocol.
+Okay... so now that we explained that in detail you might be wondering why the second "Custom Rolled Algorithm" looks pretty similar to the __Val1__ value in the packets from the Chat protocol.
 
 Well, what's the chances that the Chat Application is utilizing the same checksum we just detailed? I don't know... but let's find out if it is!
 
 Let's look back at our parsed packet, specifically the Connection Packet since it's smaller and will be easier for us to test.
 
 ```
-Len: 18, Unk1: 1494, Unk2: 0, Data: b'\x04test\nkkb-ubuntu\x00'
+Len: 18, Val1: 1494, Val2: 0, Data: b'\x04test\nkkb-ubuntu\x00'
 ````
 
-The value for __Unk1__ is `1494`. So, let's take the hexadecimal representation of our data and convert it to decimal. The following is the hexadecimal representation of our data:
+The value for __Val1__ is `1494`. So, let's take the hexadecimal representation of our data and convert it to decimal. The following is the hexadecimal representation of our data:
 
 ```
 04 74 65 73 74 0a 6b 6b  62 2d 75 62 75 6e 74 75 00
@@ -488,7 +488,7 @@ Now let's convert that to a decimal representation, which should be as follows:
 4 116 101 115 116 10 107 107 98 45 117 98 117 110 116 117 0
 ```
 
-Adding those integers up we get `1494` which is the exact same value that __Unk1__ is! Awesome, so we verified our assumption that __Unk1__ is the checksum which is calculated by taking the decimal value of each byte and summing it up... not as secure as I was hoping it to be.
+Adding those integers up we get `1494` which is the exact same value that __Val1__ is! Awesome, so we verified our assumption that __Val1__ is the checksum which is calculated by taking the decimal value of each byte and summing it up... not as secure as I was hoping it to be.
 
 ## Protocol Structure Diagram
 
@@ -503,5 +503,3 @@ I will leave it to you to practice and try to figure out if the inbound packets 
 From this point we can start intercepting the packets and begin looking for vulnerabilities in the protocol such as buffer overflows, integer overflows, command injection, etc.
 
 If you really want to learn more about the vulnerabilities and how to exploit them then I highly suggest you buy the book [Attacking Network Protocols](https://nostarch.com/networkprotocols) by James Forshaw if you want to learn more!
-
-
