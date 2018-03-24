@@ -347,8 +347,7 @@ while f.tell() < file_size:
     unk1 = read_int(f)
     unk2 = read_byte(f)
     data = read_bytes(f, length - 1)
-    print("Len: %d, Unk1: %d, Unk2: %d, Data: %s" 
-        % (length, unk1, unk2, data))
+    print("Len: %d, Unk1: %d, Unk2: %d, Data: %s" % (length, unk1, unk2, data))
 ```
 
 This script should be self-explanatory but let's quickly break it down so we have a better understanding of what's going on.
