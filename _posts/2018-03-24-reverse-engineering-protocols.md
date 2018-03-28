@@ -373,7 +373,7 @@ Overall the script is pretty straightforward and will allow us to quickly parse 
 So let's go ahead and run the Python script and include the name of our bin file in the command as well. I suggest you also utilize Python v3 since it does way better at printing out Byte data then Python v2.
 
 ```console
-kkb@kkb-ubuntu:~$ python3 read_protocol.py outbound.bin 
+kkb@kkb-ubuntu:~$ python3 protocol_parse.py outbound.bin 
 Connection: b'BINX'
 Len: 18, Val1: 1494, Val2: 0, Data: b'\x04test\nkkb-ubuntu\x00'
 Len: 30, Val1: 2553, Val2: 3, Data: b'\x04test\x17This is a test message!'
