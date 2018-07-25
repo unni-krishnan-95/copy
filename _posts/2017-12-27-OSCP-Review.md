@@ -107,7 +107,7 @@ The following materials below will help you take the first steps into Penetratio
   - [Cybrary - Web Application Penetration Testing](https://www.cybrary.it/course/web-application-pen-testing/)
 * Books
   - [Penetration Testing: A Hands-On Introduction to Hacking](https://www.amazon.com/Penetration-Testing-Hands-Introduction-Hacking-ebook/dp/B00KME7GN8/ref=sr_1_fkmr0_1?s=digital-text&ie=UTF8&qid=1514402732&sr=1-1-fkmr0&keywords=hiking+georgia+weidman)
-  - [The Hacker Playbook 2: Practical Guide To Penetration Testing](https://www.amazon.com/Hacker-Playbook-Practical-Penetration-Testing/dp/1512214566)
+  - [The Hacker Playbook 3: Practical Guide To Penetration Testing](https://www.amazon.com/Hacker-Playbook-Practical-Penetration-Testing-ebook/dp/B07CSPFYZ2)
   - [The Web Application Hacker's Handbook: Finding and Exploiting Security Flaws](https://www.amazon.com/Web-Application-Hackers-Handbook-Exploiting/dp/1118026470)
   - [Black Hat Python: Python Programming for Hackers and Pentesters](https://www.amazon.com/Black-Hat-Python-Programming-Pentesters/dp/1593275900/ref=sr_1_1?ie=UTF8&qid=1514402830&sr=8-1&keywords=Black+Hat+Python%3A+Python+Programming+for+Hackers+and+Pentesters)
   - [Hacking: The Art of Exploitation, 2nd Edition](https://www.amazon.com/Hacking-Art-Exploitation-Jon-Erickson/dp/1593271441/ref=sr_1_fkmr0_1?ie=UTF8&qid=1514402853&sr=8-1-fkmr0&keywords=Hacking%3A+The+Art+of+Exploitation+Paperback+%E2%80%93+7+Feb+2008)
