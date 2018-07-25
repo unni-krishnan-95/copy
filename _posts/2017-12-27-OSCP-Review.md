@@ -126,7 +126,7 @@ The following materials below will help you take the first steps into Penetratio
       - [SkyTower: 1](https://www.vulnhub.com/entry/skytower-1,96/)
   - [HackTheBox](https://www.hackthebox.eu/)
     - Practice on the Retired Machines too... trust me!
-  - [PentestIt (Advanced Only!)](https://lab.pentestit.ru/)
+  - [Pentestit Labs](https://lab.pentestit.ru/) (Advanced Only!)
   - [CTF365](https://ctf365.com/)
   - [PentesetLab - Bootcamp](https://pentesterlab.com/bootcamp)
   - [Exploit Exercises - Mainsequence](https://exploit-exercises.com/mainsequence/)
