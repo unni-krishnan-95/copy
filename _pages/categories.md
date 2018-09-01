@@ -13,6 +13,7 @@ permalink: /categories.html
 <li><a href="https://jhalon.github.io/sans-2016-holiday-hack-challenge/">SANS 2016 Holiday Hack Challenge</a></li>
 <li><a href="https://jhalon.github.io/sans-2017-holiday-hack-challenge/">SANS 2017 Holiday Hack Challenge</a></li>
 <li><a href="https://jhalon.github.io/OSCP-Review/">Offensive Security’s PWK & OSCP Review</a></li>
+<li><a href="https://jhalon.github.io/becoming-a-pentester/">So You Want To Be a Pentester?</a></li>
 </ul>
 
 <h2>Tutorials</h2>
