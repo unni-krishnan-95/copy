@@ -22,7 +22,7 @@ Overall, protocol reverse engineering is the process of extracting the applicati
 
 _But why? Why is it important?_
 
-Well it's important for many reasons. Let's say you're a Security Consultant and were hired to test the underlying protocol of a trading system that will be used on Wall Street for trading/buying/selling stocks, and a plethora of other things. The client unfortunately doesn't provide you with a Server, only a Client, and doesn't event provide you with the applications source code... so what do you do?
+Well it's important for many reasons. Let's say you're a Security Consultant and were hired to test the underlying protocol of a trading system that will be used on Wall Street for trading/buying/selling stocks, and a plethora of other things. The client unfortunately doesn't provide you with a Server, only a Client, and doesn't even provide you with the applications source code... so what do you do?
 
 Well, we know that this trading system will be client-server based, so there needs to be an underlying TCP Protocol being used to transport data between the Client and Server. And since we have access to the Client but not the Server, then we can easily (well... hopefully easily) intercept the traffic, reverse the protocol, learn how it's structured, how it passes the data, and then look for exploits in the protocol which generally would attribute to vulnerabilities in the code.
 
