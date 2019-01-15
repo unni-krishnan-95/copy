@@ -7,9 +7,10 @@ header:
 related: true
 comments: true
 ---
-{% include toc title="Solutions Index" icon="file-text" %}
 
 Happy Holidays and a Happy New Year 2019 readers! 
+
+{% include toc title="Solutions Index" icon="file-text" %}
 
 Thanks for joining me today as we go over the [SANS 2018 Holiday Hack Challenge](https://www.holidayhackchallenge.com/2018/)!
 
