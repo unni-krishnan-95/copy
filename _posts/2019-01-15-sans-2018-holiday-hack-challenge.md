@@ -12,8 +12,6 @@ Happy Holidays and a Happy New Year 2019 readers!
 
 Thanks for joining me today as we go over the [SANS 2018 Holiday Hack Challenge](https://www.holidayhackchallenge.com/2018/)!
 
-{% include toc title="Solutions Index" icon="file-text" %}
-
 As always, SANS has done an amazing job at making this as fun as possible, while also being very educational!
 
 I also want to give a quick shout out to the amazing Community from the CentralSec Slack Channel and from SANS for always helping everyone out and continuously teaching the community. This is what makes the InfoSec community amazing! 
@@ -29,6 +27,8 @@ This year the whole SANS Holiday Hack takes place at [KringleCon](https://www.kr
 From here, as well as from the Holiday Hack website, we get to follow the story and access our challenges.
 
 <p align="center"><a href="/images/hh18-1.png"><img src="/images/hh18-1.png"></a></p>
+
+{% include toc title="Solutions Index" icon="file-text" %}
 
 > As you walk through the gates, a familiar red-suited holiday figure warmly welcomes all of his special visitors to KringleCon.
 
