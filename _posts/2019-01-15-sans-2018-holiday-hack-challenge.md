@@ -7,6 +7,7 @@ header:
 related: true
 comments: true
 ---
+{% include toc title="Solutions Index" icon="file-text" %}
 
 Happy Holidays and a Happy New Year 2019 readers! 
 
@@ -27,8 +28,6 @@ This year the whole SANS Holiday Hack takes place at [KringleCon](https://www.kr
 From here, as well as from the Holiday Hack website, we get to follow the story and access our challenges.
 
 <p align="center"><a href="/images/hh18-1.png"><img src="/images/hh18-1.png"></a></p>
-
-{% include toc title="Solutions Index" icon="file-text" %}
 
 > As you walk through the gates, a familiar red-suited holiday figure warmly welcomes all of his special visitors to KringleCon.
 
