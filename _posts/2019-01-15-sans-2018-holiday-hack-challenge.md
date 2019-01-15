@@ -931,7 +931,7 @@ For those unfamiliar with complex math and graph theory, here is an ELI5 (Explai
 > The graph is  _directed_, so the lines connecting the circles together have an arrow on one end. If A has an arrow pointing to B then B may or may not have an arrow pointed back at A.
 > 
 > The "symbols" could be most anything. If they are letters then the sequence of symbols would be words (or general keyboard smashing; De Brujin doesn't care). If the symbols are digits then the sequences are several-digit numbers. You can have anything make up your list of possible symbols, then every circle in the graph gets some unique sequence of the same length. For example, if your symbols were 'A', 'B', and 'C' and you were using sequences that were two letters long then you would have circles with "AA" "AB" "AC" "BA" "BB" "BC" "CA" "CB" and "CC" in them. Note that this is  _every_possible permutation of these 3 symbols. If you used many symbols and a long sequence length then you quickly wind up with a  _ton_  circles in your graph.
-
+>
 > Finally, we look at how to draw the lines in the graph. You start at any circle and you look at what is in that circle. Then you delete the character on the far left side of the sequence and you add any character to the right side. This will now be the name of another circle. Draw an arrow that points from the circle that you started at to the circle that has that new name. Now repeat for every possible combination.
 > 
 > Using our graph with 'A', 'B', and 'C' of length 2 we would find that the "AA" square should have a line that points at "AA" (i.e. back at itself), one that points at "AB", and one that points at "AC". To work through another node, the "CB" circle should be pointing at the "BA", the "BB", and the "BC" circles.
