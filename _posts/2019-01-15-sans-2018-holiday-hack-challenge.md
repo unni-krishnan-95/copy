@@ -106,11 +106,11 @@ All right, now that we know all that - let's get into answering the questions!
 
 Upon entering the castle for KringleCon, we come up to Bushy Evergreen and her CranPi challenge. 
 
-<p align="center"><a href="/images/hh18-4.png"><img src="/images/hh18-4.png"></a></p></p>
+<p align="center"><a href="/images/hh18-4.png"><img src="/images/hh18-4.png"></a></p>
 
 We can talk to Bushy to get an idea of what we need to complete the challenge, and we will also get a hint that can be accessed from the Hints tab on our badge.
 
-<p align="center"><a href="/images/hh18-5.png"><img src="/images/hh18-5.png"></a></p></p>
+<p align="center"><a href="/images/hh18-5.png"><img src="/images/hh18-5.png"></a></p>
 
 Upon accessing the terminal, we are presented with the following output:
 
