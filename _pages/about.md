@@ -7,7 +7,7 @@ header:
 permalink: /about.html
 ---
 
-## jack@localhost:~# whoami
+## jack@localhost:~$ whoami
 
 <p align="center"><img src="https://42f2671d685f51e10fc6-b9fcecea3e50b3b59bdc28dead054ebc.ssl.cf5.rackcdn.com/illustrations/programming_2svr.svg" width="500" height="300"></p>
 
@@ -20,7 +20,7 @@ This page will contain posts on my learning experiences, challenges, projects, o
 Cheers!
 Jack 
 
-## jack@localhost:~# cat conference-talks.txt
+## jack@localhost:~$ cat conference-talks.txt
 
 <p align="center"><img src="https://42f2671d685f51e10fc6-b9fcecea3e50b3b59bdc28dead054ebc.ssl.cf5.rackcdn.com/illustrations/conference_speaker_6nt7.svg" width="500" height="300"></p>
 
