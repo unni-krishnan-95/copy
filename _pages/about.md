@@ -27,5 +27,5 @@ Jack
 
 The following is a list of Conferences that I have presented at along with slides and video links (if available).
 
-* NCC-CON (2019) - Red Teaming AWS: From Comrpmise to Persistence
+* NCC-CON (2019) - Red Teaming AWS: From Compromise to Persistence
 * TBD (2019)
