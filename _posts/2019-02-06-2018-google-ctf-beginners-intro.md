@@ -74,7 +74,7 @@ Another thing that can help you prepare for CTFs is to read write-ups on new bug
 
 The following links are great places to read about new bugs, and vulnerabilities. They are also a good place to learn how other's exploited known bugs.
 
-{: .notice--info
+{: .notice--info}
 __HINT:__ These links can also help you get into Bug Bounty Hunting!
 
 * [Hackerone - Hacktivity](https://hackerone.com/hacktivity)
