@@ -29,7 +29,9 @@ But, there are resources that can help you get started!
 
 <p align="center"><img src="/images/wtf-ctf.jpg"></p>
 
-Let's start by explaining what a CTF really is. [CTF TIME](https://ctftime.org/ctf-wtf/) does a good job at explaining the basics, so I'm just going to quote them (with some "minor" editing)!
+Let's start by explaining what a CTF really is!
+
+[CTF Time](https://ctftime.org/ctf-wtf/) does a good job at explaining the basics, so I'm just going to quote them (with some "minor" editing)!
 
 > Capture the Flag (CTF) is a special kind of information security competitions. There are three common types of CTFs: Jeopardy, Attack-Defense and mixed.
 > 
@@ -51,7 +53,8 @@ Now that we have a general idea of what a CTF is and what it contains, let's lea
 
 Once again, [LiveOverflow](http://liveoverflow.com/intro.html) has an amazing video explaining why CTF's are a great way to learn hacking. This video was a live recording of his FSEC 2017 talk that aimed to "_motivate you to play CTFs and showcase various example challenge solutions, to show you stuff you hopefully haven't seen before and get you inspired to find more interesting vulnerabilities_".
 
-{% include video id="fjV8XukxO8" provider="youtube" %}
+{% include video id="rfjV8XukxO8" provider="youtube" %}
+
 
 There are also a ton of resources online that aim to teach you the basics of Vulnerability Discovery, Binary Exploitation, Forensics, and more, such as the following below:
 
@@ -71,6 +74,7 @@ Another thing that can help you prepare for CTFs is to read write-ups on new bug
 
 The following links are great places to read about new bugs, and vulnerabilities. They are also a good place to learn how other's exploited known bugs.
 
+{: .notice--info
 __HINT:__ These links can also help you get into Bug Bounty Hunting!
 
 * [Hackerone - Hacktivity](https://hackerone.com/hacktivity)
@@ -99,14 +103,11 @@ Now that you have the basics skills and know a little more about certain topics 
 
 From there, all you need to do is just wait for the CTF to start, and hack away!
 
-{: .notice--warning}
-testing
-
 Okay, seems easy enough - but then again for a first time it's still overwhelming! So what can we do to make our first CTF experience a good one?
 
 Well, that's where the Google CTF comes in!
 
-<p align="center"><img src="/images/gctf-ctf.jpg"></a></p>
+<p align="center"><img src="/images/gctf-ctf.jpg"></p>
 
 As I stated before, the reason why I really liked Google's CTF was because it allowed for both beginners and experts to take part, and even allowed people new to CTF's to try their hands at some security challenges without adding too much pressure.
 
@@ -128,10 +129,10 @@ Once we read the story, we can start with the challenges. These beginner challen
 
 * <span style="color:purple">Purple:</span> __misc - (Miscellaneous)__
 * <span style="color:green">Green:</span> __pwn/pwn-re - (Exploitation/Buffer Overflows & Reverse Engineering)__
-* <span style="color:yellow">Yellow:</span> __re - (Reverse Engineering)__
+* <span style="color:gold">Yellow:</span> __re - (Reverse Engineering)__
 * <span style="color:blue">Blue:</span> __web (Web Exploitation)__
 
-<p align="center" href="google-ctf-quest-map.png"><<img src="/images/google-ctf-quest-map.png"></a></p>
+<p align="center"><a href="/images/google-ctf-quest-map.png"><img src="/images/google-ctf-quest-map.png"></a></p>
 
 If you click on one of the circles then you will go to the respective challenge. The challenge will contain some information, along with either an attachment or a link. From there, try to solve the challenge and find the flag, which is in the __CTF{}__ format. Submitting the correct flag will complete the challenge.
 
