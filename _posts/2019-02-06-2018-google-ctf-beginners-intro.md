@@ -27,7 +27,7 @@ Honestly, you'll never be ready! There will always be something new to learn, so
 
 But, there are resources that can help you get started! 
 
-<p align="center"><img src="/images/wtf-ctf.jpg"></a></p>
+<p align="center"><img src="/images/wtf-ctf.jpg"></p>
 
 Let's start by explaining what a CTF really is. [CTF TIME](https://ctftime.org/ctf-wtf/) does a good job at explaining the basics, so I'm just going to quote them (with some "minor" editing)!
 
@@ -45,7 +45,7 @@ Let's start by explaining what a CTF really is. [CTF TIME](https://ctftime.org/c
 
 {% include video id="8ev9ZX9J45A" provider="youtube" %}
 
-<p align="center"><img src="/images/gs-ctf.jpg"></a></p>
+<p align="center"><img src="/images/gs-ctf.jpg"></p>
 
 Now that we have a general idea of what a CTF is and what it contains, let's learn how we can get started in playing CTFs!
 
@@ -139,7 +139,7 @@ Now notice how some of these challenges are "grayed out". That's because these c
 
 Also notice that Google allows you to make choices on what challenge you want to do. They don't force you to do all of them to get to the __END__, but give you the ability to pick and choose another path if something is too hard. Thus, making it easier for you to feel accomplishment and to later come back and learn!
 
-<p align="center"><img src="/images/gctf-closing.jpg"></a></p>
+<p align="center"><img src="/images/gctf-closing.jpg"></p>
 
 Alright, that's it for now. Hopefully you learned something new today and I sincerely hope that the resources will allow you to learn and explore new topics!
 
