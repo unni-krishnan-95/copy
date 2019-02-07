@@ -19,7 +19,7 @@ Now, some of you might be wondering... "_How much do I need to know or learn to 
 
 Truth be told, __it depends__. Some CTFs can be way more complex than other, such as [DEFCON's CTF](https://www.defcon.org/html/links/dc-ctf.html) and even Google's CTF can be quite complex and complicated - but not impossible! It solely depends on your area of expertise.
 
-There are many CTF groups that have people who specialize in Code Review and Web Apps and can do Web Challenges with their eyes closed, but give them a binary and they won't know there different between the [EIP](https://inst.eecs.berkeley.edu/~cs161/sp15/discussions/dis06-assembly.pdf) and [ESP](https://inst.eecs.berkeley.edu/~cs161/sp15/discussions/dis06-assembly.pdf), the same goes for others! Sure, there are people who are the "Jack of All Trades" and can do pretty much anything, but that doesn't make them an expert. 
+There are many CTF teams that have people who specialize in Code Review and Web Apps and can do Web Challenges with their eyes closed, but give them a binary and they won't know there difference between the [EIP](https://inst.eecs.berkeley.edu/~cs161/sp15/discussions/dis06-assembly.pdf) and [ESP](https://inst.eecs.berkeley.edu/~cs161/sp15/discussions/dis06-assembly.pdf). The same goes for others! Sure, there are people who are the "Jack of All Trades" and can do pretty much anything, but that doesn't make them an expert in everything. 
 
 After reading this, you might be asking me - _But I've never done a CTF before! How do I know if I'm ready to attempt one?_
 
