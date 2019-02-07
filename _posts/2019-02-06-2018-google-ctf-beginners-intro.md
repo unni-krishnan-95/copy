@@ -87,7 +87,7 @@ __HINT:__ These links can also help you get into Bug Bounty Hunting!
 
 Once we have a decent understanding of a certain field such as Web, Crypto, Binary, etc. it's time we start reading and watching other people's writeups. This will allow us to gain an understanding on how certain challenges are solved, and hopefully it will also teach us a few new things. 
 
-The following links are great places to read/watch CTF solutions.
+The following links are great places to read and watch CTF solutions:
 
 * [CTF Time - Writeups](https://ctftime.org/writeups)
 * [CTFs Github - Writeups, Resources, and more!](https://github.com/ctfs)
