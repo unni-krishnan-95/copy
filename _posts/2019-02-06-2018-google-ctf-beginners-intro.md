@@ -47,7 +47,7 @@ Let's start by explaining what a CTF really is!
 
 {% include video id="8ev9ZX9J45A" provider="youtube" %}
 
-<br>
+Overall, CTFs are time games where hackers compete agasint eachother (either in teams or alone) to find bugs and solve puzzles to find "flags" which count for points. The team with the most points at the end of the CTF is the winner! 
 
 <p align="center"><img src="/images/gs-ctf.jpg"></p>
 
