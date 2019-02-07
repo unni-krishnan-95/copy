@@ -23,6 +23,14 @@ permalink: /categories.html
 <li><a href="https://jhalon.github.io/reverse-engineering-protocols/">Reverse Engineering Network Protocols</a></li>
 </ul>
 
+<h2>Capture The Flag</h2>
+<ul>
+  <li>2018 Google CTF - Beginners Quest</li>
+  <ul>
+    <li><a href="https://jhalon.github.io/2018-google-ctf-beginners-intro/">Google CTF (2018): Beginners Quest - Introduction</a></li>
+  </ul>
+</ul>
+
 <h2>OverTheWire</h2>
 <ul>
 
