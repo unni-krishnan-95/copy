@@ -55,6 +55,7 @@ Once again, [LiveOverflow](http://liveoverflow.com/intro.html) has an amazing vi
 
 {% include video id="rfjV8XukxO8" provider="youtube" %}
 
+<br>
 
 There are also a ton of resources online that aim to teach you the basics of Vulnerability Discovery, Binary Exploitation, Forensics, and more, such as the following below:
 
