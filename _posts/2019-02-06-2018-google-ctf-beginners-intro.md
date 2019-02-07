@@ -131,10 +131,10 @@ The story is as follows:
 
 Once we read the story, we can start with the challenges. These beginner challenges were presented in a “Quest” style based off the story scenario. The quest has a total of nineteen (19) challenges as shown below in the quest map - with each color representing a different category as follows:
 
-* <span style="color:purple">__Purple:__</span> __misc - (Miscellaneous)__
-* <span style="color:green">__Green:__</span> __pwn/pwn-re - (Exploitation/Buffer Overflows & Reverse Engineering)__
-* <span style="color:gold">__Yellow:__</span> __re - (Reverse Engineering)__
-* <span style="color:DodgerBlue">__Blue:__</span> __web (Web Exploitation)__
+* <span style="color:purple">__Purple:__</span> __Miscellaneous__
+* <span style="color:green">__Green:__</span> __Exploitation/Buffer Overflows & Reverse Engineering__
+* <span style="color:gold">__Yellow:__</span> __Reverse Engineering__
+* <span style="color:DodgerBlue">__Blue:__</span> __Web Exploitation__
 
 <p align="center"><a href="/images/google-ctf-quest-map.png"><img src="/images/google-ctf-quest-map.png"></a></p>
 
