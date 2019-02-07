@@ -67,7 +67,9 @@ There are also a ton of resources online that aim to teach you the basics of Vul
 * [So You Want To Be a Pentester?](https://jhalon.github.io/becoming-a-pentester/) <-- Shameless plug because of resources! =)
 
 
-Out of all these resources, I believe that [CTF Series: Vulnerable Machines](https://bitvijays.github.io/LFC-VulnerableMachines.html) is honestly the BEST resources for CTFs. It's aim is mostly focused on how to approach Vulnerable VM's like the ones on [VulnHub](https://www.vulnhub.com/) and [Hack The Box](https://www.hackthebox.eu/), but it still gives you a ton of example and resources on how to find certain vulnerabilities, how to utilized given tools, and how to exploit vulnerabilities.
+Out of all these resources, I believe that [CTF Series: Vulnerable Machines](https://bitvijays.github.io/LFC-VulnerableMachines.html) is honestly the BEST resources for CTFs.
+
+It's aim is mostly focused on how to approach Vulnerable VM's like the ones on [VulnHub](https://www.vulnhub.com/) and [Hack The Box](https://www.hackthebox.eu/), but it still gives you a ton of example and resources on how to find certain vulnerabilities, how to utilized given tools, and how to exploit vulnerabilities.
 
 As I said time and time again, learning the basics will drastically help improve your CTF skills. Once you get enough experience you'll start to notice "patterns" in certain code, binaries, web apps, etc. which will allow you to know if a particular vulnerability exists and how it can be exploited.
 
