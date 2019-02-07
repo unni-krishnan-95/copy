@@ -47,7 +47,7 @@ Let's start by explaining what a CTF really is!
 
 {% include video id="8ev9ZX9J45A" provider="youtube" %}
 
-<br><br>
+<br>
 
 <p align="center"><img src="/images/gs-ctf.jpg"></p>
 
