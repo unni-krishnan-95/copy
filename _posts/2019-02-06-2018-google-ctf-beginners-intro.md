@@ -47,6 +47,8 @@ Let's start by explaining what a CTF really is!
 
 {% include video id="8ev9ZX9J45A" provider="youtube" %}
 
+<br><br>
+
 <p align="center"><img src="/images/gs-ctf.jpg"></p>
 
 Now that we have a general idea of what a CTF is and what it contains, let's learn how we can get started in playing CTFs!
