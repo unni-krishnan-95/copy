@@ -33,9 +33,9 @@ Let's start by explaining what a CTF really is!
 
 [CTF Time](https://ctftime.org/ctf-wtf/) does a good job at explaining the basics, so I'm just going to quote them (with some "minor" editing)!
 
-> Capture the Flag (CTF) is a special kind of information security competitions. There are three common types of CTFs: Jeopardy, Attack-Defense and mixed.
+> Capture the Flag (CTF) is a special kind of information security competition. There are three common types of CTFs: Jeopardy, Attack-Defense and mixed.
 > 
-> Jeopardy-style CTFs has a couple of questions (tasks) in range of categories. For example, Web, Forensic, Crypto, Binary, PWN or something else. Teams compete against each other and gain points for every solved task. The more points for a task, the more complicated the task. Usually certain tasks appear in chains, and can only be opened after someone on the team solves the previous task. Once the competition is over, the team with the highest amount of points, wins!
+> Jeopardy-style CTFs have a couple of questions (tasks) which are organized in categories. For example, Web, Forensic, Crypto, Binary, PWN or something else. Teams compete against each other and gain points for every solved task. The more points for a task, the more complicated the task. Usually certain tasks appear in chains, and can only be opened after someone on the team solves the previous task. Once the competition is over, the team with the highest amount of points, wins!
 > 
 > Attack-defense is another interesting type of competition. Here every team has their own network (or only one host) with vulnerable services. Your team has time for patching and usually has time for developing exploits against these services. Once completed, organizers connects participants of the competition to a single network and the wargame starts! Your goal is to protect your own services for defense points and to hack your opponents for attack points. Some of you might know this CTF if you ever competed in the [CCDC](http://www.nationalccdc.org/index.php/component/content/). 
 > 
@@ -71,9 +71,9 @@ There are also a ton of resources online that aim to teach you the basics of Vul
 
 Out of all these resources, I believe that [CTF Series: Vulnerable Machines](https://bitvijays.github.io/LFC-VulnerableMachines.html) is honestly the BEST resources for CTFs.
 
-It's aim is mostly focused on how to approach Vulnerable VM's like the ones on [VulnHub](https://www.vulnhub.com/) and [Hack The Box](https://www.hackthebox.eu/), but it still gives you a ton of example and resources on how to find certain vulnerabilities, how to utilized given tools, and how to exploit vulnerabilities.
+It's aim is mostly focused on how to approach Vulnerable VM's like the ones on [VulnHub](https://www.vulnhub.com/) and [Hack The Box](https://www.hackthebox.eu/), but it still gives you a ton of examples and resources on how to find certain vulnerabilities, how to utilize given tools, and how to exploit vulnerabilities.
 
-As I said time and time again, learning the basics will drastically help improve your CTF skills. Once you get enough experience you'll start to notice "patterns" in certain code, binaries, web apps, etc. which will allow you to know if a particular vulnerability exists and how it can be exploited.
+As I said time and time again, learning the basics will drastically help improve your skills. Once you get enough experience you'll start to notice "patterns" in certain code, binaries, web apps, etc. which will allow you to know if a particular vulnerability exists and how it can be exploited.
 
 Another thing that can help you prepare for CTFs is to read write-ups on new bugs and vulnerabilities. A ton of Web CTF challenges are based off of these bugs and vulnerabilities or are a variant of them - so if you can keep up with new findings and understand them, then you're ahead of the curve.
 
@@ -97,7 +97,7 @@ The following links are great places to read and watch CTF solutions:
 * [CTF Time - Writeups](https://ctftime.org/writeups)
 * [CTFs Github - Writeups, Resources, and more!](https://github.com/ctfs)
 * [Mediunm - CTF Writeups](https://medium.com/bugbountywriteup/tagged/ctf)
-* [LiverOverflow Youtube](https://www.youtube.com/channel/UClcE-kVhqyiHCcjYwcpfj9w/featured)
+* [LiveOverflow](https://www.youtube.com/channel/UClcE-kVhqyiHCcjYwcpfj9w/featured)
 * [Gynvael Coldwind](https://www.youtube.com/user/GynvaelEN)
 * [Murmus CTF](https://www.youtube.com/channel/UCUB9vOGEUpw7IKJRoR4PK-A/featured)
 * [John Hammond](https://www.youtube.com/user/RootOfTheNull)
