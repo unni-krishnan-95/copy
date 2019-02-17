@@ -28,6 +28,7 @@ permalink: /categories.html
   <li>2018 Google CTF - Beginners Quest</li>
   <ul>
     <li><a href="https://jhalon.github.io/2018-google-ctf-beginners-intro/">Google CTF (2018): Beginners Quest - Introduction</a></li>
+    <li><a href="https://jhalon.github.io/2018-google-ctf-beginners-misc-solutions/">Google CTF (2018): Beginners Quest - Miscellaneous Solutions</a></li>
   </ul>
 </ul>
 
