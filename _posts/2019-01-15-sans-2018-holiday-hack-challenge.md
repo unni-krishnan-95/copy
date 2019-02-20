@@ -4200,7 +4200,7 @@ d-----       12/27/2018   5:40 PM                forensic_artifacts
 -a----       12/17/2018   9:46 AM         108889 CHOCOLATE_CHIP_COOKIE_RECIPE.docm                                                                                                                                                                                                   
 -a----       12/28/2018   2:18 PM            938 dropper.ps1
 -a----       12/28/2018   8:06 PM          17754 source.ps1  
--a----  	 12/28/2018   8:18 PM  		   21094 source-non-min.ps1                                                                                                                                                                                                                       
+-a----  12/28/2018   8:18 PM  		   21094 source-non-min.ps1                                                                                                                                                                                                                       
 -a----       12/28/2018   8:10 PM             38 kill.ps1
 ```
 
