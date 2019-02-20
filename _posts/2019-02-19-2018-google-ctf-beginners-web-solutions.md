@@ -318,7 +318,7 @@ If we look just below that, we see the following code:
     };
 ```
 
-For those new to JavaScript, or those confused by what this variables does, let's break it down line by line.
+For those new to JavaScript, or those confused by what this environment variable does, let's break it down line by line.
 
 For starters `var env = {` just set's up a new JavaScript [object](https://www.w3schools.com/js/js_object_definition.asp) for environmental variables - you can think of these object's as a key-value pair.
 
