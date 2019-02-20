@@ -377,7 +377,6 @@ If you want a more in depth explanation of how this works, [Gynvael Coldwind](ht
 __NOTE:__ The JS Safe Challange starts at [1:12:37](https://www.youtube.com/watch?v=qDYwcIf0LZw&t=4357s)!
 
 {% include video id="qDYwcIf0LZw" provider="youtube" %}
-<br>
 
 Okay, this is getting very confusing very fast. Since we have the HTML file, let' add some [debug](https://www.w3schools.com/js/js_debugging.asp) code to see what's really going on.
 
