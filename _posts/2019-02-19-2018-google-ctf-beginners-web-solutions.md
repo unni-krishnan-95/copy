@@ -322,11 +322,9 @@ For those new to JavaScript, or those confused by what this environment variable
 
 For starters `var env = {` just set's up a new JavaScript [object](https://www.w3schools.com/js/js_object_definition.asp) for environmental variables - you can think of these object's as a key-value pair.
 
-The next line `a: (x,y) => x[y]` sets up a new key name called `a` and sets the value pair to the output of `(x,y) => x[y]`. The `=>` expression is simply an [arrow function expression](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions) which is a syntactically compact alternative to a [regular function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/function) expression, although without its own bindings to the [this](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this), [arguments](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/arguments), [super](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/super), or [new.target](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/new.target) keywords.
+The next line `a: (x,y) => x[y]` sets up a new key name called `a` and sets the value pair to the output of `(x,y) => x[y]`. The `=>` expression is simply an [arrow function expression](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions) which is a syntactically compact alternative to a [regular function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/function) expression. 
 
-Simply put, this is a [lambda](https://www.vinta.com.br/blog/2015/javascript-lambda-and-arrow-functions/) function in JavaScript.
-
-The value of `a` will be the output of object at index `[y]` from the `x` array.
+Simply put, this is a [lambda](https://www.vinta.com.br/blog/2015/javascript-lambda-and-arrow-functions/) function in JavaScript where the value of key `a` will be the output of index `[y]` from the `x` array.
 
 The next line `b: (x,y) => Function.constructor.apply.apply(x, y)` sets up another new key name called `b` and sets the value pair to the output of a function call where `(x, y)` are either the parameters or body/name of the function. This is done via the [constructor](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/constructor) object and [apply](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/apply) method.
 
