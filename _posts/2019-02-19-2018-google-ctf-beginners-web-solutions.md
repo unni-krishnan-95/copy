@@ -7,7 +7,9 @@ related: true
 comments: true
 ---
 
-In my previous post "[Google CTF (2018): Beginners Quest - Miscellaneous Solutions](https://jhalon.github.io/2018-google-ctf-beginners-misc-solutions/)", we covered the miscellaneous challenges for the 2018 Google CTF, which covered a variety of security issues ranging from topics such as improper data censoring to security vulnerabilities like SQL injections. In this post, we will cover the web solutions for the Beginners Quest which touched on topics such as the improper use of client side scripts, and other simple vulnerabilities like cross-site scripting (also known as XSS).
+In my previous post "[Google CTF (2018): Beginners Quest - Miscellaneous Solutions](https://jhalon.github.io/2018-google-ctf-beginners-misc-solutions/)", we covered the miscellaneous challenges for the 2018 Google CTF, which covered a variety of security issues ranging from topics such as improper data censoring to security vulnerabilities like SQL injections.
+
+In this post, we will cover the web solutions for the Beginners Quest which touched on topics such as the improper use of client side scripts, and other simple vulnerabilities like cross-site scripting (also known as XSS).
 
 {: .notice--warning}
 __WARNING:__ I am by no means an expert in JavaScript! I tried to explain the JS Safe challenge the best way I could, and I'm sure I might have made a few mistakes here and there. So if a mistake was made or something is misleading, then please let me know!
@@ -207,13 +209,12 @@ async function open_safe() {
 Upon looking into the code we notice and interesting comment at the top, including this following line.
 
 ```html
-When ordering, please specify the
-password you'd like to use to open and close the safe and the content you'd
-like to store. We'll hand craft a unique safe just for you, that only works
-with your password of choice and contains your secret.
+When ordering, please specify the password you'd like to use to open and close 
+the safe and the content you'd like to store. We'll hand craft a unique safe 
+just for you, that only works with your password of choice and contains your secret.
 ```
 
-Okay, so there is only one password that will work with this safe. Let's dig a little further into the code and see what happens when we enter a password and press enter. This should be present in the `<body>` section of the HTML file.
+Okay, so there is only one password that will work with this safe. Let's dig a little further into the code and see what happens when we enter a password and press enter. The code for this should be present in the `<body>` section of the HTML file.
 
 ```html
 <div>
@@ -245,7 +246,7 @@ password = /^CTF{([0-9a-zA-Z_@!?-]+)}$/.exec(keyhole.value);
 
 This regex basically looks for a password that starts with `CTF{` and then ends with a closing bracket `}`.  The middle portion of the password accepts numbers, letters, and symbols. So I guess the password will be in the `CTF{}` format, and this should also be our flag.
 
-Awesome! If we look into the next two lines we also notice that if the password is empty ( `!password`) or ( `||`)  the `x` function returns (false?) then we get the `denied` error. Otherwise if the password is correct (true?) then we get the `granted` message.
+Awesome! Looking into the next two lines we also notice that if the password is empty ( `!password`) or the `x` function returns (false?) then we get the `denied` error. Otherwise if the password is correct (true?) then we get the `granted` message.
 
 If you're wondering what the [await](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/await) function does, then it simply just waits for a [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) object which simply represents the eventual completion (or failure) of an [asynchronous operation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function), and its resulting value. Simply put, this just makes sure that the `x` function which is an asynchronous operation (as seen by the `async` parameter) is completed successfully and that it returns a value.
 
@@ -372,7 +373,10 @@ We know that the `h` key in the `env` object is set to `0`. So this basically sa
 
 If you want a more in depth explanation of how this works, [Gynvael Coldwind](https://twitter.com/gynvael) actually did a very good job explaining this on his stream. So I suggest you watch that below!
 
-{% include video id="qDYwcIf0LZw&t=4357s" provider="youtube" %}
+{: .notice--info}
+__NOTE:__ The JS Safe Challange starts at [1:12:37](https://www.youtube.com/watch?v=qDYwcIf0LZw&t=4357s)!
+
+{% include video id="qDYwcIf0LZw" provider="youtube" %}
 
 Okay, this is getting very confusing very fast. Since we have the HTML file, let' add some [debug](https://www.w3schools.com/js/js_debugging.asp) code to see what's really going on.
 
