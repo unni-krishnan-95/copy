@@ -376,9 +376,9 @@ __NOTE:__ The JS Safe Challange starts at [1:12:37](https://www.youtube.com/watc
 
 {% include video id="qDYwcIf0LZw" provider="youtube" %}
 
-Okay, this is getting very confusing very fast. Since we have the HTML file, let' add some [debug](https://www.w3schools.com/js/js_debugging.asp) code to see what's really going on.
+Okay, this is getting very confusing very fast. Since we have the HTML file, lets add some [debug](https://www.w3schools.com/js/js_debugging.asp) code to see what's really going on.
 
-We will enter the following debug code in the `x` function, which will simply print out the variables for us that the try and catch function is using.
+We will enter the following debug code in the `x` function, which will simply print out the variables to the console that the try and catch functions are using.
 
 ```javascript
 console.log(lhs, fn, arg1, arg2, env[arg1], env[arg2]);
