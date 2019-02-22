@@ -151,7 +151,7 @@ root@kali:~/Google-CTF/Gatekeeper# strings ./gatekeeper
 /===========================================================================\
 |               Gatekeeper - Access your PC from everywhere!                |
 +===========================================================================+
-ACCESS DENIED
+
 [ERROR] Login information missing
 Usage: %s <username> <password>
  ~> Verifying.
@@ -163,7 +163,6 @@ Welcome back!
 CTF{%s}
  ~> Incorrect password
 ;*3$"
----snip---
 ```
 
 Right away we can see all the strings the binary uses, including what seems to be a username and password! I'm going to assume that `0n3_W4rM` is the username as it comes first, and the password is `zLl1ks_d4m_T0g_I` since it follows after.
