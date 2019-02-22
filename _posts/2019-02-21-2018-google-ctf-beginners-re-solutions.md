@@ -17,7 +17,7 @@ For those that have never done any sort of binary reverse engineering before, th
 
 <p align="center"><a href="/images/gctf18-re-1.png"><img src="/images/gctf18-re-1.png"></a></p>
 
-Upon reading the challenge description we learn that we got access to a binary final, and we have to see if we can't find anything. Interesting enough, the description states that it's "__now time to _walk_ around the firmware__"which makes me suspect that we need to use [binwalk](https://github.com/ReFirmLabs/binwalk).
+Upon reading the challenge description we learn that we got access to a binary file, and have to see if we can't find anything. Interesting enough, the description states that it's "__now time to _walk_ around the firmware__" which makes me suspect that we need to use [binwalk](https://github.com/ReFirmLabs/binwalk).
 
 First, let's download the attachment, and extract the file. We should be presented with the following challenge file.
 
@@ -46,7 +46,7 @@ DECIMAL       HEXADECIMAL     DESCRIPTION
 617256        0x96B28         Unix path: /etc/alternatives/nawk.1.gz
 ```
 
-Awesome, our assumptions were right! So to access this filesystem, we can simply create a new directory and then use the [mount](https://linux.die.net/man/8/mount) command to mount that filesystem to our Linux system. We should then be able to access all the files via the mount point.
+Awesome, our assumptions were right! So to access this filesystem, we can simply create a new directory and then use the [mount](https://linux.die.net/man/8/mount) command to mount that filesystem to our newly created directory. We should then be able to access all the files via the mount point.
 
 In this case I created a new directory in root called `mnt` and mounted the filesystem there.
 
@@ -126,7 +126,7 @@ root@kali:~/Google-CTF/Gatekeeper# ./gatekeeper
 Usage: ./gatekeeper <username> <password>
 ```
 
-Okay, we get usage instruction printed out to let us know that we need to pass a username and password into the program. Let's see what happens if we pass in the combination of `admin:admin`.
+Okay, without providing any arugments we get usage instruction which let us know that we need to pass a username and password into the program. Let's see what happens if we pass in the combination of `admin:admin`.
 
 ```console
 root@kali:~/Google-CTF/Gatekeeper# ./gatekeeper admin admin
@@ -138,9 +138,9 @@ ACCESS DENIED
  ~> Incorrect username
 ```
 
-Access Denied... of course. So it seems that we need to find a valid username and password. I'm going to guess that these values are hardcoded
+Access Denied... of course. So it seems that we need to find a valid username and password. I'm going to guess that these values are hardcoded.
 
-What we can do to make life easy, and try to go for a quick "win", is to use a tool like [strings](https://linux.die.net/man/1/strings) against the binary. This in turn will print out all the printable characters in the binary, possibly revealing the username and password!
+What we can do to make life easy, and try to go for a quick "win", is to use a tool like [strings](https://linux.die.net/man/1/strings) against the binary. This in turn will print out all the printable characters from the binary, possibly revealing the username and password!
 
 {: .notice--info}
 __NOTE:__ I trimmed some of the output for readability.
@@ -199,19 +199,15 @@ By double clicking the cross reference, we should be taken directly into the IDA
 
 <p align="center"><a href="/images/gctf18-re-6.png"><img src="/images/gctf18-re-6.png"></a></p>
 
-Initially right above and below the password I see a [mov](http://www.keil.com/support/man/docs/armasm/armasm_dom1361289878994.htm) instruction that seems to load data from memory at `[rbp+dest]` and then moves it to the `rax` register. We then see that the [lea](https://stackoverflow.com/questions/1658294/whats-the-purpose-of-the-lea-instruction) or "load effective address" loads the password string into the `rsi` or Source Index register.
+Initially right above and below the password I see a [mov](http://www.keil.com/support/man/docs/armasm/armasm_dom1361289878994.htm) instruction that seems to load data from memory at `[rbp+dest]` and then moves it to the `rax` register. We then see that the [lea](https://stackoverflow.com/questions/1658294/whats-the-purpose-of-the-lea-instruction) or "load effective address" instructions loads the password string into the `rsi` or Source Index register.
 
-Then another `mov` instruction is called that sets the `rdi` or Destination Index to that of the `rax` register which should be that data loaded from memory. This then calls the [_strcmp](https://www.tutorialspoint.com/c_standard_library/c_function_strcmp.htm) function against these two strings.
+Then another `mov` instruction is called that sets the `rdi` or Destination Index to that of the `rax` register which should be the data that was loaded from memory. This then calls the [strcmp](https://www.tutorialspoint.com/c_standard_library/c_function_strcmp.htm) function against these two strings.
 
 So my question is... what's it comparing it to? If we scroll up in the Graph View, we will see the following.
 
 <p align="center"><a href="/images/gctf18-re-7.png"><img src="/images/gctf18-re-7.png"></a></p>
 
-Take note that I explain what's going on in the image. Simply this is a string reverse function that takes the last character of the password and moves it to the front. 
-
-Now there's one thing that you need to understand about string in C, and that's a string is simply and array of character pointers to the characters in memory. This allows for the manipulation of strings as an array because... well because it's an array!
-
-If you're confused you can read "[C Strings (Arrays vs. Pointers)](https://www.cs.bu.edu/teaching/cpp/string/array-vs-ptr/)" to better understand it.
+Take note that I explain what's going on in the image. Simply this portion of the program get's the length of an argument, which in our case is `arg[2]` or our password, and then allocates data on the heap which is equal to the string length plus 1. The password we passed into the program is then written to the allocated space.
 
 So to give you a better visual representation of what the assembly is doing, I can show you what the the C code for this will look like. It should look like the following:
 
@@ -232,6 +228,12 @@ At the end we see that another `mov` instruction is called that set's the memory
 This then jumps to `loc_B2A`, which is the string reverse function loop.
 
 <p align="center"><a href="/images/gctf18-re-8.png"><img src="/images/gctf18-re-8.png"></a></p>
+
+Simply this is a string reverse function that takes the last character of the password and moves it to the front. 
+
+Now there's one thing that you need to understand about string in C, and that's a string is simply and array of character pointers to the characters in memory. This allows for the manipulation of strings as an array because... well because it's an array!
+
+If you're confused you can read "[C Strings (Arrays vs. Pointers)](https://www.cs.bu.edu/teaching/cpp/string/array-vs-ptr/)" to better understand it.
 
 The C code for this function will look like the following:
 
