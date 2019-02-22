@@ -151,8 +151,8 @@ root@kali:~/Google-CTF/Gatekeeper# strings ./gatekeeper
 /===========================================================================\
 |               Gatekeeper - Access your PC from everywhere!                |
 +===========================================================================+
-ACCESS DENIED
-[ERROR] Login information missing
+
+
 Usage: %s <username> <password>
  ~> Verifying.
 0n3_W4rM
