@@ -146,7 +146,7 @@ What we can do to make life easy, and try to go for a quick "win", is to use a t
 __NOTE:__ I snipped some of the output for readability.
 
 ```console
-oot@kali:~/Google-CTF/Gatekeeper# strings ./gatekeeper
+root@kali:~/Google-CTF/Gatekeeper# strings ./gatekeeper
 ---snip---
 /===========================================================================\
 |               Gatekeeper - Access your PC from everywhere!                |
