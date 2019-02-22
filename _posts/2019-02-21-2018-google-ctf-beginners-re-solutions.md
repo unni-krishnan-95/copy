@@ -231,7 +231,7 @@ This then jumps to `loc_B2A`, which is the string reverse function loop.
 
 Simply this is a string reverse function that takes the last character of the password and moves it to the front. 
 
-Now there's one thing that you need to understand about string in C, and that's that a string is simply and array of character pointers to the characters in memory. This allows for the manipulation of strings as an array because... well because it's an array!
+Now there's one thing that you need to understand about string in C, and that's that a string is simply an array of character pointers to the characters in memory. This allows for the manipulation of strings as an array because... well because it's an array!
 
 If you're confused you can read "[C Strings (Arrays vs. Pointers)](https://www.cs.bu.edu/teaching/cpp/string/array-vs-ptr/)" to better understand it.
 
