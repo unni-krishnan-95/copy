@@ -148,6 +148,11 @@ __NOTE:__ I trimmed some of the output for readability.
 ```console
 root@kali:~/Google-CTF/Gatekeeper# strings ./gatekeeper
 ---trim---
+/===========================================================================\
+|               Gatekeeper - Access your PC from everywhere!                |
++===========================================================================+
+ACCESS DENIED
+[ERROR] Login information missing
 Usage: %s <username> <password>
  ~> Verifying.
 0n3_W4rM
@@ -155,7 +160,6 @@ Usage: %s <username> <password>
 zLl1ks_d4m_T0g_I
 Correct!
 Welcome back!
-CTF{%s}
  ~> Incorrect password
 ---trim---
 ```
