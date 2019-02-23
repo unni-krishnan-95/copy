@@ -32,6 +32,7 @@ permalink: /categories.html
     <li><a href="https://jhalon.github.io/2018-google-ctf-beginners-web-solutions/">Google CTF (2018): Beginners Quest - Web Solutions
 </a></li>
     <li><a href="https://jhalon.github.io/2018-google-ctf-beginners-re-solutions/">Google CTF (2018): Beginners Quest - Reverse Engineering Solutions</a></li>
+    <li><a href="https://jhalon.github.io/2018-google-ctf-beginners-pwn-solutions-1/">Google CTF (2018): Beginners Quest - PWN Solutions (1/2)</a></li>
   </ul>
 </ul>
 
