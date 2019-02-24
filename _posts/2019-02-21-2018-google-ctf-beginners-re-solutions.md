@@ -279,6 +279,8 @@ The Reverse Engineering challenges were pretty easy to be honest! They weren't t
 
 If you had trouble understanding the assembly then I suggest you take the [Introductory Intel x86: Architecture, Assembly, Applications, & Alliteration](http://opensecuritytraining.info/IntroX86.html) by [Open Security Training](http://opensecuritytraining.info). They have a lot of courses that can help you get started in assembly and reverse engineering.
 
+Also, [Malware Unicorn](https://twitter.com/malwareunicorn) has a great [Reverse Engineering 101](https://sites.google.com/secured.org/malwareunicorn/reverse-engineering/re101) workshop that I highly suggest you read!
+
 At the same time I believe that the book, "[Hacking: The Art of Exploitation](https://www.amazon.com/Hacking-Art-Exploitation-Jon-Erickson/dp/1593271441)" and "[Practical Reverse Engineering: x86, x64, ARM, Windows Kernel, Reversing Tools, and Obfuscation](https://www.amazon.com/Practical-Reverse-Engineering-Reversing-Obfuscation/dp/1118787315/ref=sr_1_1?keywords=reverse+engineering&qid=1550812342&s=books&sr=1-1)" are great books if you want to get started in exploitation and reverse engineering.
 
 With that being said, I hope you all learned something new from this write up! Stay tuned for my next post as we cover the final PWN challenges! 
