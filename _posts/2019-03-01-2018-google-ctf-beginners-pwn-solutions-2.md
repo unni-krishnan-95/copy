@@ -696,7 +696,7 @@ Awesome, right away we notice that the [RBP](https://stackoverflow.com/questions
 So if we add 4 more bytes of, let's say the C character of `0x43` in hex, then we can overwrite the return pointer. Let's test this.
 
 ```python
-db-peda$ r
+gdb-peda$ r
 Starting program: /root/Google-CTF/Message Of The Day/motd 
 Choose functionality to test:
 1 - Get user MOTD
