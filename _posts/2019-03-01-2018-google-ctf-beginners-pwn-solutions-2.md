@@ -1348,6 +1348,7 @@ LiveOverflow has a great video explaining the GOT and PLT, which I suggest you w
 
 {% include video id="kUk5pw4w0h4" provider="youtube" %}
 
+   
 So if we can read from or write to these addresses in the GOT and PLT, then we can call our own function to execute whatever we want, like [system](https://www.tutorialspoint.com/c_standard_library/c_function_system.htm).
 
 But before we can do that, let's check the protection in place for the application.
