@@ -633,7 +633,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 
 Alright, now let's start the application in gdb, select choice 2 to write a new message, and enter our generated string.
 
-```console
+```python
 root@kali:~/Google-CTF/Message Of The Day# gdb -q ./motd
 Reading symbols from ./motd...(no debugging symbols found)...done.
 gdb-peda$ r
