@@ -247,7 +247,7 @@ int main(void)
 }
 ```
 
-Looking into the main function of the application we see that it does a few things. It set's the real and effective user ID's to `root` via [setreuid](https://linux.die.net/man/2/setreuid) and then it calls the `  set_new_env()` function.
+Looking into the main function of the application we see that it does a few things. It set's the real and effective user ID's to `root` via [setreuid](https://linux.die.net/man/2/setreuid) and then it calls the `set_new_env()` function.
 
 Let's see what that function does.
 
