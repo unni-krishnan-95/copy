@@ -322,7 +322,7 @@ From here is seems that these strings of environmental variables will be passed 
 
 > The _argv_ and _envp_ arrays must each include a null pointer at the end of the array.
 
-But if we look into the code, we see that there is no NULL terminator is being added to the end of the environmental variable array. 
+But if we look into the code, we see that there is no NULL terminator being added to the end of the environmental variable array. 
 
 If we look deeper into the code for the `filter_env` function we will notice where the bug can be exploited.
 
