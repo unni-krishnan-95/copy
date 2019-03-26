@@ -451,7 +451,7 @@ drwxr-xr-x 21 user user  4096 Oct 24 19:10 ..
 -rw-r--r--  1 user user 16136 Feb 24 23:35 exp.so
 ```
 
-Awesome, from here we can navigate to the `filterenv` binary and execute it with out LD_PRELOAD function. This should give us the flag.
+Awesome, from here we can navigate to the `filterenv` binary and execute it with our LD_PRELOAD function. This should give us the flag.
 
 ```console
 cd /home/adminimum
