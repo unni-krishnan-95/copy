@@ -5,8 +5,6 @@ header:
   teaser: oth.png
   overlay_image: stapler-banner.jpg
   caption: "[__VulnHub__](https://www.vulnhub.com/entry/stapler-1,150/)"
-related: true
-comments: true
 ---
 
 Welcome back to my 2nd - VulnHub CTF! This time we will be tackling [Stapler: 1](https://www.vulnhub.com/entry/stapler-1,150/)!
