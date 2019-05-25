@@ -3,8 +3,6 @@ layout: single
 title: "Reverse Engineering Malicious Macros for Fun & Profit"
 header:
   overlay_image: mm-background.jpg
-related: true
-comments: true
 ---
 
 ## DISCLAIMER:
