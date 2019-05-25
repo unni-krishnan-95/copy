@@ -4,8 +4,6 @@ title: "SANS 2016 Holiday Hack Challenge"
 header:
   overlay_image: hh-banner.png
   caption: "[__SANS Holiday Hack Challenge__](https://holidayhackchallenge.com/2016/)"
-related: true
-comments: true
 ---
 
 Happy Holidays and a Happy New Year 2017 readers! Thanks for joining me today as we go over the [SANS 2016 Holiday Hack Challenge](https://holidayhackchallenge.com/2016/)! Which honestly, was the most fun I ever had!
