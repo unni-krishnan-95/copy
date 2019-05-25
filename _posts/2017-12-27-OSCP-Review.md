@@ -3,8 +3,6 @@ layout: single
 title: "Offensive Security's PWK & OSCP Review"
 header:
   overlay_image: oscp.png
-related: true
-comments: true
 ---
 
 On December 19, 2017 I received one of the most desired emails by aspiring Offensive Security enthusiasts and professionals...
