@@ -2,11 +2,7 @@
 layout: single
 title: "OverTheWire: 'Bandit' Solutions 1-10"
 header:
-  teaser: oth.png
-  overlay_image: ZenBGR.png
   caption: "[__OverTheWire__](http://overthewire.org/wargames/)"
-related: true
-comments: true
 ---
 
 Over the past couple weeks, I have been digging deeper and deeper into the realm of penetration testing (or as many like to call it... hacking). I have been obsessively doing researching, practicing, and honing my basic level Linux skills, as well as expanding my toolset knowledge.
