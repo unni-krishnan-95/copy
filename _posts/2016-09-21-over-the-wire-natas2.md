@@ -5,8 +5,6 @@ header:
   teaser: oth.png
   overlay_image: ZenBGG.png
   caption: "[__OverTheWire__](http://overthewire.org/wargames/)"
-related: true
-comments: true
 ---
 
 Welcome back! This post is the continuation of the __Natas__ wargame from [OverTheWire](http://overthewire.org/wargames/natas/).
