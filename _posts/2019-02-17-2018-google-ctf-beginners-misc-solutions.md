@@ -3,8 +3,6 @@ layout: single
 title: "Google CTF (2018): Beginners Quest - Miscellaneous Solutions"
 header:
   overlay_image: google-ctf-banner.jpg
-related: true
-comments: true
 ---
 
 In my previous post "[Google CTF (2018): Beginners Quest - Introduction](https://jhalon.github.io/2018-google-ctf-beginners-intro/)", we covered how to break into CTFs and I also introduced the 2018 Google CTF. In this post we will be covering the miscellaneous (misc) solutions for the Beginner Quest, which contained a variety of security issues ranging from topics such as improper data censoring to security vulnerabilities like [SQL injections](https://www.owasp.org/index.php/SQL_Injection).
