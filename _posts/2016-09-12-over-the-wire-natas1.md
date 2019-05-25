@@ -5,8 +5,6 @@ header:
   teaser: oth.png
   overlay_image: ZenBGG.png
   caption: "[__OverTheWire__](http://overthewire.org/wargames/)"
-related: true
-comments: true
 ---
 
 Web Hacking; one of the most dangerous attack vectors out on the internet in today's world. Web Hackers have gotten away with millions of user accounts and passwords, credit card information, and even social security numbers! 
