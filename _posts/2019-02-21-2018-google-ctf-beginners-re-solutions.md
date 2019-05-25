@@ -3,8 +3,6 @@ layout: single
 title: "Google CTF (2018): Beginners Quest - Reverse Engineering Solutions"
 header:
   overlay_image: google-ctf-banner.jpg
-related: true
-comments: true
 ---
 
 In my previous post "[Google CTF (2018): Beginners Quest - Web Solutions](https://jhalon.github.io/2018-google-ctf-beginners-web-solutions/)" we covered the web challenges for the 2018 Google CTF, which covered a variety of security issues ranging from topics such as the improper use of client side scripts, and other simple vulnerabilities like cross-site scripting (also known as XSS).
