@@ -4,8 +4,6 @@ title: "VulnHub - Kioptrix 2"
 header:
   overlay_image: kioptrix-banner.jpg
   caption: "[__VulnHub__](https://www.vulnhub.com/entry/kioptrix-level-11-2,23/)"
-related: true
-comments: true
 ---
 
 Welcome back to the Kioptrix VM Series!
