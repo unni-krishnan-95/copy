@@ -9,10 +9,6 @@ permalink: /categories.html
 
 <h2>General</h2>
 <ul>
-<li><a href="https://jhalon.github.io/m-trends-fireeye-report-overview/">M-Trends 2016: Cyber Threat Report Overview</a></li>
-<li><a href="https://jhalon.github.io/sans-2016-holiday-hack-challenge/">SANS 2016 Holiday Hack Challenge</a></li>
-<li><a href="https://jhalon.github.io/sans-2017-holiday-hack-challenge/">SANS 2017 Holiday Hack Challenge</a></li>
-<li><a href="https://jhalon.github.io/sans-2018-holiday-hack-challenge/">SANS 2018 Holiday Hack Challenge</a></li>
 <li><a href="https://jhalon.github.io/OSCP-Review/">Offensive Security’s PWK & OSCP Review</a></li>
 <li><a href="https://jhalon.github.io/becoming-a-pentester/">So You Want To Be a Pentester?</a></li>
 </ul>
@@ -37,27 +33,11 @@ permalink: /categories.html
   </ul>
 </ul>
 
-<h2>OverTheWire</h2>
+<h2>SANS</h2>
 <ul>
-
-<li>Bandit</li>
-<ul>
-<li><a href="https://jhalon.github.io/over-the-wire-bandit1/">Bandit Solutions 1-10</a></li>
-<li><a href="https://jhalon.github.io/over-the-wire-bandit2/">Bandit Solutions 11-25</a></li>
-</ul>
-
-<li>Leviathan</li>
-<ul>
-<li><a href="https://jhalon.github.io/over-the-wire-leviathan/">Leviathan Solutions 1-8</a></li>
-</ul>
-
-<li>Natas</li>
-<ul>
-<li><a href="https://jhalon.github.io/over-the-wire-natas1/">Natas Solutions 1-10</a></li>
-<li><a href="https://jhalon.github.io/over-the-wire-natas2/">Natas Solutions 11-15</a></li>
-<li><a href="https://jhalon.github.io/over-the-wire-natas3/">Natas Solutions 16-20</a></li>
-</ul>
-
+<li><a href="https://jhalon.github.io/sans-2016-holiday-hack-challenge/">SANS 2016 Holiday Hack Challenge</a></li>
+<li><a href="https://jhalon.github.io/sans-2017-holiday-hack-challenge/">SANS 2017 Holiday Hack Challenge</a></li>
+<li><a href="https://jhalon.github.io/sans-2018-holiday-hack-challenge/">SANS 2018 Holiday Hack Challenge</a></li>
 </ul>
 
 <h2>Pentestit Lab</h2>
@@ -108,4 +88,27 @@ permalink: /categories.html
 <li><a href="https://jhalon.github.io/vulnhub-kioptrix3/">Kioptrix 3</a></li>
 <li><a href="https://jhalon.github.io/vulnhub-kioptrix4/">Kioptrix 4</a></li>
 <li><a href="https://jhalon.github.io/vulnhub-kioptrix5/">Kioptrix 5</a></li>
+</ul>
+
+<h2>OverTheWire</h2>
+<ul>
+
+<li>Bandit</li>
+<ul>
+<li><a href="https://jhalon.github.io/over-the-wire-bandit1/">Bandit Solutions 1-10</a></li>
+<li><a href="https://jhalon.github.io/over-the-wire-bandit2/">Bandit Solutions 11-25</a></li>
+</ul>
+
+<li>Leviathan</li>
+<ul>
+<li><a href="https://jhalon.github.io/over-the-wire-leviathan/">Leviathan Solutions 1-8</a></li>
+</ul>
+
+<li>Natas</li>
+<ul>
+<li><a href="https://jhalon.github.io/over-the-wire-natas1/">Natas Solutions 1-10</a></li>
+<li><a href="https://jhalon.github.io/over-the-wire-natas2/">Natas Solutions 11-15</a></li>
+<li><a href="https://jhalon.github.io/over-the-wire-natas3/">Natas Solutions 16-20</a></li>
+</ul>
+
 </ul>
