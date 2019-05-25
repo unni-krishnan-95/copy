@@ -4,8 +4,6 @@ title: "VulnHub - Kioptrix 1"
 header:
   overlay_image: kioptrix-banner.jpg
   caption: "[__VulnHub__](https://www.vulnhub.com/entry/kioptrix-level-1-1,22/)"
-related: true
-comments: true
 ---
 
 "Try Harder"... the quote that brings fear and confusion into every [PWK](https://www.offensive-security.com/information-security-training/penetration-testing-training-kali-linux/) participant; all working hard to obtain the prestigious [OSCP](https://www.offensive-security.com/information-security-certifications/oscp-offensive-security-certified-professional/) Certificate.
