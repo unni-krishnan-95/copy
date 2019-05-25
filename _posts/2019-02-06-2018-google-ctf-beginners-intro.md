@@ -3,8 +3,6 @@ layout: single
 title: "Google CTF (2018): Beginners Quest - Introduction"
 header:
   overlay_image: google-ctf-banner.jpg
-related: true
-comments: true
 ---
 
 Over the past couple of weeks I've been doing a lot of CTFs (Capture the Flag) - old and new. And I honestly can't believe what I've been missing out on. I've learned so much during this time by just playing the CTFs, reading write-ups, and even watching the solutions on YouTube. This allowed me to realize how much I still don't know, and allowed me to see where the gaps in my knowledge were.
