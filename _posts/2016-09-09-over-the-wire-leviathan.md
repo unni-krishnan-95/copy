@@ -5,8 +5,6 @@ header:
   teaser: oth.png
   overlay_image: ZenBGB.png
   caption: "[__OverTheWire__](http://overthewire.org/wargames/)"
-related: true
-comments: true
 ---
 
 __Leviathan__: A large aquatic creature of some kind. The Bible refers to it as a fearsome beast having monstrous ferocity and great power. Today, the word has become synonymous with any large sea monster or creature. In literature it refers to great whales, and in Modern Hebrew, it simply means "whale". And trust me... you will have a "whale" of a time with this wargame! Eh? EH? No? -- Fine, I'll see my way out...
