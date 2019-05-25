@@ -3,8 +3,6 @@ layout: single
 title: "Google CTF (2018): Beginners Quest - PWN Solutions (1/2)"
 header:
   overlay_image: google-ctf-banner.jpg
-related: true
-comments: true
 ---
 
 In my previous post "[Google CTF (2018): Beginners Quest - Reverse Engineering Solutions](https://jhalon.github.io/2018-google-ctf-beginners-re-solutions/)", we covered the reverse engineering solutions for the 2018 Google CTF, which introduced vulnerabilities such as hardcoded data, and also introduced the basics for x86 Assembly.
