@@ -5,8 +5,6 @@ header:
   teaser: oth.png
   overlay_image: ZenBGR.png
   caption: "[__OverTheWire__](http://overthewire.org/wargames/)"
-related: true
-comments: true
 ---
 
 Hey, Welcome Back! This post is the continuation to the "__Bandit__" Wargame found at: [overthewire.org](http://overthewire.org/wargames/bandit/).
