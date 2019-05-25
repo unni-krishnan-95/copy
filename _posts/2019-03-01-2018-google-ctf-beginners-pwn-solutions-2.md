@@ -3,8 +3,6 @@ layout: single
 title: "Google CTF (2018): Beginners Quest - PWN Solutions (2/2)"
 header:
   overlay_image: google-ctf-banner.jpg
-related: true
-comments: true
 ---
 
 In my previous post "[Google CTF (2018): Beginners Quest - PWN Solutions (1/2)](https://jhalon.github.io/2018-google-ctf-beginners-pwn-solutions-1/)", we covered the first set of PWN solutions for the Beginners Quest, which touched on topics such as code injection, reverse engineering, [buffer overflows](https://www.owasp.org/index.php/Buffer_Overflow), and [format string exploits](https://www.owasp.org/index.php/Format_string_attack).
