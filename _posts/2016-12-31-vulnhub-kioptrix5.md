@@ -4,8 +4,6 @@ title: "VulnHub - Kioptrix 5"
 header:
   overlay_image: kioptrix-banner.jpg
   caption: "[__VulnHub__](https://www.vulnhub.com/entry/kioptrix-2014-5,62/)"
-related: true
-comments: true
 ---
 
 Welcome back to the Final Chapter of the Kioptrix VM Series!
