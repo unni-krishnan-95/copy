@@ -5,8 +5,6 @@ header:
   teaser: oth.png
   overlay_image: so-banner.jpg
   caption: "[__VulnHub__](https://www.vulnhub.com/entry/sickos-11,132/)"
-related: true
-comments: true
 ---
 
 Welcome back to another VulnHub CTF write-up! Today we will be pwning SickOS 1.1 - which can be found here on [VulnHub](https://www.vulnhub.com/entry/sickos-11,132/).
