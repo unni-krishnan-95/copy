@@ -3,8 +3,6 @@ layout: single
 title: "Google CTF (2018): Beginners Quest - Web Solutions"
 header:
   overlay_image: google-ctf-banner.jpg
-related: true
-comments: true
 ---
 
 In my previous post "[Google CTF (2018): Beginners Quest - Miscellaneous Solutions](https://jhalon.github.io/2018-google-ctf-beginners-misc-solutions/)", we covered the miscellaneous challenges for the 2018 Google CTF, which covered a variety of security issues ranging from topics such as improper data censoring to security vulnerabilities like SQL injections.
