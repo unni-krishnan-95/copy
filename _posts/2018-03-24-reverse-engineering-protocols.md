@@ -3,8 +3,6 @@ layout: single
 title: "Reverse Engineering Network Protocols"
 header:
   overlay_image: anp-background.jpg
-related: true
-comments: true
 ---
 
 In the past few weeks I finally found time to dig into my library and read some of the books that I've been meaning to read since like last year. One of the books that really warranted my attention was [Attacking Network Protocols](https://nostarch.com/networkprotocols) by [James Forshaw](https://twitter.com/tiraniddo).
