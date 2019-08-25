@@ -128,7 +128,7 @@ With a new found love for Offensive Security, a fresh mindset and the willingnes
 
 I first started by going through the exam objectives again, spending about two hours reading them, taking notes and trying to read in between the lines. Unfortunately for me when I did this I noticed things I missed during the exam - which just goes to show that you really need to pay attention during the course and exam. 
 
-After taking notes, I did some OSINT (Open Source Intelligence Gathering) on Offensive Security's website for the CTP/OSCE and looked at the "__What competencies will you gain?__" section. A few points stood out to me, such as "__ understanding of PE structures__", "__innovative ways of penetrating internal networks__", as well as the "__ability to work through encoding issues and space restrictions__".
+After taking notes, I did some OSINT (Open Source Intelligence Gathering) on Offensive Security's website for the CTP/OSCE and looked at the "__What competencies will you gain?__" section. A few points stood out to me, such as "__understanding of PE structures__", "__innovative ways of penetrating internal networks__", as well as the "__ability to work through encoding issues and space restrictions__".
 
 Once my notes were completed, I went through the CTP course again and tried to focus on items that I knew would help me on the exam. Afterwards I went online and googled for the topics that I noted previously and to be honesty they really helped me understand the course and objectives in depth. This not only reflected back to the OSCE exam later but also helped me become a better red teamer as I learned new things such as PE Injections, some new internal network pivoting and attack techniques, and more! 
 
