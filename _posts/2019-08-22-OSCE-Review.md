@@ -104,7 +104,7 @@ Yes! I celebrated with a victory lap around the house and thought that maybe I c
 
 During the time I was working on the third objective, I was fuzzing the forth objective - but had no success. Being a little tired and hungry, I decided to write a script that would automate the fuzzing for me. With the script completed, I kicked it off and stepped away for an hour to eat and rest. Once my break was over I got back and was bestowed by the holy grail of exploit development - "Access Violation".
 
-I was thrilled! Within 15 minutes I got control of EIP and was able to jump into my controlled buffer. I then set off to build a simple python proof of concept to use as my skeleton exploit. Now came the hard part, crafting a working exploit that would bestow me with a shell!
+I was thrilled! Within 15 minutes I was able to jump into my controlled buffer. I then set off to build a simple python proof of concept to use as my skeleton exploit. Now came the hard part, crafting a working exploit that would bestow me with a shell!
 
 ### 03 x 6AM: That's impossible!
 
@@ -150,9 +150,9 @@ The second objective was taken out shortly after the first. Thanks to all the re
 
 ### 01 x 8PM: Peekaboo! I see you!
 
-There's a reason the forth objective is considered "impossible", and that's because it literally forces you to think laterally and like an actual attacker to accomplish the objective. I was able to fuzz and crash the application with my proof of concept, I had control of EIP and could pass data into my malicious buffer - but I still didn't know how to exploit the vulnerability to get a shell.
+There's a reason the forth objective is considered "impossible", and that's because it literally forces you to think laterally and like an actual attacker to accomplish the objective. I was able to fuzz and crash the application with my proof of concept, I had control of my malicious buffer - but I still didn't know how to exploit the vulnerability to get a shell.
 
-So I did the only thing I could, and that was to put on my Red Team face on and play the role of a persistent attacker. I started by enumerating the system and looking for other vulnerabilities that I could exploit. After an hour of digging I found something very promising and luckily for me this topic was briefly presented in the course! So I built a quick proof of concept and was able to locally exploit the system and get a remote shell on the debugging machine. I just found the shell vector... but now the question was, how the heck do I craft this into my exploit?
+So I did the only thing I could, and that was to put on my Red Team face on and play the role of a persistent attacker. After an hour of digging I found something very promising and luckily for me this topic was briefly presented in the course! So I built a quick proof of concept and was able to get a remote shell on the debugging machine. I just found the shell vector... but now the question was, how the heck do I craft this into my exploit?
 
 ### 01 x 11PM: Work dammit!
 
