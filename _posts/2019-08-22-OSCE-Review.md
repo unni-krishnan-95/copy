@@ -208,7 +208,7 @@ In the CTP course, OffSec states that you need to understand the following funda
 
 Honestly speaking, this is very broad and there are quite a few more skills that you need to have to pass this course. I suggest taking a look at the [full syallbus](https://www.offensive-security.com/documentation/cracking-the-perimeter-syllabus.pdf) to get a better idea of what you need to know.
 
-These skills are actually tested when you register for the CTP course. You will be provided a link to a web application and will need to pass a two stage registration challenge to even complete the registration. If for any reason you are having trouble completing the challenge, then you need to take a step back and go learn some more basics because if you can't pass the registration challenge then you are not ready to attempt the course, nnonetheless the OSCE exam.
+These skills are actually tested when you register for the CTP course. You will be provided a link to a web application and will need to pass a two stage registration challenge to even complete the registration. If for any reason you are having trouble completing the challenge, then you need to take a step back and go learn some more basics because if you can't pass the registration challenge then you are not ready to attempt the course, nonetheless the OSCE exam.
 
 If you are somewhat unfamiliar with x86 assembly, shellcoding, web application vulnerabilities, and basic exploitation, then here are some links to help you learn that required material:
 
