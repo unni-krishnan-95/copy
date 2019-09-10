@@ -9,7 +9,7 @@ permalink: /about.html
 
 ## jack@localhost:~$ whoami
 
-<p align="center"><img src="https://42f2671d685f51e10fc6-b9fcecea3e50b3b59bdc28dead054ebc.ssl.cf5.rackcdn.com/illustrations/programming_2svr.svg" width="500" height="300"></p>
+<p align="center"><img src="undraw_hacker_mind_6y85.png" width="500" height="300"></p>
 
 My name is Jack, I'm a current Security Consultant and Security Researcher at [NCC Group](https://twitter.com/NCCsecurityUS).
 
